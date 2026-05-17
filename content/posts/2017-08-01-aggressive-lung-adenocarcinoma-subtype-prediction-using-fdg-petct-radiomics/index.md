@@ -24,7 +24,10 @@ tags:
   - "radiomics"
   - "subtype"
   - "surgical-plan"
-coverImage: "graphical-abstract.png"
+cover:
+  image: "images/graphical-abstract.png"
+  alt: ""
+  relative: true
 ---
 
 This paper has been published in the Computational and Structural Biotechnology Journal.

@@ -17,7 +17,10 @@ tags:
   - "radiomics"
   - "radiotherapy"
   - "toxicity"
-coverImage: "image-1.png"
+cover:
+  image: "images/image-1.png"
+  alt: ""
+  relative: true
 ---
 
 Our paper **“Novel Functional Radiomics for Prediction of Cardiac Positron Emission Tomography Avidity in Lung Cancer Radiotherapy”** has been published in [JCO CCI](https://ascopubs.org/doi/10.1200/CCI.23.00241). This research work delves into an innovative approach to predict clinical cardiac assessment using functional imaging.

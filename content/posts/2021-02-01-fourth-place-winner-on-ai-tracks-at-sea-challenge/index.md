@@ -12,7 +12,10 @@ tags:
   - "object-detection"
   - "object-tracking"
   - "tracking"
-coverImage: "scene_16_02318.jpg"
+cover:
+  image: "images/scene_16_02318.jpg"
+  alt: ""
+  relative: true
 ---
 
 We won 4th place in the Artificial Intelligence (AI) Tracks at Sea Challenge. [https://www.challenge.gov/?challenge=ai-tracks-at-sea](https://www.challenge.gov/?challenge=ai-tracks-at-sea)  

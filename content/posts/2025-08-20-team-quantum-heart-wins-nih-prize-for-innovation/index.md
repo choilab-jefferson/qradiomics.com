@@ -16,7 +16,10 @@ tags:
   - "quantum-heart"
   - "science"
   - "technology"
-coverImage: "gemini_generated_image_exsgyuexsgyuexsg-1.png"
+cover:
+  image: "images/gemini_generated_image_exsgyuexsgyuexsg-1.png"
+  alt: ""
+  relative: true
 ---
 
 [https://datascience.nih.gov/tools-and-analytics/quantum-computing-new-frontiers-biomedical-research-innovation-lab](https://datascience.nih.gov/tools-and-analytics/quantum-computing-new-frontiers-biomedical-research-innovation-lab)

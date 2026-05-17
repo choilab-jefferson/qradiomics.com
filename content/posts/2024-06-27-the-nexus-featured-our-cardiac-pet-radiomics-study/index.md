@@ -12,7 +12,10 @@ tags:
   - "pet"
   - "radiomics"
   - "radiotherapy"
-coverImage: "image-3.png"
+cover:
+  image: "images/image-3.png"
+  alt: ""
+  relative: true
 ---
 
 [Jefferson Investigates: Artificial Intelligence and Heart Disease — The Nexus](https://nexus.jefferson.edu/science-and-technology/jefferson-investigates-artificial-intelligence-and-heart-disease-prenatal-drug-use-and-adhd-and-potassium-channels-and-neurological-disease/#lung-scans)

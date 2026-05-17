@@ -46,11 +46,31 @@ params:
   TocOpen: false
 
   homeInfoParams:
-    Title: "Qualia Radiomics"
-    Content: >
-      Medical Imaging, Quantitative Image Analysis, Computer-Aided Diagnosis, Machine Learning.
-      Research by Wookjin Choi, Ph.D., Assistant Professor of Radiation Oncology,
-      Sidney Kimmel Medical College at Thomas Jefferson University.
+    Title: "Qualia Radiomics 👋"
+    Content: |
+      **Computational Healthcare & Oncology Informatics (CHOI) Lab**
+      at Sidney Kimmel Medical College, Thomas Jefferson University,
+      led by **[Wookjin Choi, Ph.D.](/profile/)**
+
+      We develop **interpretable AI for medical imaging** — quantitative image analysis,
+      radiomics, and deep learning for cancer diagnosis, radiation therapy planning,
+      and outcome prediction.
+
+      **Focus areas:** Lung cancer screening · Cardiotoxicity prediction (Cardiac PET radiomics) ·
+      MR-guided adaptive radiotherapy (MRI-Linac) · Pancreatic / hepatic / head-and-neck cancer imaging ·
+      Interpretable deep learning (PathCNN, CIRDataset, Spiculation).
+
+      → [**Profile & CV**](/profile/) · [**Posts**](/posts/) · [**Open-source projects**](/projects/)
+
+  cover:
+    responsiveImages: true
+    linkFullImages: true
+    hidden: false
+
+  label:
+    text: "Qualia Radiomics"
+    icon: "/qualia-logo.png"
+    iconHeight: 28
 
   socialIcons:
     - name: github
