@@ -1,0 +1,48 @@
+# Nexus project baseline .gitignore — copied to every new project by `nexus init`.
+
+# Bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Ephemeral session files
+AGENT_SESSION_MEMORY.md
+plan.*.md
+.session-temp.md
+.tmp_pytest_output.txt
+
+# Per-task worktree sandboxes (worker_worktree.py)
+.worktrees/
+
+# Nexus deprecated stores
+.mini-work/
+.wiki
+.wiki.local_backup
+.specify/
+.sisyphus/
+.scripts/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Hugo
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Migration intermediate output (regenerable)
+migration/output/
+migration/wordpress-export.xml
