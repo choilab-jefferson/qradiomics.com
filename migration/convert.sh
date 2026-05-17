@@ -5,7 +5,6 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 INPUT="$SCRIPT_DIR/wordpress-export.xml"
 OUTPUT="$SCRIPT_DIR/output"
 
@@ -19,28 +18,18 @@ mkdir -p "$OUTPUT"
 
 cd "$SCRIPT_DIR"
 
-# wordpress-export-to-markdown options:
-#   --input             : XML file path
-#   --output            : output directory
-#   --year-folders      : organize posts by year
-#   --month-folders     : organize posts by month
-#   --post-folders      : each post gets its own folder
-#   --prefix-date       : prefix filename with publish date
-#   --save-attached-images : download images attached to posts
-#   --save-scraped-images  : download images linked in post body
-#   --include-other-types  : include pages and custom post types
 npx wordpress-export-to-markdown \
+  --wizard=false \
   --input="$INPUT" \
   --output="$OUTPUT" \
-  --year-folders=false \
-  --month-folders=false \
   --post-folders=true \
   --prefix-date=true \
-  --save-attached-images=true \
-  --save-scraped-images=true \
-  --include-other-types=true \
-  --timezone=America/New_York
+  --date-folders=none \
+  --save-images=all \
+  --timezone=America/New_York \
+  --include-time=true \
+  --quote-date=true \
+  --request-delay=300
 
 echo ""
 echo "==> Conversion complete. Output at: $OUTPUT"
-echo "==> Next: review output, then run scripts/import-to-hugo.sh"

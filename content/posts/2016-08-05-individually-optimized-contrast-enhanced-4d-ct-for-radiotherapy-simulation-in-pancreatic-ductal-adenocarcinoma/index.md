@@ -1,0 +1,22 @@
+---
+title: "Individually Optimized Contrast-Enhanced 4D-CT for Radiotherapy Simulation in Pancreatic Ductal Adenocarcinoma"
+date: "2016-08-05T01:26:35.000-04:00"
+categories: 
+  - "research"
+  - "slides"
+tags: 
+  - "4d-ct"
+  - "ce-4d-ct"
+  - "contrast-ehancement"
+  - "ct"
+  - "image"
+  - "radiotherapy"
+---
+
+2016 AAPM annual meeting
+
+\[slideshare id=64719798&doc=wchoi-individuallyoptimizedcontrast-enhanced4d-ctforradiotherapysimulationinpancreaticadenocarcinoma-160805051543\]
+
+[http://scitation.aip.org/content/aapm/journal/medphys/43/6/10.1118/1.4958261](http://scitation.aip.org/content/aapm/journal/medphys/43/6/10.1118/1.4958261)
+
+\[embed\]https://youtu.be/Vo1IBDz3DBs\[/embed\]

@@ -8,6 +8,17 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: monokai
+    lineNos: false
+
+ignoreLogs:
+  - warning-goldmark-raw-html
+
 minify:
   disableXML: true
   minifyOutput: true
