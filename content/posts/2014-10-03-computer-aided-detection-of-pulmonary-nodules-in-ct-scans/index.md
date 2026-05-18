@@ -15,4 +15,4 @@ tags:
   - "quantitative-image-feature"
 ---
 
-\[slideshare id=39782128&doc=choiwjbriefpresentationcomputeraideddetectionofpulmonarynodulesinctscans-141001234545-phpapp02\]
+{{< slideshare id="39782128" >}}

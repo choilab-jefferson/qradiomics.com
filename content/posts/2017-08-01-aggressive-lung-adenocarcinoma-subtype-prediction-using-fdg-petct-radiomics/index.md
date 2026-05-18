@@ -50,6 +50,6 @@ Lung adenocarcinoma (ADC) is the most common non-small cell lung cancer. Surgica
 
 2017 AAPM annual meeting
 
-\[slideshare id=78325615&doc=choiw-lungadcsubtyping-170727214213\]
+{{< slideshare id="78325615" >}}
 
 http://www.aapm.org/meetings/2017AM/PRAbs.asp?mid=127&aid=37917

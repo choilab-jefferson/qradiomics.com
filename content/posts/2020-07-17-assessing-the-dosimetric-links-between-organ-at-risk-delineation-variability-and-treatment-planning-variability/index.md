@@ -14,7 +14,7 @@ tags:
   - "variability"
 ---
 
-\[slideshare id=237000959&doc=aapm2020poster-200717143956\]
+{{< slideshare id="237000959" >}}
 
 The 2020 Joint AAPM | COMP Virtual Meeting  
 [https://w3.aapm.org/meetings/2020AM/programInfo/programAbs.php?sid=8490&aid=52949](https://w3.aapm.org/meetings/2020AM/programInfo/programAbs.php?sid=8490&aid=52949)

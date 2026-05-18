@@ -20,6 +20,6 @@ cover:
 
 [Jefferson Investigates: Artificial Intelligence and Heart Disease — The Nexus](https://nexus.jefferson.edu/science-and-technology/jefferson-investigates-artificial-intelligence-and-heart-disease-prenatal-drug-use-and-adhd-and-potassium-channels-and-neurological-disease/#lung-scans)
 
-[![](images/image.png)](https://qradiomics.com/wp-content/uploads/2024/06/image.png)
+![](images/image.png)
 
 [https://medicalxpress.com/news/2024-06-machine-lung-cancer-scans-heart.html](https://medicalxpress.com/news/2024-06-machine-lung-cancer-scans-heart.html)

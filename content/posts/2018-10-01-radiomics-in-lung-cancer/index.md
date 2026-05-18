@@ -24,4 +24,4 @@ tags:
   - "svm"
 ---
 
-\[slideshare id=117684751&doc=choiw-quantitativeimageanalysisforcancerdiagnosisandradiationtherapy-181002010045\]
+{{< slideshare id="117684751" >}}

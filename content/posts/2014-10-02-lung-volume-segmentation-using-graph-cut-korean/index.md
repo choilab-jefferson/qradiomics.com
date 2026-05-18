@@ -17,4 +17,4 @@ tags:
   - "volume-segmentation"
 ---
 
-\[slideshare id=39782556&doc=random-141002001000-phpapp01\]
+{{< slideshare id="39782556" >}}

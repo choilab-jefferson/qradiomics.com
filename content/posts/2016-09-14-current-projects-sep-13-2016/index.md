@@ -26,4 +26,4 @@ tags:
   - "therapy-response"
 ---
 
-\[slideshare id=66003783&doc=choiw-currentprojects-sep13-160914061401\]
+{{< slideshare id="66003783" >}}

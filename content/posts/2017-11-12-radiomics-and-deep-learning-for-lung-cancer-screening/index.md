@@ -15,4 +15,4 @@ tags:
 
 KOCSEA Technical Symposium 2017, Invited Talk, KSEA Travel Grant
 
-\[slideshare id=81927502&doc=choiw-radiomicsanddeeplearningforlungscreening-171112125233\]
+{{< slideshare id="81927502" >}}

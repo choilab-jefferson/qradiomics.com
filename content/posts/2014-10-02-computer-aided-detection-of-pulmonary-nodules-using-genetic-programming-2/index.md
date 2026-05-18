@@ -19,4 +19,4 @@ tags:
   - "quantitative-image-feature"
 ---
 
-\[slideshare id=39782554&doc=computer-aideddetectionofpulmonarynodulesusinggeneticprogramming-141002001000-phpapp02\]
+{{< slideshare id="39782554" >}}

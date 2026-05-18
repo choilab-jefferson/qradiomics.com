@@ -14,4 +14,4 @@ QuaLIA (Quantitative Lung Image Analysis)
 
 **[QuaLIA CAD](https://github.com/QuaLIACAD/qualia)** [Download Source code](https://github.com/QuaLIACAD/qualia/archive/master.zip)   [Download Binary](https://docs.google.com/uc?export=download&confirm=5MsF&id=0BwUtEL5FMGdzOGtDeU9nWGVGQVU)
 
-\[youtube=http://youtu.be/uEPYpfTG5uw\]
+{{< youtube uEPYpfTG5uw >}}

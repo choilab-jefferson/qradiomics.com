@@ -25,9 +25,9 @@ cover:
 
 Our paper **“Novel Functional Radiomics for Prediction of Cardiac Positron Emission Tomography Avidity in Lung Cancer Radiotherapy”** has been published in [JCO CCI](https://ascopubs.org/doi/10.1200/CCI.23.00241). This research work delves into an innovative approach to predict clinical cardiac assessment using functional imaging.
 
-[![](images/image.png)](https://qradiomics.com/wp-content/uploads/2024/03/image.png)
+![](images/image.png)
 
-[![](images/image-1.png)](https://qradiomics.com/wp-content/uploads/2024/03/image-1.png)
+![](images/image-1.png)
 
 ### Abstract:
 
@@ -59,12 +59,12 @@ Related Presentations
 
 [Functional Delta-Radiomics Overall Survival Prediction](https://aapm.confex.com/aapm/2023am/meetingapp.cgi/Paper/2188)
 
-\[slideshare id=260812563&doc=aapm2023su-300-iepd-f6-4novelfunctional-230911155249-f9140084\]
+{{< slideshare id="260812563" >}}
 
 [Functional Radiomics Classification of Cardiac Uptake Patterns](https://www.redjournal.org/article/S0360-3016\(23\)05012-5/fulltext)
 
-\[slideshare id=261895397&doc=astro2023pretxcardiacfdgpet-231008022918-bf12235d\]
+{{< slideshare id="261895397" >}}
 
 [https://www.abstractsonline.com/pp8/#!/10856/presentation/7201](https://www.abstractsonline.com/pp8/#!/10856/presentation/7201)
 
-\[slideshare id=262297130&doc=informsaitoreduceradiationinducedhearttoxicity-231016142405-0ea7de4d\]
+{{< slideshare id="262297130" >}}

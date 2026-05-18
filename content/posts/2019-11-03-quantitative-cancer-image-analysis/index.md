@@ -24,4 +24,4 @@ tags:
   - "variability"
 ---
 
-\[slideshare id=189820450&doc=choiw-quantitativecancerimageanalysis-191103051123\]
+{{< slideshare id="189820450" >}}

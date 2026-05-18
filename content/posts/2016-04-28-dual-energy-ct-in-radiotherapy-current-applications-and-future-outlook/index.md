@@ -13,4 +13,4 @@ tags:
   - "review"
 ---
 
-\[slideshare id=61487028&doc=wchoi-journalclub04282016-160429025742\]
+{{< slideshare id="61487028" >}}

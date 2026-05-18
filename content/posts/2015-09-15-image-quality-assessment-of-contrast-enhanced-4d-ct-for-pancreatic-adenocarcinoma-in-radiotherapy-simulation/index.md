@@ -17,4 +17,4 @@ tags:
 
 2015 AAPM annual meeting
 
-\[slideshare id=52825645&doc=choice4d-ctpancreasaapm-wc-150915235126-lva1-app6892\]
+{{< slideshare id="52825645" >}}

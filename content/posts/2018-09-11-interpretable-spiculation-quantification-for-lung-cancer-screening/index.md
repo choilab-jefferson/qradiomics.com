@@ -21,11 +21,11 @@ tags:
   - "svm"
 ---
 
-\[slideshare id=108846563&doc=choiwspiculationukc2018-180807021909\]
+{{< slideshare id="108846563" >}}
 
 UKC2018 Aug 4, 2018
 
-\[slideshare id=117014244&doc=spiculationposter-180928033644\]
+{{< slideshare id="117014244" >}}
 
 MSKCC Postdoctoral Research Symposium Sep 28, 2018
 

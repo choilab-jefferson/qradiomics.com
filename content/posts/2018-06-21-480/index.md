@@ -20,10 +20,10 @@ tags:
   - "svm"
 ---
 
-\[slideshare id=117684751&doc=choiw-quantitativeimageanalysisforcancerdiagnosisandradiationtherapy-181002010045\]
+{{< slideshare id="117684751" >}}
 
 Sep 17, 2018
 
-\[slideshare id=98787521&doc=choiw-quantitativeimageanalysisforcancerdiagnosisandradiationtherapy-180525221105\]
+{{< slideshare id="98787521" >}}
 
 May 21, 2018

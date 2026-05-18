@@ -20,4 +20,4 @@ tags:
   - "segmentation"
 ---
 
-\[slideshare id=39782550&doc=ct-141002000957-phpapp02\]
+{{< slideshare id="39782550" >}}

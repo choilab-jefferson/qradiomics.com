@@ -13,4 +13,4 @@ tags:
   - "radiotherapy"
 ---
 
-\[slideshare id=61487038&doc=wchoi-journalclub04142016-160429025821\]
+{{< slideshare id="61487038" >}}

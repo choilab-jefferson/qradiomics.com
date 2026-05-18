@@ -19,8 +19,8 @@ tags:
   - "segmentation"
 ---
 
-\[slideshare id=260812562&doc=aapm2023po-gepv-d-50deeplearning-230911155249-1ca012dd\]
+{{< slideshare id="260812562" >}}
 
-\[slideshare id=261888371&doc=wchoiastro2023autosegmentation-231007212933-bcb854fd\]
+{{< slideshare id="261888371" >}}
 
 [AAPM 2023](https://aapm.confex.com/aapm/2023am/meetingapp.cgi/Paper/3903), [ASTRO 2023](https://pubmed.ncbi.nlm.nih.gov/37785478/)

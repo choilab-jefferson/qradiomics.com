@@ -20,4 +20,4 @@ tags:
 
 2010 IEEE ICIP
 
-\[slideshare id=39782553&doc=icip2010-141002000959-phpapp02&type=d\]
+{{< slideshare id="39782553" >}}

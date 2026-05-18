@@ -18,6 +18,6 @@ tags:
 
 2016 AAPM annual meeting
 
-\[slideshare id=64719797&doc=wchoi-identificationofrobusttexturefeaturesinnormallungmsk1-160805051541\]
+{{< slideshare id="64719797" >}}
 
 [http://onlinelibrary.wiley.com/doi/10.1118/1.4955803/abstract](http://onlinelibrary.wiley.com/doi/10.1118/1.4955803/abstract)

@@ -17,7 +17,7 @@ tags:
   - "science"
   - "technology"
 cover:
-  image: "images/gemini_generated_image_exsgyuexsgyuexsg-1.png"
+  image: "images/quantum-heart-cover-2025.png"
   alt: ""
   relative: true
 ---

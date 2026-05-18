@@ -20,4 +20,4 @@ tags:
 
 Invited talk in CNUH, Apr 2014
 
-\[slideshare id=39782322&doc=2014insighttoolkitct-141001235649-phpapp02\]
+{{< slideshare id="39782322" >}}

@@ -19,4 +19,4 @@ tags:
   - "quantitative-image-feature"
 ---
 
-\[slideshare id=39782552&doc=ct-141002000958-phpapp01\]
+{{< slideshare id="39782552" >}}

@@ -34,15 +34,21 @@ plan.*.md
 .env.*
 !.env.example
 
-# Hugo
+# AI tooling state
+.gemini
+.wiki-state.json
+
+# Nexus artifact area (per-task sandboxes)
+code/artifacts/
+
+# Hugo build
 public/
 resources/_gen/
 .hugo_build.lock
 
 # Node
 node_modules/
-npm-debug.log*
 
-# Migration intermediate output (regenerable)
+# Migration intermediate output (regenerable from wordpress-export.xml)
 migration/output/
 migration/wordpress-export.xml

@@ -38,7 +38,7 @@ The first CIR dataset, released [here](https://zenodo.org/record/6672251), conta
 
 <figure>
 
-[![](images/image.png)](https://qradiomics.com/wp-content/uploads/2022/06/image.png)
+![](images/image.png)
 
 <figcaption>
 
@@ -54,7 +54,7 @@ We also release our multi-class [Voxel2Mesh](https://github.com/cvlab-epfl/voxel
 
 <figure>
 
-[![](images/image-1.png)](https://qradiomics.com/wp-content/uploads/2022/06/image-1.png)
+![](images/image-1.png)
 
 <figcaption>
 
@@ -112,4 +112,4 @@ _Table 2. Malignancy prediction metrics._
 | **Mesh Only** | 0.733 | 68.49 | 80.56 | 56.76 | 71.60 |
 | **Mesh+Encoder** | 0.743 | 65.75 | 86.11 | 45.95 | 71.26 |
 
-\[slideshare id=254223135&doc=miccai22poster-cirdataset-221115174304-83fb67e6\]
+{{< slideshare id="254223135" >}}

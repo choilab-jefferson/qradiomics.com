@@ -21,4 +21,4 @@ tags:
 
 2015 AAPM annual meeting
 
-\[slideshare id=52825646&doc=choihccfeatureanalysisaapm-wc-150915235128-lva1-app6891\]
+{{< slideshare id="52825646" >}}

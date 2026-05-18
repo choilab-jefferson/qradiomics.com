@@ -16,4 +16,4 @@ tags:
   - "super-computer"
 ---
 
-\[slideshare id=52825938&doc=kimradiogenomics2014-150916000529-lva1-app6892&type=d\]
+{{< slideshare id="52825938" >}}

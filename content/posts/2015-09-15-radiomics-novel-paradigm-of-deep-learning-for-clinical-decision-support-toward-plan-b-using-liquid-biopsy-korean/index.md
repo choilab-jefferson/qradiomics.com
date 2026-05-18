@@ -17,4 +17,4 @@ tags:
   - "super-computer"
 ---
 
-\[slideshare id=52826006&doc=4-150916000951-lva1-app6891&type=d\]
+{{< slideshare id="52826006" >}}

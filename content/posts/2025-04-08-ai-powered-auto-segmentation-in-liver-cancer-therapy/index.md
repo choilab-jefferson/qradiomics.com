@@ -22,7 +22,7 @@ We’re excited to share our latest work published in _Technology in Cancer Rese
 
 This study introduces a **deep learning (DL) model built on the 3D U-Net architecture**, developed to automatically segment the liver in CT scans for patients undergoing Y-90 Selective Internal Radiation Therapy (SIRT). Accurate liver segmentation is a critical step for calculating Y-90 dosage, traditionally done manually — a time-consuming and subjective process.
 
-[![Schematic diagram of deep learning-based auto segmentation implementation for clinical use.](images/image.png)](https://qradiomics.wordpress.com/wp-content/uploads/2025/04/image.png)
+![Schematic diagram of deep learning-based auto segmentation implementation for clinical use.](images/image.png)
 
 Our DL-based pipeline:
 

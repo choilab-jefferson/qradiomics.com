@@ -8,6 +8,6 @@ categories:
 
 2017 AAPM annual meeting
 
-\[slideshare id=78325656&doc=choiw-lungscreeningradiomics-170727214432\]
+{{< slideshare id="78325656" >}}
 
 http://www.aapm.org/meetings/2017AM/PRAbs.asp?mid=127&aid=36486

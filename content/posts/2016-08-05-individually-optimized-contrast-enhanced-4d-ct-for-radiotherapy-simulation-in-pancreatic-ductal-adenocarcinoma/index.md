@@ -15,8 +15,8 @@ tags:
 
 2016 AAPM annual meeting
 
-\[slideshare id=64719798&doc=wchoi-individuallyoptimizedcontrast-enhanced4d-ctforradiotherapysimulationinpancreaticadenocarcinoma-160805051543\]
+{{< slideshare id="64719798" >}}
 
 [http://scitation.aip.org/content/aapm/journal/medphys/43/6/10.1118/1.4958261](http://scitation.aip.org/content/aapm/journal/medphys/43/6/10.1118/1.4958261)
 
-\[embed\]https://youtu.be/Vo1IBDz3DBs\[/embed\]
+{{< youtube Vo1IBDz3DBs >}}

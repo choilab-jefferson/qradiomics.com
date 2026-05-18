@@ -23,4 +23,4 @@ tags:
   - "shape-based-feature-descriptor"
 ---
 
-\[slideshare id=39782110&doc=choiwjpresentationautomaticdetectionofpulmonarynodulesinlungctimages-141001234503-phpapp01\]
+{{< slideshare id="39782110" >}}

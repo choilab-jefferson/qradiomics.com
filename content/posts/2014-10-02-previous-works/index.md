@@ -17,10 +17,10 @@ tags:
 
 - Automatic Pulmonary Nodule Detection
 
-\[embed\]https://www.youtube.com/watch?v=1rbdBf\_-USo\[/embed\]
+https://www.youtube.com/watch?v=1rbdBf\_-USo
 
  
 
 - Three dimensional shape reconstruction from auto-focused microscopic image
 
-\[embed\]https://www.youtube.com/watch?v=aiAOs7AZAb8\[/embed\]
+{{< youtube aiAOs7AZAb8 >}}

@@ -14,4 +14,4 @@ tags:
   - "variablility"
 ---
 
-\[slideshare id=156336028&doc=wchoisimulationofrealisticorgan-at-riskdelineationvariabilityinhnc-190718235232\]
+{{< slideshare id="156336028" >}}

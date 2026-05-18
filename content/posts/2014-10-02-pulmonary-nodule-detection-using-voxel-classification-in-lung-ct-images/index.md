@@ -17,4 +17,4 @@ tags:
   - "voxel"
 ---
 
-\[slideshare id=39782549&doc=ctvoxelclassification-141002000957-phpapp01\]
+{{< slideshare id="39782549" >}}

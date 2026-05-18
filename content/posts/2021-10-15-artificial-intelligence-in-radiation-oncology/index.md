@@ -19,10 +19,10 @@ tags:
   - "radiotherapy"
 ---
 
-\[slideshare id=254222500&doc=choiw-artificialintelligenceinradiationoncology-221115173554-379c8539\]
+{{< slideshare id="254222500" >}}
 
-\[slideshare id=251348093&doc=choiw-artificialintelligenceinradiationoncology-220315003626\]
+{{< slideshare id="251348093" >}}
 
-\[slideshare id=250918971&doc=choiw-artificialintelligenceinradiationoncology-211230011850\]
+{{< slideshare id="250918971" >}}
 
-\[slideshare id=250324683&doc=choiw-artificialintelligenceinradiationoncology-210929012641\]
+{{< slideshare id="250324683" >}}

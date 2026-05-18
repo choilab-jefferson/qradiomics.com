@@ -18,6 +18,6 @@ date: "2014-10-01T22:13:27.000-04:00"
 - The use of a computer-aided detection (CAD) system can provide an effective solution
     - Increasing the scanning efficiency and potentially improving nodule detection
 
-[QuaLIA CAD System](https://qradiomics.wordpress.com/portfolio/qualia-cad/) - [https://github.com/taznux/qualia](https://github.com/taznux/qualia) [Lung image analysis framework](https://qradiomics.wordpress.com/portfolio/lung-image-analysis-framwork/) - [https://github.com/taznux/lung-image-analysis](https://github.com/taznux/lung-image-analysis)
+[QuaLIA CAD System](https://qradiomics.com/projects/2016-01-11-qualia-cad/) - [https://github.com/taznux/qualia](https://github.com/taznux/qualia) [Lung image analysis framework](https://qradiomics.com/projects/2016-08-27-lung-image-analysis-framwork/) - [https://github.com/taznux/lung-image-analysis](https://github.com/taznux/lung-image-analysis)
 
 http://www.youtube.com/watch?v=uEPYpfTG5uw

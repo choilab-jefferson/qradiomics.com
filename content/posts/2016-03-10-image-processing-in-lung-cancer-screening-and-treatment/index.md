@@ -21,4 +21,4 @@ tags:
 
 Invited talk in GIST, Nov 2014
 
-\[slideshare id=59354573&doc=wookjinchoi-imageprocessinginlungcancerscreeningandtreatment-copy-160310055343\]
+{{< slideshare id="59354573" >}}

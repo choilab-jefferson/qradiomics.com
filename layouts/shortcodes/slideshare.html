@@ -1,0 +1,11 @@
+{{- $id := .Get "id" -}}
+{{- $w := .Get "width" | default "595" -}}
+{{- $h := .Get "height" | default "485" -}}
+{{- $doc := .Get "doc" -}}
+<div class="slideshare-embed" style="position:relative;padding-bottom:56.25%;height:0;margin:1rem 0;">
+  <iframe src="https://www.slideshare.net/slideshow/embed_code/{{ $id }}"
+          width="{{ $w }}" height="{{ $h }}"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:1px solid #CCC;"
+          frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
+          allowfullscreen{{ with $doc }} title="{{ . }}"{{ end }}></iframe>
+</div>

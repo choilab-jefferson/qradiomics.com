@@ -22,7 +22,7 @@ Source codes: [https://github.com/choilab-jefferson/LungCancerScreeningRadiomics
   
 **Highlights**
 
-[![](images/1-s2.0-s0169260720316722-gr1_lrg.jpg)](https://qradiomics.com/wp-content/uploads/2020/11/1-s2.0-s0169260720316722-gr1_lrg.jpg)
+![](images/1-s2.0-s0169260720316722-gr1_lrg.jpg)
 
 - A novel interpretable spiculation feature is presented, computed using the area distortion metric from spherical conformal (angle-preserving) parameterization.
 
