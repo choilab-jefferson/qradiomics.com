@@ -36,6 +36,8 @@ Thrilled to share that our work has been selected for an **Oral Scientific Prese
 
 *Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson University, Philadelphia, PA*
 
+> **Acknowledgement.** This work would not exist without **Dr. Pradeep Bhetwal**, who led the original data collection across the 189-patient cohort and built the first CBCT radiomics extraction pipeline and initial survival model during his time in the lab. The cumulative-longitudinal framework presented here was developed on the foundation of his earlier work.
+
 ## What the study is about
 
 Traditional prognostic models for lung cancer rely on **static pre-treatment factors** and miss the dynamic response of tumors *during* radiotherapy. Cone-beam CT (CBCT) provides serial imaging of this evolution, but snapshot or delta-radiomics approaches fail to capture the full response trajectory.
