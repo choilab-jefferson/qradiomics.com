@@ -40,7 +40,7 @@ Thrilled to share that our work has been selected for an **Oral Scientific Prese
 
 *Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson University, Philadelphia, PA*
 
-> **Acknowledgement.** This work would not exist without **Dr. Pradeep Bhetwal**, who led the original data collection across the 189-patient cohort and built the first CBCT radiomics extraction pipeline and initial survival model during his time in the lab. The cumulative-longitudinal framework presented here was developed on the foundation of his earlier work — published as two first-author proceedings:
+> **Acknowledgement.** This work would not exist without **Dr. Pradeep Bhetwal**, who led the original data collection across the 189-patient cohort and built the first CBCT radiomics extraction pipeline and initial survival model during his time in the lab. The cumulative-longitudinal framework presented here was developed on the foundation of his earlier work — published as two first-author abstracts:
 >
 > - Bhetwal P, Dichmann M, Ghimire R, Chen Y, Vinogradskiy Y, Werner-Wasik M, Dicker A, Choi W. *Development and Validation of a Scalable Radiomics Pipeline for Lung Cancer Research Using Clinical and Public Datasets* (SU-1015-202-4). **Medical Physics** 52(10):e700597, AAPM 2025.
 > - Bhetwal P, Dichmann M, Ghimire R, Chen Y, Vinogradskiy Y, Werner-Wasik M, Dicker AP, Choi W. [*Integrating Clinical and Radiomic Features for Enhanced Prognostic Modeling for Lung Cancer Survival*](https://www.redjournal.org/article/S0360-3016(25)03724-1/abstract). **IJROBP** 123(1):e719, ASTRO 2025.
