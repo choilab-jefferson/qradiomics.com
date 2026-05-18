@@ -43,6 +43,8 @@ Thrilled to share that our work has been selected for an **Oral Scientific Prese
 *Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson University, Philadelphia, PA*
 
 > **Acknowledgement.** This work would not exist without **Dr. Pradeep Bhetwal**, who led the original data collection across the 189-patient cohort and built the first CBCT radiomics extraction pipeline and initial survival model during his time in the lab. The cumulative-longitudinal framework presented here was developed on the foundation of his earlier work.
+>
+> **Funding.** This research was supported by a research grant from **Varian Medical Systems, Inc.** ([related announcement](/posts/2023-02-10-longitudinal-cbct-radiomics-in-lung-cancer-supported-by-varian-medical-systems-inc/)).
 
 ## What the study is about
 
