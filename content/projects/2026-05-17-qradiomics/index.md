@@ -1,5 +1,5 @@
 ---
-title: "qradiomics — Serverless Radiomics Research CLI"
+title: "qradiomics — Radiomics Research CLI"
 date: "2026-05-17T20:31:21.000-04:00"
 categories:
   - "research"
@@ -19,7 +19,7 @@ tags:
 
 **License:** MIT · **Python:** 3.11+ · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)
 
-Serverless radiomics research CLI. `qr` does two things equally well:
+Radiomics research CLI. `qr` does two things equally well:
 
 - **Atomic tasks** — convert DICOM, extract features, merge clinical, fit a model. Each is a single command, files in / files out.
 - **Workflow assembly** — generate, mutate, scaffold, and run multi-step pipelines from those atomic tasks. Default executor is **Nextflow** (per-patient parallel + cache + HPC); **Prefect** is the secondary executor; **inline** is the small-cohort fallback.
