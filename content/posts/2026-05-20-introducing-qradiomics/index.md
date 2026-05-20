@@ -137,7 +137,13 @@ The pipeline was first presented publicly at **AAPM 2025** (Washington, DC, Jul 
 > *Development and Validation of a Scalable Radiomics Pipeline for Lung Cancer Research Using Clinical and Public Datasets* (SU-1015-202-4).  
 > **Medical Physics** 52(10):e700597, AAPM 2025.
 
-The open-source release arrives roughly nine months after that presentation. The public release of `qradiomics` marks the point where reproducibility is no longer an afterthought — every result in our past papers can be re-run with one command on publicly available data.
+A companion study presented at **ASTRO 2025** applied the same pipeline to survival modeling across a 629-patient multi-institutional cohort (207 institutional + 422 TCIA Lung1), combining clinical and radiomic features with Cox PH models. Integrating radiomics with clinical variables improved overall survival prediction from C-index 0.50–0.56 (clinical-only) to **0.57–0.69**. The institutional portion uses private clinical data; the TCIA Lung1 component is fully reproducible with qradiomics:
+
+> Bhetwal P, Dichmann M, Ghimire R, Chen Y, Vinogradskiy Y, Werner-Wasik M, Dicker AP, **Choi W**.  
+> *Integrating Clinical and Radiomic Features for Enhanced Prognostic Modeling for Lung Cancer Survival*.  
+> **IJROBP** 123(1):e719, ASTRO 2025. [doi:10.1016/S0360-3016(25)03724-1](https://www.redjournal.org/article/S0360-3016(25)03724-1/abstract)
+
+The open-source release arrives roughly nine months after those presentations. The public release of `qradiomics` marks the point where reproducibility is no longer an afterthought — every result in our past papers can be re-run with one command on publicly available data.
 
 Full documentation: [qradiomics.com/projects/2026-05-17-qradiomics](https://qradiomics.com/projects/2026-05-17-qradiomics/)  
 Source code: [github.com/choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)
