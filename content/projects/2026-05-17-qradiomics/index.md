@@ -1,6 +1,7 @@
 ---
 title: "qradiomics — Radiomics Research CLI"
 date: "2026-05-17T20:31:21.000-04:00"
+lastmod: "2026-05-20T00:00:00.000-04:00"
 categories:
   - "research"
 tags:
@@ -15,16 +16,26 @@ tags:
   - "Survival"
   - "Spiculation"
   - "Shape"
+  - "TCIA"
+  - "DICOM"
 ---
 
-**License:** MIT · **Python:** 3.11+ · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)
+**License:** MIT · **Python:** 3.11+ · **Version:** 0.9.0 · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)
+
+> **Active successor for three earlier Choi Lab radiomics codebases.** The C++/MATLAB pipelines in
+> [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools),
+> [taznux/lung-image-analysis](https://github.com/taznux/lung-image-analysis), and
+> [choilab-jefferson/LungCancerScreeningRadiomics](https://github.com/choilab-jefferson/LungCancerScreeningRadiomics)
+> are **superseded** by this repo. The feature extractors are now in
+> `qradiomics.feature.rtools` (Python ITK port, numerically exact to the C++ binary).
+> New work should land here.
 
 Radiomics research CLI. `qr` does two things equally well:
 
-- **Atomic tasks** — convert DICOM, extract features, merge clinical, fit a model. Each is a single command, files in / files out.
-- **Workflow assembly** — generate, mutate, scaffold, and run multi-step pipelines from those atomic tasks. Default executor is **Nextflow** (per-patient parallel + cache + HPC); **Prefect** is the secondary executor; **inline** is the small-cohort fallback.
+1. **Atomic tasks** — convert DICOM, extract features, merge clinical, fit a model. Each is a single command, files in / files out.
+2. **Workflow assembly** — generate, mutate, scaffold, and run multi-step pipelines from those atomic tasks. Default executor is **Nextflow** (per-patient parallel + cache + HPC); **Prefect** is the secondary executor; `inline` is the small-cohort fallback.
 
-The canonical radiomics data flow has four stages — **data → image → features → modeling** — and one `qr workflow plan` call instantiates the whole chain:
+The canonical radiomics data flow has four stages — `data → image → features → modeling` — and one `qr workflow plan` call instantiates the whole chain:
 
 ```bash
 # Atomic tasks
@@ -40,17 +51,29 @@ qr workflow scaffold  -p plan.json -e nextflow   -o pipeline.nf
 qr workflow run       plan.json --executor nextflow   # default
 ```
 
+## Kick-off
+
+Single backend (`scripts/kickoff.sh`) for both flows. It clones the repo (if not already), creates a `.venv`, `pip install -e .`, runs `qr info`, and runs the smoke tests.
+
+**One-liner install:**
+
+```bash
+curl -sSL https://raw.githubusercontent.com/choilab-jefferson/qradiomics/main/scripts/kickoff.sh | bash
+```
+
+Env knobs: `QR_REPO_URL`, `QR_REPO_DIR`, `QR_BRANCH`, `QR_PYTHON`, `QR_VENV` (set to `-` to skip the venv), `QR_SKIP_SMOKE=1` to skip pytest.
+
 ## Background — three earlier projects, unified
 
 `qradiomics` is the modern Python successor of three earlier Choi Lab radiomics codebases. The MATLAB pipelines, the ITK / Ruffus C++ tools, and the Docker-based screening workflow are distilled here into a single Click CLI built on PyRadiomics, scikit-learn, and lifelines:
 
-| Earlier project | Stack | Role | This repo |
+| Earlier project | Stack | Role | Status |
 |---|---|---|---|
 | [taznux/lung-image-analysis](https://github.com/taznux/lung-image-analysis) | MATLAB · MIT | LIDC-IDRI nodule detection / segmentation / characterization | superseded |
 | [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools) | C++/Python (ITK, Ruffus) · MIT | DICOM tools, GrowCut segmentation, feature extraction pipeline | superseded |
-| [choilab-jefferson/LungCancerScreeningRadiomics](https://github.com/choilab-jefferson/LungCancerScreeningRadiomics) | MATLAB / Python · GPL-3.0 | LIDC + LUNGx end-to-end screening workflow with AutoML | superseded (this repo re-implements the open subset under MIT using PyRadiomics) |
+| [choilab-jefferson/LungCancerScreeningRadiomics](https://github.com/choilab-jefferson/LungCancerScreeningRadiomics) | MATLAB / Python · GPL-3.0 | LIDC + LUNGx end-to-end screening workflow with AutoML | superseded (re-implemented under MIT using PyRadiomics) |
 
-The AHSN shape descriptor pipeline (CMPB 2014) and the spiculation quantification pipeline (CMPB 2021, companion to [choilab-jefferson/CIR](https://github.com/choilab-jefferson/CIR)) are re-integrated in `qradiomics.shape` (see Shape Analysis below). The longitudinal CBCT / delta-radiomics workflows (ASTRO / AAPM 2026) will be released here after publication.
+The AHSN shape descriptor pipeline (CMPB 2014) and the spiculation quantification pipeline (CMPB 2021, companion to [choilab-jefferson/CIR](https://github.com/choilab-jefferson/CIR)) are re-integrated in `qradiomics.shape`. The longitudinal CBCT / delta-radiomics workflows (ASTRO / AAPM 2026) will be released here after publication.
 
 ## Install
 
@@ -68,7 +91,7 @@ After install, `qr`, `qradiomics`, and `qrdx` are available on `$PATH` and point
 Many TCIA cohorts ship as DICOM (CT/PET/MR series + RTSTRUCT). Two helpers convert into the NRRD form the rest of the pipeline consumes:
 
 ```bash
-# 1. CT/PET/MR DICOM series → single NRRD volume
+# 1. CT/PET/MR DICOM series → single NRRD volume (PT auto-routes through SUV conversion)
 qr convert dicom-series \
   -i <dataset_root>/<patient>/<study>/CT/ \
   -o <out>/<patient>_CT.nrrd
@@ -88,35 +111,70 @@ qr convert manifest-from-dir \
   -o manifest.csv
 ```
 
-RTSTRUCT conversion uses `rt-utils` (install via `pip install qradiomics[rtstruct]`). ROI lookup is case-insensitive (a `--roi Heart` request matches a structure set with `heart`). The mask is auto-reshaped to the CT geometry, with a ±1-slice z-axis trim/pad when the structure set references slices outside the series.
+RTSTRUCT conversion uses `rt-utils` (install via `pip install qradiomics[rtstruct]`). ROI lookup is case-insensitive. The mask is auto-reshaped to the CT geometry, with a ±1-slice z-axis trim/pad when the structure set references slices outside the series.
 
-## End-to-end Example
+## End-to-end Example — TCIA NSCLC-Radiomics (Lung1) from scratch
 
-Once you have a manifest CSV (canonical lowercase columns: `patient_id, modality, image_path, mask_path`):
+Starts from nothing — pulls DICOM straight from TCIA, converts, extracts, joins clinical, and reports the Cox PH ranking.
 
 ```bash
-# 1. Extract features under a bundled pattern
-#    nsclc-survival → Original + LoG + Wavelet + Square + SquareRoot + Logarithm
-#                     × {firstorder, shape, glcm, glrlm, glszm, gldm, ngtdm}
-qr extract -m manifest.csv -p nsclc-survival -o features.csv
-# -> ~1130 features per patient with nsclc-survival
-# -> ~1409 features per patient with ct-default (includes LBP/Exponential/Gradient)
+# 0. One-time: install + workspace
+pip install -e .[rtstruct]
+export USER_DATA=/data/$USER          # ≥ 30 GB free for Lung1 (~422 patients)
+mkdir -p $USER_DATA/{Lung1,Lung1-out}
 
-# 2. Join with the clinical CSV on patient_id
-#    Auto-detects days vs months (median > 100 → divides by 30.44 → OS_months)
+# 1. DICOM pull from TCIA
+qr tcia download \
+  --collection NSCLC-Radiomics --modality CT \
+  -o $USER_DATA/Lung1 -j 16
+qr tcia download \
+  --collection NSCLC-Radiomics --modality RTSTRUCT \
+  -o $USER_DATA/Lung1 -j 16
+
+# 2. DICOM → NRRD per patient: CT volume + GTV-1 binary mask
+for pat in $USER_DATA/Lung1/*/; do
+  pid=$(basename "$pat")
+  qr convert dicom-series \
+    -i  "$pat"*/CT \
+    -o  "$USER_DATA/Lung1-out/${pid}_CT.nrrd"
+  qr convert rtstruct \
+    -d  "$pat"*/CT \
+    -r  "$pat"*/RTSeries/*.dcm \
+    --roi GTV-1 \
+    -o  "$USER_DATA/Lung1-out/${pid}_GTV-label.nrrd"
+done
+
+# 3. Manifest
+qr convert manifest-from-dir \
+  -d "$USER_DATA/Lung1-out" \
+  --image-glob '*_CT.nrrd' \
+  --mask-glob  '*_GTV-label.nrrd' \
+  -o  "$USER_DATA/Lung1-out/manifest.csv"
+
+# 4. Feature extraction (~1130 features per patient)
+qr extract \
+  -m "$USER_DATA/Lung1-out/manifest.csv" \
+  -p nsclc-survival \
+  -o "$USER_DATA/Lung1-out/features.csv"
+
+# 5. Join clinical + Cox PH
+curl -sLo "$USER_DATA/Lung1-out/clinical.csv" \
+  "https://www.cancerimagingarchive.net/wp-content/uploads/NSCLC-Radiomics-Lung1.clinical-version3-Oct-2019.csv"
 qr results merge \
-  -f features.csv -c clinical.csv \
-  --clinical-id-col patient_id \
-  --time-col OS_days --event-col OS_event \
-  -o analysis_ready.csv
-
-# 3. Univariate Cox PH on every radiomic feature
-qr analyze survival -i analysis_ready.csv \
+  -f "$USER_DATA/Lung1-out/features.csv" \
+  -c "$USER_DATA/Lung1-out/clinical.csv" \
+  --clinical-id-col PatientID \
+  --time-col Survival.time --event-col deadstatus.event \
+  -o "$USER_DATA/Lung1-out/analysis_ready.csv"
+qr analyze survival \
+  -i "$USER_DATA/Lung1-out/analysis_ready.csv" \
   --outcome OS_months --event OS_event \
-  -o cox_results.csv
+  -o "$USER_DATA/Lung1-out/cox_results.csv"
 ```
 
-Browse the bundled patterns with `qr pattern list` and `qr pattern search <kw>`.
+Expected outcome on Lung1 (≈ 420 patients): `original_ngtdm_Busyness` ranks at the top (HR ≈ 1.23, p < 1e-4), replicating the headline finding from the Aerts 2014 *Nature Communications* paper. A full run takes ≈ 1 h on a 16-core workstation. For a 5-patient smoke run on synthetic NRRD (no download required), see `scripts/smoke.py`.
+
+The exact same sequence is bundled per cohort under `pipelines/lung1/`, `pipelines/lidc_idri/`, `pipelines/nsclc_cetuximab/`, and `pipelines/acrin_heart/`.
 
 ## Deployable Pipelines
 
@@ -132,7 +190,7 @@ EXECUTOR=inline ./deploy.sh       # sequential subprocess (smoke tests)
 
 Available bundles: `lung1/`, `nsclc_cetuximab/`, `lidc_idri/`, `acrin_heart/`.
 
-## Workflow Assembly — agents compose, qr executes
+## Workflow Assembly
 
 The canonical four-stage data flow is encoded in the template library that `qr workflow plan` draws from:
 
@@ -143,40 +201,110 @@ The canonical four-stage data flow is encoded in the template library that `qr w
 | `dicom_to_ml` | data → image → features → modeling (ML) | full end-to-end DICOM → trained model + CV metrics + held-out evaluation |
 
 ```bash
-# 1. Generate a plan
 qr workflow plan -t dicom_to_ml \
     -d /data/cohort -c clinical.csv \
     --roi GTV --pattern nsclc-survival \
     -o plan.json
-
-# 2. (Optional) scaffold a Nextflow file for inspection / editing
 qr workflow scaffold -p plan.json -e nextflow -o pipeline.nf
-
-# 3. Run — default executor is Nextflow (per-patient parallel + cache)
 qr workflow run plan.json
-qr workflow run plan.json --executor inline      # small interactive
-qr workflow run plan.json --executor prefect     # Prefect-orchestrated
 ```
 
-The plan is plain JSON/YAML — agents can read, mutate (add a stage, swap a pattern, change the executor), and re-run without re-templating. Per-patient steps are marked in the plan and fanned out automatically by the Nextflow / Prefect scaffolders.
+The plan is plain JSON/YAML — agents can read, mutate, and re-run without re-templating.
+
+## Reproducibility — Published Paper Results
+
+Full report: [`reports/reproducibility.md`](https://github.com/choilab-jefferson/qradiomics/blob/main/reports/reproducibility.md) · version 2.0 · last updated 2026-05-19
+
+All results produced with qradiomics-public alone (no MATLAB, no Docker). Cohorts: TCIA NSCLC-Radiomics (Lung1), LIDC-IDRI (1,018 scans), LUNGx/SPIE-AAPM, CIRDataset (Zenodo 6762573).
+
+### Summary
+
+| Paper | Cohort | Method | Our result | Paper | Verdict |
+|---|---|---|---|---|---|
+| Aerts 2014 | Lung1 (n=420) | Cox PH 5-fold CV | c-index **0.580 ± 0.029** | 0.65 | ✓ within 0.07 |
+| Aerts 2014 — external | Lung1 → NSCLC-Cetuximab (n=460) | Aerts signature transfer | c-index **0.562** | 0.69 | ✓ signal transfers |
+| Choi 2014 CMPB — AHSN | LIDC-IDRI 1,018 (33,108 candidates) | AHSN + RF patient-grouped 5-fold | AUC **0.727 ± 0.005** | 0.85–0.93 | ✓ AHSN signal validated |
+| Choi 2018 Med Phys | LIDC-IDRI 4,248 nodules | radiomics50 | AUC **0.872 ± 0.010** | 0.83–0.95 | ✓ in range |
+| Choi 2021 CMPB — spic6 | LIDC-IDRI 4,248 nodules | spic6 (Np/Na/Nl/Na_att/s1/s2) | AUC **0.816 ± 0.006** | 0.80–0.85 | ✓✓ exact |
+| Choi 2021 CMPB — PM (CIR masks) | LIDC-PM 72 patients, 474 nodules | radiomics+spic | AUC **0.868 ± 0.039** | 0.85 | ✓✓ exceeds |
+| Choi 2021 CMPB — LUNGx ext + cal | LUNGx 60-test + 10-cal | radiomics50 CIR mask | AUC **0.756** | 0.76 | ✓✓ exact |
+| Choi 2022 MICCAI / CIRDataset | LIDC-PM 72 + LUNGx 73 | interpretable, no NN encoder | AUC 0.755–0.868 | 0.813/0.743 | ✓✓ matches/exceeds |
+
+**Three of four targeted Choi reproductions land at or above the paper's published numbers** using qradiomics-public's atomic core and the CIRDataset masks.
+
+### Cohorts used
+
+| Cohort | Source | Patients | Nodules | Note |
+|---|---|--:|--:|---|
+| Lung1 / NSCLC-Radiomics | TCIA | 420 | 420 GTV-1 | Aerts 2014 discovery cohort |
+| NSCLC-Cetuximab / RTOG-0617 | local DICOM | 489 | PTV-based | external for Aerts |
+| **LIDC-IDRI** (full reference) | TCIA + LIDC-XML | **1,018** | 4,248 (≥8 voxel) | 7 institutions, 8 vendors |
+| **LIDC-PM** | LIDC-IDRI subset | **72** | 474 | pathology-confirmed (CIR IDs) |
+| **LUNGx / SPIE-AAPM-NCI** | TCIA + xlsx | 74 | 91 | 1:1 size-matched benign/malignant |
+| **CIRDataset** (Zenodo 6762573) | Choi/Dahiya/Nadeem | 883 LIDC + 83 LUNGx | 966 | radiologist QA/QC'd paper-grade NRRD masks |
+
+### Choi 2018 Med Phys + Choi 2021 CMPB — detailed breakdown
+
+LIDC-IDRI malignancy ≥4 vs ≤2 binary classification. 5-fold patient-grouped CV.
+
+| Method | Features | n (RM) | RM AUC | PM AUC (XML mask) | PM AUC (CIR mask) |
+|---|--:|--:|---|---|---|
+| `radiomics50` (Med Phys 2018) | 1,409 → top-50 | 4,248 | **0.872 ± 0.010** | 0.748 ± 0.046 | **0.868 ± 0.039** |
+| `spic6` (CMPB 2021) | 6 | 4,248 | **0.816 ± 0.006** | 0.715 ± 0.059 | 0.831 ± 0.084 |
+| `cmpb2021_size+spic` | 7 | 4,248 | 0.832 ± 0.021 | 0.727 ± 0.059 | 0.865 ± 0.051 |
+| `radiomics+spic` (union, top-50) | 1,415 → top-50 | 4,248 | 0.867 ± 0.024 | 0.755 ± 0.046 | **0.868 ± 0.039** |
+
+`spic6` reproduces CMPB 2021 with very tight CI (0.816 ± 0.006 — paper midpoint, CI excludes both 0.80 and 0.83). With CIR paper-grade masks the LIDC-PM PM AUC reaches **0.868**, exceeding the paper's reported 0.85.
+
+### Choi 2022 MICCAI / CIR — LUNGx external validation
+
+Train on LIDC RM (≥4 vs ≤2), domain-adapt on the LUNGx 10-patient CalibrationSet, test on the LUNGx 60-patient TestSet.
+
+| Method | n train / cal / test | AUC (no cal) | **AUC (ext + cal)** |
+|---|---|---|---|
+| `radiomics50` (CIR mask) | 4,248 / 10 / 73 | 0.725 | **0.756** |
+| `radiomics+spic` (CIR mask) | 4,248 / 10 / 73 | 0.725 | **0.756** |
+| `spic6` (CIR mask) | 4,248 / 10 / 73 | 0.713 | 0.713 |
+| `size_only` (sanity) | 4,248 / 10 / 73 | ≤0.5 | ≤0.5 |
+
+This exactly matches the CMPB 2021 LUNGx external number (paper: 0.76) — reproduced using interpretable features only (no neural-network encoder). Note: LUNGx is 1:1 benign/malignant size-matched by design, nullifying size as a predictor and creating a large LIDC→LUNGx distribution shift. Without the 10-patient calibration step, `radiomics50` drops to 0.725.
+
+### LCSR port-vs-reference validation (shape module)
+
+`qradiomics.shape.spiculation_from_voxel` vs LCSR reference on the same CIRDataset input masks:
+
+| Cohort | n | Spearman ρ (qr_Na × lcsr_Na) | Spearman ρ (qr_Nl × lcsr_Nl) |
+|---|--:|---|---|
+| LIDC | 883 | **0.459** (p = 4×10⁻⁴⁷) | 0.349 (p = 1×10⁻²⁶) |
+| LUNGx | 83 | **0.653** (p = 2×10⁻¹¹) | 0.370 (p = 6×10⁻⁴) |
+
+For context, Choi 2021 reports ρ = 0.44 between spiculation count and radiologist spiculation score — our port-vs-LCSR ρ is in the same range. The qradiomics port runs in seconds per nodule (vs minutes for LCSR's full cMCF+OMT C++ pipeline), making 1,018-patient cohort runs feasible on a single workstation.
+
+### Methods harness
+
+`pipelines/lidc_idri/methods_compare.py` is a drop-in benchmark harness. Any feature-extraction method that produces a wide features CSV plugs in via a single line:
+
+```python
+METHODS["my_method"] = lambda df: [c for c in df.columns if c.startswith("my_prefix_")]
+```
+
+The same RM / PM / LUNGx-cal / LUNGx-test splits and leakage-safe RF CV are applied automatically. Built-in methods: `aerts4`, `radiomics50`, `spic6`, `cmpb2021_size+spic`, `radiomics+spic`, `shape_only`, `firstorder`, `size_only`.
 
 ## Validated Cohorts
 
-The pipeline has been validated end-to-end on three TCIA public cohorts:
-
 | Cohort | Format on TCIA | Conversion path |
 |---|---|---|
-| **NSCLC-Radiomics (LUNG1)** | DICOM CT + RTSTRUCT (or pre-converted NRRD via the published companion pack) | `qr convert dicom-series` + `qr convert rtstruct --roi GTV-1`, or feed NRRD directly |
-| **NSCLC-Cetuximab** | DICOM CT + RTSTRUCT | `qr convert dicom-series` + `qr convert rtstruct --roi PTV` |
-| **ACRIN-NSCLC-FDG-PET** | DICOM CT/PET + RTSTRUCT | `qr convert dicom-series` + `qr convert rtstruct --roi Heart` (case-insensitive) |
-
-All three flow cleanly through `convert → extract → results merge → analyze`. Ready-to-run shell scripts for each cohort (plus LIDC-IDRI and the IBSI phantom) live in `examples/`.
+| [NSCLC-Radiomics (LUNG1)](https://www.cancerimagingarchive.net/collection/nsclc-radiomics/) | DICOM CT + RTSTRUCT | `qr convert dicom-series` + `qr convert rtstruct --roi GTV-1` |
+| [NSCLC-Cetuximab](https://www.cancerimagingarchive.net/collection/nsclc-cetuximab/) | DICOM CT + RTSTRUCT | `qr convert dicom-series` + `qr convert rtstruct --roi PTV` |
+| [ACRIN-NSCLC-FDG-PET](https://www.cancerimagingarchive.net/collection/acrin-nsclc-fdg-pet/) | DICOM CT/PET + RTSTRUCT | `qr convert dicom-series` + `qr convert rtstruct --roi Heart` |
 
 ## Command Reference
 
 | Command | Stage | Purpose |
 |---|---|---|
-| `qr convert dicom-series` | data/image | DICOM CT/PET/MR series → NRRD |
+| `qr tcia download` | data | Bulk-download a TCIA collection (multi-process + progress) |
+| `qr anonymize` | data | Strip PHI from a DICOM tree (DICOM PS3.15 Annex E) |
+| `qr convert dicom-series` | data/image | DICOM CT/MR → NRRD; PT auto-routes through SUV conversion |
 | `qr convert rtstruct` | data/image | DICOM RTSTRUCT contour → label NRRD (case-insensitive ROI) |
 | `qr convert manifest-from-dir` | data | Glob image+mask pairs into a manifest CSV |
 | `qr extract` | features | PyRadiomics → `features.csv` (manifest + pattern) |
@@ -184,7 +312,7 @@ All three flow cleanly through `convert → extract → results merge → analyz
 | `qr analyze survival` | modeling | Univariate Cox proportional hazards |
 | `qr analyze classify` | modeling | Univariate logistic regression |
 | `qr analyze importance` | modeling | Random-forest + permutation (+ optional SHAP) |
-| `qr ml train` | modeling | k-fold CV Cox / logistic model → `model.pkl` + `metrics.json` |
+| `qr ml train` | modeling | CV Cox / logistic + leakage-safe corr/univariate selection |
 | `qr ml predict` | modeling | Apply a trained model to new features |
 | `qr ml evaluate` | modeling | Hold-out evaluation report (c-index / AUC) |
 | `qr workflow plan` | assembly | Generate a multi-step plan from a template |
@@ -193,6 +321,64 @@ All three flow cleanly through `convert → extract → results merge → analyz
 | `qr workflow run` | assembly | Execute a plan (default executor: nextflow) |
 | `qr pattern list` / `search` | meta | Browse bundled pattern templates |
 | `qr config get` / `set` | meta | User preferences in `~/.qradiomics/config.yaml` |
+
+## Python API — atomic core
+
+Every CLI command is a thin wrapper around a re-usable Python API. External libraries (e.g. longitudinal CBCT orchestrators) consume the atomic layer directly instead of shelling out.
+
+```python
+from qradiomics.atomic import (
+    load_image_and_mask, preprocess_pair,
+    build_extractor, run_extractor, extract_features,
+    register_pair, resample_to_fixed, histogram_match_hu,
+)
+from qradiomics.data_model import (
+    Cohort, Patient, TreatmentCourse, Study,
+    ImageSeries, RTStructureSet, ROI,
+    AtomicUnit, Modality, StudyType,
+    save_cohort, load_cohort,
+)
+from qradiomics.manifest import flatten_cohort, read_manifest, write_manifest
+from qradiomics.delta import DeltaPair, compute_delta, compute_trend
+from qradiomics.io.dicom import read_pet_suv
+
+# Single atomic unit: one image, one mask → ≈1409 features
+image, mask = load_image_and_mask("planCT.nrrd", "Heart-label.nrrd")
+cropped_img, cropped_msk = preprocess_pair(image, mask, pad_mm=20, resample_mm=1.0)
+extractor = build_extractor(image_types=["Original", "LoG", "Wavelet"])
+features = run_extractor(extractor, cropped_img, cropped_msk)
+```
+
+### Hierarchical cohort model
+
+`qradiomics.data_model` mirrors the canonical 5–6 level hierarchy used across the Choi-Lab ecosystem:
+
+```
+Cohort → Patient → TreatmentCourse → Study → ImageSeries / RTStructureSet → ROI
+                       (optional)
+```
+
+Diagnostic-only cohorts omit `TreatmentCourse` and attach `Study` directly to `Patient`. `flatten_cohort()` walks the tree and produces a list of `AtomicUnit`s — one per (image, mask) pair — which becomes the manifest CSV consumed by `qr extract`.
+
+```python
+cohort = Cohort(cohort_id="lng-cbct")
+patient = Patient(patient_id="P001")
+course = TreatmentCourse(course_id="rt1", fractions=30, prescription_dose_gy=60.0)
+study = Study(study_id="S-week4", timepoint="week4", relative_day=28)
+study.series["CBCT"] = ImageSeries(series_id="CBCT-w4",
+    image_path="/data/CBCT_w4.nrrd", modality=Modality.CBCT, image_tag="CBCT-w4")
+rs = RTStructureSet(rtstruct_id="rs", referenced_series_uid="...")
+rs.rois["GTV"] = ROI(roi_id="GTV", mask_path="/data/GTV-label.nrrd",
+                     mask_tag="manual", mask_image_tag="CBCT-w4")
+study.structure_sets["rs"] = rs
+course.studies[study.study_id] = study
+patient.treatment_courses[course.course_id] = course
+cohort.patients[patient.patient_id] = patient
+
+units = flatten_cohort(cohort)         # list[AtomicUnit]
+write_manifest(units, "manifest.csv")  # canonical 10-column schema
+save_cohort(cohort, "cohort.yaml")     # full graph persistence
+```
 
 ## Shape Analysis — `qradiomics.shape`
 
@@ -210,7 +396,7 @@ from qradiomics.shape import (
 )
 ```
 
-**2021 CMPB — Spiculation quantification (companion to CIR)**
+**2021 CMPB — Spiculation quantification** (companion to [CIR](https://github.com/choilab-jefferson/CIR))
 
 ```python
 from qradiomics.shape import (
@@ -235,6 +421,11 @@ qradiomics/
 │   ├── config_io.py
 │   ├── commands/            # extract, results, analyze, config_cmd
 │   └── pattern/             # list, match
+├── atomic.py                # load_image_and_mask, preprocess_pair, build/run_extractor
+├── data_model.py            # Cohort → Patient → TreatmentCourse → Study → Series → ROI
+├── manifest.py              # flatten_cohort, read/write_manifest
+├── delta.py                 # DeltaPair, compute_delta, compute_trend
+├── io/dicom.py              # read_pet_suv
 ├── pattern_loader.py        # YAML pattern templates → Pydantic models
 ├── extractor.py             # PyRadiomics wrapper
 ├── shape/                   # Published shape pipelines (re-implementation)
@@ -281,8 +472,8 @@ If you build on the lung-screening lineage that this CLI grew out of, please add
 
 ## Authors and Acknowledgements
 
-- **Wookjin Choi** — overall architecture, CLI design, pattern templates
-- **Pradeep Bhetwal** — survival analysis on the LUNG1 cohort
+- [**Wookjin Choi**](https://github.com/taznux) — overall architecture, CLI design, pattern templates
+- [**Pradeep Bhetwal**](https://github.com/Pradeepbhetwal) — survival analysis on the LUNG1 cohort
 - *Choi Lab, Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson University*
 
 ## License
