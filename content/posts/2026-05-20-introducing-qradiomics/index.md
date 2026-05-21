@@ -97,7 +97,7 @@ python scripts/smoke.py
 qr tcia download --collection NSCLC-Radiomics --modality CT -o /data/Lung1 -j 16
 ```
 
-Full documentation: [qradiomics.com/projects/2026-05-17-qradiomics](https://qradiomics.com/projects/2026-05-17-qradiomics/)  
+Full documentation: [../../projects/2026-05-17-qradiomics/](../../projects/2026-05-17-qradiomics/)  
 Source code: [github.com/choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)
 
 ---
@@ -118,12 +118,12 @@ Source: [github.com/mskspi/PathCNN](https://github.com/mskspi/PathCNN) · Paper:
 ### Functional delta-radiomics: cardiac PET in lung cancer RT (Choi 2023 / 2024)
 
 A novel functional radiomics method that uses serial cardiac FDG-PET uptake as a surrogate of radiation-induced cardiotoxicity. Featured in a *JCO Clinical Cancer Informatics* editorial.  
-Posts: [Novel Functional Delta-Radiomics (AAPM/ASTRO 2023)](/posts/2023-09-11-novel-functional-delta-radiomics-for-predicting-overall-survival-in-lung-cancer-radiotherapy-using-cardiac-fdg-pet-uptake/) · [JCO CCI editorial (2024)](/posts/2024-04-14-shining-a-light-unveiling-cardiac-risks-using-pet-imaging-in-lung-cancer-radiotherapy/)
+Posts: [Novel Functional Delta-Radiomics (AAPM/ASTRO 2023)](../2023-09-11-novel-functional-delta-radiomics-for-predicting-overall-survival-in-lung-cancer-radiotherapy-using-cardiac-fdg-pet-uptake/) · [JCO CCI editorial (2024)](../2024-04-14-shining-a-light-unveiling-cardiac-risks-using-pet-imaging-in-lung-cancer-radiotherapy/)
 
 ### Deep learning auto-segmentation for MR-guided adaptive RT (Choi et al. 2023)
 
 Automated GTV and OAR segmentation for pancreatic cancer patients on MR-Linac systems.  
-Posts: [AAPM 2023](/posts/2023-05-08-2023-accepted-invited-annual-meeting-abstracts/) · [ASTRO 2023](/posts/2023-10-07-deep-learning-segmentation-for-accurate-gtv-and-oar-segmentation-in-mr-guided-adaptive-radiotherapy-for-pancreatic-cancer-patients/)
+Posts: [AAPM 2023](../2023-05-08-2023-accepted-invited-annual-meeting-abstracts/) · [ASTRO 2023](../2023-10-07-deep-learning-segmentation-for-accurate-gtv-and-oar-segmentation-in-mr-guided-adaptive-radiotherapy-for-pancreatic-cancer-patients/)
 
 ---
 
@@ -145,7 +145,7 @@ A companion study presented at **ASTRO 2025** applied the same pipeline to survi
 
 The open-source release arrives roughly nine months after those presentations. The public release of `qradiomics` marks the point where reproducibility is no longer an afterthought — every result in our past papers can be re-run with one command on publicly available data.
 
-Full documentation: [qradiomics.com/projects/2026-05-17-qradiomics](https://qradiomics.com/projects/2026-05-17-qradiomics/)  
+Full documentation: [../../projects/2026-05-17-qradiomics/](../../projects/2026-05-17-qradiomics/)  
 Source code: [github.com/choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)
 
 ---
