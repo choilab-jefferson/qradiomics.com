@@ -1,6 +1,7 @@
 ---
 title: "Novel Functional Radiomics for Predicting Cardiotoxicity in Lung Cancer Radiotherapy using Cardiac FDG-PET Uptake"
 date: "2023-09-11T12:03:17.000-04:00"
+lastmod: "2026-05-20T22:10:43.000-04:00"
 categories: 
   - "poster"
   - "research"
@@ -24,6 +25,8 @@ cover:
 ---
 
 Our paper **“Novel Functional Radiomics for Prediction of Cardiac Positron Emission Tomography Avidity in Lung Cancer Radiotherapy”** has been published in [JCO CCI](https://ascopubs.org/doi/10.1200/CCI.23.00241). This research work delves into an innovative approach to predict clinical cardiac assessment using functional imaging.
+
+> Note: This post summarizes broader **functional cardiac PET radiomics** work. Only one related presentation below is specifically a **delta-radiomics** analysis.
 
 ![](images/image.png)
 
@@ -57,7 +60,7 @@ Feel free to explore the full paper in the **JCO Clinical Cancer Informatics**, 
 
 Related Presentations
 
-[Functional Delta-Radiomics Overall Survival Prediction](https://aapm.confex.com/aapm/2023am/meetingapp.cgi/Paper/2188)
+[Functional Delta-Radiomics Overall Survival Prediction (specific delta-radiomics study)](https://aapm.confex.com/aapm/2023am/meetingapp.cgi/Paper/2188)
 
 {{< slideshare id="260812563" >}}
 

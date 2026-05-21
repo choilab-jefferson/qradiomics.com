@@ -1,7 +1,7 @@
 ---
 title: "Introducing qradiomics — A Decade of Choi Lab Radiomics Research, Now Open-Source"
 date: "2026-05-20T17:00:00.000-04:00"
-lastmod: "2026-05-20T22:01:54.000-04:00"
+lastmod: "2026-05-20T22:10:02.000-04:00"
 categories:
   - "news"
   - "research"
@@ -114,12 +114,7 @@ Source code: [github.com/choilab-jefferson/qradiomics](https://github.com/choila
 
 A reproducible, geometry-based algorithm for quantifying nodule spiculation in CT — one of the most diagnostically important features for lung cancer malignancy assessment. Available as `qradiomics.shape`. Paper: [doi:10.1016/j.cmpb.2020.105839](https://doi.org/10.1016/j.cmpb.2020.105839).
 
-### PathCNN — survival prediction from multi-omics (Oh & Choi 2021, *Bioinformatics*)
-
-An interpretable CNN applied to glioblastoma, combining mRNA expression, copy-number variation, and DNA methylation via a novel pathway-image representation. GradCAM-based interpretation surfaces the biological pathways driving predictions.  
-Source: [github.com/mskspi/PathCNN](https://github.com/mskspi/PathCNN) · Paper: [doi:10.1093/bioinformatics/btab285](https://doi.org/10.1093/bioinformatics/btab285)
-
-### Functional delta-radiomics: cardiac PET in lung cancer RT (Choi 2023 / 2024)
+### Functional radiomics: cardiac PET in lung cancer RT (Choi 2023 / 2024)
 
 A novel functional radiomics method that uses serial cardiac FDG-PET uptake as a surrogate of radiation-induced cardiotoxicity. Featured in a *JCO Clinical Cancer Informatics* editorial.  
 Posts: [Novel Functional Delta-Radiomics (AAPM/ASTRO 2023)](../2023-09-11-novel-functional-delta-radiomics-for-predicting-overall-survival-in-lung-cancer-radiotherapy-using-cardiac-fdg-pet-uptake/) · [JCO CCI editorial (2024)](../2024-04-14-shining-a-light-unveiling-cardiac-risks-using-pet-imaging-in-lung-cancer-radiotherapy/)
