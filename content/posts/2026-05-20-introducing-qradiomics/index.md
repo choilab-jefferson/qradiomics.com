@@ -1,7 +1,7 @@
 ---
-title: "Introducing qradiomics — A Decade of Choi Lab Radiomics Research, Now Open-Source"
+title: "Introducing qradiomics — A Unified Radiomics CLI for Reproducible Research"
 date: "2026-05-20T17:00:00.000-04:00"
-lastmod: "2026-05-20T22:10:02.000-04:00"
+lastmod: "2026-05-20T22:12:20.000-04:00"
 categories:
   - "news"
   - "research"
