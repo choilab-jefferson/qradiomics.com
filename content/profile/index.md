@@ -5,7 +5,7 @@ date: "2016-06-22T23:51:23.000-04:00"
 
 # **Wookjin Choi, Ph.D.**
 
-Assistant Professor of Radiation Oncology
+Associate Professor of Radiation Oncology
 **C**omputational **H**ealthcare & **O**ncology **I**nformatics Lab
 Sidney Kimmel Medical College at Thomas Jefferson University
 Email: [Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu), [wchoi1022@gmail.com](mailto:wchoi1022@gmail.com)
