@@ -25,6 +25,8 @@ tags:
 
 We are releasing **[qradiomics](https://github.com/choilab-jefferson/qradiomics)** — an open-source Python CLI that unifies more than a decade of Choi Lab radiomics work into a single, reproducible, pip-installable toolkit.
 
+![qradiomics workflow overview](images/qradiomics-workflow-overview.svg)
+
 ## What is qradiomics?
 
 `qradiomics` (command: `qr`) is a radiomics research CLI built for the full data flow from raw DICOM to published-grade results:
@@ -119,11 +121,6 @@ Source: [github.com/mskspi/PathCNN](https://github.com/mskspi/PathCNN) · Paper:
 
 A novel functional radiomics method that uses serial cardiac FDG-PET uptake as a surrogate of radiation-induced cardiotoxicity. Featured in a *JCO Clinical Cancer Informatics* editorial.  
 Posts: [Novel Functional Delta-Radiomics (AAPM/ASTRO 2023)](../2023-09-11-novel-functional-delta-radiomics-for-predicting-overall-survival-in-lung-cancer-radiotherapy-using-cardiac-fdg-pet-uptake/) · [JCO CCI editorial (2024)](../2024-04-14-shining-a-light-unveiling-cardiac-risks-using-pet-imaging-in-lung-cancer-radiotherapy/)
-
-### Deep learning auto-segmentation for MR-guided adaptive RT (Choi et al. 2023)
-
-Automated GTV and OAR segmentation for pancreatic cancer patients on MR-Linac systems.  
-Posts: [AAPM 2023](../2023-05-08-2023-accepted-invited-annual-meeting-abstracts/) · [ASTRO 2023](../2023-10-07-deep-learning-segmentation-for-accurate-gtv-and-oar-segmentation-in-mr-guided-adaptive-radiotherapy-for-pancreatic-cancer-patients/)
 
 ---
 

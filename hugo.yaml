@@ -2,6 +2,9 @@ baseURL: "https://www.qradiomics.com/"
 languageCode: "en-us"
 title: "Qualia Radiomics"
 theme: "PaperMod"
+services:
+  googleAnalytics:
+    ID: "G-733B4FBTFG"
 
 enableRobotsTXT: true
 buildDrafts: false

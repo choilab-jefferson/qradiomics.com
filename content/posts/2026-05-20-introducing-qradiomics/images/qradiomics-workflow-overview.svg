@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">qradiomics workflow overview</title>
+  <desc id="desc">DICOM download to modeling workflow with reproducible pipeline orchestration.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="420" fill="url(#bg)"/>
+  <text x="60" y="70" fill="#e2e8f0" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700">
+    qradiomics: end-to-end reproducible radiomics pipeline
+  </text>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="middle">
+    <rect x="70" y="145" width="200" height="120" rx="14" fill="#1d4ed8"/>
+    <text x="170" y="215" fill="#ffffff">DICOM</text>
+
+    <rect x="300" y="145" width="200" height="120" rx="14" fill="#2563eb"/>
+    <text x="400" y="215" fill="#ffffff">Convert</text>
+
+    <rect x="530" y="145" width="200" height="120" rx="14" fill="#3b82f6"/>
+    <text x="630" y="215" fill="#ffffff">Extract</text>
+
+    <rect x="760" y="145" width="200" height="120" rx="14" fill="#60a5fa"/>
+    <text x="860" y="215" fill="#0f172a">Merge</text>
+
+    <rect x="990" y="145" width="140" height="120" rx="14" fill="#93c5fd"/>
+    <text x="1060" y="215" fill="#0f172a">Model</text>
+  </g>
+  <g stroke="#cbd5e1" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M270 205 H290"/>
+    <path d="M500 205 H520"/>
+    <path d="M730 205 H750"/>
+    <path d="M960 205 H980"/>
+  </g>
+  <g fill="#cbd5e1">
+    <polygon points="290,195 308,205 290,215"/>
+    <polygon points="520,195 538,205 520,215"/>
+    <polygon points="750,195 768,205 750,215"/>
+    <polygon points="980,195 998,205 980,215"/>
+  </g>
+  <text x="60" y="350" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="20">
+    Command-first workflow: qr tcia download -> qr convert -> qr extract -> qr analyze / qr ml
+  </text>
+</svg>
