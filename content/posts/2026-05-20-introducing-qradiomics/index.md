@@ -21,11 +21,13 @@ tags:
   - "Deep Learning"
   - "Cardiac"
   - "PET"
+cover:
+  image: "images/qradiomics-workflow-overview.png"
+  alt: "qradiomics workflow overview"
+  relative: true
 ---
 
 We are releasing **[qradiomics](https://github.com/choilab-jefferson/qradiomics)** — an open-source Python CLI that unifies more than a decade of Choi Lab radiomics work into a single, reproducible, pip-installable toolkit.
-
-![qradiomics workflow overview](images/qradiomics-workflow-overview.svg)
 
 ## What is qradiomics?
 

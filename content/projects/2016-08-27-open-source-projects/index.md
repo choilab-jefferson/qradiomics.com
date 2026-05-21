@@ -1,25 +1,48 @@
 ---
 title: "Open source projects"
 date: "2016-08-27T13:58:18.000-04:00"
+lastmod: "2026-05-20T21:58:00.000-04:00"
 ---
 
-**[qradiomics](https://qradiomics.com/projects/2026-05-17-qradiomics/)**
+This page summarizes active and legacy open-source projects from Choi Lab.
 
-Open-source source for the qradiomics.com site and content.
-Source code: [https://github.com/choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)
+## Active
 
-**[Lung Cancer Screening Radiomics](https://qradiomics.com/projects/2022-06-10-lung-cancer-screening-radiomics/)**
+### [qradiomics](../2026-05-17-qradiomics/)
 
-A full system for lung cancer screening radiomics using [Lung Image Analysis Framework](https://qradiomics.com/projects/2016-08-27-lung-image-analysis-framwork/), [Radiomics Tools](https://qradiomics.com/projects/2016-07-23-radiomics-tools/), and other external tools with Docker.
+Unified Python radiomics CLI and library for end-to-end workflows (DICOM conversion, feature extraction, modeling, and reproducible orchestration).
 
-[**PathCNN**](https://qradiomics.com/projects/2022-06-10-pathcnn/)
+- Repo: [github.com/choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)
+- License: MIT
+- Status: actively maintained
 
-Interpretable convolutional neural networks for survival prediction and pathway analysis applied to glioblastoma
+## Legacy (superseded by qradiomics)
 
-**[Radiomics Tools](https://qradiomics.com/projects/2016-07-23-radiomics-tools/)**
+### [Lung Cancer Screening Radiomics](../2022-06-10-lung-cancer-screening-radiomics/)
 
-Radiomic feature analysis tools in C++ and Python with ITK, Simple ITK. [Ruffus](http://www.ruffus.org.uk/) pipeline structure Image processing tools for radiomics analysis, e.g. DICOM and DICOM-RT handling, contour manipulation, automatic segmentation, etc. Interfaces for invoking MATLAB and external executables, e.g. CERR, plastimatch and etc. 3D and 2D shape, intensity,  and texture (GLCM, GLRM) features
+Earlier end-to-end screening workflow on LIDC-IDRI and LUNGx with AutoML components.
 
-**[Lung Image Analysis Framework](https://qradiomics.com/projects/2016-08-27-lung-image-analysis-framwork/)**
+- Repo: [github.com/choilab-jefferson/LungCancerScreeningRadiomics](https://github.com/choilab-jefferson/LungCancerScreeningRadiomics)
+- Status: no longer maintained
 
-A basic framwork for lung image analysis in MATLAB Now, this project has very simple algorithms for example lung image analysis.
+### [Radiomics Tools](../2016-07-23-radiomics-tools/)
+
+C++/Python (ITK, Ruffus) radiomics pipeline including DICOM/RT handling and feature extraction.
+
+- Repo: [github.com/taznux/radiomics-tools](https://github.com/taznux/radiomics-tools)
+- Status: no longer maintained
+
+### [Lung Image Analysis Framwork](../2016-08-27-lung-image-analysis-framwork/)
+
+MATLAB framework for pulmonary nodule detection and characterization on CT.
+
+- Repo: [github.com/taznux/lung-image-analysis](https://github.com/taznux/lung-image-analysis)
+- Status: no longer maintained
+
+## Related
+
+### [PathCNN](../2022-06-10-pathcnn/)
+
+Interpretable CNN for survival prediction and pathway analysis in glioblastoma.
+
+- Repo: [github.com/mskspi/PathCNN](https://github.com/mskspi/PathCNN)
