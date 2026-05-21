@@ -1,7 +1,7 @@
 ---
 title: "Introducing qradiomics — A Decade of Choi Lab Radiomics Research, Now Open-Source"
 date: "2026-05-20T17:00:00.000-04:00"
-lastmod: "2026-05-20T17:00:00.000-04:00"
+lastmod: "2026-05-20T22:01:54.000-04:00"
 categories:
   - "news"
   - "research"
@@ -22,7 +22,7 @@ tags:
   - "Cardiac"
   - "PET"
 cover:
-  image: "images/qradiomics-workflow-overview.png"
+  image: "images/qradiomics-workflow-overview.svg"
   alt: "qradiomics workflow overview"
   relative: true
 ---
