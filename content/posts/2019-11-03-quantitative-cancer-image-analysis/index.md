@@ -22,6 +22,8 @@ tags:
   - "subtype"
   - "u-net"
   - "variability"
+aliases:
+  - /2019/11/03/quantitative-cancer-image-analysis/
 ---
 
 {{< slideshare id="189820450" >}}

@@ -13,6 +13,8 @@ tags:
   - "pda"
   - "quality-assessment"
   - "radiotherapy"
+aliases:
+  - /2015/09/15/image-quality-assessment-of-contrast-enhanced-4d-ct-for-pancreatic-adenocarcinoma-in-radiotherapy-simulation/
 ---
 
 2015 AAPM annual meeting

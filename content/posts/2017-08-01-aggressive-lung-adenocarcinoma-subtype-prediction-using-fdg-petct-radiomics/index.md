@@ -28,6 +28,8 @@ cover:
   image: "images/graphical-abstract.png"
   alt: ""
   relative: true
+aliases:
+  - /2017/08/01/aggressive-lung-adenocarcinoma-subtype-prediction-using-fdg-petct-radiomics/
 ---
 
 This paper has been published in the Computational and Structural Biotechnology Journal.

@@ -1,6 +1,8 @@
 ---
 title: "Lung Cancer Screening Radiomics"
 date: "2022-06-10T15:50:37.000-04:00"
+aliases:
+  - /portfolio/lung-cancer-screening-radiomics/
 ---
 
 > ⚠️ **This project is no longer maintained.** It has been superseded by [qradiomics](/projects/2026-05-17-qradiomics/), which provides a unified modern Python implementation.

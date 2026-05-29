@@ -13,6 +13,8 @@ tags:
   - "radiomics"
   - "shape"
   - "spiculation"
+aliases:
+  - /2020/11/17/reproducible-and-interpretable-spiculation-quantification-for-lung-cancer-screening/
 ---
 
 Choi, W., Nadeem, S., Alam, S. R., Deasy, J. O., Tannenbaum, A., & Lu, W. (2020). Reproducible and Interpretable Spiculation Quantification for Lung Cancer Screening. _Computer Methods and Programs in Biomedicine_, 105839. [https://doi.org/10.1016/j.cmpb.2020.105839](https://doi.org/10.1016/j.cmpb.2020.105839)

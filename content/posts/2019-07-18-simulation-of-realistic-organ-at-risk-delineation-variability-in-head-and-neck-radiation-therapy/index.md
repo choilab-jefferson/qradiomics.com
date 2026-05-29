@@ -12,6 +12,8 @@ tags:
   - "radiation-therapy"
   - "radiotherapy"
   - "variablility"
+aliases:
+  - /2019/07/18/simulation-of-realistic-organ-at-risk-delineation-variability-in-head-and-neck-radiation-therapy/
 ---
 
 {{< slideshare id="156336028" >}}

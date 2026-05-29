@@ -11,6 +11,8 @@ tags:
   - "nodule"
   - "pulmonary"
   - "radiomics"
+aliases:
+  - /2017/11/12/radiomics-and-deep-learning-for-lung-cancer-screening/
 ---
 
 KOCSEA Technical Symposium 2017, Invited Talk, KSEA Travel Grant

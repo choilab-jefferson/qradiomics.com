@@ -18,6 +18,8 @@ cover:
   image: "images/astro-2026-banner.jpg"
   alt: "ASTRO 2026 Annual Meeting — Boston, Sep 26-30"
   relative: true
+aliases:
+  - /2026/05/18/astro-2026-best-of-physics-oral-acceptance/
 ---
 
 Thrilled to share that our work has been selected for an **Oral Scientific Presentation in the *BEST of Physics* session** at the **American Society for Radiation Oncology (ASTRO) 2026 Annual Meeting**, September 26–30 in Boston, MA. Out of **~2,700 abstracts submitted** to ASTRO this year, only **300 were chosen** for oral presentation, and *BEST of Physics* gathers the highest-rated physics work of the meeting.

@@ -17,6 +17,8 @@ tags:
   - "quantitative-image-feature"
   - "radiomics"
   - "radiotherapy"
+aliases:
+  - /2021/10/15/artificial-intelligence-in-radiation-oncology/
 ---
 
 {{< slideshare id="254222500" >}}

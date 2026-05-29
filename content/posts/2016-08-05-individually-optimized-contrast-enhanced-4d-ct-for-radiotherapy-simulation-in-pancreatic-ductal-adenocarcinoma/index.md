@@ -11,6 +11,8 @@ tags:
   - "ct"
   - "image"
   - "radiotherapy"
+aliases:
+  - /2016/08/05/individually-optimized-contrast-enhanced-4d-ct-for-radiotherapy-simulation-in-pancreatic-ductal-adenocarcinoma/
 ---
 
 2016 AAPM annual meeting

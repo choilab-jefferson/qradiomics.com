@@ -11,6 +11,8 @@ tags:
   - "cone-beam-ct"
   - "ct"
   - "radiotherapy"
+aliases:
+  - /2016/04/28/robust-breathing-signal-extraction-from-cone-beam-ct-projections-based-on-adaptive-and-global-optimization-techniques/
 ---
 
 {{< slideshare id="61487038" >}}

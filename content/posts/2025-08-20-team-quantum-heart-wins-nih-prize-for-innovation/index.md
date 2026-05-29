@@ -20,6 +20,8 @@ cover:
   image: "images/quantum-heart-cover-2025.png"
   alt: ""
   relative: true
+aliases:
+  - /2025/08/20/team-quantum-heart-wins-nih-prize-for-innovation/
 ---
 
 [https://datascience.nih.gov/tools-and-analytics/quantum-computing-new-frontiers-biomedical-research-innovation-lab](https://datascience.nih.gov/tools-and-analytics/quantum-computing-new-frontiers-biomedical-research-innovation-lab)

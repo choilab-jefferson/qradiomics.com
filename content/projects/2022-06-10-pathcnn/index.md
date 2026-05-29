@@ -1,6 +1,8 @@
 ---
 title: "PathCNN"
 date: "2022-06-10T15:59:11.000-04:00"
+aliases:
+  - /portfolio/pathcnn/
 ---
 
 Interpretable convolutional neural networks for survival prediction and pathway analysis applied to glioblastoma

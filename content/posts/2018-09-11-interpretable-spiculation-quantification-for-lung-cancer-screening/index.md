@@ -19,6 +19,8 @@ tags:
   - "screening"
   - "spiculation"
   - "svm"
+aliases:
+  - /2018/09/11/interpretable-spiculation-quantification-for-lung-cancer-screening/
 ---
 
 {{< slideshare id="108846563" >}}

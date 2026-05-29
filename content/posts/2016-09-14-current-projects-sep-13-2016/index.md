@@ -24,6 +24,8 @@ tags:
   - "radiomics"
   - "radiotherapy"
   - "therapy-response"
+aliases:
+  - /2016/09/14/current-projects-sep-13-2016/
 ---
 
 {{< slideshare id="66003783" >}}

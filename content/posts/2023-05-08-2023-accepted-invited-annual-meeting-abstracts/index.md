@@ -21,6 +21,8 @@ tags:
   - "segmentation"
   - "survival"
   - "toxicity"
+aliases:
+  - /2023/05/08/2023-accepted-invited-annual-meeting-abstracts/
 ---
 
 - AAPM Annual Meeting (Houston, TX • July 23 ‒ 27, 2023)

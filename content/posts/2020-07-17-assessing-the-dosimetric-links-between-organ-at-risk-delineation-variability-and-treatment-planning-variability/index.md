@@ -12,6 +12,8 @@ tags:
   - "organ-at-risk"
   - "radiotherapy"
   - "variability"
+aliases:
+  - /2020/07/17/assessing-the-dosimetric-links-between-organ-at-risk-delineation-variability-and-treatment-planning-variability/
 ---
 
 {{< slideshare id="237000959" >}}

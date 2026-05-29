@@ -18,6 +18,8 @@ tags:
   - "pulmonary"
   - "quantitative-image-feature"
   - "segmentation"
+aliases:
+  - /2014/10/02/lung-structure-segmentation-and-nodule-detection-based-on-3d-block-analysis-in-ct-image-korean/
 ---
 
 {{< slideshare id="39782550" >}}

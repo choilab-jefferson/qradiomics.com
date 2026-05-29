@@ -12,6 +12,8 @@ tags:
   - "pulmonary"
   - "quantitative-image-feature"
   - "radiomics"
+aliases:
+  - /2022/06/08/lung-cancer-screening-radiomics/
 ---
 
 A comprehensive framework for lung cancer screening radiomics using LIDC-IDRI and LUNGx dataset.

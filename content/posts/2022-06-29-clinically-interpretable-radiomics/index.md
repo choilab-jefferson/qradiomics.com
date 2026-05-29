@@ -17,6 +17,8 @@ tags:
   - "quantitative-image-feature"
   - "radiomics"
   - "spiculation"
+aliases:
+  - /2022/06/29/clinically-interpretable-radiomics/
 ---
 
 [MICCAI'22 Paper](https://arxiv.org/pdf/2206.14903.pdf) | [CMPB'21 Paper](https://arxiv.org/pdf/1808.08307.pdf) | [CIRDataset](https://zenodo.org/record/6762573)

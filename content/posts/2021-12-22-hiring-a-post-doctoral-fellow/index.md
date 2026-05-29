@@ -10,6 +10,8 @@ tags:
   - "interpretable"
   - "quantitative-image-feature"
   - "radiomics"
+aliases:
+  - /2021/12/22/hiring-a-post-doctoral-fellow/
 ---
 
 #### Postdoctoral Fellow - Developing Clinically Interpretable Medical Imaging AI in Radiation Therapy

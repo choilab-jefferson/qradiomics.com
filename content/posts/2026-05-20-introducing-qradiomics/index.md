@@ -25,6 +25,8 @@ cover:
   image: "images/qradiomics-workflow-overview.svg"
   alt: "qradiomics workflow overview"
   relative: true
+aliases:
+  - /2026/05/20/introducing-qradiomics/
 ---
 
 We are releasing **[qradiomics](https://github.com/choilab-jefferson/qradiomics)** — an open-source Python CLI that unifies more than a decade of Choi Lab radiomics work into a single, reproducible, pip-installable toolkit.

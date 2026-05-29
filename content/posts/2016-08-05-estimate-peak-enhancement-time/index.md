@@ -3,6 +3,8 @@ title: "How to estimate peak enhancement time of pancreas region by test injecti
 date: "2016-08-05T00:33:00.000-04:00"
 categories: 
   - "research"
+aliases:
+  - /2016/08/05/estimate-peak-enhancement-time/
 ---
 
 This video clip shows how to estimate peak enhancement time by using the test injection technique.

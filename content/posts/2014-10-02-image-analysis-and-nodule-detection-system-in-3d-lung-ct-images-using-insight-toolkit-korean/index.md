@@ -16,6 +16,8 @@ tags:
   - "korean"
   - "lung"
   - "pulmonary"
+aliases:
+  - /2014/10/02/image-analysis-and-nodule-detection-system-in-3d-lung-ct-images-using-insight-toolkit-korean/
 ---
 
 Invited talk in CNUH, Apr 2014

@@ -14,6 +14,8 @@ tags:
   - "quantitative-image-feature"
   - "radiomics"
   - "super-computer"
+aliases:
+  - /2015/09/15/radiomics-novel-paradigm-of-deep-learning-for-clinical-decision-support-toward-plan-b-using-liquid-biopsy/
 ---
 
 {{< slideshare id="52825938" >}}

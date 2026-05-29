@@ -11,6 +11,8 @@ tags:
   - "journal-club"
   - "radiotherapy"
   - "review"
+aliases:
+  - /2016/04/28/dual-energy-ct-in-radiotherapy-current-applications-and-future-outlook/
 ---
 
 {{< slideshare id="61487028" >}}

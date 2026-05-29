@@ -18,6 +18,8 @@ tags:
   - "Shape"
   - "TCIA"
   - "DICOM"
+aliases:
+  - /portfolio/qradiomics/
 ---
 
 **License:** MIT · **Python:** 3.11+ · **Version:** 0.9.0 · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)

@@ -1,6 +1,8 @@
 ---
 title: "Radiomics Tools"
 date: "2016-07-23T23:00:14.000-04:00"
+aliases:
+  - /portfolio/radiomics-tools/
 ---
 
 > ⚠️ **This project is no longer maintained.** It has been superseded by [qradiomics](/projects/2026-05-17-qradiomics/), which provides a unified modern Python implementation.

@@ -21,6 +21,8 @@ tags:
   - "pulmonary"
   - "quantitative-image-feature"
   - "shape-based-feature-descriptor"
+aliases:
+  - /2014/10/02/automatic-detection-of-pulmonary-nodules-in-lung-ct-images/
 ---
 
 {{< slideshare id="39782110" >}}

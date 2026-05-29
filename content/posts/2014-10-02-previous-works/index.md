@@ -13,6 +13,8 @@ tags:
   - "pulmonary"
   - "sff"
   - "shape-from-focus"
+aliases:
+  - /2014/10/02/previous-works/
 ---
 
 - Automatic Pulmonary Nodule Detection

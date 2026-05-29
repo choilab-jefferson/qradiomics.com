@@ -12,6 +12,8 @@ tags:
   - "pulmonary"
   - "radiomics"
   - "stereotactic"
+aliases:
+  - /2023/11/07/exploring-published-and-novel-pre-treatment-ct-and-pet-radiomics-to-stratify-risk-of-progression-among-early-stage-non-small-cell-lung-cancer-patients-treated-with-stereotactic-radiation/
 ---
 
 Maria Thor 1,4, Kelly Fitzgerald 2,4, Aditya Apte 1, Jung Hun Oh 1, Aditi Iyer 1, Otasowie Odiase 2, Saad Nadeem 1, Ellen D. Yorke 1, Jamie Chaft 3, Abraham J. Wu 2, Michael Offin 3, Charles B Simone II 2, Isabel Preeshagul 3, Daphna Y. Gelblum 2, Daniel Gomez 2, Joseph O. Deasy 1, Andreas Rimner 2  

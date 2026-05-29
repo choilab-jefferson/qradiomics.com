@@ -15,6 +15,8 @@ tags:
   - "radiomics"
   - "robustness"
   - "texture"
+aliases:
+  - /2017/10/02/robust-normal-lung-ct-texture-features-for-the-prediction-of-radiation-induced-lung-disease/
 ---
 
 2017 ASTRO annual meeting

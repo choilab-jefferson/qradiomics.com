@@ -15,6 +15,8 @@ tags:
   - "pulmonary"
   - "quantitative-image-feature"
   - "voxel"
+aliases:
+  - /2014/10/02/pulmonary-nodule-detection-using-voxel-classification-in-lung-ct-images/
 ---
 
 {{< slideshare id="39782549" >}}

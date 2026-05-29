@@ -17,6 +17,8 @@ tags:
   - "quantitative-image-feature"
   - "radiomics"
   - "radiotherapy"
+aliases:
+  - /2016/03/10/image-processing-in-lung-cancer-screening-and-treatment/
 ---
 
 Invited talk in GIST, Nov 2014

@@ -16,6 +16,8 @@ tags:
   - "nodule"
   - "pulmonary"
   - "quantitative-image-feature"
+aliases:
+  - /2014/10/02/computer-aided-detection-of-pulmonary-nodules-using-genetic-programming/
 ---
 
 2010 IEEE ICIP

@@ -1,6 +1,8 @@
 ---
 title: "QuaLIA CAD"
 date: "2016-01-11T21:29:41.000-05:00"
+aliases:
+  - /portfolio/qualia-cad/
 ---
 
 > ⚠️ **This project is no longer maintained.** It has been superseded by [qradiomics](/projects/2026-05-17-qradiomics/), which provides a unified modern Python implementation.

@@ -22,6 +22,8 @@ tags:
   - "screening"
   - "spiculation"
   - "svm"
+aliases:
+  - /2018/10/01/radiomics-in-lung-cancer/
 ---
 
 {{< slideshare id="117684751" >}}

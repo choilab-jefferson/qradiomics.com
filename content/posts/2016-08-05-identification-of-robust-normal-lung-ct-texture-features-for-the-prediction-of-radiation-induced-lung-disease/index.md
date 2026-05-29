@@ -14,6 +14,8 @@ tags:
   - "radiomics"
   - "radiotherapy"
   - "robustness"
+aliases:
+  - /2016/08/05/identification-of-robust-normal-lung-ct-texture-features-for-the-prediction-of-radiation-induced-lung-disease/
 ---
 
 2016 AAPM annual meeting

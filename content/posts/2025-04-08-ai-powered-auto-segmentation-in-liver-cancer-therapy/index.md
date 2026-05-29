@@ -16,6 +16,8 @@ tags:
   - "selective-internal-radiation-therapy"
   - "sirt"
   - "yttrium-90"
+aliases:
+  - /2025/04/08/ai-powered-auto-segmentation-in-liver-cancer-therapy/
 ---
 
 We’re excited to share our latest work published in _Technology in Cancer Research & Treatment_: **“Deep Learning-Based Auto-Segmentation for Liver Yttrium-90 Selective Internal Radiation Therapy”** — a collaboration between Jun Li, Rani Anne, and myself.

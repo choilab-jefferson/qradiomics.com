@@ -18,6 +18,8 @@ tags:
   - "radiomics"
   - "radiotherapy"
   - "svm"
+aliases:
+  - /2018/06/21/480/
 ---
 
 {{< slideshare id="117684751" >}}

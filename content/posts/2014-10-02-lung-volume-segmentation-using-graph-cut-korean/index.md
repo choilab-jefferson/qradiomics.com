@@ -15,6 +15,8 @@ tags:
   - "segmentation"
   - "volume"
   - "volume-segmentation"
+aliases:
+  - /2014/10/02/lung-volume-segmentation-using-graph-cut-korean/
 ---
 
 {{< slideshare id="39782556" >}}

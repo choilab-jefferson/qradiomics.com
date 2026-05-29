@@ -16,6 +16,8 @@ tags:
   - "pancreatic-ductal-adenocarcinoma"
   - "pda"
   - "radiotherapy"
+aliases:
+  - /2016/09/21/individually-optimized-contrast-enhanced-4d-ct-for-radiotherapy-simulation-in-pancreatic-adenocarcinoma/
 ---
 
 2016 ASTRO annual meeting This poster has been selected for the ARRO poster walk (6 out of 250 physics posters).

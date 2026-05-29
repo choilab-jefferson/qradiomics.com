@@ -14,6 +14,8 @@ tags:
   - "Geant4"
   - "DICOM"
   - "Radiomics"
+aliases:
+  - /2026/05/24/announcing-gemini-gem-for-computational-medical-physics/
 ---
 
 We are excited to share the release of a specialized **Gemini Gem** designed specifically for **Computational Medical Physicists**. This AI agent acts as a knowledgeable co-pilot for research, computational modeling, dosimetry, and medical image computing.

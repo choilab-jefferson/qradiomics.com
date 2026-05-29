@@ -16,6 +16,8 @@ cover:
   image: "images/scene_16_02318.jpg"
   alt: ""
   relative: true
+aliases:
+  - /2021/02/01/fourth-place-winner-on-ai-tracks-at-sea-challenge/
 ---
 
 We won 4th place in the Artificial Intelligence (AI) Tracks at Sea Challenge. [https://www.challenge.gov/?challenge=ai-tracks-at-sea](https://www.challenge.gov/?challenge=ai-tracks-at-sea)  
