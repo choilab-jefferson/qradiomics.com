@@ -1,0 +1,14 @@
+/* Invert black/dark icons in dark mode to make them visible on a dark background */
+html[data-theme='dark'] .profile-icons img[alt="GitHub"],
+html[data-theme='dark'] .profile-icons img[alt="CV"],
+html[data-theme='dark'] .profile-icons img[alt="Academic Tree"] {
+    filter: invert(1) brightness(1.2);
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme='light']) .profile-icons img[alt="GitHub"],
+    html:not([data-theme='light']) .profile-icons img[alt="CV"],
+    html:not([data-theme='light']) .profile-icons img[alt="Academic Tree"] {
+        filter: invert(1) brightness(1.2);
+    }
+}
