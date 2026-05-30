@@ -62,18 +62,18 @@ def main():
     square_logo = Image.new('RGBA', (C, C), (0, 0, 0, 0))
 
     # Scale components for perfect visual balance in a square layout
-    # - Q body: height of 90 pixels (64 width) centered at top
-    q_scaled = q_cropped.resize((64, 90), resample_filter)
-    # - Right half (ualia + swoosh + dots): width of 180 pixels (131 height) centered at bottom
-    r_scaled = right_cropped.resize((180, 131), resample_filter)
+    # - Q body is massive (101x140) to dominate as the hero emblem
+    q_scaled = q_cropped.resize((101, 140), resample_filter)
+    # - Right half (ualia + swoosh + dots) is compact (120x87) at the bottom
+    r_scaled = right_cropped.resize((120, 87), resample_filter)
 
     # Paste components onto the square canvas
     q_x = (C - q_scaled.width) // 2
-    q_y = 15
+    q_y = 10
     square_logo.paste(q_scaled, (q_x, q_y))
 
     r_x = (C - r_scaled.width) // 2
-    r_y = 110
+    r_y = 10 + 140 + 8
     square_logo.paste(r_scaled, (r_x, r_y))
 
     # Save the master square logo
