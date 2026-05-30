@@ -43,50 +43,23 @@ def main():
     q_cropped = q_canvas.crop(bbox)
     w, h = q_cropped.size
 
-    # 3. Calculate the centroid of the main circle of the Q (defined as original x < 36)
-    # The crop starts at bbox[0], so the circle limit in cropped coordinates is 36 - bbox[0]
-    circle_limit = 36 - bbox[0]
-    cropped_pixels = q_cropped.load()
+    # 3. Calculate circle dimensions inside q_cropped
+    # The circle's bounding box in original logo is x: [0, 36], y: [11, 72].
+    # bbox[0] and bbox[1] are the top-left of q_cropped.
+    circle_w = 36 - bbox[0]
+    circle_h = 72 - bbox[1]
 
-    sum_x, sum_y, count = 0, 0, 0
-    for y_c in range(h):
-        for x_c in range(w):
-            r_c, g_c, b_c, a_c = cropped_pixels[x_c, y_c]
-            # Consider pixels with significant opacity for centroid calculation
-            if a_c > 50 and x_c < circle_limit:
-                sum_x += x_c
-                sum_y += y_c
-                count += 1
+    # 4. Create a square canvas where the Q's circle body is maximized and perfectly centered.
+    # We choose C = 64 to ensure the circle body occupies ~95% of the canvas height (very large and prominent).
+    C = 64
+    q_final = Image.new('RGBA', (C, C), (0, 0, 0, 0))
 
-    if count > 0:
-        centroid_x = sum_x / count
-        centroid_y = sum_y / count
-    else:
-        # Fallback to visual center if circle not segmented
-        centroid_x = w / 2.0
-        centroid_y = h / 2.0
+    # Center the circle in the canvas
+    offset_x = (C - circle_w) // 2
+    offset_y = (C - circle_h) // 2
 
-    # 4. Create a square canvas where the Q's circle centroid is perfectly in the center.
-    # To prevent any part of the image from being clipped, the radius of the canvas
-    # must be at least the maximum distance from the centroid to any of the image boundaries.
-    max_dist = max(
-        centroid_x,
-        w - centroid_x,
-        centroid_y,
-        h - centroid_y
-    )
-    C = int(max_dist * 2) + 4  # Perfect square canvas dimension
-
-    centered_canvas = Image.new('RGBA', (C, C), (0, 0, 0, 0))
-    offset_x = int(C / 2 - centroid_x)
-    offset_y = int(C / 2 - centroid_y)
-    centered_canvas.paste(q_cropped, (offset_x, offset_y))
-
-    # 5. Add 12% padding for visual breathing room and professional floating appearance
-    padding = int(C * 0.12)
-    padded_dim = C + padding * 2
-    q_final = Image.new('RGBA', (padded_dim, padded_dim), (0, 0, 0, 0))
-    q_final.paste(centered_canvas, (padding, padding))
+    # Paste the cropped image at the offset (allowing the tail to extend and fade beautifully at the boundaries)
+    q_final.paste(q_cropped, (offset_x, offset_y))
 
     # Determine Resampling filter (compatibility across PIL versions)
     try:
@@ -94,7 +67,7 @@ def main():
     except AttributeError:
         resample_filter = Image.LANCZOS
 
-    # 6. Generate and save the icons
+    # 5. Generate and save the icons
     # 16x16 PNG
     fav_16 = q_final.resize((16, 16), resample_filter)
     fav_16.save('static/favicon-16x16.png', 'PNG')
