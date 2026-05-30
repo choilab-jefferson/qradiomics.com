@@ -11,80 +11,94 @@ def main():
     width, height = logo.size
     pixels = logo.load()
 
-    # 1. Segment orange pixels for the Q and its tail (limit to x < 52)
-    max_x = 52
-    fade_start = 42
-    q_canvas = Image.new('RGBA', (max_x, height), (0, 0, 0, 0))
-    q_pixels = q_canvas.load()
-
-    for y in range(height):
-        for x in range(max_x):
-            if x < width:
-                r, g, b, a = pixels[x, y]
-                # Segment orange vs gray
-                dist_orange = (r - 243)**2 + (g - 152)**2 + (b - 0)**2
-                dist_gray = (r - 123)**2 + (g - 122)**2 + (b - 119)**2
-                if a > 0 and dist_orange < dist_gray:
-                    # Apply a smooth horizontal fade-out for x >= fade_start to taper the tail
-                    if x >= fade_start:
-                        factor = 1.0 - (x - fade_start) / (max_x - fade_start)
-                        new_a = int(a * factor)
-                    else:
-                        new_a = a
-                    
-                    if new_a > 0:
-                        q_pixels[x, y] = (r, g, b, new_a)
-
-    # 2. Crop to the active bounding box
-    bbox = q_canvas.getbbox()
-    if not bbox:
-        print("Error: Failed to find Q shape in segmentation.")
-        return
-    q_cropped = q_canvas.crop(bbox)
-    w, h = q_cropped.size
-
-    # 3. Calculate circle dimensions inside q_cropped
-    # The circle's bounding box in original logo is x: [0, 36], y: [11, 72].
-    # bbox[0] and bbox[1] are the top-left of q_cropped.
-    circle_w = 36 - bbox[0]
-    circle_h = 72 - bbox[1]
-
-    # 4. Create a square canvas where the Q's circle body is maximized and perfectly centered.
-    # We choose C = 64 to ensure the circle body occupies ~95% of the canvas height (very large and prominent).
-    C = 64
-    q_final = Image.new('RGBA', (C, C), (0, 0, 0, 0))
-
-    # Center the circle in the canvas
-    offset_x = (C - circle_w) // 2
-    offset_y = (C - circle_h) // 2
-
-    # Paste the cropped image at the offset (allowing the tail to extend and fade beautifully at the boundaries)
-    q_final.paste(q_cropped, (offset_x, offset_y))
-
     # Determine Resampling filter (compatibility across PIL versions)
     try:
         resample_filter = Image.Resampling.LANCZOS
     except AttributeError:
         resample_filter = Image.LANCZOS
 
-    # 5. Generate and save the icons
+    # 1. Crop and segment the orange Q (x < 44, short tail with fade-out from x=36)
+    q_canvas = Image.new('RGBA', (44, height), (0, 0, 0, 0))
+    q_pixels = q_canvas.load()
+    for y in range(height):
+        for x in range(44):
+            if x < width:
+                r, g, b, a = pixels[x, y]
+                # Segment orange vs gray
+                dist_orange = (r - 243)**2 + (g - 152)**2 + (b - 0)**2
+                dist_gray = (r - 123)**2 + (g - 122)**2 + (b - 119)**2
+                if a > 0 and dist_orange < dist_gray:
+                    if x >= 36:
+                        factor = 1.0 - (x - 36) / (44 - 36)
+                        new_a = int(a * factor)
+                    else:
+                        new_a = a
+                    if new_a > 0:
+                        q_pixels[x, y] = (r, g, b, new_a)
+
+    bbox_q = q_canvas.getbbox()
+    if not bbox_q:
+        print("Error: Q bounding box not found.")
+        return
+    q_cropped = q_canvas.crop(bbox_q)
+
+    # 2. Crop and segment the right half (x >= 36: gray 'ualia' text + orange swoosh/dots)
+    right_canvas = Image.new('RGBA', (width - 36, height), (0, 0, 0, 0))
+    right_pixels = right_canvas.load()
+    for y in range(height):
+        for x in range(36, width):
+            r, g, b, a = pixels[x, y]
+            if a > 0:
+                right_pixels[x - 36, y] = (r, g, b, a)
+
+    bbox_r = right_canvas.getbbox()
+    if not bbox_r:
+        print("Error: Right half bounding box not found.")
+        return
+    right_cropped = right_canvas.crop(bbox_r)
+
+    # 3. Construct a high-resolution 256x256 square logo
+    C = 256
+    square_logo = Image.new('RGBA', (C, C), (0, 0, 0, 0))
+
+    # Scale components for perfect visual balance in a square layout
+    # - Q body: height of 90 pixels (64 width) centered at top
+    q_scaled = q_cropped.resize((64, 90), resample_filter)
+    # - Right half (ualia + swoosh + dots): width of 180 pixels (131 height) centered at bottom
+    r_scaled = right_cropped.resize((180, 131), resample_filter)
+
+    # Paste components onto the square canvas
+    q_x = (C - q_scaled.width) // 2
+    q_y = 15
+    square_logo.paste(q_scaled, (q_x, q_y))
+
+    r_x = (C - r_scaled.width) // 2
+    r_y = 110
+    square_logo.paste(r_scaled, (r_x, r_y))
+
+    # Save the master square logo
+    square_logo_path = 'static/qualia-logo-square.png'
+    square_logo.save(square_logo_path, 'PNG')
+    print(f"Generated and saved {square_logo_path}")
+
+    # 4. Generate and save the favicons from the master square logo
     # 16x16 PNG
-    fav_16 = q_final.resize((16, 16), resample_filter)
+    fav_16 = square_logo.resize((16, 16), resample_filter)
     fav_16.save('static/favicon-16x16.png', 'PNG')
     print("Saved static/favicon-16x16.png")
 
     # 32x32 PNG
-    fav_32 = q_final.resize((32, 32), resample_filter)
+    fav_32 = square_logo.resize((32, 32), resample_filter)
     fav_32.save('static/favicon-32x32.png', 'PNG')
     print("Saved static/favicon-32x32.png")
 
     # Apple Touch Icon (180x180 PNG)
-    apple_icon = q_final.resize((180, 180), resample_filter)
+    apple_icon = square_logo.resize((180, 180), resample_filter)
     apple_icon.save('static/apple-touch-icon.png', 'PNG')
     print("Saved static/apple-touch-icon.png")
 
     # Multi-size ICO (16x16, 32x32, 48x48)
-    fav_padded_for_ico = q_final.resize((256, 256), resample_filter)
+    fav_padded_for_ico = square_logo.resize((256, 256), resample_filter)
     fav_padded_for_ico.save(
         'static/favicon.ico',
         format='ICO',
