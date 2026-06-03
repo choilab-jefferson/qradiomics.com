@@ -213,6 +213,16 @@ qr workflow run plan.json
 
 The plan is plain JSON/YAML — agents can read, mutate, and re-run without re-templating.
 
+## Agentic Radiomics: Beyond the CLI
+
+As the field of medical physics shifts towards AI-driven automation, `qradiomics` is designed to be more than just a tool for humans; it is built to be the **engine for a Radiomics Agent**.
+
+### Why qradiomics is "Agent-Ready":
+*   **Structured I/O:** Every command supports JSON output, allowing LLM-based agents to parse results and make autonomous decisions.
+*   **Workflow Scaffolding:** Agents can generate complex Nextflow or Snakemake pipelines by simply describing the desired study design in natural language.
+*   **Self-Correction:** If a feature extraction fails due to DICOM header inconsistencies, the CLI provides structured error codes that an AI agent can use to suggest (or apply) data cleaning fixes.
+*   **Integration with Gemini Gems:** Our specialized [Medical Physics Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/) is pre-trained on `qradiomics` syntax, acting as a high-level **Radiomics Agent** that can write and execute your research code.
+
 ## Reproducibility — Published Paper Results
 
 Full report: [`reports/reproducibility.md`](https://github.com/choilab-jefferson/qradiomics/blob/main/reports/reproducibility.md) · version 2.0 · last updated 2026-05-19
