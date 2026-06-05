@@ -84,6 +84,8 @@ params:
       url: "https://scholar.google.com/citations?user=iHgsGLUAAAAJ"
     - name: orcid
       url: "https://orcid.org/0000-0001-8038-5876"
+    - name: slack
+      url: "https://radiomics.slack.com/"
     - name: email
       url: "mailto:Wookjin.Choi@jefferson.edu"
 

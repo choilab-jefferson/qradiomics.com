@@ -46,3 +46,4 @@ Our research is translated in close collaboration with clinical colleagues at th
 * **Email:** [Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu)
 * **GitHub Organization:** [choilab-jefferson](https://github.com/choilab-jefferson)
 * **Notion Workspace:** [Wookjin's Notion Workspace](https://choiw.notion.site/)
+* **Slack Workspace:** [radiomics.slack.com](https://radiomics.slack.com/)
