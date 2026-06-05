@@ -61,7 +61,7 @@ params:
       MR-guided adaptive radiotherapy (MRI-Linac) · Pancreatic / hepatic / head-and-neck cancer imaging ·
       Interpretable deep learning (PathCNN, CIRDataset, Spiculation).
 
-      → [**Profile & CV**](/profile/) · [**Posts**](/posts/) · [**Open-source projects**](/projects/)
+      → [**About the Lab**](/about/) · [**QRadiomics CLI**](/qradiomics/) · [**Blog & News**](/posts/) · [**Director Profile**](/profile/)
 
   cover:
     responsiveImages: true
@@ -97,16 +97,20 @@ menu:
       name: Home
       url: /
       weight: 10
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 12
     - identifier: qradiomics
       name: QRadiomics
       url: /qradiomics/
       weight: 15
     - identifier: posts
-      name: Posts
+      name: Blog & News
       url: /posts/
       weight: 20
     - identifier: profile
-      name: Profile
+      name: Director
       url: /profile/
       weight: 30
     - identifier: projects
