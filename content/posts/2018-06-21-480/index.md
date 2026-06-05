@@ -20,6 +20,7 @@ tags:
   - "svm"
 aliases:
   - /2018/06/21/480/
+description: "Sep 17, 2018 May 21, 2018"
 ---
 
 {{< slideshare id="117684751" >}}

@@ -24,6 +24,7 @@ tags:
   - "svm"
 aliases:
   - /2018/10/01/radiomics-in-lung-cancer/
+description: "Read about Radiomics in Lung Cancer and other research topics from Wookjin Choi at Choi Lab Jefferson."
 ---
 
 {{< slideshare id="117684751" >}}

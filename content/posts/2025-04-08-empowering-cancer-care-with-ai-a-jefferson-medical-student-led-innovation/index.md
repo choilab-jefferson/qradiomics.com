@@ -16,6 +16,7 @@ tags:
   - "recommendation"
 aliases:
   - /2025/04/08/empowering-cancer-care-with-ai-a-jefferson-medical-student-led-innovation/
+description: "I’m excited to share a new collaborative study I had the privilege of co authoring, which was recently published in Nutrients . Led by Jefferson medical..."
 ---
 
 I’m excited to share a new collaborative study I had the privilege of co-authoring, which was recently published in _Nutrients_. Led by Jefferson medical student **Julia Logan**, this work explores how large language models (LLMs) like ChatGPT and Gemini can deliver accessible, culturally sensitive dietary advice to cancer patients—many of whom lack access to professional nutritional counseling due to insurance limitations or socioeconomic barriers.

@@ -4,6 +4,7 @@ date: "2026-05-20T22:00:40.000-04:00"
 lastmod: "2026-05-20T22:00:40.000-04:00"
 aliases:
   - /portfolio/open-source-projects/
+description: "This page summarizes active and legacy open source projects from Choi Lab. Active qradiomics Unified Python radiomics CLI and library for end to end..."
 ---
 
 This page summarizes active and legacy open-source projects from Choi Lab.

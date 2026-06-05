@@ -15,6 +15,7 @@ tags:
   - "shape-from-focus"
 aliases:
   - /2014/10/02/previous-works/
+description: "Automatic Pulmonary Nodule Detection https://www.youtube.com/watch?v=1rbdBf\ USo Three dimensional shape reconstruction from auto focused microscopic image"
 ---
 
 - Automatic Pulmonary Nodule Detection

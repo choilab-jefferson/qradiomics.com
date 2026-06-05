@@ -30,6 +30,7 @@ cover:
   relative: true
 aliases:
   - /2017/08/01/aggressive-lung-adenocarcinoma-subtype-prediction-using-fdg-petct-radiomics/
+description: "This paper has been published in the Computational and Structural Biotechnology Journal. Preoperative 18F FDG PET/CT and CT radiomics for identifying..."
 ---
 
 This paper has been published in the Computational and Structural Biotechnology Journal.

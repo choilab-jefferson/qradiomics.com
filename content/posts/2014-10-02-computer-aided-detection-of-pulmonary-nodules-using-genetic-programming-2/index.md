@@ -19,6 +19,7 @@ tags:
   - "quantitative-image-feature"
 aliases:
   - /2014/10/02/computer-aided-detection-of-pulmonary-nodules-using-genetic-programming-2/
+description: "Read about Computer aided detection of pulmonary nodules using genetic programming and other research topics from Wookjin Choi at Choi Lab Jefferson."
 ---
 
 {{< slideshare id="39782554" >}}

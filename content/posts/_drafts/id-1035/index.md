@@ -3,6 +3,7 @@ title: "Novel AI-Based Dose Prediction Directly from Diagnostic PET/CT: Applicat
 categories: 
   - "research"
 draft: true
+description: "[](https://www.slideshare.net/secret/p4QoTwDiErTC8S)"
 ---
 
 [](https://www.slideshare.net/secret/p4QoTwDiErTC8S)

@@ -29,9 +29,10 @@ cover:
   relative: true
 aliases:
   - /2026/05/20/introducing-qradiomics/
+description: "Introducing qradiomics, a unified Python CLI and library to automate radiomics research pipelines from DICOM to published-grade survival models."
 ---
 
-Today, we are thrilled to announce the official release of **[qradiomics](https://github.com/choilab-jefferson/qradiomics)** — an open-source Command Line Interface (CLI) and **agent-friendly orchestrator** designed to bring reproducibility, scalability, and AI-driven automation to the world of radiomics research.
+Today, we are thrilled to announce the official release of **[qradiomics](https://github.com/choilab-jefferson/qradiomics)** — an open-source Command Line Interface (CLI) and **agent-friendly orchestrator** designed to bring reproducibility, scalability, and AI-driven automation to the world of radiomics research. It is also available on PyPI at [pypi.org/project/qradiomics](https://pypi.org/project/qradiomics/).
 
 ## What is qradiomics?
 
@@ -95,8 +96,8 @@ The same pipeline has been validated end-to-end on TCIA data:
 ## Get started
 
 ```bash
-# Install
-pip install -e .[rtstruct]
+# Install from PyPI
+pip install qradiomics[rtstruct]
 
 # One-liner smoke test (synthetic data, no download required)
 python scripts/smoke.py

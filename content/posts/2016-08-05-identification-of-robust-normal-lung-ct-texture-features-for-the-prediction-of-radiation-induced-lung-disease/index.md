@@ -16,6 +16,7 @@ tags:
   - "robustness"
 aliases:
   - /2016/08/05/identification-of-robust-normal-lung-ct-texture-features-for-the-prediction-of-radiation-induced-lung-disease/
+description: "2016 AAPM annual meeting http://onlinelibrary.wiley.com/doi/10.1118/1.4955803/abstract"
 ---
 
 2016 AAPM annual meeting

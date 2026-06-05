@@ -24,6 +24,7 @@ cover:
   relative: true
 aliases:
   - /2023/09/11/novel-functional-delta-radiomics-for-predicting-overall-survival-in-lung-cancer-radiotherapy-using-cardiac-fdg-pet-uptake/
+description: "Our paper “Novel Functional Radiomics for Prediction of Cardiac Positron Emission Tomography Avidity in Lung Cancer Radiotherapy” has been published in..."
 ---
 
 Our paper **“Novel Functional Radiomics for Prediction of Cardiac Positron Emission Tomography Avidity in Lung Cancer Radiotherapy”** has been published in [JCO CCI](https://ascopubs.org/doi/10.1200/CCI.23.00241). This research work delves into an innovative approach to predict clinical cardiac assessment using functional imaging.

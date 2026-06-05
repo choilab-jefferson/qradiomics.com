@@ -5,6 +5,7 @@ categories:
   - "research"
 aliases:
   - /2016/08/05/estimate-peak-enhancement-time/
+description: "This video clip shows how to estimate peak enhancement time by using the test injection technique. W Choi et al. Individually Optimized Contrast Enhanced..."
 ---
 
 This video clip shows how to estimate peak enhancement time by using the test injection technique.

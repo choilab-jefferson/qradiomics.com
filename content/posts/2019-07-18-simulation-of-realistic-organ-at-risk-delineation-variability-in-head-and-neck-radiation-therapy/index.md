@@ -14,6 +14,7 @@ tags:
   - "variablility"
 aliases:
   - /2019/07/18/simulation-of-realistic-organ-at-risk-delineation-variability-in-head-and-neck-radiation-therapy/
+description: "Read about Simulation of Realistic Organ-At-Risk Delineation Variability in Head and Neck Radiation Therapy and other research topics from Wookjin Choi at..."
 ---
 
 {{< slideshare id="156336028" >}}

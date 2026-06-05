@@ -18,6 +18,7 @@ tags:
   - "quantitative-image-feature"
 aliases:
   - /2014/10/02/computer-aided-detection-of-pulmonary-nodules-using-genetic-programming/
+description: "2010 IEEE ICIP"
 ---
 
 2010 IEEE ICIP

@@ -6,6 +6,7 @@ categories:
   - "slides"
 aliases:
   - /2017/08/03/radiomics-analysis-of-pulmonary-nodules-in-low-dose-ct-for-early-detection-of-lung-cancer/
+description: "2017 AAPM annual meeting http://www.aapm.org/meetings/2017AM/PRAbs.asp?mid=127&aid=36486"
 ---
 
 2017 AAPM annual meeting

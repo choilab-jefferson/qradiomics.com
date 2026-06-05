@@ -19,6 +19,7 @@ tags:
   - "quantitative-image-feature"
 aliases:
   - /2014/10/02/computer-aided-detection-of-pulmonary-nodules-using-genetic-programming-korean/
+description: "Read about Computer-aided Detection of Pulmonary Nodules using Genetic Programming (Korean) and other research topics from Wookjin Choi at Choi Lab..."
 ---
 
 {{< slideshare id="39782552" >}}

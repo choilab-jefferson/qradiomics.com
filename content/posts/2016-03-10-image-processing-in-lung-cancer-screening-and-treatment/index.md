@@ -19,6 +19,7 @@ tags:
   - "radiotherapy"
 aliases:
   - /2016/03/10/image-processing-in-lung-cancer-screening-and-treatment/
+description: "Invited talk in GIST, Nov 2014"
 ---
 
 Invited talk in GIST, Nov 2014

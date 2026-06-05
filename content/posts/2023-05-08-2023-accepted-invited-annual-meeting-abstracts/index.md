@@ -23,6 +23,7 @@ tags:
   - "toxicity"
 aliases:
   - /2023/05/08/2023-accepted-invited-annual-meeting-abstracts/
+description: "AAPM Annual Meeting (Houston, TX • July 23 ‒ 27, 2023) 1. Novel Functional Delta Radiomics for Predicting Overall Survival in Lung Cancer Radiotherapy..."
 ---
 
 - AAPM Annual Meeting (Houston, TX • July 23 ‒ 27, 2023)

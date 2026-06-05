@@ -12,6 +12,7 @@ tags:
   - "object-detection"
 aliases:
   - /2020/11/17/automatic-motion-tracking-system-for-analysis-of-insect-behavior/
+description: "Darrin Gladman, Jehu Osegbe, Wookjin Choi\ , and Joon Suk Lee 'Automatic motion tracking system for analysis of insect behavior', Proc. SPIE 11510,..."
 ---
 
 Darrin Gladman, Jehu Osegbe, Wookjin Choi\*, and Joon Suk Lee "Automatic motion tracking system for analysis of insect behavior", Proc. SPIE 11510, Applications of Digital Image Processing XLIII, 115102W (21 August 2020); [https://doi.org/10.1117/12.2568804](https://doi.org/10.1117/12.2568804)

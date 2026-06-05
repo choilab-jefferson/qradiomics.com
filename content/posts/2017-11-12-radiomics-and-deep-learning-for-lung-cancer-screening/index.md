@@ -13,6 +13,7 @@ tags:
   - "radiomics"
 aliases:
   - /2017/11/12/radiomics-and-deep-learning-for-lung-cancer-screening/
+description: "KOCSEA Technical Symposium 2017, Invited Talk, KSEA Travel Grant"
 ---
 
 KOCSEA Technical Symposium 2017, Invited Talk, KSEA Travel Grant

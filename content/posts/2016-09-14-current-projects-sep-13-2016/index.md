@@ -26,6 +26,7 @@ tags:
   - "therapy-response"
 aliases:
   - /2016/09/14/current-projects-sep-13-2016/
+description: "Read about Current Projects - Sep 13, 2016 and other research topics from Wookjin Choi at Choi Lab Jefferson."
 ---
 
 {{< slideshare id="66003783" >}}

@@ -17,6 +17,7 @@ tags:
   - "texture"
 aliases:
   - /2017/10/02/robust-normal-lung-ct-texture-features-for-the-prediction-of-radiation-induced-lung-disease/
+description: "2017 ASTRO annual meeting http://www.redjournal.org/article/S0360 3016(17)31540 7/fulltext"
 ---
 
 2017 ASTRO annual meeting

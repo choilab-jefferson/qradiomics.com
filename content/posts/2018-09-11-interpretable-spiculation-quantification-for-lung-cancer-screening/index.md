@@ -21,6 +21,7 @@ tags:
   - "svm"
 aliases:
   - /2018/09/11/interpretable-spiculation-quantification-for-lung-cancer-screening/
+description: "UKC2018 Aug 4, 2018 MSKCC Postdoctoral Research Symposium Sep 28, 2018 https://twitter.com/arxiv\ org/status/1034746650089021445 Presented at MICCAI..."
 ---
 
 {{< slideshare id="108846563" >}}

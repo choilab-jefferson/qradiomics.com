@@ -19,6 +19,7 @@ tags:
   - "therapy-response"
 aliases:
   - /2015/09/15/quantitative-image-feature-analysis-of-multiphase-liver-ct-for-hepatocellular-carcinoma-hcc-in-radiation-therapy/
+description: "2015 AAPM annual meeting"
 ---
 
 2015 AAPM annual meeting

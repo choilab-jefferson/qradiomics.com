@@ -17,6 +17,7 @@ tags:
   - "volume-segmentation"
 aliases:
   - /2014/10/02/lung-volume-segmentation-using-graph-cut-korean/
+description: "Read about Lung Volume Segmentation using Graph-Cut (Korean) and other research topics from Wookjin Choi at Choi Lab Jefferson."
 ---
 
 {{< slideshare id="39782556" >}}

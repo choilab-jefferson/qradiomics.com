@@ -23,6 +23,7 @@ tags:
   - "shape-based-feature-descriptor"
 aliases:
   - /2014/10/02/automatic-detection-of-pulmonary-nodules-in-lung-ct-images/
+description: "Read about Automatic detection of pulmonary nodules in lung CT images and other research topics from Wookjin Choi at Choi Lab Jefferson."
 ---
 
 {{< slideshare id="39782110" >}}

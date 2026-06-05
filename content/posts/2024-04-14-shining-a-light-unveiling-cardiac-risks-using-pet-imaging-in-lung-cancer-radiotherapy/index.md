@@ -16,6 +16,7 @@ tags:
   - "toxicity"
 aliases:
   - /2024/04/14/shining-a-light-unveiling-cardiac-risks-using-pet-imaging-in-lung-cancer-radiotherapy/
+description: "Our study on cardiac toxicity in lung cancer treatment is now featured in a JCO CCI editorial. Discoveries that could change patient care are on the..."
 ---
 
 [Our study on cardiac toxicity in lung cancer treatment](https://qradiomics.com/2023/09/11/novel-functional-delta-radiomics-for-predicting-overall-survival-in-lung-cancer-radiotherapy-using-cardiac-fdg-pet-uptake/) is now featured in a JCO CCI editorial. Discoveries that could change patient care are on the horizon. Stay tuned! [#CardiacToxicity](https://www.facebook.com/hashtag/cardiactoxicity?__eep__=6&__cft__[0]=AZVYuNlW1e31uhubkm-E3LkIOc41m_6ws0yeRNQoHoAAfTj9Hi9QyM7eqtYciuE7xVVbG3IeS9lMJZhc5vQuwAwe0Fl1ZEUTpwq3BaIuLOCTmwRfO-88Vg_sIQhl-_kK66nRPi2gNlTw28c-8Pz83HiJDqqdY9Q4k3WScrfQ5YYTpw&__tn__=*NK-R)[#LungCancer](https://www.facebook.com/hashtag/lungcancer?__eep__=6&__cft__[0]=AZVYuNlW1e31uhubkm-E3LkIOc41m_6ws0yeRNQoHoAAfTj9Hi9QyM7eqtYciuE7xVVbG3IeS9lMJZhc5vQuwAwe0Fl1ZEUTpwq3BaIuLOCTmwRfO-88Vg_sIQhl-_kK66nRPi2gNlTw28c-8Pz83HiJDqqdY9Q4k3WScrfQ5YYTpw&__tn__=*NK-R)[#Innovation](https://www.facebook.com/hashtag/innovation?__eep__=6&__cft__[0]=AZVYuNlW1e31uhubkm-E3LkIOc41m_6ws0yeRNQoHoAAfTj9Hi9QyM7eqtYciuE7xVVbG3IeS9lMJZhc5vQuwAwe0Fl1ZEUTpwq3BaIuLOCTmwRfO-88Vg_sIQhl-_kK66nRPi2gNlTw28c-8Pz83HiJDqqdY9Q4k3WScrfQ5YYTpw&__tn__=*NK-R)

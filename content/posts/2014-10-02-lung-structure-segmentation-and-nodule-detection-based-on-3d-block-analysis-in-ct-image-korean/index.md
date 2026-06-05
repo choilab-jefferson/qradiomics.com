@@ -20,6 +20,7 @@ tags:
   - "segmentation"
 aliases:
   - /2014/10/02/lung-structure-segmentation-and-nodule-detection-based-on-3d-block-analysis-in-ct-image-korean/
+description: "Read about Lung structure segmentation and nodule detection based on 3D block analysis in CT image (Korean) and other research topics from Wookjin Choi at..."
 ---
 
 {{< slideshare id="39782550" >}}

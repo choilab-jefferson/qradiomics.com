@@ -3,6 +3,7 @@ title: "PathCNN"
 date: "2022-06-10T15:59:11.000-04:00"
 aliases:
   - /portfolio/pathcnn/
+description: "Interpretable convolutional neural networks for survival prediction and pathway analysis applied to glioblastoma Pathway image : Grid structure conversion..."
 ---
 
 Interpretable convolutional neural networks for survival prediction and pathway analysis applied to glioblastoma

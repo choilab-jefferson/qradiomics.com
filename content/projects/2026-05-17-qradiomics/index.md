@@ -20,9 +20,10 @@ tags:
   - "DICOM"
 aliases:
   - /portfolio/qradiomics/
+description: "qradiomics is an open-source CLI and library for reproducible radiomics research, supporting PyRadiomics, TCIA dataset automation, and survival analysis."
 ---
 
-**License:** MIT · **Python:** 3.11+ · **Version:** 0.9.0 · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)
+**License:** MIT · **Python:** 3.11+ · **Version:** 0.9.0 · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics) · **PyPI:** [qradiomics](https://pypi.org/project/qradiomics/)
 
 > **Active successor for three earlier Choi Lab radiomics codebases.** The C++/MATLAB pipelines in
 > [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools),
@@ -80,8 +81,15 @@ The AHSN shape descriptor pipeline (CMPB 2014) and the spiculation quantificatio
 ## Install
 
 ```bash
-pip install -e .            # core CLI + library
-pip install -e .[rtstruct]  # plus rt-utils for `qr convert rtstruct`
+pip install qradiomics            # core CLI + library from PyPI
+pip install qradiomics[rtstruct]  # plus rt-utils for `qr convert rtstruct`
+```
+
+Or for development (editable mode):
+```bash
+git clone https://github.com/choilab-jefferson/qradiomics.git
+cd qradiomics
+pip install -e .
 ```
 
 Python 3.11 or newer is required. PyRadiomics, SimpleITK, lifelines, scikit-learn, statsmodels, scipy, and pandas are pulled in as dependencies.

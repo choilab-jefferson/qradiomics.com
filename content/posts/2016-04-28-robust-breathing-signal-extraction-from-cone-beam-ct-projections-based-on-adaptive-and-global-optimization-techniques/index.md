@@ -13,6 +13,7 @@ tags:
   - "radiotherapy"
 aliases:
   - /2016/04/28/robust-breathing-signal-extraction-from-cone-beam-ct-projections-based-on-adaptive-and-global-optimization-techniques/
+description: "Read about Robust breathing signal extraction from cone beam CT projections based on adaptive and global optimization techniques and other research topics..."
 ---
 
 {{< slideshare id="61487038" >}}

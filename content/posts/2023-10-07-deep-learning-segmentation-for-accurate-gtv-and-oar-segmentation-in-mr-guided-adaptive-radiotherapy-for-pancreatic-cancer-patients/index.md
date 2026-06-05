@@ -19,6 +19,7 @@ tags:
   - "segmentation"
 aliases:
   - /2023/10/07/deep-learning-segmentation-for-accurate-gtv-and-oar-segmentation-in-mr-guided-adaptive-radiotherapy-for-pancreatic-cancer-patients/
+description: "AAPM 2023, ASTRO 2023"
 ---
 
 {{< slideshare id="260812562" >}}

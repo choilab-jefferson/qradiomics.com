@@ -16,6 +16,7 @@ tags:
   - "super-computer"
 aliases:
   - /2015/09/15/radiomics-novel-paradigm-of-deep-learning-for-clinical-decision-support-toward-plan-b-using-liquid-biopsy/
+description: "Read about Radiomics: Novel Paradigm of Deep Learning for Clinical Decision Support toward Plan B using Liquid Biopsy and other research topics from..."
 ---
 
 {{< slideshare id="52825938" >}}

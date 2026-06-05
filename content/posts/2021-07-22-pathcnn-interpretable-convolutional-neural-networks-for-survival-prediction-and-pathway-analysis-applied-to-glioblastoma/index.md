@@ -15,6 +15,7 @@ tags:
   - "survival"
 aliases:
   - /2021/07/22/pathcnn-interpretable-convolutional-neural-networks-for-survival-prediction-and-pathway-analysis-applied-to-glioblastoma/
+description: "Jung Hun Oh, Wookjin Choi, Euiseong Ko, Mingon Kang, Allen Tannenbaum, Joseph O Deasy The authors wish it to be known that, in their opinion, Jung Hun Oh..."
 ---
 
 Jung Hun Oh, Wookjin Choi, Euiseong Ko, Mingon Kang, Allen Tannenbaum, Joseph O Deasy

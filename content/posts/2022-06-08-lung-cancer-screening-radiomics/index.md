@@ -14,6 +14,7 @@ tags:
   - "radiomics"
 aliases:
   - /2022/06/08/lung-cancer-screening-radiomics/
+description: "A comprehensive framework for lung cancer screening radiomics using LIDC IDRI and LUNGx dataset. Data preprocessing download data, conversion, etc...."
 ---
 
 A comprehensive framework for lung cancer screening radiomics using LIDC-IDRI and LUNGx dataset.

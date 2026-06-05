@@ -15,6 +15,7 @@ tags:
   - "video-clip"
 aliases:
   - /2016/07/03/concept-of-target-volumes/
+description: "Dr. Jin Sung Kim introduced an insightful video clip to give you a better understanding of target volumes for moving target in radiation therapy. This..."
 ---
 
 [Dr. Jin Sung Kim](http://mpjinsung.tistory.com/) introduced an insightful video clip to give you a better understanding of target volumes for moving target in radiation therapy. This clip visualize a concept of moving target volume which was reported by Wolthaus et al., 2006.

@@ -18,6 +18,7 @@ cover:
   relative: true
 aliases:
   - /2024/06/27/the-nexus-featured-our-cardiac-pet-radiomics-study/
+description: "Jefferson Investigates: Artificial Intelligence and Heart Disease — The Nexus Machine learning uses lung cancer scans to predict heart damage —..."
 ---
 
 [Jefferson Investigates: Artificial Intelligence and Heart Disease — The Nexus](https://nexus.jefferson.edu/science-and-technology/jefferson-investigates-artificial-intelligence-and-heart-disease-prenatal-drug-use-and-adhd-and-potassium-channels-and-neurological-disease/#lung-scans)

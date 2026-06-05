@@ -18,6 +18,7 @@ tags:
   - "yttrium-90"
 aliases:
   - /2025/04/08/ai-powered-auto-segmentation-in-liver-cancer-therapy/
+description: "We’re excited to share our latest work published in Technology in Cancer Research & Treatment : “Deep Learning Based Auto Segmentation for Liver Yttrium..."
 ---
 
 We’re excited to share our latest work published in _Technology in Cancer Research & Treatment_: **“Deep Learning-Based Auto-Segmentation for Liver Yttrium-90 Selective Internal Radiation Therapy”** — a collaboration between Jun Li, Rani Anne, and myself.

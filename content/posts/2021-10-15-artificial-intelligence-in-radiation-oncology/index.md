@@ -19,6 +19,7 @@ tags:
   - "radiotherapy"
 aliases:
   - /2021/10/15/artificial-intelligence-in-radiation-oncology/
+description: "Read about Artificial Intelligence in Radiation Oncology and other research topics from Wookjin Choi at Choi Lab Jefferson."
 ---
 
 {{< slideshare id="254222500" >}}
