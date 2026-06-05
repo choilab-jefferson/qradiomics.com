@@ -21,6 +21,7 @@ tags:
 aliases:
   - /portfolio/qradiomics/
 description: "qradiomics is an open-source CLI and library for reproducible radiomics research, supporting PyRadiomics, TCIA dataset automation, and survival analysis."
+schema: "software"
 ---
 
 **License:** MIT · **Python:** 3.11+ · **Version:** 0.9.1 · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics) · **PyPI:** [qradiomics](https://pypi.org/project/qradiomics/)

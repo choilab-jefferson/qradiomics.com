@@ -1,0 +1,24 @@
+{{- if eq .Params.schema "software" -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "qradiomics",
+  "operatingSystem": "Linux, macOS, Windows",
+  "applicationCategory": "ScientificApplication",
+  "softwareVersion": "0.9.1",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://pypi.org/project/qradiomics/",
+  "featureList": "DICOM conversion, Radiomics feature extraction, pyradiomics automation, survival analysis modeling",
+  "author": {
+    "@type": "Organization",
+    "name": "Choi Lab, Thomas Jefferson University",
+    "url": "https://qradiomics.com/"
+  }
+}
+</script>
+{{- end -}}
