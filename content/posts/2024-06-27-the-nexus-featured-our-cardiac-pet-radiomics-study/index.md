@@ -24,4 +24,5 @@ aliases:
 
 ![](images/image.png)
 
-[https://medicalxpress.com/news/2024-06-machine-lung-cancer-scans-heart.html](https://medicalxpress.com/news/2024-06-machine-lung-cancer-scans-heart.html)
+- [Machine learning uses lung cancer scans to predict heart damage — EurekAlert!](https://www.eurekalert.org/news-releases/1049793)
+- [Machine learning uses lung cancer scans to predict heart damage — Medical Xpress](https://medicalxpress.com/news/2024-06-machine-lung-cancer-scans-heart.html)
