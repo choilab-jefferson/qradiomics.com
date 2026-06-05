@@ -1,5 +1,5 @@
 ---
-title: "qradiomics — Radiomics Research CLI"
+title: "QRadiomics — Radiomics Research CLI"
 date: "2026-05-17T20:31:21.000-04:00"
 lastmod: "2026-05-20T00:00:00.000-04:00"
 categories:
@@ -20,7 +20,8 @@ tags:
   - "DICOM"
 aliases:
   - /portfolio/qradiomics/
-description: "qradiomics is an open-source CLI and library for reproducible radiomics research, supporting PyRadiomics, TCIA dataset automation, and survival analysis."
+  - /projects/2026-05-17-qradiomics/
+description: "QRadiomics is an open-source CLI and library for reproducible radiomics research, supporting PyRadiomics, TCIA dataset automation, and survival analysis."
 schema: "software"
 ---
 

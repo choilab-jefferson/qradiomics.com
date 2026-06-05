@@ -106,7 +106,7 @@ python scripts/smoke.py
 qr tcia download --collection NSCLC-Radiomics --modality CT -o /data/Lung1 -j 16
 ```
 
-Full documentation: [../../projects/2026-05-17-qradiomics/](../../projects/2026-05-17-qradiomics/)  
+Full documentation: [/qradiomics/](/qradiomics/)  
 Source code: [github.com/choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)
 
 ---
@@ -144,7 +144,7 @@ A companion study presented at **ASTRO 2025** applied the same pipeline to survi
 
 The open-source release arrives roughly nine months after those presentations. The public release of `qradiomics` marks the point where reproducibility is no longer an afterthought — every result in our past papers can be re-run with one command on publicly available data.
 
-Full documentation: [../../projects/2026-05-17-qradiomics/](../../projects/2026-05-17-qradiomics/)  
+Full documentation: [/qradiomics/](/qradiomics/)  
 Source code: [github.com/choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics)
 
 ---

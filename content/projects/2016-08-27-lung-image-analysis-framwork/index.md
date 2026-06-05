@@ -3,10 +3,10 @@ title: "Lung Image Analysis Framwork"
 date: "2016-08-27T03:31:31.000-04:00"
 aliases:
   - /portfolio/lung-image-analysis-framwork/
-description: "> ⚠️ This project is no longer maintained. It has been superseded by qradiomics, which provides a unified modern Python implementation. A basic framework..."
+description: "> ⚠️ This project is no longer maintained. It has been superseded by QRadiomics, which provides a unified modern Python implementation. A basic framework..."
 ---
 
-> ⚠️ **This project is no longer maintained.** It has been superseded by [qradiomics](/projects/2026-05-17-qradiomics/), which provides a unified modern Python implementation.
+> ⚠️ **This project is no longer maintained.** It has been superseded by [QRadiomics](/qradiomics/), which provides a unified modern Python implementation.
 
 A basic framework for pulmonary nodule detection and characterization in CT [https://github.com/taznux/lung-image-analysis](https://github.com/taznux/lung-image-analysis)
 

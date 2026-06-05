@@ -55,7 +55,7 @@ params:
       at Sidney Kimmel Medical College, Thomas Jefferson University,
       led by **[Wookjin Choi, Ph.D.](/profile/)**
 
-      We develop **interpretable AI and open-source radiomics tools** (including our flagship **[qradiomics CLI](/projects/2026-05-17-qradiomics/)**) for medical imaging — quantitative image analysis, radiomics, and deep learning for cancer diagnosis, radiation therapy planning, and outcome prediction.
+      We develop **interpretable AI and open-source radiomics tools** (including our flagship **[QRadiomics CLI](/qradiomics/)**) for medical imaging — quantitative image analysis, radiomics, and deep learning for cancer diagnosis, radiation therapy planning, and outcome prediction.
 
       **Focus areas:** Lung cancer screening · Cardiotoxicity prediction (Cardiac PET radiomics) ·
       MR-guided adaptive radiotherapy (MRI-Linac) · Pancreatic / hepatic / head-and-neck cancer imaging ·
@@ -97,6 +97,10 @@ menu:
       name: Home
       url: /
       weight: 10
+    - identifier: qradiomics
+      name: QRadiomics
+      url: /qradiomics/
+      weight: 15
     - identifier: posts
       name: Posts
       url: /posts/
