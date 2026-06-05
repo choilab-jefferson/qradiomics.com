@@ -75,7 +75,7 @@ params:
 
   socialIcons:
     - name: github
-      url: "https://github.com/taznux"
+      url: "https://github.com/choilab-jefferson"
     - name: linkedin
       url: "https://www.linkedin.com/in/wookjin-choi-5309a325/"
     - name: researchgate

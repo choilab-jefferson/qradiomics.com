@@ -3,7 +3,7 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "qradiomics",
+  "name": "QRadiomics",
   "operatingSystem": "Linux, macOS, Windows",
   "applicationCategory": "ScientificApplication",
   "softwareVersion": "0.9.1",
@@ -16,9 +16,81 @@
   "featureList": "DICOM conversion, Radiomics feature extraction, pyradiomics automation, survival analysis modeling",
   "author": {
     "@type": "Organization",
-    "name": "Choi Lab, Thomas Jefferson University",
+    "name": "CHOI Lab, Thomas Jefferson University",
     "url": "https://qradiomics.com/"
   }
+}
+</script>
+{{- end -}}
+
+{{- if eq .Params.schema "about" -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ResearchOrganization",
+  "name": "Computational Healthcare & Oncology Informatics (CHOI) Lab",
+  "alternateName": "CHOI Lab",
+  "description": "The CHOI Lab at Thomas Jefferson University develops interpretable machine learning models, quantitative radiomics pipelines, and advanced image analysis tools for cancer therapy prediction and adaptive radiotherapy.",
+  "url": "https://qradiomics.com/about/",
+  "logo": "https://qradiomics.com/images/logo.png",
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "Sidney Kimmel Medical College, Thomas Jefferson University",
+    "url": "https://www.jefferson.edu/"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Department of Radiation Oncology, Thomas Jefferson University Hospital",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Philadelphia",
+      "addressRegion": "PA",
+      "postalCode": "19107",
+      "addressCountry": "US"
+    }
+  },
+  "sameAs": [
+    "https://github.com/choilab-jefferson",
+    "https://choiw.notion.site/"
+  ],
+  "knowsAbout": [
+    "Quantitative Radiomics",
+    "Medical Image Analysis",
+    "Explainable AI (XAI)",
+    "Precision Oncology",
+    "Adaptive Radiotherapy"
+  ]
+}
+</script>
+{{- end -}}
+
+{{- if eq .Params.schema "profile" -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Wookjin Choi",
+  "jobTitle": "Associate Professor of Radiation Oncology",
+  "worksFor": {
+    "@type": "ResearchOrganization",
+    "name": "CHOI Lab, Thomas Jefferson University",
+    "url": "https://qradiomics.com/"
+  },
+  "url": "https://qradiomics.com/profile/",
+  "sameAs": [
+    "https://orcid.org/0000-0001-8038-5876",
+    "https://github.com/taznux",
+    "https://choiw.notion.site/",
+    "https://www.linkedin.com/in/wookjin-choi-5309a325/",
+    "https://www.researchgate.net/profile/Wookjin_Choi2",
+    "https://publons.com/a/520211/"
+  ],
+  "knowsAbout": [
+    "Medical Physics",
+    "Radiation Oncology Informatics",
+    "Deep Learning in Medicine",
+    "Quantitative Delta-Radiomics"
+  ]
 }
 </script>
 {{- end -}}

@@ -495,7 +495,7 @@ If you build on the lung-screening lineage that this CLI grew out of, please add
 ## Authors and Acknowledgements
 
 - [**Wookjin Choi**](https://github.com/taznux) — overall architecture, CLI design, pattern templates
-- [**Pradeep Bhetwal**](https://github.com/Pradeepbhetwal) — survival analysis on the LUNG1 cohort
+- [**Pradeep Bhetwal**](https://github.com/Pradeepbhetwal) — survival analysis on the LUNG1 cohort, CBCT radiomics
 - *Choi Lab, Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson University*
 
 ## License
