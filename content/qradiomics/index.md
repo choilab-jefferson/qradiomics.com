@@ -1,7 +1,7 @@
 ---
 title: "QRadiomics — Radiomics Research CLI"
 date: "2026-05-17T20:31:21.000-04:00"
-lastmod: "2026-07-07T00:00:00.000-04:00"
+lastmod: "2026-07-24T00:00:00.000-04:00"
 categories:
   - "research"
 tags:
@@ -25,7 +25,7 @@ description: "QRadiomics is an open-source CLI and library for reproducible radi
 schema: "software"
 ---
 
-**License:** MIT · **Python:** 3.11+ · **Version:** 0.9.2 · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics) · **PyPI:** [qradiomics](https://pypi.org/project/qradiomics/)
+**License:** MIT · **Python:** 3.11+ · **Version:** 0.9.3 · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics) · **PyPI:** [qradiomics](https://pypi.org/project/qradiomics/)
 
 > **Active successor for three earlier Choi Lab radiomics codebases.** The C++/MATLAB pipelines in
 > [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools),
@@ -46,6 +46,7 @@ The canonical radiomics data flow has four stages — `data → image → featur
 # Atomic tasks
 qr convert dicom-series / rtstruct / manifest-from-dir
 qr extract        -m manifest.csv -p <pattern> -o features.csv
+qr extract        -m manifest.csv -o features.csv --engine pyradiomics,pysera,rtools  # multi-engine
 qr results merge  -f features.csv -c clinical.csv -o analysis_ready.csv
 qr analyze {survival,classify,importance} -i analysis_ready.csv ...
 qr ml {train,predict,evaluate} ...
@@ -79,7 +80,11 @@ curl -sSL https://raw.githubusercontent.com/choilab-jefferson/qradiomics/main/sc
 >    layout, don'ts, citations). Do **not** log PHI, do **not** push
 >    to remotes, do **not** invent new public dataset URLs — use only
 >    the ones documented in AGENTS.md.
-> 3. Ask the user what they want to build.
+> 3. If your agent supports skills (e.g. Claude Code), the repo ships one at
+>    `.claude/skills/qradiomics/` — it auto-triggers here and maps the whole
+>    `qr` CLI, the Python API, workflow/pipeline authoring, and how to test on
+>    TCIA data. See **AI-Agent Skill** below.
+> 4. Ask the user what they want to build.
 
 Env knobs: `QR_REPO_URL`, `QR_REPO_DIR`, `QR_BRANCH`, `QR_PYTHON`, `QR_VENV` (set to `-` to skip the venv), `QR_SKIP_SMOKE=1` to skip pytest.
 
@@ -99,7 +104,7 @@ Install pyradiomics **first**. `pip install qradiomics` on its own fails to reso
 | Earlier project | Stack | Role | This repo |
 |---|---|---|---|
 | [taznux/lung-image-analysis](https://github.com/taznux/lung-image-analysis) | MATLAB · MIT | LIDC-IDRI nodule detection / segmentation / characterization | superseded |
-| [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools) | C++/Python (ITK, Ruffus) · MIT | DICOM tools, GrowCut segmentation, feature extraction pipeline | superseded |
+| [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools) | C++/Python (ITK, Ruffus) · MIT | DICOM tools, GrowCut segmentation, feature extraction pipeline | its feature extractor is wrapped as the `rtools` engine (`qr extract --engine rtools`); DICOM tools/GrowCut remain superseded |
 | [choilab-jefferson/LungCancerScreeningRadiomics](https://github.com/choilab-jefferson/LungCancerScreeningRadiomics) | MATLAB / Python · GPL-3.0 | LIDC + LUNGx end-to-end screening workflow with AutoML | superseded (this repo re-implements the open subset under MIT using PyRadiomics) |
 
 The AHSN shape descriptor pipeline (CMPB 2014) and the spiculation quantification pipeline (CMPB 2021, companion to [choilab-jefferson/CIR](https://github.com/choilab-jefferson/CIR)) are re-integrated in `qradiomics.shape`. The longitudinal CBCT / delta-radiomics workflows (ASTRO / AAPM 2026) will be released here after publication.
@@ -107,8 +112,10 @@ The AHSN shape descriptor pipeline (CMPB 2014) and the spiculation quantificatio
 ## Install
 
 ```bash
-pip install qradiomics            # core CLI + library from PyPI
-pip install qradiomics[rtstruct]  # plus rt-utils for `qr convert rtstruct`
+pip install qradiomics              # core CLI + library from PyPI
+pip install qradiomics[rtstruct]    # plus rt-utils for `qr convert rtstruct`
+pip install qradiomics[pysera]      # plus the PySERA extraction engine (`qr extract --engine pysera`)
+pip install qradiomics[pysera-deep] # + torch/torchvision for PySERA's deep-feature extraction mode
 ```
 
 Or for development (editable mode):
@@ -261,6 +268,23 @@ As the field of medical physics shifts towards AI-driven automation, `qradiomics
 *   **Self-Correction:** If a feature extraction fails due to DICOM header inconsistencies, the CLI provides structured error codes that an AI agent can use to suggest (or apply) data cleaning fixes.
 *   **Integration with Gemini Gems:** Our specialized [Medical Physics Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/) is pre-trained on `qradiomics` syntax, acting as a high-level **Radiomics Agent** that can write and execute your research code.
 
+## AI-Agent Skill (Claude Code)
+
+The repo ships a first-class **agent skill** at `.claude/skills/qradiomics/`. In Claude Code (and any tool that reads `.claude/skills/`) it auto-triggers whenever you work in this repository — even when a request only names a piece ("extract features", "convert this RTSTRUCT", "fit a Cox model", "build a pipeline for this cohort") without naming qradiomics. It exists so an agent uses the `qr` CLI and the atomic API the way they're meant to be used, and honors the clinical-data safeguards, instead of guessing.
+
+It uses progressive disclosure — a short `SKILL.md` plus focused references the agent opens only when the task lands in them:
+
+| File | Covers |
+|---|---|
+| `SKILL.md` | The `data → image → features → modeling` flow, a stage-by-stage map of every `qr` command, the non-negotiables (no PHI in logs, no `git add -A`, no push without confirmation), and quickstarts for workflows and testing |
+| `references/cli.md` | Every `qr` command group, its options, and copy-paste recipes |
+| `references/python-api.md` | `qradiomics.atomic`, `qradiomics.io`, `qradiomics.shape` with real signatures |
+| `references/workflows.md` | Authoring workflows & pipelines: the `WorkflowPlan` data model, editing/scaffolding/running, building a deployable `pipelines/` bundle |
+| `references/testing.md` | Validating work: offline phantom smoke, IBSI reference parity, and end-to-end runs on TCIA public data |
+| `references/pipelines.md` | The shipped LIDC-IDRI/LUNGx reproducibility scripts, patterns, and workflow templates |
+
+**Using it.** In Claude Code, just open this repo and start working — no setup. To use it elsewhere, point your agent at `.claude/skills/qradiomics/SKILL.md`, or package it with Anthropic's `skill-creator`. Full skill-based usage guide and examples live in the [project wiki](https://github.com/choilab-jefferson/qradiomics/wiki).
+
 ## Reproducibility — Published Paper Results
 
 Full report: [`reports/reproducibility.md`](https://github.com/choilab-jefferson/qradiomics/blob/main/reports/reproducibility.md) · version 2.0 · last updated 2026-05-19
@@ -377,7 +401,7 @@ Each entry point writes a JSON/CSV report next to the script; no manual gluing r
 | `qr preprocess` | image | bbox crop + isotropic resample per (image, mask) row |
 | `qr register` | image | Rigid Mattes-MI/LBFGSB moving→fixed (Scenario C mask transfer) |
 | `qr hu-correct` | image | Histogram-match CBCT to a reference CT |
-| `qr extract` | features | PyRadiomics → `features.csv` (manifest + pattern) |
+| `qr extract` | features | Feature extraction → `features.csv` (manifest + pattern); `--engine pyradiomics,pysera,rtools` for multi-engine |
 | `qr shape extract` | features | AHSN + spiculation shape descriptors |
 | `qr delta` | features | DeltaPair (A - B) + trend slope per patient across timepoints |
 | `qr results merge` | features | `features.csv` + `clinical.csv` → `analysis_ready.csv` |
