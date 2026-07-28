@@ -11,6 +11,7 @@ tags:
   - "EHR"
   - "NLP"
   - "Cardio-Oncology"
+  - "GPT-OSS"
   - "DeepSeek"
   - "Llama"
   - "Mistral"
@@ -43,21 +44,32 @@ We worked with a cohort of **411 lung and breast cancer patients** across two in
 
 | | |
 |---|---|
-| **Accuracy** | 79–85% across development, internal, and external validation cohorts (best models: DeepSeek-R1, Llama-3.3, Mistral-Large) |
+| **Accuracy** | 79–85% across development, internal, and external validation cohorts (best models: GPT-OSS, DeepSeek-R1, Llama-3.3, Mistral-Large) |
 | **Processing time** | 20–42 sec/patient · 2.3–4.8 hours total for all 411 patients, vs. ~822 hours estimated for full manual chart review |
 | **Fine-tuning required** | None |
 | **Institutions** | Sidney Kimmel Comprehensive Cancer Center at Jefferson + Lehigh Valley Health Network |
 | **Cohort** | 411 patients (development, internal-validation, and external-validation cohorts) |
 
+**Interesting finding:** for this kind of straightforward event extraction, larger general-purpose open-source models actually outperformed medical domain-specific models — further evidence that careful prompting matters more than domain fine-tuning here.
+
 ## Why it matters
 
 Clinical research is drowning in unstructured data, and most centers lack the infrastructure — or budget — for proprietary clinical AI platforms. TRACER shows that the bottleneck isn't model weights, it's prompt-engineering rigor. That's a democratizing result: any center with an open-source LLM and a well-designed prompting pipeline can replicate this approach, at a fraction of the cost of specialized clinical AI.
+
+No more summer breaks spent by medical students manually digging through EHR free text: TRACER frees that time up for more meaningful clinical research.
+
+## The team
+
+Huge congratulations to **Dr. Wenchao Cao**, our current Senior Physics Resident, who joins the department as faculty tomorrow, and **Dr. Nilanjan Halder**, who just completed his Radiation Oncology residency and is heading to Phoenix — along with the medical student intern team who did much of the extraction and validation work: Isis Lloyd, Michael Dichmann, Femi Adejolu, Moorin Khan, and Patrick Faherty. Best of luck to Wenchao and Nilanjan on their next chapters.
 
 ## Publication
 
 **Cross-Institutional Validation of a Novel LLM-Based Cardiac Event Extraction Framework from Electronic Health Records.**
 Wenchao Cao, Isis Lloyd, Michael Dichmann, Nilanjan Halder, David Thomas, Zhe Chen, Erik Blomain, Femi Adejolu, Kristen E. Beck, Patrick Faherty, Moorin Khan, Nicole Simone, Varsha Jain, Eugene Storozynsky, Adam P. Dicker, **Wookjin Choi**, Yevgeniy Vinogradskiy.
-*International Journal of Radiation Oncology, Biology, Physics* (in press), published online June 29, 2026. [doi:10.1016/j.ijrobp.2026.06.3060](https://doi.org/10.1016/j.ijrobp.2026.06.3060)
+*International Journal of Radiation Oncology, Biology, Physics* (in press), published online June 29, 2026.
+
+- DOI: [10.1016/j.ijrobp.2026.06.3060](https://doi.org/10.1016/j.ijrobp.2026.06.3060)
+- Full text: [ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0360301626039131) · [Red Journal](https://www.redjournal.org/article/S0360-3016(26)03913-1/fulltext)
 
 Sidney Kimmel Comprehensive Cancer Center at Jefferson, Sidney Kimmel Medical College, Thomas Jefferson University, with Lehigh Valley Health Network.
 
