@@ -1,6 +1,6 @@
 ---
 title: "TRACER: Open-Source LLM Prompting Matches Specialized Medical AI for Cardiac Event Extraction"
-date: "2026-07-27T09:00:00.000-04:00"
+date: "2026-07-01T09:00:00.000-04:00"
 categories:
   - "news"
   - "research"
@@ -17,6 +17,7 @@ tags:
   - "Mistral"
   - "Open Source"
 aliases:
+  - /2026/07/01/tracer-open-source-llms-cardiac-event-extraction/
   - /2026/07/27/tracer-open-source-llms-cardiac-event-extraction/
 description: "TRACER shows that prompt-engineering rigor, not proprietary model weights, is what lets open-source LLMs extract cardiac events from unstructured EHRs — now published in IJROBP (the Red Journal)."
 cover:
