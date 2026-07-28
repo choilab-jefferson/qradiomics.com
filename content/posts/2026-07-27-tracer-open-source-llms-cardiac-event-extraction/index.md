@@ -1,0 +1,64 @@
+---
+title: "TRACER: Open-Source LLM Prompting Matches Specialized Medical AI for Cardiac Event Extraction"
+date: "2026-07-27T09:00:00.000-04:00"
+categories:
+  - "news"
+  - "research"
+  - "ai"
+tags:
+  - "LLM"
+  - "Prompt Engineering"
+  - "EHR"
+  - "NLP"
+  - "Cardio-Oncology"
+  - "DeepSeek"
+  - "Llama"
+  - "Mistral"
+  - "Open Source"
+aliases:
+  - /2026/07/27/tracer-open-source-llms-cardiac-event-extraction/
+description: "TRACER shows that prompt-engineering rigor, not proprietary model weights, is what lets open-source LLMs extract cardiac events from unstructured EHRs — now published in IJROBP (the Red Journal)."
+cover:
+  image: "images/tracer-ijrobp-pre-proof.jpg"
+  alt: "IJROBP journal pre-proof page for the TRACER cardiac event extraction paper"
+  relative: true
+---
+
+**The moat isn't the model — it's how you ask the question.**
+
+I'm excited to share new work from our AI research team at the Sidney Kimmel Comprehensive Cancer Center (SKCC) at Jefferson: **TRACER**, a prompting framework that shows smart prompt engineering with open-source LLMs can solve one of the hardest problems in clinical research — extracting cardiac events from thousands of unstructured EHRs. The paper is now in press at *International Journal of Radiation Oncology, Biology, Physics* (IJROBP, the Red Journal).
+
+## The problem
+
+We worked with a cohort of **411 lung and breast cancer patients** across two institutions — a Jefferson development/internal-validation cohort (n=266) and an external validation cohort from Lehigh Valley Health Network (n=145). Cardiac events were physician-adjudicated from the full EHR history. Manual chart review at this scale is a major bottleneck for cardio-oncology research, and specialized medical AI models have historically plateaued well short of the accuracy needed to trust the output at scale.
+
+## The TRACER framework
+
+- **Two-phase pipeline** — fast structured queries first, followed by an open-source LLM with context-window filtering for the cases that need deeper reading.
+- **Few-shot hard negatives** — examples that teach the model to correctly rule out a cardiac event (e.g., recognizing that "ruling out an MI" is not itself an MI).
+- **Temporal awareness** — prompts explicitly distinguish pre-treatment from post-treatment context.
+- **Fully local** — no proprietary APIs, no external dependencies, so it can run inside an institution's own infrastructure.
+
+## Results
+
+| | |
+|---|---|
+| **Accuracy** | 79–85% across development, internal, and external validation cohorts (best models: DeepSeek-R1, Llama-3.3, Mistral-Large) |
+| **Processing time** | 20–42 sec/patient · 2.3–4.8 hours total for all 411 patients, vs. ~822 hours estimated for full manual chart review |
+| **Fine-tuning required** | None |
+| **Institutions** | Sidney Kimmel Comprehensive Cancer Center at Jefferson + Lehigh Valley Health Network |
+| **Cohort** | 411 patients (development, internal-validation, and external-validation cohorts) |
+
+## Why it matters
+
+Clinical research is drowning in unstructured data, and most centers lack the infrastructure — or budget — for proprietary clinical AI platforms. TRACER shows that the bottleneck isn't model weights, it's prompt-engineering rigor. That's a democratizing result: any center with an open-source LLM and a well-designed prompting pipeline can replicate this approach, at a fraction of the cost of specialized clinical AI.
+
+## Publication
+
+**Cross-Institutional Validation of a Novel LLM-Based Cardiac Event Extraction Framework from Electronic Health Records.**
+Wenchao Cao, Isis Lloyd, Michael Dichmann, Nilanjan Halder, David Thomas, Zhe Chen, Erik Blomain, Femi Adejolu, Kristen E. Beck, Patrick Faherty, Moorin Khan, Nicole Simone, Varsha Jain, Eugene Storozynsky, Adam P. Dicker, **Wookjin Choi**, Yevgeniy Vinogradskiy.
+*International Journal of Radiation Oncology, Biology, Physics* (in press), published online June 29, 2026. [doi:10.1016/j.ijrobp.2026.06.3060](https://doi.org/10.1016/j.ijrobp.2026.06.3060)
+
+Sidney Kimmel Comprehensive Cancer Center at Jefferson, Sidney Kimmel Medical College, Thomas Jefferson University, with Lehigh Valley Health Network.
+
+Thanks to everyone who worked on this — excited to see other centers pick this approach up and put it to use.
