@@ -41,7 +41,7 @@ Our research is translated in close collaboration with clinical colleagues at th
 ---
 
 ## **Contact Information**
-* **Department:** Department of Radiation Oncology, Thomas Jefferson University Hospital
+* **Department:** Department of Radiation Oncology, Sidney Kimmel Medical College, Thomas Jefferson University
 * **Address:** Philadelphia, PA 19107, USA
 * **Email:** [Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu)
 * **GitHub Organization:** [choilab-jefferson](https://github.com/choilab-jefferson)
