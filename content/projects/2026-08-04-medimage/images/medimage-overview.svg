@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1b1f24"/>
+      <stop offset="1" stop-color="#20262d"/>
+    </linearGradient>
+    <linearGradient id="arrow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f39800"/>
+      <stop offset="1" stop-color="#f9a900"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- header -->
+  <text x="60" y="110" fill="#f39800" font-size="52" font-weight="700">medimage</text>
+  <text x="60" y="148" fill="#c9cdd3" font-size="22">Quantitative Medical Image Analysis with Python</text>
+
+  <!-- pipeline stage cards -->
+  <g>
+    <rect x="60" y="260" width="310" height="180" rx="14" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
+    <text x="90" y="330" fill="#f39800" font-size="17" font-weight="700" letter-spacing="1">PART I</text>
+    <text x="90" y="365" fill="#eef0f2" font-size="26" font-weight="700">Foundations</text>
+    <text x="90" y="405" fill="#6b7178" font-size="15">Ch. 1–5</text>
+
+    <rect x="445" y="260" width="310" height="180" rx="14" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
+    <text x="475" y="330" fill="#f39800" font-size="17" font-weight="700" letter-spacing="1">PART II</text>
+    <text x="475" y="365" fill="#eef0f2" font-size="26" font-weight="700">Applications</text>
+    <text x="475" y="405" fill="#6b7178" font-size="15">Ch. 6–8</text>
+
+    <rect x="830" y="260" width="310" height="180" rx="14" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
+    <text x="860" y="330" fill="#f39800" font-size="17" font-weight="700" letter-spacing="1">PART III</text>
+    <text x="860" y="365" fill="#eef0f2" font-size="26" font-weight="700">Quantitative</text>
+    <text x="860" y="405" fill="#6b7178" font-size="15">Ch. 9–13</text>
+  </g>
+
+  <!-- connecting arrows -->
+  <g stroke="url(#arrow)" stroke-width="4" fill="none">
+    <line x1="372" y1="350" x2="440" y2="350"/>
+    <line x1="757" y1="350" x2="825" y2="350"/>
+  </g>
+  <g fill="#f39800">
+    <polygon points="440,350 424,341 424,359"/>
+    <polygon points="825,350 809,341 809,359"/>
+  </g>
+
+  <!-- footer -->
+  <text x="60" y="560" fill="#6b7178" font-size="16">Choi Lab · Thomas Jefferson University</text>
+  <text x="1140" y="560" fill="#6b7178" font-size="16" text-anchor="end">github.com/choilab-jefferson/medimage</text>
+</svg>
