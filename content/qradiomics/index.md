@@ -97,6 +97,15 @@ pip install qradiomics
 
 Install pyradiomics **first**. `pip install qradiomics` on its own fails to resolve its `pyradiomics>=3.1.0` requirement: pyradiomics ships no PyPI wheel for Python 3.10+ and its 3.1.0 sdist has broken metadata (declares `3.0.1a1`), so pip discards it. This is a pyradiomics packaging limitation, not a qradiomics one — installing pyradiomics from its upstream git first gives pip a build that satisfies the requirement.
 
+## Learn — the medimage course
+
+New to radiomics, or want a guided path into this CLI rather than jumping straight into the reference
+docs below? **[medimage](/posts/2026-08-04-introducing-medimage/)** is Choi Lab's free, 13-chapter
+Colab course in quantitative medical image analysis. Its final chapters run `qradiomics` directly —
+Chapter 9 covers radiomics features, Chapter 12 walks through classification (and a real data leak),
+and Chapter 13 reproduces the Aerts 2014 NSCLC-Radiomics result end to end with `qr extract` → `qr
+results merge` → `qr analyze survival`. No install required — every chapter opens in Google Colab.
+
 ## Background — three earlier projects, unified
 
 `qradiomics` is the modern Python successor of three earlier Choi Lab radiomics codebases. The MATLAB pipelines, the ITK / Ruffus C++ tools, and the Docker-based screening workflow are distilled here into a single Click CLI built on PyRadiomics, scikit-learn, and lifelines:
