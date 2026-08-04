@@ -1,7 +1,8 @@
 ---
-title: "medimage — Quantitative Medical Image Analysis with Python"
-date: "2026-08-04T07:00:00.000-04:00"
+title: "Introducing medimage — A Free Colab Course in Quantitative Medical Image Analysis"
+date: "2026-08-04T09:00:00.000-04:00"
 categories:
+  - "news"
   - "research"
   - "open-source"
 tags:
@@ -16,51 +17,131 @@ tags:
 description: "medimage is a free, hands-on Colab course from Choi Lab — 13 notebook chapters from opening a DICOM file to CT/MR body composition, PET SUV, radiomics, and reproducing a published study."
 cover:
   image: "images/medimage-overview.svg"
-  alt: "medimage curriculum overview: Part I Foundations (Ch 1-5), Part II Applications (Ch 6-8), Part III Quantitative methods (Ch 9-13)"
+  alt: "medimage curriculum overview: Part I Foundations (Ch 1-5), Part II Applications (Ch 6-8), Part III Methods (Ch 9-13)"
   relative: true
 ---
 
-**License:** MIT · **Repo:** [choilab-jefferson/medimage](https://github.com/choilab-jefferson/medimage)
-
-**medimage** is a free, notebook-based course — not just a code library. Every chapter runs directly
+**medimage** is a free, notebook-based course, not just a code library. Every chapter runs directly
 in **Google Colab** with no local setup: open a notebook, run the cells, and you're working with real
 (de-identified, publicly licensed) CT, MR, and PET data. It takes you from opening your first DICOM
 file to measuring body composition on CT and MR, and finally to reproducing a published radiomics
-result end to end. No prior background in medical imaging is assumed — each chapter builds directly
-on what came before it.
+result end to end. No prior background in medical imaging is assumed.
+
+**License:** MIT · **Repo:** [choilab-jefferson/medimage](https://github.com/choilab-jefferson/medimage)
 
 ## Curriculum
 
-Every row opens straight in Google Colab — no account setup, no local install, click and run.
+Every card opens straight in Colab — no account setup, no local install, click and run. Each chapter
+is standalone: open any single notebook and it fetches and prepares its own data, with no dependency
+on another chapter having run first.
 
-| Chapter | What you learn | Why the course needs it | |
-|---|---|---|---|
-| **Part I — Foundations** | | | |
-| 1. Exploration | DICOM, headers, Hounsfield units, image orientation, viewing volumes | You cannot measure anything until the numbers mean something | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter01_Exploration.ipynb) |
-| 2. Masks and filters | Histograms, selecting pixels, denoising, morphology, edges | Fat and muscle are picked out by their HU range — after denoising | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter02_Masks_and_Filters.ipynb) |
-| 3. Measurement | Labeling, object selection, area and volume, mean HU, validating with Dice | Areas and mean HU *are* the body composition numbers | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter03_Measurement.ipynb) |
-| 4. Image comparison | Resampling, transformations, similarity metrics, normalization | Two patients are different sizes, so raw numbers cannot be compared | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter04_Image_Comparison.ipynb) |
-| 5. Patient privacy | Finding, removing, and **verifying** removal of PHI in DICOM | Before any of this can touch real clinical data | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter05_Patient_Privacy.ipynb) |
-| **Part II — Applications** | | | |
-| 6. Body composition from CT | Finding L3, verifying a pretrained model, muscle / SAT / VAT, the muscle index | The destination the first four chapters were building toward | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter06_Body_Composition_CT.ipynb) |
-| 7. Fat quantification with MR | Dixon in/opposed-phase, fat-fraction maps, liver steatosis | The other modality that can measure fat, and why CT is still the default | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter07_MR_Fat_Quantification.ipynb) |
-| 8. PET/CT | SUV, PET/CT fusion, cardiac FDG uptake, change between timepoints | Function as well as anatomy — and a published clinical application | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter08_PET_CT.ipynb) |
-| **Part III — Quantitative methods** | | | |
-| 9. Radiomics features | The three feature families, patterns, and what preprocessing does to each | Knowing which of your ~1,130 features survive someone else running the pipeline | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter09_Radiomics_Features.ipynb) |
-| 10. Registration | Two engines, scoring in millimeters, diagnosing a registration that fails silently | Aligning scans is where pipelines break without saying so | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter10_Registration.ipynb) |
-| 11. Delta radiomics | Measuring change between timepoints, and your own noise floor | Change is more informative than any single value — once you know what change means | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter11_Delta_Radiomics.ipynb) |
-| 12. Classification | Benchmarking eight models, and a real data leak that produced AUC 1.000 | An implausibly good result is a bug report, not a finding | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter12_Classification.ipynb) |
-| 13. Reproducing published results | The full `qr` analysis on Lung1, compared against the paper | Whether a pipeline reproduces is the question that matters | [Open →](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter13_Reproducibility.ipynb) |
+<div class="mi-part">
+  <div class="mi-part-eyebrow">Part I</div>
+  <h3 class="mi-part-title">Foundations</h3>
+  <div class="mi-chapter-grid">
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter01_Exploration.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 01</span>
+      <span class="mi-chapter-title">Exploration</span>
+      <span class="mi-chapter-hook">DICOM, headers, Hounsfield units, orientation, viewing volumes</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter02_Masks_and_Filters.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 02</span>
+      <span class="mi-chapter-title">Masks and filters</span>
+      <span class="mi-chapter-hook">Histograms, selecting pixels, denoising, morphology, edges</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter03_Measurement.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 03</span>
+      <span class="mi-chapter-title">Measurement</span>
+      <span class="mi-chapter-hook">Labeling, object selection, area/volume, mean HU, validating with Dice</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter04_Image_Comparison.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 04</span>
+      <span class="mi-chapter-title">Image comparison</span>
+      <span class="mi-chapter-hook">Resampling, transformations, similarity metrics, normalization</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter05_Patient_Privacy.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 05</span>
+      <span class="mi-chapter-title">Patient privacy</span>
+      <span class="mi-chapter-hook">Finding, removing, and verifying removal of PHI in DICOM</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+  </div>
+</div>
+
+<div class="mi-part">
+  <div class="mi-part-eyebrow">Part II</div>
+  <h3 class="mi-part-title">Applications</h3>
+  <div class="mi-chapter-grid">
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter06_Body_Composition_CT.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 06</span>
+      <span class="mi-chapter-title">Body composition from CT</span>
+      <span class="mi-chapter-hook">Finding L3, a pretrained model, muscle / SAT / VAT, the muscle index</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter07_MR_Fat_Quantification.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 07</span>
+      <span class="mi-chapter-title">Fat quantification with MR</span>
+      <span class="mi-chapter-hook">Dixon in/opposed-phase, fat-fraction maps, liver steatosis</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter08_PET_CT.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 08</span>
+      <span class="mi-chapter-title">PET/CT</span>
+      <span class="mi-chapter-hook">SUV, PET/CT fusion, cardiac FDG uptake, change between timepoints</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+  </div>
+</div>
+
+<div class="mi-part">
+  <div class="mi-part-eyebrow">Part III</div>
+  <h3 class="mi-part-title">Quantitative methods</h3>
+  <div class="mi-chapter-grid">
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter09_Radiomics_Features.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 09</span>
+      <span class="mi-chapter-title">Radiomics features</span>
+      <span class="mi-chapter-hook">The three feature families, patterns, and what preprocessing does to each</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter10_Registration.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 10</span>
+      <span class="mi-chapter-title">Registration</span>
+      <span class="mi-chapter-hook">Two engines, scoring in millimeters, diagnosing a silent failure</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter11_Delta_Radiomics.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 11</span>
+      <span class="mi-chapter-title">Delta radiomics</span>
+      <span class="mi-chapter-hook">Measuring change between timepoints, and your own noise floor</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter12_Classification.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 12</span>
+      <span class="mi-chapter-title">Classification</span>
+      <span class="mi-chapter-hook">Benchmarking eight models, and a real data leak that scored AUC 1.000</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+    <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter13_Reproducibility.ipynb" target="_blank" rel="noopener">
+      <span class="mi-chapter-num">CH. 13</span>
+      <span class="mi-chapter-title">Reproducing published results</span>
+      <span class="mi-chapter-hook">The full <code>qr</code> analysis on Lung1, compared against the paper</span>
+      <span class="mi-chapter-cta">Open in Colab</span>
+    </a>
+  </div>
+</div>
 
 Each chapter teaches the failure mode alongside the technique — a registration that fails silently
-(Ch.10), a real data leak walked through step by step (Ch.12), a "does the number actually add up"
-check before trusting it (Ch.3) — rather than only the happy path.
+(Ch. 10), a real data leak walked through step by step (Ch. 12), a "does the number actually add up"
+check before trusting it (Ch. 3) — rather than only the happy path.
 
 ## Run it — no install required
 
 Every notebook opens with a setup cell that detects Colab, clones the repo, and installs anything the
-runtime is missing. Each chapter is standalone — open any single notebook in Colab and it fetches and
-prepares its own data, with no dependency on another chapter having been run first. Start at Chapter 1:
+runtime is missing. Start at Chapter 1:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter01_Exploration.ipynb)
 
@@ -93,11 +174,7 @@ Lab's radiomics research toolkit — Chapter 13 reproduces the Aerts 2014 NSCLC-
 using the public `qr extract` → `qr results merge` → `qr analyze survival` pipeline. medimage is the
 teaching path into the same tools and data used in the lab's published research.
 
-## Authors
+---
 
 *Choi Lab, Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson
-University* — [Wookjin Choi, Ph.D.](/profile/)
-
-## License
-
-MIT — see [LICENSE](https://github.com/choilab-jefferson/medimage/blob/main/LICENSE).
+University* — [Wookjin Choi, Ph.D.](/profile/) · MIT License · [LICENSE](https://github.com/choilab-jefferson/medimage/blob/main/LICENSE)

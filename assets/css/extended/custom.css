@@ -12,3 +12,68 @@ html[data-theme='dark'] .profile-icons img[alt="Academic Tree"] {
         filter: invert(1) brightness(1.2);
     }
 }
+
+/* medimage curriculum cards — grouped grid replacing plain tables/text links */
+.mi-part {
+    margin: 2.2rem 0 0.6rem;
+}
+.mi-part-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #f39800;
+}
+.mi-part-title {
+    margin: 0.2rem 0 1rem;
+    font-size: 1.35rem;
+}
+.mi-chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+}
+a.mi-chapter {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--entry);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+a.mi-chapter:hover {
+    border-color: #f39800;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(243, 152, 0, 0.12);
+}
+.mi-chapter-num {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #f39800;
+    letter-spacing: 0.04em;
+}
+.mi-chapter-title {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.3;
+}
+.mi-chapter-hook {
+    font-size: 0.82rem;
+    color: var(--secondary);
+    line-height: 1.4;
+    flex: 1;
+}
+.mi-chapter-cta {
+    margin-top: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #f39800;
+}
+.mi-chapter-cta::after {
+    content: " \2197";
+}

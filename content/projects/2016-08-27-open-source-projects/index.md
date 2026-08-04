@@ -1,7 +1,7 @@
 ---
 title: "Open source projects"
 date: "2026-05-20T22:00:40.000-04:00"
-lastmod: "2026-08-04T12:00:00.000-04:00"
+lastmod: "2026-05-20T22:00:40.000-04:00"
 aliases:
   - /portfolio/open-source-projects/
 description: "This page summarizes active and legacy open source projects from Choi Lab. Active qradiomics Unified Python radiomics CLI and library for end to end..."
@@ -43,14 +43,6 @@ MATLAB framework for pulmonary nodule detection and characterization on CT.
 - Status: no longer maintained
 
 ## Related
-
-### [medimage](../2026-08-04-medimage/)
-
-Free, Colab-based hands-on course in quantitative medical image analysis with Python — DICOM basics through CT/MR body composition, PET, radiomics, and reproducing a published study.
-
-- Repo: [github.com/choilab-jefferson/medimage](https://github.com/choilab-jefferson/medimage)
-- License: MIT
-- Status: actively developed
 
 ### [PathCNN](../2022-06-10-pathcnn/)
 
