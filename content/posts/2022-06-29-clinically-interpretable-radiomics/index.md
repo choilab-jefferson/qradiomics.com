@@ -29,7 +29,7 @@ This library serves as a one-stop solution for analyzing datasets using clinical
 ## CIRDataset: A large-scale Dataset for Clinically-Interpretable lung nodule Radiomics and malignancy prediction \[MICCAI'22\]
 
 Wookjin Choi1, Navdeep Dahiya2, and Saad Nadeem3  
-1 Department of Radiation Oncology, Thomas Jefferson University Hospital  
+1 Department of Radiation Oncology, Sidney Kimmel Medical College, Thomas Jefferson University  
 2 School of Electrical and Computer Engineering, Georgia Institute of Technology  
 3 Department of Medical Physics, Memorial Sloan Kettering Cancer Center
 
