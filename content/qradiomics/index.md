@@ -1,7 +1,7 @@
 ---
 title: "QRadiomics — Radiomics Research CLI"
 date: "2026-05-17T20:31:21.000-04:00"
-lastmod: "2026-07-24T00:00:00.000-04:00"
+lastmod: "2026-08-04T00:00:00.000-04:00"
 categories:
   - "research"
 tags:
@@ -25,7 +25,7 @@ description: "QRadiomics is an open-source CLI and library for reproducible radi
 schema: "software"
 ---
 
-**License:** MIT · **Python:** 3.11+ · **Version:** 0.9.3 · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics) · **PyPI:** [qradiomics](https://pypi.org/project/qradiomics/)
+**License:** MIT · **Python:** 3.11+ · **Version:** 0.9.4 · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics) · **PyPI:** [qradiomics](https://pypi.org/project/qradiomics/)
 
 > **Active successor for three earlier Choi Lab radiomics codebases.** The C++/MATLAB pipelines in
 > [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools),
