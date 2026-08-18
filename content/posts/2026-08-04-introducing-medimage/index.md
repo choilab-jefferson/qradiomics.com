@@ -122,7 +122,7 @@ on another chapter having run first.
     <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter12_Classification.ipynb" target="_blank" rel="noopener">
       <span class="mi-chapter-num">CH. 12</span>
       <span class="mi-chapter-title">Classification</span>
-      <span class="mi-chapter-hook">Benchmarking eight models, and a real data leak that scored AUC 1.000</span>
+      <span class="mi-chapter-hook">Benchmarking eight models, a real data leak that scored AUC 1.000, and what a hold-out set can and cannot tell you at this size</span>
       <span class="mi-chapter-cta">Open in Colab</span>
     </a>
     <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter13_Reproducibility.ipynb" target="_blank" rel="noopener">
@@ -135,8 +135,10 @@ on another chapter having run first.
 </div>
 
 Each chapter teaches the failure mode alongside the technique — a registration that fails silently
-(Ch. 10), a real data leak walked through step by step (Ch. 12), a "does the number actually add up"
-check before trusting it (Ch. 3) — rather than only the happy path.
+and is shown side by side with the run that worked (Ch. 10), a real data leak walked through step by
+step (Ch. 12), a "does the number actually add up" check before trusting it (Ch. 3) — rather than
+only the happy path. Chapter 12 closes by splitting the same 59 patients six ways and getting
+hold-out AUCs from 0.48 to 0.74, which is an argument about sample size rather than about models.
 
 ## Run it — no install required
 
@@ -154,6 +156,11 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
+Everything installs from PyPI with one exception. The four chapters that extract radiomics features
+need **pyradiomics**, which publishes no wheel for Python 3.10 or newer, so it is built from its
+upstream git on first install — a few minutes, once per Colab session. Chapters that do not extract
+features skip it entirely and install in well under a minute.
+
 ## No imaging data in the repo
 
 Every notebook downloads what it needs from its original public source on first run and caches it
@@ -169,7 +176,7 @@ the licensing clean — and it keeps the provenance of every image one function 
 
 ## Built alongside QRadiomics
 
-The final chapters (9, 12, 13) run the same `qr` CLI that powers **[QRadiomics](/qradiomics/)**, Choi
+Chapters 5, 9, 11, 12 and 13 run the same `qr` CLI that powers **[QRadiomics](/qradiomics/)**, Choi
 Lab's radiomics research toolkit — Chapter 13 reproduces the Aerts 2014 NSCLC-Radiomics Cox PH result
 using the public `qr extract` → `qr results merge` → `qr analyze survival` pipeline. medimage is the
 teaching path into the same tools and data used in the lab's published research.
