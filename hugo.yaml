@@ -51,7 +51,7 @@ params:
   TocOpen: false
 
   homeInfoParams:
-    Title: "Qualia Radiomics 👋"
+    Title: "Qualia Radiomics — Open-Source Radiomics & Interpretable AI 👋"
     Content: |
       **Computational Healthcare & Oncology Informatics (CHOI) Lab**
       at Sidney Kimmel Medical College, Thomas Jefferson University,
@@ -135,11 +135,18 @@ menu:
       url: /search/
       weight: 50
 
+outputFormats:
+  LLMS:
+    mediaType: text/plain
+    baseName: llms
+    isPlainText: true
+
 outputs:
   home:
     - HTML
     - RSS
     - JSON
+    - LLMS
 
 taxonomies:
   category: categories

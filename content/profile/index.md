@@ -50,6 +50,25 @@ radiotherapy, and large language models for clinical information extraction.
 
 ---
 
+## Appointments and Education
+
+| Years | Position | Institution |
+| --- | --- | --- |
+| 2026– | Associate Professor, Radiation Oncology | Sidney Kimmel Medical College, Thomas Jefferson University |
+| 2022–2026 | Assistant Professor, Radiation Oncology | Sidney Kimmel Medical College, Thomas Jefferson University |
+| 2019–2021 | Assistant Professor, Computer Science | Virginia State University |
+| 2019–2021 | Visiting Assistant Professor, Radiation Oncology | University of Virginia School of Medicine |
+| 2018–2019 | Research Associate, Radiation Oncology | University of Virginia School of Medicine |
+| 2016–2018 | Research Scholar, Medical Physics | Memorial Sloan Kettering Cancer Center |
+| 2014–2016 | Post-Doctoral Fellow, Radiation Oncology | University of Maryland School of Medicine |
+| 2013–2014 | Founder and CEO | Qualia, Inc., South Korea |
+
+**Ph.D.** Mechatronics — medical image computing, Gwangju Institute of Science and Technology, 2013<br>
+**M.S.** Mechatronics — computer vision, Gwangju Institute of Science and Technology, 2008<br>
+**B.S.** Computer Science and Engineering, Korea University of Technology and Education, 2006
+
+---
+
 ## Selected Publications
 
 Full list: [Google Scholar](http://scholar.google.com/citations?user=iHgsGLUAAAAJ&hl=en) · [Scopus](http://www.scopus.com/authid/detail.url?authorId=7402516217) · [ORCID](https://orcid.org/0000-0001-8038-5876) · [CV (PDF)](images/wookjin-choi-cv.pdf)
