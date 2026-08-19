@@ -1,0 +1,45 @@
+{{- /* Extends PaperMod's render-image hook with two things it does not do:
+       downscale oversized sources, and emit intrinsic dimensions.
+
+       Several figures migrated from WordPress are enormous — the 2017
+       graphical abstract is 9600x5400 (3.5 MB) — and were being served at full
+       size into a 720px column, which dominated Largest Contentful Paint. The
+       source files stay untouched; Hugo serves a resized derivative.
+
+       width/height are emitted so the browser can reserve the box before the
+       image loads, which keeps Cumulative Layout Shift at zero. */ -}}
+{{- $u := urls.Parse .Destination -}}
+{{- $src := $u.String -}}
+{{- $width := "" -}}
+{{- $height := "" -}}
+{{- $maxWidth := 1440 -}}
+{{- if not $u.IsAbs -}}
+  {{- $path := strings.TrimPrefix "./" $u.Path }}
+  {{- with or (.PageInner.Resources.Get $path) (resources.Get $path) -}}
+    {{- $r := . -}}
+    {{- /* SVG and GIF carry no usable pixel dimensions for Hugo's image
+           processing, so they pass through unchanged. */ -}}
+    {{- if and (eq $r.ResourceType "image") (in (slice "png" "jpeg") $r.MediaType.SubType) -}}
+      {{- if gt $r.Width $maxWidth -}}
+        {{- $r = $r.Resize (printf "%dx q85" $maxWidth) -}}
+      {{- end -}}
+      {{- $width = string $r.Width -}}
+      {{- $height = string $r.Height -}}
+    {{- end -}}
+    {{- $src = $r.RelPermalink -}}
+    {{- with $u.RawQuery -}}
+      {{- $src = printf "%s?%s" $src . -}}
+    {{- end -}}
+    {{- with $u.Fragment -}}
+      {{- $src = printf "%s#%s" $src . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $attributes := merge .Attributes (dict "alt" .Text "src" $src "title" (.Title | transform.HTMLEscape) "loading" "lazy" "width" $width "height" $height) -}}
+<img
+  {{- range $k, $v := $attributes -}}
+    {{- if $v -}}
+      {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}>
+{{- /**/ -}}

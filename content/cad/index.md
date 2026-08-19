@@ -1,6 +1,8 @@
 ---
-title: "Introduction of Lung CAD"
+title: "Introduction to Lung CAD"
 date: "2014-10-01T22:13:27.000-04:00"
+description: "An introduction to computer-aided detection (CAD) of pulmonary nodules in lung CT — why early lung cancer detection matters and how CAD systems assist radiologists."
+keywords: ["lung CAD", "computer-aided detection", "pulmonary nodule detection", "lung CT", "lung cancer screening"]
 ---
 
 - Lung cancer is the primary cause of cancer-related death in the world.

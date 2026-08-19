@@ -71,13 +71,45 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Wookjin Choi",
+  "givenName": "Wookjin",
+  "familyName": "Choi",
+  "honorificSuffix": "Ph.D.",
   "jobTitle": "Associate Professor of Radiation Oncology",
+  "description": "Associate Professor of Radiation Oncology at Thomas Jefferson University and Director of the CHOI Lab, working on radiomics, interpretable AI, and quantitative medical image analysis for cancer diagnosis and radiation therapy.",
+  "email": "mailto:Wookjin.Choi@jefferson.edu",
+  "url": "https://qradiomics.com/profile/",
   "worksFor": {
     "@type": "ResearchOrganization",
     "name": "CHOI Lab, Thomas Jefferson University",
     "url": "https://qradiomics.com/"
   },
-  "url": "https://qradiomics.com/profile/",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Sidney Kimmel Medical College, Thomas Jefferson University",
+    "url": "https://www.jefferson.edu/"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Gwangju Institute of Science and Technology",
+      "url": "https://www.gist.ac.kr/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Korea University of Technology and Education"
+    }
+  ],
+  "award": [
+    "ASTRO Annual Meeting Abstract Award, Basic Transitional Award in Physics (2026)",
+    "NIH Biomedical Quantum Computation Challenge, winning team (2024)",
+    "KSEA Faculty of the Year Award, Central Virginia Chapter (2021)",
+    "Editor\u2019s Pick, Medical Physics (2018)"
+  ],
+  "memberOf": [
+    { "@type": "Organization", "name": "American Association of Physicists in Medicine (AAPM)" },
+    { "@type": "Organization", "name": "American Society for Radiation Oncology (ASTRO)" },
+    { "@type": "Organization", "name": "Institute of Electrical and Electronics Engineers (IEEE)" }
+  ],
   "sameAs": [
     "https://orcid.org/0000-0001-8038-5876",
     "https://scholar.google.com/citations?user=iHgsGLUAAAAJ",
@@ -90,12 +122,47 @@
     "https://www.webofscience.com/wos/author/rid/H-8692-2013"
   ],
   "knowsAbout": [
+    "Radiomics",
     "Medical Physics",
+    "Medical Image Analysis",
+    "Computer-Aided Diagnosis",
     "Radiation Oncology Informatics",
     "Deep Learning in Medicine",
     "Quantitative Delta-Radiomics",
     "Large Language Models in Oncology"
   ]
+}
+</script>
+{{- end -}}
+
+{{- /* PaperMod already emits Organization (home) and BlogPosting (pages) JSON-LD.
+       Only the WebSite node is missing, so add just that — duplicating the others
+       would give search engines two competing descriptions of the same entity. */ -}}
+{{- if .IsHome -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": {{ site.BaseURL | jsonify }},
+  "name": {{ site.Title | jsonify }},
+  "alternateName": ["CHOI Lab", "QRadiomics"],
+  "description": {{ site.Params.description | jsonify }},
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "ResearchOrganization",
+    "name": "Computational Healthcare & Oncology Informatics (CHOI) Lab",
+    "url": {{ "about/" | absURL | jsonify }},
+    "parentOrganization": {
+      "@type": "CollegeOrUniversity",
+      "name": "Sidney Kimmel Medical College, Thomas Jefferson University",
+      "url": "https://www.jefferson.edu/"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Wookjin Choi",
+      "url": {{ "profile/" | absURL | jsonify }}
+    }
+  }
 }
 </script>
 {{- end -}}

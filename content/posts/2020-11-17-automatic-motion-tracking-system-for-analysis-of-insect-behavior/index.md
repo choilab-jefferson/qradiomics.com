@@ -19,7 +19,7 @@ Darrin Gladman, Jehu Osegbe, Wookjin Choi\*, and Joon Suk Lee "Automatic mo
 
 \*Corresponding author
 
-![](images/00289_psisdg11510_115102w_page_5_1.jpg)
+![Automatic motion tracking of insect behavior across video frames](images/00289_psisdg11510_115102w_page_5_1.jpg)
 
 **Abstract**
 
