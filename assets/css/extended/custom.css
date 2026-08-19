@@ -119,19 +119,6 @@ a.mi-chapter:hover {
     margin-top: 0;
 }
 
-/* Wide-element breakout.
-   The 720px column is right for prose — measured at 77-86 characters per line,
-   already at the top of the comfortable range, so widening the text would hurt.
-   It is wrong for everything else on this site: /qradiomics/ carries 12 tables,
-   up to 6 columns, with cells wrapping to 12 lines, and 8 of its code blocks
-   need 763-890px and scroll sideways at 720px.
-
-   So the text column stays put and only tables, code blocks and figures step
-   outside it. margin-inline is negative because 50% resolves against the 720px
-   container: 360 - 1040/2 = -160 per side.
-
-   Gated at 1152px (1040 + breathing room) — below that the viewport cannot
-   spare the width and everything behaves exactly as before. */
 /* Markdown tables are wrapped by layouts/_markup/render-table.html so they have
    something to scroll inside; the wrapper carries the spacing and the breakout. */
 .post-content .table-wrap {
@@ -175,20 +162,82 @@ a.mi-chapter:hover {
     }
 }
 
-@media screen and (min-width: 1152px) {
-    .post-content > .table-wrap,
-    .post-content > .highlight,
-    .post-content > pre,
-    .post-content > figure {
-        width: 1040px;
-        max-width: none;
-        margin-inline: -160px;
-    }
 
-    /* Figures caption their own content, so keep the caption with the image
-       rather than letting it run the full 1040px. */
-    .post-content > figure figcaption {
-        max-width: 720px;
-        margin-inline: auto;
-    }
+/* ---------------------------------------------------------------------------
+   Fluid type and measure.
+
+   PaperMod's whole responsive layer is seven rules in zmedia.css, all of them
+   layout and spacing — it never changes a font size. So a 40px h1 and an 18px
+   table cell render identically on a 1440px desktop and a 390px phone, which is
+   why headings feel oversized on a narrow screen.
+
+   Rather than add a second column width inside the page, the column and the
+   type scale together with the viewport. Line length — the thing that actually
+   governs readability — then stays roughly constant everywhere, while each
+   device gets a size suited to how far the screen sits from your eyes.
+   --------------------------------------------------------------------------- */
+
+:root {
+    /* 720px up to a 1160px viewport, then widening to 880px. */
+    --main-width: clamp(720px, 62vw, 880px);
+}
+
+body {
+    /* 17px on a phone, 21px on a wide desktop. */
+    font-size: clamp(17px, 0.6vw + 14.5px, 21px);
+}
+
+.post-content {
+    font-size: inherit;
+}
+
+/* Headings scale on the same curve, with a wider range: they are what looks
+   most oversized on a phone. */
+.post-header .post-title,
+.md-content h1 {
+    font-size: clamp(28px, 1.6vw + 22px, 40px);
+}
+.md-content h2 {
+    font-size: clamp(23px, 1.2vw + 18px, 32px);
+}
+.md-content h3 {
+    font-size: clamp(19px, 0.8vw + 15px, 24px);
+}
+
+/* Table text runs a notch smaller than prose: a table is scanned, not read
+   line by line, and the smaller size buys columns the room they need. */
+.post-content .table-wrap table {
+    font-size: clamp(15px, 0.45vw + 13.3px, 18px);
+}
+
+/* Below the widening point the column is already viewport-bound, so the phone
+   keeps PaperMod's own fluid behaviour and only the type changes. */
+
+/* Code does not scale with prose. A line of code has a fixed character count,
+   so growing it with the body only pushes more blocks into horizontal scroll —
+   raising the body to 21px inflated code from 14px to 16.4px and doubled the
+   number of scrolling blocks. Hold it near 14px and let the extra column width
+   go to fitting more of the line. */
+.post-content code,
+.post-content pre,
+.post-content .highlight pre code {
+    font-size: clamp(13px, 0.15vw + 12.4px, 14.5px);
+}
+
+/* The nav is a horizontal scroller (PaperMod has no hamburger). With seven
+   entries, three of them sit off-screen on a phone with nothing to say so.
+   Same scrolling-shadow trick as the tables. */
+#menu {
+    background:
+        linear-gradient(to right, var(--theme), transparent) 0 0 / 24px 100% no-repeat local,
+        linear-gradient(to left, var(--theme), transparent) 100% 0 / 24px 100% no-repeat local,
+        radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.28), transparent) 0 0 / 14px 100% no-repeat scroll,
+        radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.28), transparent) 100% 0 / 14px 100% no-repeat scroll;
+}
+:root[data-theme="dark"] #menu {
+    background:
+        linear-gradient(to right, var(--theme), transparent) 0 0 / 24px 100% no-repeat local,
+        linear-gradient(to left, var(--theme), transparent) 100% 0 / 24px 100% no-repeat local,
+        radial-gradient(farthest-side at 0 50%, rgba(255, 255, 255, 0.22), transparent) 0 0 / 14px 100% no-repeat scroll,
+        radial-gradient(farthest-side at 100% 50%, rgba(255, 255, 255, 0.22), transparent) 100% 0 / 14px 100% no-repeat scroll;
 }
