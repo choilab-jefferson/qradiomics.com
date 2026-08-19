@@ -51,10 +51,13 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
+          # Build with the baseURL from hugo.yaml (https). The base_url output of
+          # actions/configure-pages is http:// for this custom domain, which put
+          # http:// into every absolute URL Hugo emits — cover srcsets, og:image,
+          # JSON-LD — and browsers then blocked those images as mixed content.
           hugo \
             --gc \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
