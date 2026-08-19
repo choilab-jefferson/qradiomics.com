@@ -86,3 +86,35 @@ a.mi-chapter:hover {
 .mi-chapter-cta::after {
     content: " \2197";
 }
+
+/* Heading spacing.
+   PaperMod gives h2 32px above and 24px below, and h3 24px/16px — close enough
+   to equal that a heading reads as the tail of the section above it rather than
+   the head of the one below. Worse for lists: the list's own 20px bottom margin
+   collapses into the heading's top margin, so a heading after a list gets no
+   more air than one after a paragraph, while the ragged last bullet makes the
+   gap look smaller than it is.
+
+   A heading belongs to what follows, so the space above it should read as
+   clearly larger — roughly 3:1 here. */
+.md-content h2 {
+    margin-top: 56px;
+    margin-bottom: 20px;
+}
+.md-content h3 {
+    margin-top: 40px;
+    margin-bottom: 14px;
+}
+.md-content h4,
+.md-content h5,
+.md-content h6 {
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+/* A heading directly under its parent heading is a pair, not a new section. */
+.md-content h2 + h3,
+.md-content h3 + h4,
+.md-content h4 + h5 {
+    margin-top: 0;
+}
