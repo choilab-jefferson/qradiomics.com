@@ -132,8 +132,51 @@ a.mi-chapter:hover {
 
    Gated at 1152px (1040 + breathing room) — below that the viewport cannot
    spare the width and everything behaves exactly as before. */
+/* Markdown tables are wrapped by layouts/_markup/render-table.html so they have
+   something to scroll inside; the wrapper carries the spacing and the breakout. */
+.post-content .table-wrap {
+    overflow-x: auto;
+    margin-bottom: var(--content-gap);
+
+    /* Scrolling shadows. A table that scrolls with no cue is worse than one
+       that wraps: the wrapped version at least showed every column, while a
+       silent scroller hides them. These two gradient pairs sit on the left and
+       right edges — the `local` layers scroll away with the content and uncover
+       the `scroll` layers, so a shadow appears only on a side that has more
+       table to reach. Pure CSS, no script. */
+    background:
+        linear-gradient(to right, var(--theme), transparent) 0 0 / 28px 100% no-repeat local,
+        linear-gradient(to left, var(--theme), transparent) 100% 0 / 28px 100% no-repeat local,
+        radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.3), transparent) 0 0 / 16px 100% no-repeat scroll,
+        radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.3), transparent) 100% 0 / 16px 100% no-repeat scroll;
+}
+.post-content .table-wrap > table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* The shadow is black-on-white; on the dark theme it would vanish into the
+   background, so invert it there. PaperMod stamps data-theme on :root. */
+:root[data-theme="dark"] .post-content .table-wrap {
+    background:
+        linear-gradient(to right, var(--theme), transparent) 0 0 / 28px 100% no-repeat local,
+        linear-gradient(to left, var(--theme), transparent) 100% 0 / 28px 100% no-repeat local,
+        radial-gradient(farthest-side at 0 50%, rgba(255, 255, 255, 0.22), transparent) 0 0 / 16px 100% no-repeat scroll,
+        radial-gradient(farthest-side at 100% 50%, rgba(255, 255, 255, 0.22), transparent) 100% 0 / 16px 100% no-repeat scroll;
+}
+
+/* Below the breakout width there is no room for a four-column table: squeezed
+   into 362px on a phone its cells wrap to ten lines and the grid stops reading
+   as a grid. Past three columns, keep the natural width and scroll instead.
+   Two- and three-column tables still fit, so they are left to wrap. */
+@media screen and (max-width: 1151px) {
+    .post-content .table-wrap:has(thead th:nth-child(4)) > table {
+        min-width: 680px;
+    }
+}
+
 @media screen and (min-width: 1152px) {
-    .post-content > table,
+    .post-content > .table-wrap,
     .post-content > .highlight,
     .post-content > pre,
     .post-content > figure {

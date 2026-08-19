@@ -131,25 +131,25 @@ Dates and amounts follow the [CV](images/wookjin-choi-cv.pdf); figures are **tot
 
 ### Active
 
-| Period | Project | Role · Award |
-| --- | --- | --- |
-| 12/2023 – 12/2026 | **Longitudinal CBCT radiomics analysis for lung cancer radiotherapy response and prognosis prediction**<br>Varian Medical Systems | **PI** · $230,000 |
-| 8/2024 – 7/2029 | **Systems Engineering for Ransomware Attack Response Resiliency in Radiation Oncology**<br>NIH / AHRQ | Co-I · $393,974 |
-| 1/2022 – present | **Interpretable Predictive Models for Radiation Therapy**<br>Sidney Kimmel Comprehensive Cancer Center | **PI** |
+| Period | Project | Sponsor | Role · Award |
+| --- | --- | --- | --- |
+| 12/2023 – 12/2026 | Longitudinal CBCT radiomics analysis for lung cancer radiotherapy response and prognosis prediction | Varian Medical Systems | **PI** · $230,000 |
+| 8/2024 – 7/2029 | Systems Engineering for Ransomware Attack Response Resiliency in Radiation Oncology | NIH / AHRQ | Co-I · $393,974 |
+| 1/2022 – present | Interpretable Predictive Models for Radiation Therapy | Sidney Kimmel Comprehensive Cancer Center | **PI** |
 
 ### Completed
 
-| Period | Project | Role · Award |
-| --- | --- | --- |
-| 1/2022 – 12/2025 | **Computational development for MRI-Linac**<br>ViewRay Technologies | **PI** · $368,182 direct |
-| 2/2024 – 2/2025 | **Microdosimetry for Prostate Cancer Radiotheranostics**<br>Philadelphia Prostate Cancer Biome Project | Co-I |
-| 5/2023 – 4/2024 | **Facial analytic deep learning training set for detecting frustration in early readers**<br>Propel Health Impact Grant | Subaward **PI** · $200,000 ($25,000 to TJU) |
-| 5/2021 – 5/2024 | **Deep Learning-based Target Tracking and Assignment for Cooperative Swamp Defense**<br>DoD Naval Engineering Education Consortium | Co-PI · $361,161 ($261,796 direct) |
-| 5/2021 – 8/2022 | **Cybersecurity Monitoring and Assurance Training for Safe and Secure Port Operations**<br>Commonwealth Cyber Initiative | Co-PI · $150,000 ($32,070 to VSU) |
-| 5/2021 – 5/2022 | **Acquisition of a GPU-Accelerated Deep-Learning Research Cluster**<br>DoD HBCU/MI Equipment Program | **PI** · $588,244 |
-| 7/2020 – 7/2021 | **Robust Human Action Recognition Using Multi-View Depth Videos for Human-Robot Interaction**<br>VSU & Commonwealth Center for Advanced Manufacturing | **PI** · $50,000 |
-| 11/2013 – 7/2014 | **3D Image Analysis for Computer-Aided Diagnosis in Lung CT**<br>National Research Foundation of Korea | **PI** · $50,000 ($39,000 direct) |
-| 12/2013 – 12/2014 | **A System for Computer-Aided Detection of Pulmonary Disease**<br>Small and Medium Business Administration of Korea | **PI**, founder of QuaLIA, Inc. · $90,000 |
+| Period | Project | Sponsor | Role · Award |
+| --- | --- | --- | --- |
+| 1/2022 – 12/2025 | Computational development for MRI-Linac | ViewRay Technologies | **PI** · $368,182 direct |
+| 2/2024 – 2/2025 | Microdosimetry for Prostate Cancer Radiotheranostics | Philadelphia Prostate Cancer Biome Project | Co-I |
+| 5/2023 – 4/2024 | Facial analytic deep learning training set for detecting frustration in early readers | Propel Health Impact Grant | Subaward **PI** · $200,000 ($25,000 to TJU) |
+| 5/2021 – 5/2024 | Deep Learning-based Target Tracking and Assignment for Cooperative Swamp Defense | DoD Naval Engineering Education Consortium | Co-PI · $361,161 ($261,796 direct) |
+| 5/2021 – 8/2022 | Cybersecurity Monitoring and Assurance Training for Safe and Secure Port Operations | Commonwealth Cyber Initiative | Co-PI · $150,000 ($32,070 to VSU) |
+| 5/2021 – 5/2022 | Acquisition of a GPU-Accelerated Deep-Learning Research Cluster | DoD HBCU/MI Equipment Program | **PI** · $588,244 |
+| 7/2020 – 7/2021 | Robust Human Action Recognition Using Multi-View Depth Videos for Human-Robot Interaction | VSU & Commonwealth Center for Advanced Manufacturing | **PI** · $50,000 |
+| 11/2013 – 7/2014 | 3D Image Analysis for Computer-Aided Diagnosis in Lung CT | National Research Foundation of Korea | **PI** · $50,000 ($39,000 direct) |
+| 12/2013 – 12/2014 | A System for Computer-Aided Detection of Pulmonary Disease | Small and Medium Business Administration of Korea | **PI**, founder of QuaLIA, Inc. · $90,000 |
 
 ---
 

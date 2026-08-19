@@ -1,0 +1,29 @@
+{{- /* Wrap markdown tables so they have something to scroll inside.
+
+       Without a wrapper a wide table has only one way to fit a narrow screen:
+       squeeze its columns until cells wrap to ten lines and the grid stops
+       reading as a grid. The wrapper lets tables past three columns keep their
+       natural width and scroll sideways instead, and it is also what the
+       desktop breakout attaches to. */ -}}
+<div class="table-wrap">
+  <table>
+    <thead>
+      {{- range .THead }}
+      <tr>
+        {{- range . }}
+        <th{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</th>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </thead>
+    <tbody>
+      {{- range .TBody }}
+      <tr>
+        {{- range . }}
+        <td{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</td>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </tbody>
+  </table>
+</div>
