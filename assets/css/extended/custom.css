@@ -86,3 +86,66 @@ a.mi-chapter:hover {
 .mi-chapter-cta::after {
     content: " \2197";
 }
+
+/* Heading spacing.
+   PaperMod gives h2 32px above and 24px below, and h3 24px/16px — close enough
+   to equal that a heading reads as the tail of the section above it rather than
+   the head of the one below. Worse for lists: the list's own 20px bottom margin
+   collapses into the heading's top margin, so a heading after a list gets no
+   more air than one after a paragraph, while the ragged last bullet makes the
+   gap look smaller than it is.
+
+   A heading belongs to what follows, so the space above it should read as
+   clearly larger — roughly 3:1 here. */
+.md-content h2 {
+    margin-top: 56px;
+    margin-bottom: 20px;
+}
+.md-content h3 {
+    margin-top: 40px;
+    margin-bottom: 14px;
+}
+.md-content h4,
+.md-content h5,
+.md-content h6 {
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+/* A heading directly under its parent heading is a pair, not a new section. */
+.md-content h2 + h3,
+.md-content h3 + h4,
+.md-content h4 + h5 {
+    margin-top: 0;
+}
+
+/* Wide-element breakout.
+   The 720px column is right for prose — measured at 77-86 characters per line,
+   already at the top of the comfortable range, so widening the text would hurt.
+   It is wrong for everything else on this site: /qradiomics/ carries 12 tables,
+   up to 6 columns, with cells wrapping to 12 lines, and 8 of its code blocks
+   need 763-890px and scroll sideways at 720px.
+
+   So the text column stays put and only tables, code blocks and figures step
+   outside it. margin-inline is negative because 50% resolves against the 720px
+   container: 360 - 1040/2 = -160 per side.
+
+   Gated at 1152px (1040 + breathing room) — below that the viewport cannot
+   spare the width and everything behaves exactly as before. */
+@media screen and (min-width: 1152px) {
+    .post-content > table,
+    .post-content > .highlight,
+    .post-content > pre,
+    .post-content > figure {
+        width: 1040px;
+        max-width: none;
+        margin-inline: -160px;
+    }
+
+    /* Figures caption their own content, so keep the caption with the image
+       rather than letting it run the full 1040px. */
+    .post-content > figure figcaption {
+        max-width: 720px;
+        margin-inline: auto;
+    }
+}
