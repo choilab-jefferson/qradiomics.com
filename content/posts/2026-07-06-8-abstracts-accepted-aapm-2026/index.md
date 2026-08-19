@@ -38,7 +38,7 @@ I won't be attending the meeting in Vancouver in person this year, but I'm incre
    **Wookjin Choi**, Hamidreza Nourzadeh, David H. Thomas, Yingxuan Chen, Yevgeniy Vinogradskiy
 
 4. **SU-315-GPD-R-23** — *Improving Cardiac Toxicity Prediction from PET Radiomics: Cross-Cohort Validation and Late-Fusion Ensemble Modeling*
-   Wenchao Cao, Devanshu Panchal, Nilanjan Halder, Michael Dichmann, Patrick Faherty, Erik Blomain, **Wookjin Choi**, Yevgeniy Vinogradskiy
+   Wenchao Cao, Devanshu Panchal, Nilanjan Haldar, Michael Dichmann, Patrick Faherty, Erik Blomain, **Wookjin Choi**, Yevgeniy Vinogradskiy
 
 5. **SU-315-GPD-T-25** — *Hierarchical Spatial and Temporal Aggregation as Progressive Denoising for Longitudinal CBCT Radiomics in Lung Cancer* — **SNAP Oral**
    **Wookjin Choi**, Pradeep Bhetwal, Michael Dichmann, Yingcui Jia, Wenchao Cao, Yingxuan Chen, Yevgeniy Vinogradskiy, Hamidreza Nourzadeh

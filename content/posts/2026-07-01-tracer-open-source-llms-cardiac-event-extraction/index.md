@@ -61,12 +61,12 @@ No more summer breaks spent by medical students manually digging through EHR fre
 
 ## The team
 
-Huge congratulations to **Dr. Wenchao Cao**, formerly our Senior Physics Resident and now department faculty since July 1, and **Dr. Nilanjan Halder**, who just completed his Radiation Oncology residency and is heading to Phoenix — along with the medical student intern team who did much of the extraction and validation work: Isis Lloyd, Michael Dichmann, Femi Adejolu, Moorin Khan, and Patrick Faherty. Best of luck to Wenchao and Nilanjan on their next chapters.
+Huge congratulations to **Dr. Wenchao Cao**, formerly our Senior Physics Resident and now department faculty since July 1, and **Dr. Nilanjan Haldar**, who just completed his Radiation Oncology residency and is heading to Phoenix — along with the medical student intern team who did much of the extraction and validation work: Isis Lloyd, Michael Dichmann, Femi Adejolu, Moorin Khan, and Patrick Faherty. Best of luck to Wenchao and Nilanjan on their next chapters.
 
 ## Publication
 
 **Cross-Institutional Validation of a Novel LLM-Based Cardiac Event Extraction Framework from Electronic Health Records.**
-Wenchao Cao, Isis Lloyd, Michael Dichmann, Nilanjan Halder, David Thomas, Zhe Chen, Erik Blomain, Femi Adejolu, Kristen E. Beck, Patrick Faherty, Moorin Khan, Nicole Simone, Varsha Jain, Eugene Storozynsky, Adam P. Dicker, **Wookjin Choi**, Yevgeniy Vinogradskiy.
+Wenchao Cao, Isis Lloyd, Michael Dichmann, Nilanjan Haldar, David Thomas, Zhe Chen, Erik Blomain, Femi Adejolu, Kristen E. Beck, Patrick Faherty, Moorin Khan, Nicole Simone, Varsha Jain, Eugene Storozynsky, Adam P. Dicker, **Wookjin Choi**, Yevgeniy Vinogradskiy.
 *International Journal of Radiation Oncology, Biology, Physics* (in press), published online June 29, 2026.
 
 - DOI: [10.1016/j.ijrobp.2026.06.3060](https://doi.org/10.1016/j.ijrobp.2026.06.3060)
