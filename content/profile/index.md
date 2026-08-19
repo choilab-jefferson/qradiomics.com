@@ -1,17 +1,20 @@
 ---
-title: "Profile"
+title: "Wookjin Choi, Ph.D."
 date: "2016-06-22T23:51:23.000-04:00"
-lastmod: "2026-08-18T00:00:00.000-04:00"
-description: "Profile and Curriculum Vitae of Wookjin Choi, Ph.D., Associate Professor of Radiation Oncology and Director of the CHOI Lab at Thomas Jefferson University."
+lastmod: "2026-08-19T00:00:00.000-04:00"
+description: "Wookjin Choi, Ph.D. — Associate Professor of Radiation Oncology at Thomas Jefferson University and Director of the CHOI Lab. Radiomics, interpretable AI, and medical image analysis for cancer care."
+summary: "Associate Professor of Radiation Oncology at Thomas Jefferson University; Director of the CHOI Lab. Radiomics, interpretable AI, and open-source medical image analysis."
+keywords: ["Wookjin Choi", "radiomics", "medical image analysis", "interpretable AI", "radiation oncology", "Thomas Jefferson University", "CHOI Lab", "qradiomics"]
 schema: "profile"
+TocOpen: true
+hideMeta: true
 ---
 
-# **Wookjin Choi, Ph.D.**
+**Associate Professor of Radiation Oncology** (since April 2026)<br>
+**Director**, Computational Healthcare & Oncology Informatics ([CHOI Lab](/about/))<br>
+Sidney Kimmel Medical College at Thomas Jefferson University · Philadelphia, PA
 
-Associate Professor of Radiation Oncology (since April 2026)
-Director, **C**omputational **H**ealthcare & **O**ncology **I**nformatics ([CHOI Lab](/about/))
-Sidney Kimmel Medical College at Thomas Jefferson University
-Email: [Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu), [wchoi1022@gmail.com](mailto:wchoi1022@gmail.com)
+[**Curriculum Vitae (PDF)**](images/wookjin-choi-cv.pdf) · [Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu) · [wchoi1022@gmail.com](mailto:wchoi1022@gmail.com)
 
 <p class="profile-icons">
 <a href="images/wookjin-choi-cv.pdf" title="Curriculum Vitae (PDF)" aria-label="Curriculum Vitae (PDF)"><svg viewBox="0 0 16 16" role="img" aria-hidden="true" focusable="false"><path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/> <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5z"/></svg></a>
@@ -28,110 +31,138 @@ Email: [Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu), [wchoi10
 <a href="https://choiw.notion.site/" title="Notion Space" aria-label="Notion Space"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></a>
 </p>
 
+Wookjin Choi works on **quantitative medical image analysis** for cancer diagnosis and
+radiation therapy. He builds
+**interpretable radiomics and deep learning models** — and the open-source software that
+makes them reproducible, including the [**qradiomics**](/qradiomics/) research CLI and the
+free [**medimage**](/posts/2026-08-04-introducing-medimage/) course. His work spans lung
+cancer screening, cardiac toxicity prediction from PET radiomics, MR-guided adaptive
+radiotherapy, and large language models for clinical information extraction.
+
 ---
 
-- Research Area
-    - Medical Image Analysis
-    - Radiomics/Computer-Aided Diagnosis
-    - Machine learning and Deep learning
-    - Large language models and AI agents for clinical and research workflows
+## Research Areas
 
-- Selected Publications \[[Google Scholar](http://scholar.google.com/citations?user=iHgsGLUAAAAJ&hl=en)\]\[[Scopus](http://www.scopus.com/authid/detail.url?authorId=7402516217)\]\[[ORCID](https://orcid.org/0000-0001-8038-5876)\]
-    1. Wenchao Cao, Isis Lloyd, Michael Dichmann, Nilanjan Haldar, David Thomas, Z. Chen, Erik Blomain, **Wookjin Choi**, et al., "Cross-Institutional Validation of a Novel LLM-Based Cardiac Event Extraction Framework from Electronic Health Records (TRACER)," International Journal of Radiation Oncology, Biology, Physics (Red Journal), in press, 2026. [Summary](/posts/2026-07-01-tracer-open-source-llms-cardiac-event-extraction/)
-    2. Taindra Neupane, Edward Castillo, Yingxuan Chen, Soroush Heidari Pahlavian, Richard Castillo, Yevgeniy Vinogradskiy, **Wookjin Choi**, "Predicting radiation pneumonitis in lung cancer patients using robust 4DCT-ventilation and perfusion imaging," Radiotherapy and Oncology, Vol. 212, 111110, November 2025. [https://doi.org/10.1016/j.radonc.2025.111110](https://doi.org/10.1016/j.radonc.2025.111110)
-    3. Jun Li, **Wookjin Choi**, Rani Anne, "Deep Learning-Based Auto-Segmentation for Liver Yttrium-90 Selective Internal Radiation Therapy," Technology in Cancer Research & Treatment, Vol. 24, 15330338251327081, March 2025. [https://doi.org/10.1177/15330338251327081](https://doi.org/10.1177/15330338251327081) [Summary](/posts/2025-04-08-ai-powered-auto-segmentation-in-liver-cancer-therapy/)
-    4. Julia A. Logan, Sriya Sadhu, Cameo Hazlewood, et al., **Wookjin Choi**, Nicole L. Simone, "Bridging Gaps in Cancer Care: Utilizing Large Language Models for Accessible Dietary Recommendations," Nutrients, Vol. 17, No. 7, 1176, March 2025. [https://doi.org/10.3390/nu17071176](https://doi.org/10.3390/nu17071176) [Summary](/posts/2025-04-08-empowering-cancer-care-with-ai-a-jefferson-medical-student-led-innovation/)
-    5. **Wookjin Choi**, Yingcui Jia, Jennifer Kwak, Maria Werner-Wasik, Adam P. Dicker, Nicole L. Simone, Eugene Storozynsky, Varsha Jain, Yevgeniy Vinogradskiy, Novel Functional Radiomics for Prediction of Cardiac Positron Emission Tomography Avidity in Lung Cancer Radiotherapy. JCO Clin Cancer Inform 8, e2300241(2024). [https://doi.org/10.1200/CCI.23.00241](https://doi.org/10.1200/CCI.23.00241) (featured in [JCO CCI Editorial](https://ascopubs.org/doi/10.1200/CCI.24.00045))
-    6. **Wookjin Choi**, Chia-Ju Liu, Sadegh Riyahi Alam, Jung Hun Oh, Raj Vaghjiani, John Humm, Wolfgang Weber, Prasad S. Adusumilli, Joseph O. Deasy, and Wei Lu, "Preoperative 18F-FDG PET/CT and CT Radiomics for Identifying Aggressive Histopathological Subtypes in Early Stage Lung Adenocarcinoma", Computational and Structural Biotechnology Journal, [Volume 21](https://www.sciencedirect.com/journal/computational-and-structural-biotechnology-journal/vol/21/suppl/C), 2023, Pages 5601-5608, [https://doi.org/10.1016/j.csbj.2023.11.008](https://doi.org/10.1016/j.csbj.2023.11.008)
-    7. **Wookjin Choi**, Navdeep Dahiya, Saad Nadeem, "CIRDataset: A large-scale Dataset for Clinically-Interpretable lung nodule Radiomics and malignancy prediction," International Conference on Medical Image Computing and Computer-Assisted Intervention, Sep 2022. [https://arxiv.org/abs/2206.14903](https://arxiv.org/abs/2206.14903) [https://link.springer.com/chapter/10.1007/978-3-031-16443-9_2](https://link.springer.com/chapter/10.1007/978-3-031-16443-9_2)
-    8. Jung Hun Oh, **Wookjin Choi**, Euiseong Ko, Mingon Kang, Allen Tannenbaum, Joseph O Deasy, "PathCNN: interpretable convolutional neural networks for survival prediction and pathway analysis applied to glioblastoma," Bioinformatics, Volume 37, Issue Supplement_1, July 2021, Pages i443–i450, the first two authors should be regarded as Joint First Authors. [doi.org/10.1093/bioinformatics/btab285](https://doi.org/10.1093/bioinformatics/btab285), [Codes](https://github.com/mskspi/PathCNN)
-    9. **Wookjin Choi**, Saad Nadeem, Sadegh Riyahi, Joseph O. Deasy, Allen Tannenbaum, Wei Lu, "Reproducible and Interpretable Spiculation Quantification for Lung Cancer Screening," Computer Methods and Programs in Biomedicine 200, 105839, March 2021, [doi:10.1016/j.cmpb.2020.105839](https://doi.org/10.1016/j.cmpb.2020.105839) [Slides](https://qradiomics.wordpress.com/2018/09/11/interpretable-spiculation-quantification-for-lung-cancer-screening/)
-    10. **Wookjin Choi**, Jung Hun Oh, Sadegh Riyahi, Chia-Ju Liu, Feng Jiang, Wengen Chen, Charles White, Andreas Rimner, James G. Mechalakos, Joseph O. Deasy, and Wei Lu, "Radiomics analysis of pulmonary nodules in low-dose CT for early detection of lung cancer," Medical Physics, Vol. 45, No. 4, pp. 1537-1549, April 2018. [doi:10.1002/mp.12820](http://doi.org/10.1002/mp.12820) **Selected as an Editor's Pick** [Slides](https://qradiomics.wordpress.com/2017/08/03/radiomics-analysis-of-pulmonary-nodules-in-low-dose-ct-for-early-detection-of-lung-cancer/)
-    11. **Wookjin Choi**, M Xue, B Lane, M Kang, K Patel, W Regine, P Klahr, J Wang, S Chen, W D'Souza, W Lu, "Individually Optimized Contrast-Enhanced 4D-CT for Radiotherapy Simulation in Pancreatic Ductal Adenocarcinoma", Medical Physics, Vol. 43, No. 10, pp. 5659-5666, October 2016. [doi:10.1118/1.4963213](http://dx.doi.org/10.1118/1.4963213) [Selected as Today's Science Sparks of MSKCC Library (10/17/2016)](https://library.mskcc.org/sparks/quarter/2016/4/prod) [Slides](https://qradiomics.wordpress.com/2016/08/05/individually-optimized-contrast-enhanced-4d-ct-for-radiotherapy-simulation-in-pancreatic-ductal-adenocarcinoma/) [Animation](https://qradiomics.wordpress.com/2016/08/05/estimate-peak-enhancement-time/) [Poster](https://qradiomics.wordpress.com/2016/09/21/individually-optimized-contrast-enhanced-4d-ct-for-radiotherapy-simulation-in-pancreatic-adenocarcinoma/)
-    12. **Wookjin Choi**, Tae-Sun Choi, "Automated Pulmonary Nodule Detection based on Three-dimensional Shape-based Feature Descriptor," Computer Methods and Programs in Biomedicine, Vol. 113, No. 1, pp. 37–54, January 2014. [doi:10.1016/j.cmpb.2013.08.015](https://doi.org/10.1016/j.cmpb.2013.08.015)
-    13. **Wookjin Choi**, Tae-Sun Choi, "Genetic Programming-based feature transform and classification for the automatic detection of pulmonary nodules on computed tomography images," Information Sciences, Vol. 212, pp. 57-78, December 2012. [doi:10.1016/j.ins.2012.05.008](https://doi.org/10.1016/j.ins.2012.05.008)
+- **Radiomics and quantitative image analysis** — reproducible feature extraction from CT, PET, CBCT, and MRI.
+- **Computer-aided diagnosis** — automated lung nodule detection and malignancy characterization.
+- **Interpretable machine and deep learning** — clinically meaningful features (spiculation, pathway activity) instead of black boxes.
+- **Large language models and AI agents** — structured extraction and automation for clinical and research workflows.
 
-- Research Grants and Contracts \[amounts and dates follow the [CV](images/wookjin-choi-cv.pdf); figures are total cost unless noted otherwise\]
-    - Active
-        - 12/2023 – 12/2026 PI: **Wookjin Choi**
-            "Longitudinal CBCT radiomics analysis for lung cancer radiotherapy response and prognosis prediction"
-            Varian Medical Systems Research Grant
-            Total Cost: $230,000
-        - 8/2024 – 7/2029 R18HS030060 PI: Yevgeniy Vinogradskiy; Co-I: **Wookjin Choi**
-            "Systems Engineering for Ransomware Attack Response Resiliency in Radiation Oncology"
-            NIH Agency for Healthcare Research and Quality (AHRQ)
-            Total Cost: $393,974
-        - 1/2022 – Present SKCC Research Grant PI: **Wookjin Choi**
-            "Interpretable Predictive Models for Radiation Therapy"
-            Sidney Kimmel Comprehensive Cancer Center at Thomas Jefferson University Hospital
-    - Completed
-        - 1/2022 – 12/2025 080-34000-N39801 PI: **Wookjin Choi**
-            "Computational development for MRI-Linac"
-            ViewRay Technologies, Inc.
-            Direct costs: $368,182
-        - 2/2024 – 2/2025 PI: Lucas Wilson; Co-I: **Wookjin Choi**
-            "Microdosimetry for Prostate Cancer Radiotheranostics"
-            Philadelphia Prostate Cancer Biome Project
-        - 5/2023 – 4/2024 PI: Judy Shelton; Subaward PI: **Wookjin Choi**
-            "Constructing a facial analytic deep learning training set for detecting frustration in early readers"
-            Propel Health Impact Grant
-            Total Cost: $200,000 (TJU: $25,000)
-        - 5/2021 – 5/2024 N00174-21-1-0011 PI: Ju Wang; Co-PI: **Wookjin Choi**
-            "Deep Learning-based Target Tracking and Assignment for Cooperative Swamp Defense"
-            DoD Naval Engineering Education Consortium (NEEC)
-            Total Cost: $361,161 (direct costs: $261,796)
-        - 5/2021 – 8/2022 CCI Grant PI: Sachin Shetty; Co-PI: **Wookjin Choi**
-            "Cybersecurity Monitoring and Assurance Training Program for Safe and Secure Port Operations"
-            Commonwealth Cyber Initiative — Scalable Pilot Programs for Experiential Learning
-            Total Cost: $150,000 (VSU: $32,070)
-        - 5/2021 – 5/2022 W911NF2110280 PI: **Wookjin Choi**
-            "Acquisition of a GPU-Accelerated Deep-Learning Research Cluster"
-            DoD Research and Education Program for HBCU/MI Equipment/Instrumentation
-            Total Cost: $588,244
-        - 7/2020 – 7/2021 CCAM E-055 PI: **Wookjin Choi**
-            "A Robust Human Action Recognition System using Multi-View Depth Videos for Safe and Reliable Human-Robot Interactions in a Mixed Reality Environment"
-            Innovation Fund, VSU & Commonwealth Center for Advanced Manufacturing (CCAM)
-            Total Cost: $50,000
-        - 11/2013 – 7/2014 NRF-2013R1A1-A2058113 PI: **Wookjin Choi**
-            "3D Image Analysis for Computer Aided Diagnosis in Lung CT Image"
-            Basic Science Research Program, National Research Foundation of Korea (similar to K99/R00)
-            Total Cost: $50,000 (direct costs: $39,000)
-        - 12/2013 – 12/2014 2013RS-03-00000-P-00173 PI: **Wookjin Choi**, founder of QuaLIA, Inc.
-            "A System for Computer-Aided Detection of Pulmonary Disease"
-            Start-up Seed Grant, Small and Medium Business Administration of Korea (similar to SBIR)
-            Total Cost: $90,000
+---
 
-- Awards and Honors
-    - 2026 — **ASTRO Annual Meeting Abstract Award, Basic Transitional Award in Physics** (30 award-winning abstracts out of >2,000 submissions), for *Early Adaptive Interventions in Lung Cancer: Leveraging Fusion of Longitudinal CBCT Trajectories and Clinical Variables for Robust Survival Prediction* \[[details](/posts/2026-07-27-2026-astro-annual-meeting-abstract-award/)\]
-    - 2026 — Selected for an **Oral Scientific Presentation in the *BEST of Physics* session**, ASTRO 2026 Annual Meeting, Boston (300 orals out of ~2,700 abstracts) \[[details](/posts/2026-05-18-astro-2026-best-of-physics-oral-acceptance/)\]
-    - 2026 — Selected participant, **NCI AI Embeddings Innovation Lab** ("AI Embeddings for Next-Gen Cancer Diagnostics", invitation-based, ~30 participants) \[[details](/posts/2026-07-27-selected-nci-ai-embeddings-innovation-lab/)\]
-    - 2024 — **NIH Biomedical Quantum Computation Challenge, winner ($25,000)** — NIH ODSS/NCI Quantum Computing Innovation Lab, Team Quantum Heart (1 of 3 winning teams) \[[details](/posts/2025-08-20-team-quantum-heart-wins-nih-prize-for-innovation/)\]
-    - 2024 — Featured in a [JCO Clinical Cancer Informatics editorial](https://ascopubs.org/doi/10.1200/CCI.24.00045) for the cardiac PET radiomics study
-    - 2021 — **Faculty of the Year Award**, Korean American Scientists and Engineers Association (KSEA), Central Virginia Chapter
-    - 2020 — 4th place, **AI Tracks at Sea Challenge**, hosted by the Naval Information Warfare Center (NIWC) Pacific (VSU TrojanOne team; faculty advisor) \[[details](/posts/2021-02-01-fourth-place-winner-on-ai-tracks-at-sea-challenge/)\]
-    - 2018 — **Editor's Pick**, *Medical Physics*, for "Radiomics analysis of pulmonary nodules in low-dose CT for early detection of lung cancer"
+## Selected Publications
 
-- Open-Source Software and Educational Resources \[[CHOI Lab GitHub](https://github.com/choilab-jefferson)\]
-    - **[qradiomics](/qradiomics/)** — radiomics research CLI and library (`qr`): DICOM conversion, multi-engine feature extraction, Nextflow/Prefect workflow assembly, survival and ML modeling. MIT · [PyPI](https://pypi.org/project/qradiomics/) · [GitHub](https://github.com/choilab-jefferson/qradiomics). Successor to `radiomics-tools`, `lung-image-analysis`, and `LungCancerScreeningRadiomics`.
-    - **[medimage](/posts/2026-08-04-introducing-medimage/)** — free 13-chapter Google Colab course in quantitative medical image analysis, from DICOM basics to reproducing a published radiomics study. MIT · [GitHub](https://github.com/choilab-jefferson/medimage)
-    - **[CIR / CIRDataset](https://github.com/choilab-jefferson/CIR)** — clinically-interpretable lung nodule radiomics (spiculation/lobulation quantification) and the MICCAI 2022 dataset.
-    - **[PathCNN](https://github.com/mskspi/PathCNN)** — interpretable CNN for survival prediction and pathway analysis (Bioinformatics/ISMB 2021).
-    - **[Computational Medical Physicist Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/)** — free Gemini assistant for medical image computing, dosimetry, protocol QA, and Monte Carlo work.
+Full list: [Google Scholar](http://scholar.google.com/citations?user=iHgsGLUAAAAJ&hl=en) · [Scopus](http://www.scopus.com/authid/detail.url?authorId=7402516217) · [ORCID](https://orcid.org/0000-0001-8038-5876) · [CV (PDF)](images/wookjin-choi-cv.pdf)
 
-- Teaching
-    - **[medimage](/posts/2026-08-04-introducing-medimage/)** (2026) — open, self-paced course in quantitative medical image analysis; every chapter runs in Google Colab with no local setup.
-    - **[Notion Workspace Home](https://choiw.notion.site/)** — Personal portal for course materials, deep learning guides, and portfolios.
+1. **Cross-Institutional Validation of a Novel LLM-Based Cardiac Event Extraction Framework from Electronic Health Records (TRACER)**<br>
+   *International Journal of Radiation Oncology, Biology, Physics*, in press, 2026.<br>
+   Cao W, Lloyd I, Dichmann M, Haldar N, Thomas D, Chen Z, Blomain E, **Choi W**, et al.<br>
+   [Summary](/posts/2026-07-01-tracer-open-source-llms-cardiac-event-extraction/)
 
-- Courses Taught (Virginia State University, 2019 -- 2021)
-    - CSCI 150/151 Programming I & Lab (Fall 2020)
-    - CSCI 281 Discrete Structures (Spring 2020, Spring 2021)
-    - CSCI 287 Data Structures (Fall 2019, Fall 2020)
-    - CSCI 392 Algorithms and Adv. Data Structures (Fall 2019, Spring 2021)
-    - CSCI 445 Computer Communications Network (Fall 2020)
-    - CSCI 471 Parallel and Distributed Programming ([Fall 2021](https://choiw.notion.site/CSCI-471-Parallel-Distributed-Programming-3a86834330d64209b746ee5ea777a340))
-    - CSCI 493 Senior Project I (Spring 2020, Spring 2021)
-    - CSCI 494 Senior Project II (Fall 2019, Fall 2020)
-    - CSCI 545 Advanced Data Communications (Fall 2020)
-    - CSCI 592 Adv. Algorithms (Spring 2020, Spring 2021)
-    - CSCI 643 Spe. Top.: Intro. to Machine Learning (Spring 2021)
-    - CSCI 640 Spe. Top.: Intro. to Deep Learning ([Fall 2021](https://choiw.notion.site/CSCI-640-Introduction-to-Deep-Learning-355fd451d01543e49b3a4b19e30ca36a))
+2. **Predicting radiation pneumonitis in lung cancer patients using robust 4DCT-ventilation and perfusion imaging**<br>
+   *Radiotherapy and Oncology* 212:111110, 2025.<br>
+   Neupane T, Castillo E, Chen Y, Heidari Pahlavian S, Castillo R, Vinogradskiy Y, **Choi W**.<br>
+   [doi:10.1016/j.radonc.2025.111110](https://doi.org/10.1016/j.radonc.2025.111110)
+
+3. **Novel Functional Radiomics for Prediction of Cardiac PET Avidity in Lung Cancer Radiotherapy**<br>
+   *JCO Clinical Cancer Informatics* 8:e2300241, 2024.<br>
+   **Choi W**, Jia Y, Kwak J, Werner-Wasik M, Dicker AP, Simone NL, Storozynsky E, Jain V, Vinogradskiy Y.<br>
+   [doi:10.1200/CCI.23.00241](https://doi.org/10.1200/CCI.23.00241) · featured in a [JCO CCI editorial](https://ascopubs.org/doi/10.1200/CCI.24.00045)
+
+4. **Preoperative 18F-FDG PET/CT and CT Radiomics for Identifying Aggressive Histopathological Subtypes in Early Stage Lung Adenocarcinoma**<br>
+   *Computational and Structural Biotechnology Journal* 21:5601–5608, 2023.<br>
+   **Choi W**, Liu C-J, Riyahi Alam S, Oh JH, Vaghjiani R, Humm J, Weber W, Adusumilli PS, Deasy JO, Lu W.<br>
+   [doi:10.1016/j.csbj.2023.11.008](https://doi.org/10.1016/j.csbj.2023.11.008)
+
+5. **CIRDataset: A Large-Scale Dataset for Clinically-Interpretable Lung Nodule Radiomics and Malignancy Prediction**<br>
+   *MICCAI 2022*.<br>
+   **Choi W**, Dahiya N, Nadeem S.<br>
+   [arXiv:2206.14903](https://arxiv.org/abs/2206.14903) · [Springer](https://link.springer.com/chapter/10.1007/978-3-031-16443-9_2)
+
+6. **PathCNN: Interpretable Convolutional Neural Networks for Survival Prediction and Pathway Analysis Applied to Glioblastoma**<br>
+   *Bioinformatics* 37(Suppl_1):i443–i450, 2021 (joint first authors).<br>
+   Oh JH, **Choi W**, Ko E, Kang M, Tannenbaum A, Deasy JO.<br>
+   [doi:10.1093/bioinformatics/btab285](https://doi.org/10.1093/bioinformatics/btab285) · [Code](https://github.com/mskspi/PathCNN)
+
+7. **Reproducible and Interpretable Spiculation Quantification for Lung Cancer Screening**<br>
+   *Computer Methods and Programs in Biomedicine* 200:105839, 2021.<br>
+   **Choi W**, Nadeem S, Riyahi S, Deasy JO, Tannenbaum A, Lu W.<br>
+   [doi:10.1016/j.cmpb.2020.105839](https://doi.org/10.1016/j.cmpb.2020.105839) · [Slides](/posts/2018-09-11-interpretable-spiculation-quantification-for-lung-cancer-screening/)
+
+8. **Radiomics Analysis of Pulmonary Nodules in Low-Dose CT for Early Detection of Lung Cancer** — *Editor's Pick*<br>
+   *Medical Physics* 45(4):1537–1549, 2018.<br>
+   **Choi W**, Oh JH, Riyahi S, Liu C-J, Jiang F, Chen W, White C, Rimner A, Mechalakos JG, Deasy JO, Lu W.<br>
+   [doi:10.1002/mp.12820](https://doi.org/10.1002/mp.12820) · [Slides](/posts/2017-08-03-radiomics-analysis-of-pulmonary-nodules-in-low-dose-ct-for-early-detection-of-lung-cancer/)
+
+9. **Individually Optimized Contrast-Enhanced 4D-CT for Radiotherapy Simulation in Pancreatic Ductal Adenocarcinoma**<br>
+   *Medical Physics* 43(10):5659–5666, 2016.<br>
+   **Choi W**, Xue M, Lane B, Kang M, Patel K, Regine W, Klahr P, Wang J, Chen S, D'Souza W, Lu W.<br>
+   [doi:10.1118/1.4963213](https://doi.org/10.1118/1.4963213) · [Slides](/posts/2016-08-05-individually-optimized-contrast-enhanced-4d-ct-for-radiotherapy-simulation-in-pancreatic-ductal-adenocarcinoma/) · [Poster](/posts/2016-09-21-individually-optimized-contrast-enhanced-4d-ct-for-radiotherapy-simulation-in-pancreatic-adenocarcinoma/)
+
+10. **Automated Pulmonary Nodule Detection Based on Three-Dimensional Shape-Based Feature Descriptor**<br>
+    *Computer Methods and Programs in Biomedicine* 113(1):37–54, 2014.<br>
+    **Choi W**, Choi T-S.<br>
+    [doi:10.1016/j.cmpb.2013.08.015](https://doi.org/10.1016/j.cmpb.2013.08.015)
+
+---
+
+## Research Grants and Contracts
+
+Dates and amounts follow the [CV](images/wookjin-choi-cv.pdf); figures are **total cost** unless noted otherwise.
+
+### Active
+
+| Period | Project | Role · Award |
+| --- | --- | --- |
+| 12/2023 – 12/2026 | **Longitudinal CBCT radiomics analysis for lung cancer radiotherapy response and prognosis prediction**<br>Varian Medical Systems | **PI** · $230,000 |
+| 8/2024 – 7/2029 | **Systems Engineering for Ransomware Attack Response Resiliency in Radiation Oncology**<br>NIH / AHRQ | Co-I · $393,974 |
+| 1/2022 – present | **Interpretable Predictive Models for Radiation Therapy**<br>Sidney Kimmel Comprehensive Cancer Center | **PI** |
+
+### Completed
+
+| Period | Project | Role · Award |
+| --- | --- | --- |
+| 1/2022 – 12/2025 | **Computational development for MRI-Linac**<br>ViewRay Technologies | **PI** · $368,182 direct |
+| 2/2024 – 2/2025 | **Microdosimetry for Prostate Cancer Radiotheranostics**<br>Philadelphia Prostate Cancer Biome Project | Co-I |
+| 5/2023 – 4/2024 | **Facial analytic deep learning training set for detecting frustration in early readers**<br>Propel Health Impact Grant | Subaward **PI** · $200,000 ($25,000 to TJU) |
+| 5/2021 – 5/2024 | **Deep Learning-based Target Tracking and Assignment for Cooperative Swamp Defense**<br>DoD Naval Engineering Education Consortium | Co-PI · $361,161 ($261,796 direct) |
+| 5/2021 – 8/2022 | **Cybersecurity Monitoring and Assurance Training for Safe and Secure Port Operations**<br>Commonwealth Cyber Initiative | Co-PI · $150,000 ($32,070 to VSU) |
+| 5/2021 – 5/2022 | **Acquisition of a GPU-Accelerated Deep-Learning Research Cluster**<br>DoD HBCU/MI Equipment Program | **PI** · $588,244 |
+| 7/2020 – 7/2021 | **Robust Human Action Recognition Using Multi-View Depth Videos for Human-Robot Interaction**<br>VSU & Commonwealth Center for Advanced Manufacturing | **PI** · $50,000 |
+| 11/2013 – 7/2014 | **3D Image Analysis for Computer-Aided Diagnosis in Lung CT**<br>National Research Foundation of Korea | **PI** · $50,000 ($39,000 direct) |
+| 12/2013 – 12/2014 | **A System for Computer-Aided Detection of Pulmonary Disease**<br>Small and Medium Business Administration of Korea | **PI**, founder of QuaLIA, Inc. · $90,000 |
+
+---
+
+## Awards and Honors
+
+| Year | Honor |
+| --- | --- |
+| 2026 | **ASTRO Annual Meeting Abstract Award**, Basic Transitional Award in Physics — 30 winning abstracts out of >2,000 submissions [(details)](/posts/2026-07-27-2026-astro-annual-meeting-abstract-award/) |
+| 2026 | Oral presentation in the **BEST of Physics** session, ASTRO 2026, Boston — 300 orals out of ~2,700 abstracts [(details)](/posts/2026-05-18-astro-2026-best-of-physics-oral-acceptance/) |
+| 2026 | Selected participant, **NCI AI Embeddings Innovation Lab** — invitation-based, ~30 participants [(details)](/posts/2026-07-27-selected-nci-ai-embeddings-innovation-lab/) |
+| 2024 | **Winner ($25,000), NIH Biomedical Quantum Computation Challenge** — Team Quantum Heart, 1 of 3 winning teams [(details)](/posts/2025-08-20-team-quantum-heart-wins-nih-prize-for-innovation/) |
+| 2024 | Featured in a [*JCO Clinical Cancer Informatics* editorial](https://ascopubs.org/doi/10.1200/CCI.24.00045) for the cardiac PET radiomics study |
+| 2021 | **Faculty of the Year Award**, KSEA Central Virginia Chapter |
+| 2020 | 4th place, **AI Tracks at Sea Challenge**, Naval Information Warfare Center Pacific — faculty advisor, VSU TrojanOne [(details)](/posts/2021-02-01-fourth-place-winner-on-ai-tracks-at-sea-challenge/) |
+| 2018 | **Editor's Pick**, *Medical Physics* — radiomics analysis of pulmonary nodules in low-dose CT |
+
+---
+
+## Open-Source Software and Educational Resources
+
+All code is released through the [CHOI Lab GitHub organization](https://github.com/choilab-jefferson).
+
+- **[qradiomics](/qradiomics/)** — radiomics research CLI and library (`qr`): DICOM conversion, multi-engine feature extraction, Nextflow/Prefect workflow assembly, survival and ML modeling. MIT · [PyPI](https://pypi.org/project/qradiomics/) · [GitHub](https://github.com/choilab-jefferson/qradiomics). Successor to `radiomics-tools`, `lung-image-analysis`, and `LungCancerScreeningRadiomics`.
+- **[medimage](/posts/2026-08-04-introducing-medimage/)** — free 13-chapter Google Colab course in quantitative medical image analysis, from DICOM basics to reproducing a published radiomics study. MIT · [GitHub](https://github.com/choilab-jefferson/medimage)
+- **[CIR / CIRDataset](https://github.com/choilab-jefferson/CIR)** — clinically-interpretable lung nodule radiomics (spiculation and lobulation quantification) and the MICCAI 2022 dataset.
+- **[PathCNN](https://github.com/mskspi/PathCNN)** — interpretable CNN for survival prediction and pathway analysis (Bioinformatics / ISMB 2021).
+- **[Computational Medical Physicist Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/)** — free Gemini assistant for medical image computing, dosimetry, protocol QA, and Monte Carlo work.
+
+---
+
+## Teaching
+
+- **[medimage](/posts/2026-08-04-introducing-medimage/)** (2026) — open, self-paced course in quantitative medical image analysis; every chapter runs in Google Colab with no local setup.
+- **[Notion workspace](https://choiw.notion.site/)** — course materials, deep learning guides, and student portfolios.
+- **Virginia State University, 2019–2021** — programming, discrete structures, data structures, algorithms, computer networks, senior projects, and graduate courses in machine learning, [parallel and distributed programming](https://choiw.notion.site/CSCI-471-Parallel-Distributed-Programming-3a86834330d64209b746ee5ea777a340), and [deep learning](https://choiw.notion.site/CSCI-640-Introduction-to-Deep-Learning-355fd451d01543e49b3a4b19e30ca36a).

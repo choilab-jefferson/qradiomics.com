@@ -26,7 +26,7 @@ tags:
   - "surgical-plan"
 cover:
   image: "images/graphical-abstract.png"
-  alt: ""
+  alt: "Graphical abstract: FDG PET/CT radiomics predicting aggressive lung adenocarcinoma subtypes"
   relative: true
 aliases:
   - /2017/08/01/aggressive-lung-adenocarcinoma-subtype-prediction-using-fdg-petct-radiomics/

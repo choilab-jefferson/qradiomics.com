@@ -14,7 +14,7 @@ tags:
   - "tracking"
 cover:
   image: "images/scene_16_02318.jpg"
-  alt: ""
+  alt: "VSU TrojanOne team at the U.S. Navy AI Tracks at Sea Challenge"
   relative: true
 aliases:
   - /2021/02/01/fourth-place-winner-on-ai-tracks-at-sea-challenge/
@@ -26,7 +26,7 @@ This national competition is organized by the U.S. Navy.
 
 **VSU TrojanOne** Team: Jose Diaz, Curtrell Trott, Advisor: Ju Wang, Wookjin Choi
 
-![](images/image.jpeg)
+![VSU TrojanOne team at the U.S. Navy AI Tracks at Sea Challenge](images/image.jpeg)
 
 The $200,000 prize was distributed among five winning teams, which submitted full working solutions, and three runners-up, which submitted partial working solutions. The monetary prize will be awarded to the school the corresponding team attends:
 
@@ -38,8 +38,8 @@ Teams participating in the AI Tracks at Sea Challenge spanned collegiate institu
 
 Florida, North Carolina, and Texas had the largest population of participating collegiate teams.
 
-![](images/pastedgraphic-3.png)
+![AI Tracks at Sea Challenge winning teams and prize distribution](images/pastedgraphic-3.png)
 
-![](images/pastedgraphic-4.png)
+![Collegiate institutions participating in the AI Tracks at Sea Challenge](images/pastedgraphic-4.png)
 
 https://www.ccals.com/2021/03/16/vsu-team-takes-fourth-place-in-ai-tracks-at-sea-naval-challenge/

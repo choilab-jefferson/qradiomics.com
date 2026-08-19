@@ -41,7 +41,7 @@ The first CIR dataset, released [here](https://zenodo.org/record/6672251), conta
 
 <figure>
 
-![](images/image.png)
+![Clinically-interpretable spiculation and lobulation annotation samples: input lung CT, QA/QC'ed contours, and superimposed area distortion maps](images/image.png)
 
 <figcaption>
 
@@ -57,7 +57,7 @@ We also release our multi-class [Voxel2Mesh](https://github.com/cvlab-epfl/voxel
 
 <figure>
 
-![](images/image-1.png)
+![End-to-end deep learning architecture: multi-class Voxel2Mesh extension for lung nodule segmentation, spike classification, and malignancy prediction](images/image-1.png)
 
 <figcaption>
 

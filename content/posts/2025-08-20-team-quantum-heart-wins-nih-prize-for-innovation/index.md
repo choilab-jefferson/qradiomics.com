@@ -18,7 +18,7 @@ tags:
   - "technology"
 cover:
   image: "images/quantum-heart-cover-2025.png"
-  alt: ""
+  alt: "Team Quantum Heart, winner of the NIH Biomedical Quantum Computation Challenge"
   relative: true
 aliases:
   - /2025/08/20/team-quantum-heart-wins-nih-prize-for-innovation/

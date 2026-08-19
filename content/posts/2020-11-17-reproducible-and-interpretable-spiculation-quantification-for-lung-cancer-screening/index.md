@@ -25,7 +25,7 @@ Source codes: [https://github.com/choilab-jefferson/LungCancerScreeningRadiomics
   
 **Highlights**
 
-![](images/1-s2.0-s0169260720316722-gr1_lrg.jpg)
+![Graphical abstract of reproducible and interpretable spiculation quantification for lung cancer screening CT](images/1-s2.0-s0169260720316722-gr1_lrg.jpg)
 
 - A novel interpretable spiculation feature is presented, computed using the area distortion metric from spherical conformal (angle-preserving) parameterization.
 

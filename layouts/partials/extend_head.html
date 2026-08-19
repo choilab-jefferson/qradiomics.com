@@ -99,3 +99,35 @@
 }
 </script>
 {{- end -}}
+
+{{- /* PaperMod already emits Organization (home) and BlogPosting (pages) JSON-LD.
+       Only the WebSite node is missing, so add just that — duplicating the others
+       would give search engines two competing descriptions of the same entity. */ -}}
+{{- if .IsHome -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": {{ site.BaseURL | jsonify }},
+  "name": {{ site.Title | jsonify }},
+  "alternateName": ["CHOI Lab", "QRadiomics"],
+  "description": {{ site.Params.description | jsonify }},
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "ResearchOrganization",
+    "name": "Computational Healthcare & Oncology Informatics (CHOI) Lab",
+    "url": {{ "about/" | absURL | jsonify }},
+    "parentOrganization": {
+      "@type": "CollegeOrUniversity",
+      "name": "Sidney Kimmel Medical College, Thomas Jefferson University",
+      "url": "https://www.jefferson.edu/"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Wookjin Choi",
+      "url": {{ "profile/" | absURL | jsonify }}
+    }
+  }
+}
+</script>
+{{- end -}}
