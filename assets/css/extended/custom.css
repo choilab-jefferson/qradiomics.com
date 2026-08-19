@@ -118,3 +118,34 @@ a.mi-chapter:hover {
 .md-content h4 + h5 {
     margin-top: 0;
 }
+
+/* Wide-element breakout.
+   The 720px column is right for prose — measured at 77-86 characters per line,
+   already at the top of the comfortable range, so widening the text would hurt.
+   It is wrong for everything else on this site: /qradiomics/ carries 12 tables,
+   up to 6 columns, with cells wrapping to 12 lines, and 8 of its code blocks
+   need 763-890px and scroll sideways at 720px.
+
+   So the text column stays put and only tables, code blocks and figures step
+   outside it. margin-inline is negative because 50% resolves against the 720px
+   container: 360 - 1040/2 = -160 per side.
+
+   Gated at 1152px (1040 + breathing room) — below that the viewport cannot
+   spare the width and everything behaves exactly as before. */
+@media screen and (min-width: 1152px) {
+    .post-content > table,
+    .post-content > .highlight,
+    .post-content > pre,
+    .post-content > figure {
+        width: 1040px;
+        max-width: none;
+        margin-inline: -160px;
+    }
+
+    /* Figures caption their own content, so keep the caption with the image
+       rather than letting it run the full 1040px. */
+    .post-content > figure figcaption {
+        max-width: 720px;
+        margin-inline: auto;
+    }
+}
