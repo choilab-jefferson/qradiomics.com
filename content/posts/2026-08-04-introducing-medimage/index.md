@@ -158,8 +158,9 @@ jupyter lab
 
 Everything installs from PyPI with one exception. The four chapters that extract radiomics features
 need **pyradiomics**, which publishes no wheel for Python 3.10 or newer, so it is built from its
-upstream git on first install — a few minutes, once per Colab session. Chapters that do not extract
-features skip it entirely and install in well under a minute.
+upstream git — a few minutes on first install. In Colab that cost is paid once per session, and only
+in the notebooks that need it; every other chapter installs in well under a minute. The local
+`requirements.txt` above installs it up front, whichever chapters you plan to run.
 
 ## No imaging data in the repo
 
