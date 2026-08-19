@@ -11,9 +11,12 @@ the published PDF:
   <!-- wiki-only:start --> ... <!-- wiki-only:end -->   block dropped
   <line> <!-- private -->                               line dropped
 
-Numbered CV lists (publications, abstracts) restart at 1 in each Markdown subsection;
-this script renumbers them continuously within "Publications, Peer Reviewed" and
-within "Abstracts", the way the CV is meant to read.
+Numbered CV lists restart at 1 in each Markdown subsection; this script renumbers them
+continuously across the subsections of every section named in CONTINUOUS, the way the CV
+is meant to read (e.g. journal articles 1-31 then conference papers 32-52).
+
+The private markers are the only gate between the wiki page and a public download, so a
+malformed marker aborts the render instead of publishing the content.
 """
 import re
 import sys
@@ -54,9 +57,25 @@ strong { font-weight: bold; }
 
 
 def strip_private(text: str) -> str:
+    """Drop YAML frontmatter, wiki-only blocks and private lines — or fail loudly."""
+    if text.startswith("---\n"):
+        end = text.find("\n---\n", 4)
+        if end == -1:
+            raise SystemExit("unterminated YAML frontmatter")
+        text = text[end + len("\n---\n"):]
+
+    starts, ends = text.count("<!-- wiki-only:start -->"), text.count("<!-- wiki-only:end -->")
+    if starts != ends:
+        raise SystemExit(f"unbalanced wiki-only markers: {starts} start, {ends} end")
     text = re.sub(r"<!-- wiki-only:start -->.*?<!-- wiki-only:end -->\n?", "", text, flags=re.S)
     text = "\n".join(l for l in text.splitlines() if "<!-- private -->" not in l)
-    return re.sub(r"^---\n.*?\n---\n", "", text, flags=re.S)  # YAML frontmatter
+
+    # Anything that looks like a private/wiki-only marker must be gone by now; if a typo
+    # left one behind, the line it guards would be published.
+    leftover = re.search(r"<!--\s*(private|wiki-only)[^>]*-->", text, flags=re.I)
+    if leftover:
+        raise SystemExit(f"malformed privacy marker survived stripping: {leftover.group(0)!r}")
+    return text
 
 
 def renumber(html: str) -> str:
@@ -67,7 +86,7 @@ def renumber(html: str) -> str:
     """
     out, count, level = [], 0, 0  # level = heading depth that switched numbering on (0 = off)
     for chunk in re.split(r"(<h[1-4][^>]*>.*?</h[1-4]>|<ol>)", html, flags=re.S):
-        if chunk.startswith("<h"):
+        if re.match(r"<h[1-4][ >]", chunk):
             depth = int(chunk[2])
             heading = re.sub(r"<[^>]+>", "", chunk).strip()
             if any(s.lower() == heading.lower() for s in CONTINUOUS):
@@ -78,18 +97,21 @@ def renumber(html: str) -> str:
             if level and count:
                 chunk = f'<ol style="counter-reset: list-item {count};">'
         elif level:
-            count += chunk.count("<li>")
+            # Only the items of the ordered list just opened count; bullet lists that
+            # happen to sit in the same section must not shift the numbering.
+            count += re.sub(r"<ul>.*?</ul>", "", chunk, flags=re.S).count("<li>")
         out.append(chunk)
     return "".join(out)
 
 
 def main() -> None:
-    md = strip_private(SRC.read_text())
-    body = markdown.markdown(md, extensions=["extra", "sane_lists", "smarty"])
+    md = strip_private(SRC.read_text(encoding="utf-8"))
+    # nl2br: the contact header and the closing signature are line-per-fact blocks and
+    # must not reflow into one run-on paragraph.
+    body = markdown.markdown(md, extensions=["extra", "sane_lists", "smarty", "nl2br"])
     body = renumber(body)
-    # The address/phone/email block right after the title is a plain paragraph.
+    # Byline + contact paragraph directly under the title.
     body = body.replace("<p><strong>Wookjin Choi, PhD</strong>", '<p class="contact"><strong>Wookjin Choi, PhD</strong>', 1)
-    body = body.replace("<p>Office Address:", '<p class="contact">Office Address:', 1)
     html = f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body>{body}</body></html>"
     OUT.parent.mkdir(parents=True, exist_ok=True)
     HTML(string=html, base_url=str(ROOT)).write_pdf(OUT)

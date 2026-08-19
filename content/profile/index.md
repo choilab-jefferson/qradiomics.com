@@ -51,47 +51,64 @@ Email: [Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu), [wchoi10
     12. **Wookjin Choi**, Tae-Sun Choi, "Automated Pulmonary Nodule Detection based on Three-dimensional Shape-based Feature Descriptor," Computer Methods and Programs in Biomedicine, Vol. 113, No. 1, pp. 37–54, January 2014. [doi:10.1016/j.cmpb.2013.08.015](https://doi.org/10.1016/j.cmpb.2013.08.015)
     13. **Wookjin Choi**, Tae-Sun Choi, "Genetic Programming-based feature transform and classification for the automatic detection of pulmonary nodules on computed tomography images," Information Sciences, Vol. 212, pp. 57-78, December 2012. [doi:10.1016/j.ins.2012.05.008](https://doi.org/10.1016/j.ins.2012.05.008)
 
-- Research Grants and Contracts
-    - 1/2022 -  12/2025 080-34000-N39801 PI: **Wookjin Choi**
-        "Computational development for MRI-Linac"
-        ViewRay Technologies, Inc.
-        Total Direct Costs: $368,182
-    - 1/2022 – 1/2024 SKCC Research Grant PI: **Wookjin Choi**
-        "Interpretable Predictive Models for Radiation Therapy"
-        Sidney Kimmel Cancer Center at Thomas Jefferson University Hospital
-        Total Direct Costs: $140,000
-    - 5/2021 – 5/2024 N00174-21-1-0011 co-PI: **Wookjin Choi**
-        "Deep Learning-based Target Tracking and Assignment for Cooperative Swamp Defense"
-        DoD Naval Engineering Education Consortium (NEEC)
-        Total Direct Costs: $261,796
-    - 5/2021 - 5/2022 W911NF2110280 PI: **Wookjin Choi**
-        "Acquisition of a GPU-Accelerated Deep-Learning Research Cluster"
-        DoD Research and Education Program for HBCU/MI Equipment/Instrumentation
-        Total Direct Costs: $588,244
-    - 5/2021 – 8/2022 CCI Grant co-PI: **Wookjin Choi**
-        "Cybersecurity Monitoring and Assurance Training Program for Safe and Secure Port Operations"
-        Commonwealth Cyber Initiative — Scalable Pilot Programs for Experiential Learning
-        Total Direct Costs: $150,000 (VSU: $32,070)
-    - 7/2020 – 7/2021 CCAM E-055  PI: **Wookjin Choi**
-        "A Robust Human Action Recognition System using Multi-View Depth Videos for Safe and Reliable Human-Robot Interactions in a Mixed Reality Environment"
-        Innovation Fund, VSU & Commonwealth Center for Advanced Manufacturing (CCAM)
-        Total Direct Costs: $50,000
-    - 11/2013 – 7/2014 NRF-2013R1A1-A2058113  PI: **Wookjin Choi**
-        "3D Image Analysis for Computer Aided Diagnosis in Lung CT Image"
-        Basic Science Research Program, National Research Foundation of Korea (Similar to K99/R00)
-        Total Direct Costs: $39,000
-    - 12/2013 – 12/2014 2013RS-03-00000-P-00173  PI: **Wookjin Choi** founded QuaLIA, Inc.
-        "A System for Computer-Aided Detection of Pulmonary Disease"
-        Start-up Seed Grant, Small and Medium Business Administration of Korea (Similar to SBIR)
-        Total Direct Costs: $90,000
+- Research Grants and Contracts \[amounts and dates follow the [CV](images/wookjin-choi-cv.pdf)\]
+    - Active
+        - 12/2023 – 12/2026 PI: **Wookjin Choi**
+            "Longitudinal CBCT radiomics analysis for lung cancer radiotherapy response and prognosis prediction"
+            Varian Medical Systems Research Grant
+            Total Cost: $230,000
+        - 8/2024 – 7/2029 R18HS030060 PI: Yevgeniy Vinogradskiy; Co-I: **Wookjin Choi**
+            "Systems Engineering for Ransomware Attack Response Resiliency in Radiation Oncology"
+            NIH Agency for Healthcare Research and Quality (AHRQ)
+            Total Cost: $393,974
+        - 1/2022 – Present SKCC Research Grant PI: **Wookjin Choi**
+            "Interpretable Predictive Models for Radiation Therapy"
+            Sidney Kimmel Comprehensive Cancer Center at Thomas Jefferson University Hospital
+    - Completed
+        - 1/2022 – 12/2025 080-34000-N39801 PI: **Wookjin Choi**
+            "Computational development for MRI-Linac"
+            ViewRay Technologies, Inc.
+            Total Direct Costs: $368,182
+        - 2/2024 – 2/2025 PI: Lucas Wilson; Co-I: **Wookjin Choi**
+            "Microdosimetry for Prostate Cancer Radiotheranostics"
+            Philadelphia Prostate Cancer Biome Project
+        - 5/2023 – 4/2024 PI: Judy Shelton; Subaward PI: **Wookjin Choi**
+            "Constructing a facial analytic deep learning training set for detecting frustration in early readers"
+            Propel Health Impact Grant
+            Total Cost: $200,000 (TJU: $25,000)
+        - 5/2021 – 5/2024 N00174-21-1-0011 PI: Ju Wang; Co-PI: **Wookjin Choi**
+            "Deep Learning-based Target Tracking and Assignment for Cooperative Swamp Defense"
+            DoD Naval Engineering Education Consortium (NEEC)
+            Total Cost: $361,161
+        - 5/2021 – 8/2022 CCI Grant PI: Sachin Shetty; Co-PI: **Wookjin Choi**
+            "Cybersecurity Monitoring and Assurance Training Program for Safe and Secure Port Operations"
+            Commonwealth Cyber Initiative — Scalable Pilot Programs for Experiential Learning
+            Total Cost: $150,000 (VSU: $32,070)
+        - 5/2021 – 5/2022 W911NF2110280 PI: **Wookjin Choi**
+            "Acquisition of a GPU-Accelerated Deep-Learning Research Cluster"
+            DoD Research and Education Program for HBCU/MI Equipment/Instrumentation
+            Total Cost: $588,244
+        - 7/2020 – 7/2021 CCAM E-055 PI: **Wookjin Choi**
+            "A Robust Human Action Recognition System using Multi-View Depth Videos for Safe and Reliable Human-Robot Interactions in a Mixed Reality Environment"
+            Innovation Fund, VSU & Commonwealth Center for Advanced Manufacturing (CCAM)
+            Total Cost: $50,000
+        - 11/2013 – 7/2014 NRF-2013R1A1-A2058113 PI: **Wookjin Choi**
+            "3D Image Analysis for Computer Aided Diagnosis in Lung CT Image"
+            Basic Science Research Program, National Research Foundation of Korea (similar to K99/R00)
+            Total Cost: $50,000
+        - 12/2013 – 12/2014 2013RS-03-00000-P-00173 PI: **Wookjin Choi**, founder of QuaLIA, Inc.
+            "A System for Computer-Aided Detection of Pulmonary Disease"
+            Start-up Seed Grant, Small and Medium Business Administration of Korea (similar to SBIR)
+            Total Cost: $90,000
 
 - Awards and Honors
     - 2026 — **ASTRO Annual Meeting Abstract Award, Basic Transitional Award in Physics** (30 award-winning abstracts out of >2,000 submissions), for *Early Adaptive Interventions in Lung Cancer: Leveraging Fusion of Longitudinal CBCT Trajectories and Clinical Variables for Robust Survival Prediction* \[[details](/posts/2026-07-27-2026-astro-annual-meeting-abstract-award/)\]
     - 2026 — Selected for an **Oral Scientific Presentation in the *BEST of Physics* session**, ASTRO 2026 Annual Meeting, Boston (300 orals out of ~2,700 abstracts) \[[details](/posts/2026-05-18-astro-2026-best-of-physics-oral-acceptance/)\]
     - 2026 — Selected participant, **NCI AI Embeddings Innovation Lab** ("AI Embeddings for Next-Gen Cancer Diagnostics", invitation-based, ~30 participants) \[[details](/posts/2026-07-27-selected-nci-ai-embeddings-innovation-lab/)\]
-    - 2025 — **NIH ODSS/NCI Quantum Computing Innovation Lab Challenge Prize ($25,000)**, Team Quantum Heart (1 of 3 winning teams) \[[details](/posts/2025-08-20-team-quantum-heart-wins-nih-prize-for-innovation/)\]
+    - 2024 — **NIH Biomedical Quantum Computation Challenge, winner ($25,000)** — NIH ODSS/NCI Quantum Computing Innovation Lab, Team Quantum Heart (1 of 3 winning teams) \[[details](/posts/2025-08-20-team-quantum-heart-wins-nih-prize-for-innovation/)\]
     - 2024 — Featured in a [JCO Clinical Cancer Informatics editorial](https://ascopubs.org/doi/10.1200/CCI.24.00045) for the cardiac PET radiomics study
-    - 2021 — 4th place, **AI Tracks at Sea Challenge**, a U.S. Navy national competition (VSU TrojanOne team; faculty advisor) \[[details](/posts/2021-02-01-fourth-place-winner-on-ai-tracks-at-sea-challenge/)\]
+    - 2021 — **Faculty of the Year Award**, Korean American Scientists and Engineers Association (KSEA), Central Virginia Chapter
+    - 2020 — 4th place, **AI Tracks at Sea Challenge**, hosted by the Naval Information Warfare Center (NIWC) Pacific (VSU TrojanOne team; faculty advisor) \[[details](/posts/2021-02-01-fourth-place-winner-on-ai-tracks-at-sea-challenge/)\]
     - 2018 — **Editor's Pick**, *Medical Physics*, for "Radiomics analysis of pulmonary nodules in low-dose CT for early detection of lung cancer"
 
 - Open-Source Software and Educational Resources \[[CHOI Lab GitHub](https://github.com/choilab-jefferson)\]

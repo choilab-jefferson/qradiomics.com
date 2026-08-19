@@ -116,8 +116,8 @@ This is a pyradiomics packaging limitation, not a qradiomics one.
 
 New to radiomics, or want a guided path into this CLI rather than jumping straight into the reference
 docs below? **[medimage](/posts/2026-08-04-introducing-medimage/)** is Choi Lab's free, 13-chapter
-Colab course in quantitative medical image analysis. Its final chapters run `qradiomics` directly —
-Chapter 9 covers radiomics features, Chapter 12 walks through classification (and a real data leak),
+Colab course in quantitative medical image analysis. Chapters 5, 9, 11, 12 and 13 run `qradiomics`
+directly — Chapter 9 covers radiomics features, Chapter 12 walks through classification (and a real data leak),
 and Chapter 13 reproduces the Aerts 2014 NSCLC-Radiomics result end to end with `qr extract` → `qr
 results merge` → `qr analyze survival`. No install required — every chapter opens in Google Colab.
 
