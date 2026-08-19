@@ -51,7 +51,7 @@ Email: [Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu), [wchoi10
     12. **Wookjin Choi**, Tae-Sun Choi, "Automated Pulmonary Nodule Detection based on Three-dimensional Shape-based Feature Descriptor," Computer Methods and Programs in Biomedicine, Vol. 113, No. 1, pp. 37–54, January 2014. [doi:10.1016/j.cmpb.2013.08.015](https://doi.org/10.1016/j.cmpb.2013.08.015)
     13. **Wookjin Choi**, Tae-Sun Choi, "Genetic Programming-based feature transform and classification for the automatic detection of pulmonary nodules on computed tomography images," Information Sciences, Vol. 212, pp. 57-78, December 2012. [doi:10.1016/j.ins.2012.05.008](https://doi.org/10.1016/j.ins.2012.05.008)
 
-- Research Grants and Contracts \[amounts and dates follow the [CV](images/wookjin-choi-cv.pdf)\]
+- Research Grants and Contracts \[amounts and dates follow the [CV](images/wookjin-choi-cv.pdf); figures are total cost unless noted otherwise\]
     - Active
         - 12/2023 – 12/2026 PI: **Wookjin Choi**
             "Longitudinal CBCT radiomics analysis for lung cancer radiotherapy response and prognosis prediction"
@@ -68,7 +68,7 @@ Email: [Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu), [wchoi10
         - 1/2022 – 12/2025 080-34000-N39801 PI: **Wookjin Choi**
             "Computational development for MRI-Linac"
             ViewRay Technologies, Inc.
-            Total Direct Costs: $368,182
+            Direct costs: $368,182
         - 2/2024 – 2/2025 PI: Lucas Wilson; Co-I: **Wookjin Choi**
             "Microdosimetry for Prostate Cancer Radiotheranostics"
             Philadelphia Prostate Cancer Biome Project
@@ -79,7 +79,7 @@ Email: [Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu), [wchoi10
         - 5/2021 – 5/2024 N00174-21-1-0011 PI: Ju Wang; Co-PI: **Wookjin Choi**
             "Deep Learning-based Target Tracking and Assignment for Cooperative Swamp Defense"
             DoD Naval Engineering Education Consortium (NEEC)
-            Total Cost: $361,161
+            Total Cost: $361,161 (direct costs: $261,796)
         - 5/2021 – 8/2022 CCI Grant PI: Sachin Shetty; Co-PI: **Wookjin Choi**
             "Cybersecurity Monitoring and Assurance Training Program for Safe and Secure Port Operations"
             Commonwealth Cyber Initiative — Scalable Pilot Programs for Experiential Learning
@@ -95,7 +95,7 @@ Email: [Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu), [wchoi10
         - 11/2013 – 7/2014 NRF-2013R1A1-A2058113 PI: **Wookjin Choi**
             "3D Image Analysis for Computer Aided Diagnosis in Lung CT Image"
             Basic Science Research Program, National Research Foundation of Korea (similar to K99/R00)
-            Total Cost: $50,000
+            Total Cost: $50,000 (direct costs: $39,000)
         - 12/2013 – 12/2014 2013RS-03-00000-P-00173 PI: **Wookjin Choi**, founder of QuaLIA, Inc.
             "A System for Computer-Aided Detection of Pulmonary Disease"
             Start-up Seed Grant, Small and Medium Business Administration of Korea (similar to SBIR)
