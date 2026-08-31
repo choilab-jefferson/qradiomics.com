@@ -1,5 +1,5 @@
 ---
-title: "Announcing Gemini Gem for Computational Medical Physics — Your Specialized AI Research Assistant"
+title: "Announcing Gemini Gem for Computational Medical Physics: Your Specialized AI Research Assistant"
 date: "2026-05-24T17:00:00.000-04:00"
 lastmod: "2026-05-24T17:00:00.000-04:00"
 categories:
