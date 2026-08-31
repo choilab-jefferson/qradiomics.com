@@ -1,5 +1,5 @@
 ---
-title: "Introducing medimage — A Free Colab Course in Quantitative Medical Image Analysis"
+title: "Introducing medimage: A Free Colab Course in Quantitative Medical Image Analysis"
 date: "2026-08-04T09:00:00.000-04:00"
 categories:
   - "news"
@@ -14,7 +14,7 @@ tags:
   - "CT"
   - "MR"
   - "PET"
-description: "medimage is a free, hands-on Colab course from Choi Lab — 13 notebook chapters from opening a DICOM file to CT/MR body composition, PET SUV, radiomics, and reproducing a published study."
+description: "medimage is a free, hands-on Colab course from Choi Lab, with 13 notebook chapters from opening a DICOM file to CT/MR body composition, PET SUV, radiomics, and reproducing a published study."
 cover:
   image: "images/medimage-overview.svg"
   alt: "medimage curriculum overview: Part I Foundations (Ch 1-5), Part II Applications (Ch 6-8), Part III Methods (Ch 9-13)"
@@ -31,7 +31,7 @@ result end to end. No prior background in medical imaging is assumed.
 
 ## Curriculum
 
-Every card opens straight in Colab — no account setup, no local install, click and run. Each chapter
+Every card opens straight in Colab: no account setup, no local install, click and run. Each chapter
 is standalone: open any single notebook and it fetches and prepares its own data, with no dependency
 on another chapter having run first.
 
@@ -134,13 +134,13 @@ on another chapter having run first.
   </div>
 </div>
 
-Each chapter teaches the failure mode alongside the technique — a registration that fails silently
+Each chapter teaches the failure mode alongside the technique: a registration that fails silently
 and is shown side by side with the run that worked (Ch. 10), a real data leak walked through step by
-step (Ch. 12), a "does the number actually add up" check before trusting it (Ch. 3) — rather than
+step (Ch. 12), a "does the number actually add up" check before trusting it (Ch. 3), rather than
 only the happy path. Chapter 12 closes by splitting the same 59 patients six ways and getting
 hold-out AUCs from 0.48 to 0.74, which is an argument about sample size rather than about models.
 
-## Run it — no install required
+## Run it, no install required
 
 Every notebook opens with a setup cell that detects Colab, clones the repo, and installs anything the
 runtime is missing. Start at Chapter 1:
@@ -158,7 +158,7 @@ jupyter lab
 
 Everything installs from PyPI with one exception. The four chapters that extract radiomics features
 need **pyradiomics**, which publishes no wheel for Python 3.10 or newer, so it is built from its
-upstream git — a few minutes on first install. In Colab that cost is paid once per session, and only
+upstream git, which takes a few minutes on first install. In Colab that cost is paid once per session, and only
 in the notebooks that need it; every other chapter installs in well under a minute. The local
 `requirements.txt` above installs it up front, whichever chapters you plan to run.
 
@@ -166,7 +166,7 @@ in the notebooks that need it; every other chapter installs in well under a minu
 
 Every notebook downloads what it needs from its original public source on first run and caches it
 locally (git-ignored); each loader prints its citation when it runs. That keeps the repo small and
-the licensing clean — and it keeps the provenance of every image one function call away.
+the licensing clean, and it keeps the provenance of every image one function call away.
 
 | Dataset | Used by | Source | License |
 |---|---|---|---|
@@ -178,11 +178,11 @@ the licensing clean — and it keeps the provenance of every image one function 
 ## Built alongside QRadiomics
 
 Chapters 5, 9, 11, 12 and 13 run the same `qr` CLI that powers **[QRadiomics](/qradiomics/)**, Choi
-Lab's radiomics research toolkit — Chapter 13 reproduces the Aerts 2014 NSCLC-Radiomics Cox PH result
+Lab's radiomics research toolkit. Chapter 13 reproduces the Aerts 2014 NSCLC-Radiomics Cox PH result
 using the public `qr extract` → `qr results merge` → `qr analyze survival` pipeline. medimage is the
 teaching path into the same tools and data used in the lab's published research.
 
 ---
 
 *Choi Lab, Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson
-University* — [Wookjin Choi, Ph.D.](/profile/) · MIT License · [LICENSE](https://github.com/choilab-jefferson/medimage/blob/main/LICENSE)
+University* · [Wookjin Choi, Ph.D.](/profile/) · MIT License · [LICENSE](https://github.com/choilab-jefferson/medimage/blob/main/LICENSE)

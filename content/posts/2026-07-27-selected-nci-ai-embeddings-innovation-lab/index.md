@@ -14,18 +14,18 @@ tags:
   - "Precision Medicine"
 aliases:
   - /2026/07/27/selected-nci-ai-embeddings-innovation-lab/
-description: "I've been selected to join the NCI AI Embeddings Innovation Lab — a highly competitive, invitation-based working session on fusing imaging, genomic, and clinical data into unified embeddings for earlier, more accurate cancer diagnosis."
+description: "I've been selected to join the NCI AI Embeddings Innovation Lab, a highly competitive, invitation-based working session on fusing imaging, genomic, and clinical data into unified embeddings for earlier, more accurate cancer diagnosis."
 ---
 
-I'm honored to share that I've been selected to participate in the **National Cancer Institute (NCI) AI Embeddings Innovation Lab** — *"AI Embeddings for Next-Gen Cancer Diagnostics"*, part of NCI's [Workshop Series: AI Embeddings for Cancer Research](https://www.cancer.gov/research/resources/ai-cancer-research/events) — a highly competitive, invitation-based working session focused on next-generation AI approaches for cancer diagnostics.
+I'm honored to share that I've been selected to participate in the **National Cancer Institute (NCI) AI Embeddings Innovation Lab**, *"AI Embeddings for Next-Gen Cancer Diagnostics"*, part of NCI's [Workshop Series: AI Embeddings for Cancer Research](https://www.cancer.gov/research/resources/ai-cancer-research/events). It is a highly competitive, invitation-based working session focused on next-generation AI approaches for cancer diagnostics.
 
 ## The challenge
 
-Arriving at the right diagnosis and treatment plan for a cancer patient — especially in difficult or ambiguous cases — depends on a clinical team's ability to synthesize deeply heterogeneous information: pathology, radiology, genomics, patient history, and more. Achieving earlier, more accurate diagnoses is even harder, since it may require integrating additional streams like wearable and biometric data. These data streams are rarely combined in any principled way, and the complexity of doing so exceeds human cognitive bandwidth in hard cases.
+Arriving at the right diagnosis and treatment plan for a cancer patient, especially in difficult or ambiguous cases, depends on a clinical team's ability to synthesize deeply heterogeneous information: pathology, radiology, genomics, patient history, and more. Achieving earlier, more accurate diagnoses is even harder, since it may require integrating additional streams like wearable and biometric data. These data streams are rarely combined in any principled way, and the complexity of doing so exceeds human cognitive bandwidth in hard cases.
 
 ## The opportunity: embeddings
 
-The idea is to represent a patient as a point — or trajectory — in a high-dimensional space that simultaneously encodes their molecular, imaging, clinical, and reported-outcome data. The key innovation is **fusion**: embedding techniques that place heterogeneous observations into a shared latent space where their relationships become computationally tractable, enabling integrated clinical reasoning that is currently out of reach for standard ML pipelines built on already-structured, harmonized data.
+The idea is to represent a patient as a point (or trajectory) in a high-dimensional space that simultaneously encodes their molecular, imaging, clinical, and reported-outcome data. The key innovation is **fusion**: embedding techniques that place heterogeneous observations into a shared latent space where their relationships become computationally tractable, enabling integrated clinical reasoning that is currently out of reach for standard ML pipelines built on already-structured, harmonized data.
 
 Teams at the Lab are expected to grapple with the hard, largely unattempted problems: cross-institutional generalizability, multi-modal data integration at scale, clinician interpretability of embedding-derived outputs, and a real validation framework for testing embedding-derived insights against clinical truth.
 
@@ -48,14 +48,14 @@ The Lab is fully virtual, facilitated by Knowinnovation, and runs as five intens
 
 Participation is capped at ~30 people, working with input from a cross-institutional team of Subject Guides:
 
-- **Jonas Almeida** — NCI Division of Cancer Epidemiology and Genetics
-- **Lawrence Hunter** — University of Chicago School of Medicine
-- **Anant Madabhushi** — Emory University
-- **Ghulam Rasool** — Moffitt Cancer Center
-- **Umit Topaloglu** — National Cancer Institute, CBIIT
+- **Jonas Almeida**, NCI Division of Cancer Epidemiology and Genetics
+- **Lawrence Hunter**, University of Chicago School of Medicine
+- **Anant Madabhushi**, Emory University
+- **Ghulam Rasool**, Moffitt Cancer Center
+- **Umit Topaloglu**, National Cancer Institute, CBIIT
 
 ## Why it matters
 
-Being selected for this cohort is a strong recognition of the AI and medical-imaging work coming out of our lab, and reflects the growing momentum of AI-driven research at Sidney Kimmel Medical College and across the Department of Radiation Oncology. Orientation already took place on July 23, and Day 1 kicks off tomorrow — looking forward to five intensive days of collaborative design and to seeing where the resulting proposals lead.
+Being selected for this cohort is a strong recognition of the AI and medical-imaging work coming out of our lab, and reflects the growing momentum of AI-driven research at Sidney Kimmel Medical College and across the Department of Radiation Oncology. Orientation already took place on July 23, and Day 1 kicks off tomorrow. Looking forward to five intensive days of collaborative design and to seeing where the resulting proposals lead.
 
 This isn't my first Innovation Lab: I previously took part in the NIH quantum-computing Innovation Lab, which led to [Team Quantum Heart winning an NIH Innovation Prize](/posts/2025-08-20-team-quantum-heart-wins-nih-prize-for-innovation/). Excited to see what comes out of this one.

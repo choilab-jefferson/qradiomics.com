@@ -2,7 +2,7 @@
 title: "Wookjin Choi, Ph.D."
 date: "2016-06-22T23:51:23.000-04:00"
 lastmod: "2026-08-19T00:00:00.000-04:00"
-description: "Wookjin Choi, Ph.D. — Associate Professor of Radiation Oncology at Thomas Jefferson University and Director of the CHOI Lab. Radiomics, interpretable AI, and medical image analysis for cancer care."
+description: "Wookjin Choi, Ph.D., Associate Professor of Radiation Oncology at Thomas Jefferson University and Director of the CHOI Lab. Radiomics, interpretable AI, and medical image analysis for cancer care."
 summary: "Associate Professor of Radiation Oncology at Thomas Jefferson University; Director of the CHOI Lab. Radiomics, interpretable AI, and open-source medical image analysis."
 keywords: ["Wookjin Choi", "radiomics", "medical image analysis", "interpretable AI", "radiation oncology", "Thomas Jefferson University", "CHOI Lab", "qradiomics"]
 schema: "profile"
@@ -33,7 +33,7 @@ Sidney Kimmel Medical College at Thomas Jefferson University · Philadelphia, PA
 
 Wookjin Choi works on **quantitative medical image analysis** for cancer diagnosis and
 radiation therapy. He builds
-**interpretable radiomics and deep learning models** — and the open-source software that
+**interpretable radiomics and deep learning models**, and the open-source software that
 makes them reproducible, including the [**qradiomics**](/qradiomics/) research CLI and the
 free [**medimage**](/posts/2026-08-04-introducing-medimage/) course. His work spans lung
 cancer screening, cardiac toxicity prediction from PET radiomics, MR-guided adaptive
@@ -43,10 +43,10 @@ radiotherapy, and large language models for clinical information extraction.
 
 ## Research Areas
 
-- **Radiomics and quantitative image analysis** — reproducible feature extraction from CT, PET, CBCT, and MRI.
-- **Computer-aided diagnosis** — automated lung nodule detection and malignancy characterization.
-- **Interpretable machine and deep learning** — clinically meaningful features (spiculation, pathway activity) instead of black boxes.
-- **Large language models and AI agents** — structured extraction and automation for clinical and research workflows.
+- **Radiomics and quantitative image analysis**: reproducible feature extraction from CT, PET, CBCT, and MRI.
+- **Computer-aided diagnosis**: automated lung nodule detection and malignancy characterization.
+- **Interpretable machine and deep learning**: clinically meaningful features (spiculation, pathway activity) instead of black boxes.
+- **Large language models and AI agents**: structured extraction and automation for clinical and research workflows.
 
 ---
 
@@ -63,8 +63,8 @@ radiotherapy, and large language models for clinical information extraction.
 | 2014–2016 | Post-Doctoral Fellow, Radiation Oncology | University of Maryland School of Medicine |
 | 2013–2014 | Founder and CEO | Qualia, Inc., South Korea |
 
-**Ph.D.** Mechatronics — medical image computing, Gwangju Institute of Science and Technology, 2013<br>
-**M.S.** Mechatronics — computer vision, Gwangju Institute of Science and Technology, 2008<br>
+**Ph.D.** Mechatronics (medical image computing), Gwangju Institute of Science and Technology, 2013<br>
+**M.S.** Mechatronics (computer vision), Gwangju Institute of Science and Technology, 2008<br>
 **B.S.** Computer Science and Engineering, Korea University of Technology and Education, 2006
 
 ---
@@ -108,7 +108,7 @@ Full list: [Google Scholar](http://scholar.google.com/citations?user=iHgsGLUAAAA
    **Choi W**, Nadeem S, Riyahi S, Deasy JO, Tannenbaum A, Lu W.<br>
    [doi:10.1016/j.cmpb.2020.105839](https://doi.org/10.1016/j.cmpb.2020.105839) · [Slides](/posts/2018-09-11-interpretable-spiculation-quantification-for-lung-cancer-screening/)
 
-8. **Radiomics Analysis of Pulmonary Nodules in Low-Dose CT for Early Detection of Lung Cancer** — *Editor's Pick*<br>
+8. **Radiomics Analysis of Pulmonary Nodules in Low-Dose CT for Early Detection of Lung Cancer**, *Editor's Pick*<br>
    *Medical Physics* 45(4):1537–1549, 2018.<br>
    **Choi W**, Oh JH, Riyahi S, Liu C-J, Jiang F, Chen W, White C, Rimner A, Mechalakos JG, Deasy JO, Lu W.<br>
    [doi:10.1002/mp.12820](https://doi.org/10.1002/mp.12820) · [Slides](/posts/2017-08-03-radiomics-analysis-of-pulmonary-nodules-in-low-dose-ct-for-early-detection-of-lung-cancer/)
@@ -157,14 +157,14 @@ Dates and amounts follow the [CV](images/wookjin-choi-cv.pdf); figures are **tot
 
 | Year | Honor |
 | --- | --- |
-| 2026 | **ASTRO Annual Meeting Abstract Award**, Basic Transitional Award in Physics — 30 winning abstracts out of >2,000 submissions [(details)](/posts/2026-07-27-2026-astro-annual-meeting-abstract-award/) |
-| 2026 | Oral presentation in the **BEST of Physics** session, ASTRO 2026, Boston — 300 orals out of ~2,700 abstracts [(details)](/posts/2026-05-18-astro-2026-best-of-physics-oral-acceptance/) |
-| 2026 | Selected participant, **NCI AI Embeddings Innovation Lab** — invitation-based, ~30 participants [(details)](/posts/2026-07-27-selected-nci-ai-embeddings-innovation-lab/) |
-| 2024 | **Winner ($25,000), NIH Biomedical Quantum Computation Challenge** — Team Quantum Heart, 1 of 3 winning teams [(details)](/posts/2025-08-20-team-quantum-heart-wins-nih-prize-for-innovation/) |
+| 2026 | **ASTRO Annual Meeting Abstract Award**, Basic Transitional Award in Physics; 30 winning abstracts out of >2,000 submissions [(details)](/posts/2026-07-27-2026-astro-annual-meeting-abstract-award/) |
+| 2026 | Oral presentation in the **BEST of Physics** session, ASTRO 2026, Boston; 300 orals out of ~2,700 abstracts [(details)](/posts/2026-05-18-astro-2026-best-of-physics-oral-acceptance/) |
+| 2026 | Selected participant, **NCI AI Embeddings Innovation Lab**; invitation-based, ~30 participants [(details)](/posts/2026-07-27-selected-nci-ai-embeddings-innovation-lab/) |
+| 2024 | **Winner ($25,000), NIH Biomedical Quantum Computation Challenge**; Team Quantum Heart, 1 of 3 winning teams [(details)](/posts/2025-08-20-team-quantum-heart-wins-nih-prize-for-innovation/) |
 | 2024 | Featured in a [*JCO Clinical Cancer Informatics* editorial](https://ascopubs.org/doi/10.1200/CCI.24.00045) for the cardiac PET radiomics study |
 | 2021 | **Faculty of the Year Award**, KSEA Central Virginia Chapter |
-| 2020 | 4th place, **AI Tracks at Sea Challenge**, Naval Information Warfare Center Pacific — faculty advisor, VSU TrojanOne [(details)](/posts/2021-02-01-fourth-place-winner-on-ai-tracks-at-sea-challenge/) |
-| 2018 | **Editor's Pick**, *Medical Physics* — radiomics analysis of pulmonary nodules in low-dose CT |
+| 2020 | 4th place, **AI Tracks at Sea Challenge**, Naval Information Warfare Center Pacific; faculty advisor, VSU TrojanOne [(details)](/posts/2021-02-01-fourth-place-winner-on-ai-tracks-at-sea-challenge/) |
+| 2018 | **Editor's Pick**, *Medical Physics*, for radiomics analysis of pulmonary nodules in low-dose CT |
 
 ---
 
@@ -172,16 +172,16 @@ Dates and amounts follow the [CV](images/wookjin-choi-cv.pdf); figures are **tot
 
 All code is released through the [CHOI Lab GitHub organization](https://github.com/choilab-jefferson).
 
-- **[qradiomics](/qradiomics/)** — radiomics research CLI and library (`qr`): DICOM conversion, multi-engine feature extraction, Nextflow/Prefect workflow assembly, survival and ML modeling. MIT · [PyPI](https://pypi.org/project/qradiomics/) · [GitHub](https://github.com/choilab-jefferson/qradiomics). Successor to `radiomics-tools`, `lung-image-analysis`, and `LungCancerScreeningRadiomics`.
-- **[medimage](/posts/2026-08-04-introducing-medimage/)** — free 13-chapter Google Colab course in quantitative medical image analysis, from DICOM basics to reproducing a published radiomics study. MIT · [GitHub](https://github.com/choilab-jefferson/medimage)
-- **[CIR / CIRDataset](https://github.com/choilab-jefferson/CIR)** — clinically-interpretable lung nodule radiomics (spiculation and lobulation quantification) and the MICCAI 2022 dataset.
-- **[PathCNN](https://github.com/mskspi/PathCNN)** — interpretable CNN for survival prediction and pathway analysis (Bioinformatics / ISMB 2021).
-- **[Computational Medical Physicist Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/)** — free Gemini assistant for medical image computing, dosimetry, protocol QA, and Monte Carlo work.
+- **[qradiomics](/qradiomics/)**: radiomics research CLI and library (`qr`): DICOM conversion, multi-engine feature extraction, Nextflow/Prefect workflow assembly, survival and ML modeling. MIT · [PyPI](https://pypi.org/project/qradiomics/) · [GitHub](https://github.com/choilab-jefferson/qradiomics). Successor to `radiomics-tools`, `lung-image-analysis`, and `LungCancerScreeningRadiomics`.
+- **[medimage](/posts/2026-08-04-introducing-medimage/)**: free 13-chapter Google Colab course in quantitative medical image analysis, from DICOM basics to reproducing a published radiomics study. MIT · [GitHub](https://github.com/choilab-jefferson/medimage)
+- **[CIR / CIRDataset](https://github.com/choilab-jefferson/CIR)**: clinically-interpretable lung nodule radiomics (spiculation and lobulation quantification) and the MICCAI 2022 dataset.
+- **[PathCNN](https://github.com/mskspi/PathCNN)**: interpretable CNN for survival prediction and pathway analysis (Bioinformatics / ISMB 2021).
+- **[Computational Medical Physicist Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/)**: free Gemini assistant for medical image computing, dosimetry, protocol QA, and Monte Carlo work.
 
 ---
 
 ## Teaching
 
-- **[medimage](/posts/2026-08-04-introducing-medimage/)** (2026) — open, self-paced course in quantitative medical image analysis; every chapter runs in Google Colab with no local setup.
-- **[Notion workspace](https://choiw.notion.site/)** — course materials, deep learning guides, and student portfolios.
-- **Virginia State University, 2019–2021** — programming, discrete structures, data structures, algorithms, computer networks, senior projects, and graduate courses in machine learning, [parallel and distributed programming](https://choiw.notion.site/CSCI-471-Parallel-Distributed-Programming-3a86834330d64209b746ee5ea777a340), and [deep learning](https://choiw.notion.site/CSCI-640-Introduction-to-Deep-Learning-355fd451d01543e49b3a4b19e30ca36a).
+- **[medimage](/posts/2026-08-04-introducing-medimage/)** (2026): open, self-paced course in quantitative medical image analysis; every chapter runs in Google Colab with no local setup.
+- **[Notion workspace](https://choiw.notion.site/)**: course materials, deep learning guides, and student portfolios.
+- **Virginia State University, 2019–2021**: programming, discrete structures, data structures, algorithms, computer networks, senior projects, and graduate courses in machine learning, [parallel and distributed programming](https://choiw.notion.site/CSCI-471-Parallel-Distributed-Programming-3a86834330d64209b746ee5ea777a340), and [deep learning](https://choiw.notion.site/CSCI-640-Introduction-to-Deep-Learning-355fd451d01543e49b3a4b19e30ca36a).
