@@ -57,9 +57,9 @@ Written by Lisa Fields for Jefferson Investigates.
 
 ## The team
 
-TRACER was carried out while **Wenchao Cao, PhD** was our Senior Physics Resident. He has since
-completed the residency and joined the department as **medical physics faculty** on July 1, where he
-is continuing this line of research. He worked with **Nilanjan "Neel" Haldar, MD**, for whom this was
+TRACER was carried out while **Wenchao Cao, PhD** was our Senior Physics Resident. She has since
+completed the residency and joined the department as **medical physics faculty** on July 1, where she
+is continuing this line of research. She worked with **Nilanjan "Neel" Haldar, MD**, for whom this was
 one of many projects taken on during his Jefferson Radiation Oncology residency. Much of the chart
 review and validation was done by medical students from Jefferson's summer oncology program: Isis
 Lloyd, Moorin Khan, Michael Dichmann, and Patrick Faherty, along with Femi Adejolu, then a Penn State

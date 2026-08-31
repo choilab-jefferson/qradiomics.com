@@ -61,7 +61,7 @@ No more summer breaks spent by medical students manually digging through EHR fre
 
 ## The team
 
-Huge congratulations to **Dr. Wenchao Cao**, who finished his Senior Physics Residency with us and joined the department as medical physics faculty on July 1, where he is continuing this work, and **Dr. Nilanjan Haldar**, who just completed his Radiation Oncology residency and is heading to Phoenix. Much of the extraction and validation work was done by the student intern team: Isis Lloyd, Michael Dichmann, Moorin Khan, and Patrick Faherty, along with undergraduate Femi Adejolu. Best of luck to Wenchao and Nilanjan on their next chapters.
+Huge congratulations to **Dr. Wenchao Cao**, who finished her Senior Physics Residency with us and joined the department as medical physics faculty on July 1, where she is continuing this work, and **Dr. Nilanjan Haldar**, who just completed his Radiation Oncology residency and is heading to Phoenix. Much of the extraction and validation work was done by the student intern team: Isis Lloyd, Michael Dichmann, Moorin Khan, and Patrick Faherty, along with undergraduate Femi Adejolu. Best of luck to Wenchao and Nilanjan on their next chapters.
 
 ## Publication
 
