@@ -21,6 +21,10 @@ tags:
   - "segmentation"
   - "survival"
   - "toxicity"
+cover:
+  image: "images/2023-meetings-abstracts.png"
+  alt: "Timeline of four 2023 annual meetings: ABS in Vancouver with 1 abstract, AAPM in Houston with 4, ASTRO in San Diego with 3, and INFORMS in Phoenix with 1"
+  relative: true
 aliases:
   - /2023/05/08/2023-accepted-invited-annual-meeting-abstracts/
 description: "AAPM Annual Meeting (Houston, TX • July 23 ‒ 27, 2023) 1. Novel Functional Delta Radiomics for Predicting Overall Survival in Lung Cancer Radiotherapy..."

@@ -10,6 +10,10 @@ tags:
   - "interpretable"
   - "quantitative-image-feature"
   - "radiomics"
+cover:
+  image: "images/postdoc-position-card.png"
+  alt: "Card summarizing the postdoctoral fellow position: Department of Radiation Oncology, 2-year term, PI Wookjin Choi, Ph.D. required in a related field"
+  relative: true
 aliases:
   - /2021/12/22/hiring-a-post-doctoral-fellow/
 description: "Postdoctoral Fellow Developing Clinically Interpretable Medical Imaging AI in Radiation Therapy..."

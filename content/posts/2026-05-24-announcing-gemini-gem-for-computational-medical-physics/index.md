@@ -14,6 +14,10 @@ tags:
   - "Geant4"
   - "DICOM"
   - "Radiomics"
+cover:
+  image: "images/gem-four-pillars.png"
+  alt: "The Computational Medical Physicist Gem and its four pillars: image processing and deep learning, dosimetry and radiomics, clinical guidelines and protocol QA, and Monte Carlo transport simulations"
+  relative: true
 aliases:
   - /2026/05/24/announcing-gemini-gem-for-computational-medical-physics/
 description: "We are excited to share the release of a specialized Gemini Gem designed specifically for Computational Medical Physicists . This AI agent acts as a..."
