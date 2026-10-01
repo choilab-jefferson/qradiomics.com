@@ -10,6 +10,10 @@ tags:
   - "insects-behavior"
   - "motion-tracking"
   - "object-detection"
+cover:
+  image: "images/00289_psisdg11510_115102w_page_5_1.jpg"
+  alt: "Ants detected and circled in red on a rocky ground photo and on a white arena"
+  relative: true
 aliases:
   - /2020/11/17/automatic-motion-tracking-system-for-analysis-of-insect-behavior/
 description: "Darrin Gladman, Jehu Osegbe, Wookjin Choi\ , and Joon Suk Lee 'Automatic motion tracking system for analysis of insect behavior', Proc. SPIE 11510,..."

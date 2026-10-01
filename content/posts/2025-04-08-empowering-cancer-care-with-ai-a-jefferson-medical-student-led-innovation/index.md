@@ -14,6 +14,10 @@ tags:
   - "quality-of-life"
   - "radiotherapy"
   - "recommendation"
+cover:
+  image: "images/image-1.png"
+  alt: "Chart of 31 prompt templates varying 8 categorical variables such as cancer stage, comorbidity, culture, budget and store"
+  relative: true
 aliases:
   - /2025/04/08/empowering-cancer-care-with-ai-a-jefferson-medical-student-led-innovation/
 description: "I’m excited to share a new collaborative study I had the privilege of co authoring, which was recently published in Nutrients . Led by Jefferson medical..."
