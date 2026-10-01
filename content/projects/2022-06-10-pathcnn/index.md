@@ -1,6 +1,10 @@
 ---
 title: "PathCNN"
 date: "2022-06-10T15:59:11.000-04:00"
+cover:
+  image: "images/pathcnn.png"
+  alt: "PathCNN pipeline: a pathway image passes through a CNN to LTS and non-LTS outputs, with GradCAM maps compared between the two groups"
+  relative: true
 aliases:
   - /portfolio/pathcnn/
 description: "Interpretable convolutional neural networks for survival prediction and pathway analysis applied to glioblastoma Pathway image : Grid structure conversion..."

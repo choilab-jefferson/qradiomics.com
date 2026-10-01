@@ -16,6 +16,10 @@ tags:
   - "selective-internal-radiation-therapy"
   - "sirt"
   - "yttrium-90"
+cover:
+  image: "images/image.png"
+  alt: "Schematic of the clinical AI auto-segmentation workflow connecting a computing server, a radiation oncology PACS server and a client viewer"
+  relative: true
 aliases:
   - /2025/04/08/ai-powered-auto-segmentation-in-liver-cancer-therapy/
 description: "We’re excited to share our latest work published in Technology in Cancer Research & Treatment : “Deep Learning Based Auto Segmentation for Liver Yttrium..."

@@ -17,6 +17,10 @@ tags:
   - "quantitative-image-feature"
   - "radiomics"
   - "spiculation"
+cover:
+  image: "images/image-1.png"
+  alt: "Diagram of the multi-class Voxel2Mesh network with voxel encoder and decoder, mesh decoder paths for nodule, lobulation and spiculation, and a malignancy output"
+  relative: true
 aliases:
   - /2022/06/29/clinically-interpretable-radiomics/
 description: "MICCAI'22 Paper | CMPB'21 Paper | CIRDataset This library serves as a one stop solution for analyzing datasets using clinically interpretable radiomics..."

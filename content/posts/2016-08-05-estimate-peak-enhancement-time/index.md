@@ -3,6 +3,10 @@ title: "How to estimate peak enhancement time of pancreas region by test injecti
 date: "2016-08-05T00:33:00.000-04:00"
 categories: 
   - "research"
+cover:
+  image: "images/peak-enhancement.png"
+  alt: "Slide showing an aortic test-injection enhancement curve with the estimated pancreas peak enhancement time formula"
+  relative: true
 aliases:
   - /2016/08/05/estimate-peak-enhancement-time/
 description: "This video clip shows how to estimate peak enhancement time by using the test injection technique. W Choi et al. Individually Optimized Contrast Enhanced..."

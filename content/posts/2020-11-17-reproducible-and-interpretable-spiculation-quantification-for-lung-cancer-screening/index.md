@@ -13,6 +13,10 @@ tags:
   - "radiomics"
   - "shape"
   - "spiculation"
+cover:
+  image: "images/1-s2.0-s0169260720316722-gr1_lrg.jpg"
+  alt: "Graphical abstract: a lung nodule surface mapped to a sphere, with spiculation tips marked on a color map of area distortion"
+  relative: true
 aliases:
   - /2020/11/17/reproducible-and-interpretable-spiculation-quantification-for-lung-cancer-screening/
 description: "Choi, W., Nadeem, S., Alam, S. R., Deasy, J. O., Tannenbaum, A., & Lu, W. (2020). Reproducible and Interpretable Spiculation Quantification for Lung..."
