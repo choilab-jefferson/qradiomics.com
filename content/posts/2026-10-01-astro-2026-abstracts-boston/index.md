@@ -35,7 +35,18 @@ Six abstracts from our collaborations appear in the ASTRO 2026 Annual Meeting su
 
 ## Led by our lab
 
-**Early adaptive interventions in lung cancer** (presenter: Wookjin Choi; PI). See the [acceptance post]({{< relref "/posts/2026-05-18-astro-2026-best-of-physics-oral-acceptance" >}}) and the earlier [longitudinal CBCT radiomics work]({{< relref "/posts/2023-02-10-longitudinal-cbct-radiomics-in-lung-cancer-supported-by-varian-medical-systems-inc" >}}). [IJROBP 126(1) S91](https://doi.org/10.1016/j.ijrobp.2026.06.112). The study used 225 courses from 189 patients (5,067 CBCTs, 2019-2024, single institution), with 107 radiomic features per GTV/PTV contour and 14 clinical variables. A hierarchical gradient boosting survival model aggregates lesions to the patient level, then integrates cumulatively over time (CBCTcN is fraction 1 through week N), evaluated with 5-fold patient-level cross-validation. The cumulative model peaked by week 2 (CBCTc2 C-index 0.72, CV 6.12%). The six-week model reached a C-index of 0.72 (95% CI 0.69-0.75), and its CV fell from 8.47% at week 1 to 1.97% at week 6. It outperformed clinical-only (0.61, p<0.001), planning CT radiomics (0.66, p=0.015), and delta-radiomics (0.70, p=0.006). Adding clinical variables did not significantly improve discrimination despite the word "fusion" in the title. The abstract concludes that prognostic accuracy is strong by week 2, later weeks stabilize predictions, and the approach uses standard-of-care imaging.
+**Early adaptive interventions in lung cancer** (presenter: Wookjin Choi; PI). See the [acceptance post]({{< relref "/posts/2026-05-18-astro-2026-best-of-physics-oral-acceptance" >}}) and the earlier [longitudinal CBCT radiomics work]({{< relref "/posts/2023-02-10-longitudinal-cbct-radiomics-in-lung-cancer-supported-by-varian-medical-systems-inc" >}}). [IJROBP 126(1) S91](https://doi.org/10.1016/j.ijrobp.2026.06.112). Presented as a preliminary abstract; the text below is a current status, not the published abstract.
+
+*Current status (preliminary, not peer reviewed).* Data come from a single institution: about 200 patients (204 analysed with survival follow-up, 89 deaths) and about 5,200 CBCT scans after quality control. Final counts are still being finalised. Per-contour features are summarised over CBCTs, using shape and size features plus 14 clinical variables. Cox, gradient-boosting and random-survival-forest models are compared, with contour-level scores aggregated to one patient-level score, and evaluated with patient-level cross-validation and paired bootstrap comparisons.
+
+So far the direction appears consistent, though effect sizes may still change:
+
+- CBCT-derived shape and size features combined with clinical variables appear to improve discrimination over clinical variables alone (C-index about 0.71 vs 0.63).
+- The information seems present from the first CBCT and comparable to a planning-CT-based model (the difference is not significant). Repeated CBCTs have not yet clearly added beyond the first scan, possibly because contours are propagated from the planning CT.
+- The useful signal seems concentrated in size and shape. Texture and first-order features added nothing beyond size in this cohort, and whether shape adds beyond tumour size itself is not shown.
+- The patient-level score appears to separate overall survival (12-month survival roughly 93% in the lowest-risk vs about 52% in the highest-risk quartile).
+
+This work does not claim a treatment-response mechanism, clinical readiness, or benefit of intervention. Next steps are external validation on independent data, more detailed feature selection, shape descriptors that use the contour only as a location cue, and per-scan re-segmentation so that real change during treatment can enter the estimate.
 
 ## Senior author
 
@@ -55,7 +66,7 @@ Six abstracts from our collaborations appear in the ASTRO 2026 Annual Meeting su
 
 - [Selected for ASTRO 2026 BEST of Physics]({{< relref "/posts/2026-05-18-astro-2026-best-of-physics-oral-acceptance" >}}): acceptance of the lead abstract.
 - [ASTRO 2026 abstract award]({{< relref "/posts/2026-07-27-2026-astro-annual-meeting-abstract-award" >}}): the award for the lead abstract.
-- [Longitudinal CBCT radiomics supported by Varian]({{< relref "/posts/2023-02-10-longitudinal-cbct-radiomics-in-lung-cancer-supported-by-varian-medical-systems-inc" >}}): earlier funding for the CBCT work.
+- [Longitudinal CBCT radiomics in lung cancer]({{< relref "/posts/2023-02-10-longitudinal-cbct-radiomics-in-lung-cancer-supported-by-varian-medical-systems-inc" >}}): earlier longitudinal CBCT radiomics work.
 - [Functional radiomics for cardiotoxicity]({{< relref "/posts/2023-09-11-novel-functional-delta-radiomics-for-predicting-overall-survival-in-lung-cancer-radiotherapy-using-cardiac-fdg-pet-uptake" >}}): cardiac FDG-PET uptake in lung cancer radiotherapy.
 - [Cardiac risks using PET imaging]({{< relref "/posts/2024-04-14-shining-a-light-unveiling-cardiac-risks-using-pet-imaging-in-lung-cancer-radiotherapy" >}}): cardiac PET study overview.
 - [The Nexus featured our cardiac PET radiomics study]({{< relref "/posts/2024-06-27-the-nexus-featured-our-cardiac-pet-radiomics-study" >}}): media coverage of that study.
@@ -66,6 +77,6 @@ Six abstracts from our collaborations appear in the ASTRO 2026 Annual Meeting su
 
 ## Common thread
 
-Across these abstracts, the aim is to turn repeated or heterogeneous clinical observations (serial CBCTs, EHR text, PET scans, treatment plans, MR cine images) into stable decision information.
+Across these abstracts, the aim is to turn repeated or heterogeneous clinical observations (imaging, EHR text, treatment plans, MR cine images) into stable decision information.
 
 Thank you to the presenters and to every collaborator who contributed to this work.
