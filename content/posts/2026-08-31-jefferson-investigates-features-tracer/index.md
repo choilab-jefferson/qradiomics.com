@@ -12,6 +12,10 @@ tags:
   - "Cardio-Oncology"
   - "Prompt Engineering"
   - "Open Source"
+cover:
+  image: "images/tracer-pipeline.png"
+  alt: "TRACER pipeline: unstructured electronic health records go through an open-source LLM with a prompting framework to yield cardiac events; manual review took about 2 hours per chart versus 20 to 42 seconds for the LLM"
+  relative: true
 aliases:
   - /2026/08/31/jefferson-investigates-features-tracer/
 description: "Jefferson Investigates (August 2026) covers TRACER, our open-source LLM framework that extracts cardiac event data from cancer patients' electronic health records in seconds instead of hours."
