@@ -15,6 +15,10 @@ tags:
   - "Plan Quality"
   - "MR-guided Radiotherapy"
   - "PET/CT"
+cover:
+  image: "images/astro-2026-abstracts-by-role.png"
+  alt: "The six ASTRO 2026 abstracts grouped by Choi's role: as PI, longitudinal CBCT survival prediction, a BEST of Physics oral with an abstract award; as senior author, PET radiomics cardiac risk, plan quality cohort size, and TRACER cardiac event extraction; in data and infrastructure, MR-guided tumor tracking and LLM triage of bone metastases"
+  relative: true
 aliases:
   - /2026/10/01/astro-2026-abstracts-boston/
 description: "Six abstracts from our collaborations appear in the ASTRO 2026 supplement of the Red Journal: longitudinal CBCT survival prediction, PET radiomics for cardiac risk, plan quality scoring, LLM-based EHR extraction, MR-guided tumor tracking, and bone metastasis case-finding."
