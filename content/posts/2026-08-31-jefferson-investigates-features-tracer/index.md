@@ -14,7 +14,7 @@ tags:
   - "Open Source"
 cover:
   image: "images/tracer-pipeline.png"
-  alt: "TRACER pipeline: unstructured electronic health records go through an open-source LLM with a prompting framework to yield cardiac events; manual review took about 2 hours per chart versus 20 to 42 seconds for the LLM"
+  alt: "TRACER time per chart in the 411-patient cohort: manual review took roughly two hours, the open-source LLM pipeline took 20 to 42 seconds"
   relative: true
 aliases:
   - /2026/08/31/jefferson-investigates-features-tracer/

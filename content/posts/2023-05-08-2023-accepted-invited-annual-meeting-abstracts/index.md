@@ -23,7 +23,7 @@ tags:
   - "toxicity"
 cover:
   image: "images/2023-meetings-abstracts.png"
-  alt: "Timeline of four 2023 annual meetings: ABS in Vancouver with 1 abstract, AAPM in Houston with 4, ASTRO in San Diego with 3, and INFORMS in Phoenix with 1"
+  alt: "Timeline of the 2023 annual meetings: ABS in Vancouver on June 22-24, AAPM in Houston on July 23-27, ASTRO in San Diego on October 1-4, and INFORMS in Phoenix on October 15-18"
   relative: true
 aliases:
   - /2023/05/08/2023-accepted-invited-annual-meeting-abstracts/
