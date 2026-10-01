@@ -37,14 +37,14 @@ Six abstracts from our collaborations appear in the ASTRO 2026 Annual Meeting su
 
 **Early adaptive interventions in lung cancer** (presenter: Wookjin Choi; PI). See the [acceptance post]({{< relref "/posts/2026-05-18-astro-2026-best-of-physics-oral-acceptance" >}}) and the earlier [longitudinal CBCT radiomics work]({{< relref "/posts/2023-02-10-longitudinal-cbct-radiomics-in-lung-cancer-supported-by-varian-medical-systems-inc" >}}). [IJROBP 126(1) S91](https://doi.org/10.1016/j.ijrobp.2026.06.112). Presented as a preliminary abstract; the text below is a current status, not the published abstract.
 
-*Current status (preliminary, not peer reviewed).* Data come from a single institution: about 200 patients (204 analysed with survival follow-up, 89 deaths) and about 5,200 CBCT scans after quality control. Final counts are still being finalised. Per-contour features are summarised over CBCTs, using shape and size features plus 14 clinical variables. Cox, gradient-boosting and random-survival-forest models are compared, with contour-level scores aggregated to one patient-level score, and evaluated with patient-level cross-validation and paired bootstrap comparisons.
+*Current status (preliminary, not peer reviewed).* Data come from a single institution: roughly 200 patients and on the order of 5,000 CBCT scans (counts being finalised). These analyses are still being verified, and numbers may change. Per-contour features are summarised over CBCTs, using shape and size features plus 14 clinical variables. Cox, gradient-boosting and random-survival-forest models are compared, with contour-level scores aggregated to one patient-level score, and evaluated with patient-level cross-validation and paired bootstrap comparisons.
 
 So far the direction appears consistent, though effect sizes may still change:
 
-- CBCT-derived shape and size features combined with clinical variables appear to improve discrimination over clinical variables alone (C-index about 0.71 vs 0.63).
+- CBCT-derived shape and size features combined with clinical variables appear to give a modest gain in C-index over clinical variables alone.
 - The information seems present from the first CBCT and comparable to a planning-CT-based model (the difference is not significant). Repeated CBCTs have not yet clearly added beyond the first scan, possibly because contours are propagated from the planning CT.
 - The useful signal seems concentrated in size and shape. Texture and first-order features added nothing beyond size in this cohort, and whether shape adds beyond tumour size itself is not shown.
-- The patient-level score appears to separate overall survival (12-month survival roughly 93% in the lowest-risk vs about 52% in the highest-risk quartile).
+- The patient-level score appears to separate overall survival (survival appears to differ between the lowest and highest risk quartiles).
 
 This work does not claim a treatment-response mechanism, clinical readiness, or benefit of intervention. Next steps are external validation on independent data, more detailed feature selection, shape descriptors that use the contour only as a location cue, and per-scan re-segmentation so that real change during treatment can enter the estimate.
 
