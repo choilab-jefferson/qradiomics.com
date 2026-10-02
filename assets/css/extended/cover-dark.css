@@ -1,0 +1,18 @@
+/* Cover light/dark variants (layouts/partials/cover.html, cover.imageDark).
+   PaperMod sets html[data-theme] from localStorage "pref-theme" or
+   prefers-color-scheme before first paint, and the toggle flips it. */
+:root:not([data-theme="dark"]) .cover-dark,
+:root[data-theme="dark"] .cover-light {
+    display: none;
+}
+
+/* No-JS fallback: data-theme is never set, PaperMod's noscript block follows
+   prefers-color-scheme, so follow it here too. */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) .cover-light {
+        display: none;
+    }
+    :root:not([data-theme]) .cover-dark {
+        display: revert;
+    }
+}

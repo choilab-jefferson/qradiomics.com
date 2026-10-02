@@ -14,6 +14,7 @@ tags:
   - "Open Source"
 cover:
   image: "images/tracer-pipeline.png"
+  imageDark: "images/tracer-pipeline-dark.png"
   alt: "TRACER time per chart in the 411-patient cohort: manual review took roughly two hours, the open-source LLM pipeline took 20 to 42 seconds"
   relative: true
 aliases:

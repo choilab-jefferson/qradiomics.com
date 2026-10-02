@@ -16,6 +16,7 @@ tags:
   - "Radiomics"
 cover:
   image: "images/gem-four-pillars.png"
+  imageDark: "images/gem-four-pillars-dark.png"
   alt: "The Computational Medical Physicist Gem and its four primary pillars: image processing and deep learning, dosimetry and radiomics, clinical guidelines and protocol QA, and Monte Carlo and radiation transport simulations"
   relative: true
 aliases:
