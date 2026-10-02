@@ -14,6 +14,7 @@ tags:
   - "Precision Medicine"
 cover:
   image: "images/nci-embeddings-lab-process.png"
+  imageDark: "images/nci-embeddings-lab-process-dark.png"
   alt: "NCI AI Embeddings Innovation Lab process: Town Halls on April 8-9, 2026, then a Convergence Session on April 23, then the Innovation Lab of five intensive days"
   relative: true
 aliases:

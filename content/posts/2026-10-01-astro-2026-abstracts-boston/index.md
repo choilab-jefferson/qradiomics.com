@@ -17,6 +17,7 @@ tags:
   - "PET/CT"
 cover:
   image: "images/astro-2026-abstracts-by-role.png"
+  imageDark: "images/astro-2026-abstracts-by-role-dark.png"
   alt: "The six ASTRO 2026 abstracts grouped by Choi's role: as PI, longitudinal CBCT survival prediction, a BEST of Physics oral with an abstract award; as senior author, PET radiomics cardiac risk, plan quality cohort size, and TRACER cardiac event extraction; in data and infrastructure, MR-guided tumor tracking and LLM triage of bone metastases"
   relative: true
 aliases:

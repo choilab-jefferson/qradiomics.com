@@ -12,6 +12,7 @@ tags:
   - "radiomics"
 cover:
   image: "images/postdoc-position-card.png"
+  imageDark: "images/postdoc-position-card-dark.png"
   alt: "Hiring a Postdoctoral Fellow in the Department of Radiation Oncology: developing clinically interpretable medical imaging AI in radiation therapy, with radiomics, deep learning and outcome prediction, a 2-year position with PI Wookjin Choi, Ph.D."
   relative: true
 aliases:

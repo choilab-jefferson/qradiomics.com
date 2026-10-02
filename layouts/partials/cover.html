@@ -1,0 +1,78 @@
+{{- with .cxt}} {{/* Apply proper context from dict */}}
+{{- if (and .Params.cover.image (not $.isHidden)) }}
+<figure class="entry-cover">
+    {{- $loading := cond $.IsSingle "eager" "lazy" }}
+    {{- $addLink := (and site.Params.cover.linkFullImages $.IsSingle) }}
+    {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
+    {{- $alt := (.Params.cover.alt | default .Params.cover.caption | plainify) }}
+    {{- $responsiveImages := (.Params.cover.responsiveImages | default site.Params.cover.responsiveImages) | default true }}
+
+    {{- /* Site override: an optional cover.imageDark renders as a second variant; CSS in
+         assets/css/extended/cover-dark.css shows the one matching html[data-theme]. */}}
+    {{- $variants := slice (dict "src" .Params.cover.image "class" "") }}
+    {{- with .Params.cover.imageDark }}
+        {{- $variants = slice (dict "src" $.cxt.Params.cover.image "class" "cover-light") (dict "src" . "class" "cover-dark") }}
+    {{- end }}
+    {{- range $variants }}
+    {{- $class := .class }}
+    {{- $src := .src }}
+    {{- with $.cxt }}
+    {{- $pageBundleCover := (.Resources.ByType "image").GetMatch (printf "*%s*" $src) }}
+    {{- $globalResourcesCover := (resources.ByType "image").GetMatch (printf "*%s*" $src) }}
+    {{- $cover := (or $pageBundleCover $globalResourcesCover)}}
+    {{- /* We are not using the .Param.cover.relative to decide the location of image */}}
+    {{- /* If we have the image in pageBundle or globalResources we can process the image */}}
+
+    {{- $sizes := (slice "360" "480" "720" "1080" "1500") }}
+    {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+    {{- if hugo.IsExtended -}}
+        {{- $processableFormats = $processableFormats | append "webp" -}}
+    {{- end -}}
+
+    {{- $imgdl := $src | absURL }}
+    {{- if $cover -}}
+        {{- $imgdl = $cover.Permalink }}
+    {{- end -}}
+
+    {{- if $addLink }}
+        <a{{ with $class }} class="{{ . }}"{{ end }} href="{{ $imgdl }}" target="_blank" rel="noopener noreferrer">
+    {{- end }}
+
+    {{- if $cover -}}
+        {{/* i.e it is present in page bundle */}}
+        {{- if (and (in $processableFormats $cover.MediaType.SubType) ($responsiveImages) (eq $prod true)) }}
+            <img{{ with $class }} class="{{ . }}"{{ end }} loading="{{$loading}}"
+                srcset='{{- range $size := $sizes -}}
+                            {{- if (ge $cover.Width $size) }}
+                                {{- printf "%s %s" (($cover.Resize (printf "%sx" $size)).Permalink) (printf "%sw," $size) }}
+                            {{- end }}
+                        {{- end }}
+                        {{- printf "%s %dw" ($cover.Permalink) ($cover.Width) }}'
+                src="{{ $cover.Permalink }}"
+                sizes="(min-width: 768px) 720px, 100vw"
+                width="{{ $cover.Width }}" height="{{ $cover.Height }}"
+                alt="{{ $alt }}">
+        {{- else }}{{/* Unprocessable image or responsive images disabled */}}
+            <img{{ with $class }} class="{{ . }}"{{ end }} loading="{{ $loading }}" src="{{ $imgdl }}" alt="{{ $alt }}">
+        {{- end }}
+    {{- else }}
+        {{- /* For absolute urls and external links, no img processing here */}}
+        <img{{ with $class }} class="{{ . }}"{{ end }} loading="{{ $loading }}" src="{{ $imgdl }}" alt="{{ $alt }}">
+    {{- end }}
+
+    {{- if $addLink }}
+        </a>
+    {{- end -}}
+
+    {{- end }}
+    {{- end }}
+
+    {{- /*  Display Caption  */}}
+    {{- if $.IsSingle }}
+        {{ with .Params.cover.caption -}}
+            <figcaption>{{ . | markdownify }}</figcaption>
+        {{- end }}
+    {{- end }}
+</figure>
+{{- end }}{{/* End image */}}
+{{- end -}}{{/* End context */ -}}
