@@ -291,6 +291,7 @@ As the field of medical physics shifts towards AI-driven automation, `qradiomics
 *   **Workflow Scaffolding:** Agents can generate complex Nextflow or Snakemake pipelines by simply describing the desired study design in natural language.
 *   **Self-Correction:** If a feature extraction fails due to DICOM header inconsistencies, the CLI provides structured error codes that an AI agent can use to suggest (or apply) data cleaning fixes.
 *   **Integration with Gemini Gems:** Our specialized [Medical Physics Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/) is pre-trained on `qradiomics` syntax, acting as a high-level **Radiomics Agent** that can write and execute your research code.
+*   **Colab-Ready Multi-Agent Orchestration (`nexus-lite`):** Coordinate parallel agent swarms and 3-stage verification pipelines (`driver` $\to$ `navigator` $\to$ `verifier` $\to$ `refiner`) with live `agy` and `claude` agents directly in Google Colab via **[nexus-lite](/posts/2026-10-28-introducing-nexus-lite/)** ([choilab-jefferson/nexus.lite](https://github.com/choilab-jefferson/nexus.lite)).
 
 ## AI-Agent Skill (Claude Code)
 
@@ -590,6 +591,7 @@ If you build on the lung-screening lineage that this CLI grew out of, please add
 
 - [**Wookjin Choi**](https://github.com/taznux): overall architecture, CLI design, pattern templates
 - [**Pradeep Bhetwal**](https://github.com/Pradeepbhetwal): survival analysis on the LUNG1 cohort
+- **Google Gemini 4 Argon Access**: We gratefully acknowledge Google for providing Gemini 4 Argon access and support for our multi-agent radiomics and medical physics research workflows (`qradiomics`, `medimage`, and `nexus-lite`).
 - *Choi Lab, Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson University*
 
 ## License

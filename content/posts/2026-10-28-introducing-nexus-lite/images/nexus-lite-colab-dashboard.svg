@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="winBg" x1="0" y1="0" x2="0" y2="680" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="680" rx="14" fill="url(#winBg)" stroke="#30363d" stroke-width="2"/>
+
+  <!-- Browser / Dashboard Top Bar -->
+  <rect x="2" y="2" width="1196" height="46" rx="12" fill="#161b22"/>
+  <circle cx="24" cy="25" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="25" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="25" r="6" fill="#27c93f"/>
+  <rect x="92" y="11" width="760" height="28" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="108" y="29" fill="#8b949e" font-family="monospace" font-size="12">https://essay-judge-andrea-physiology.trycloudflare.com/dashboard?token=0200e348...&amp;refresh=3</text>
+  <rect x="870" y="11" width="308" height="28" rx="6" fill="#1f6feb" fill-opacity="0.18" stroke="#388bfd" stroke-width="1"/>
+  <text x="1024" y="29" fill="#58a6ff" font-size="12" font-weight="700" text-anchor="middle">COLAB + DRIVE SYNC: ~/.gemini → MyDrive/.gemini</text>
+
+  <!-- Panel 1 (Top-Left): Active PTY Sessions & Live Agent Output -->
+  <g transform="translate(20, 64)">
+    <rect x="0" y="0" width="570" height="285" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="570" height="34" rx="10" fill="#21262d"/>
+    <text x="16" y="22" fill="#f39800" font-size="13" font-weight="700">1. PERSISTENT PTY &amp; LIVE AGENT SWARM (dtach + agy / Gemini 4 Argon)</text>
+    <text x="554" y="22" fill="#3fb950" font-family="monospace" font-size="11" text-anchor="end">● 3 WORKERS ACTIVE</text>
+
+    <rect x="14" y="46" width="542" height="225" rx="6" fill="#090d11" stroke="#21262d" stroke-width="1"/>
+    <text x="26" y="68" fill="#58a6ff" font-family="monospace" font-size="11.5">$ nexus-lite demo phantom-swarm --agent agy</text>
+    <text x="26" y="90" fill="#3fb950" font-family="monospace" font-size="11">[COMPLETED] spic6-worker-agy (Choi 2021 CMPB):</text>
+    <text x="26" y="107" fill="#c9d1d9" font-family="monospace" font-size="10.5">  Cancer models double peak counts (Np: 54-56 vs 27-31), acute spikes</text>
+    <text x="26" y="123" fill="#c9d1d9" font-family="monospace" font-size="10.5">  (Na: 5-7 vs 1-2), and composite risk (s2: 1.05-2.56 vs &lt;=0.10).</text>
+    <text x="26" y="146" fill="#3fb950" font-family="monospace" font-size="11">[COMPLETED] ahsn-worker-agy (Choi 2014 CMPB):</text>
+    <text x="26" y="163" fill="#c9d1d9" font-family="monospace" font-size="10.5">  180-D AHSN entropy stratifies spiculated (11.55) &amp; juxta-pleural (11.36)</text>
+    <text x="26" y="179" fill="#c9d1d9" font-family="monospace" font-size="10.5">  malignancies from smooth benign nodules (9.73; L2=0.30).</text>
+    <text x="26" y="202" fill="#3fb950" font-family="monospace" font-size="11">[COMPLETED] manifest-worker-agy:</text>
+    <text x="26" y="219" fill="#c9d1d9" font-family="monospace" font-size="10.5">  Verified 3 CT/mask NRRD pairs (48x48x48, 1.0mm isotropic LPS header)</text>
+    <text x="26" y="235" fill="#c9d1d9" font-family="monospace" font-size="10.5">  at /content/drive/MyDrive/nexus-lite/work/phantom_swarm/manifest.csv</text>
+    <text x="26" y="256" fill="#8b949e" font-family="monospace" font-size="10.5">bash-5.2# [nexus] TASK_COMPLETE t-8c4120a9 (rc=0) → artifacts/t-8c4120a9/output.md</text>
+  </g>
+
+  <!-- Panel 2 (Top-Right): SQLite WAL Message Bus & Role Pipeline Hand-offs -->
+  <g transform="translate(610, 64)">
+    <rect x="0" y="0" width="570" height="285" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="570" height="34" rx="10" fill="#21262d"/>
+    <text x="16" y="22" fill="#17becf" font-size="13" font-weight="700">2. LIVE MESSAGE BUS &amp; ROLE PIPELINE HAND-OFFS (SQLite WAL)</text>
+    <text x="554" y="22" fill="#8b949e" font-family="monospace" font-size="11" text-anchor="end">lite.db (WAL MODE)</text>
+
+    <!-- Message rows -->
+    <g transform="translate(14, 48)" font-family="monospace" font-size="11">
+      <rect x="0" y="0" width="542" height="48" rx="6" fill="#0d1117" stroke="#21262d"/>
+      <text x="12" y="18" fill="#f39800" font-weight="700">[HANDOFF] driver → verifier (HIPAA Pipeline · medimage Ch.5)</text>
+      <text x="12" y="36" fill="#c9d1d9">qrdx anonymize: MRN-99887766 → ANON-e5bd09fa7654 (4 DICOM slices)</text>
+
+      <rect x="0" y="56" width="542" height="48" rx="6" fill="#0d1117" stroke="#21262d"/>
+      <text x="12" y="74" fill="#3fb950" font-weight="700">[HANDOFF] verifier → refiner (verdict=PASS · 0 PHI findings)</text>
+      <text x="12" y="92" fill="#c9d1d9">PHI tags: 24 → 0 | 3D HU array &amp; PixelSpacing [0.78, 0.78] parity: True</text>
+
+      <rect x="0" y="112" width="542" height="48" rx="6" fill="#0d1117" stroke="#21262d"/>
+      <text x="12" y="130" fill="#58a6ff" font-weight="700">[HANDOFF] driver → navigator (Lung1 Audit · medimage Ch.12–13)</text>
+      <text x="12" y="148" fill="#c9d1d9">Caught OS_months/OS_event target leak (AUC 1.000 → 0.651 leak-free CV)</text>
+
+      <rect x="0" y="168" width="542" height="48" rx="6" fill="#0d1117" stroke="#21262d"/>
+      <text x="12" y="186" fill="#d2a8ff" font-weight="700">[TASK_COMPLETE] refiner &amp; verifier → FTS5 Wiki Indexed</text>
+      <text x="12" y="204" fill="#c9d1d9"> verdict=CONFIRM | Bonferroni α=4.42e-05 | spic6 c-index=0.816 verified</text>
+    </g>
+  </g>
+
+  <!-- Panel 3 (Bottom-Left): Multi-Agent Task & Pipeline Registry -->
+  <g transform="translate(20, 368)">
+    <rect x="0" y="0" width="570" height="292" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="570" height="34" rx="10" fill="#21262d"/>
+    <text x="16" y="22" fill="#5ad45a" font-size="13" font-weight="700">3. MULTI-AGENT TASK &amp; PIPELINE REGISTRY (Swarms + 3-Stage Roles)</text>
+    <text x="554" y="22" fill="#3fb950" font-family="monospace" font-size="11" text-anchor="end">12/12 COMPLETED (rc=0)</text>
+
+    <g transform="translate(16, 48)" font-family="monospace" font-size="11">
+      <text x="0" y="14" fill="#8b949e" font-weight="700">TASK / STAGE ID             ROLE        PROVIDER   STATUS      METRIC / VERDICT</text>
+      <line x1="0" y1="22" x2="538" y2="22" stroke="#30363d"/>
+
+      <text x="0" y="42" fill="#c9d1d9">spic6-worker-agy            worker      agy        COMPLETED   5 phantoms (s2=2.56)</text>
+      <text x="0" y="64" fill="#c9d1d9">ahsn-worker-agy             worker      agy        COMPLETED   180-D entropy 11.55</text>
+      <text x="0" y="86" fill="#c9d1d9">manifest-worker-agy         worker      agy        COMPLETED   3 NRRD pairs (LPS)</text>
+      <text x="0" y="108" fill="#c9d1d9">hipaa-pipeline [driver]     driver      claude/agy COMPLETED   ANON-e5bd09fa7654</text>
+      <text x="0" y="130" fill="#3fb950">hipaa-pipeline [verifier]   verifier    claude/agy COMPLETED   PASS (0 PHI, HU=True)</text>
+      <text x="0" y="152" fill="#3fb950">hipaa-pipeline [refiner]    refiner     claude/agy COMPLETED   CONFIRM (Safe Harbor)</text>
+      <text x="0" y="174" fill="#c9d1d9">ct-bodycomp-worker-agy      worker      agy        COMPLETED   SMI=53.94 cm²/m²</text>
+      <text x="0" y="196" fill="#c9d1d9">mri-steatosis-worker-agy    worker      agy        COMPLETED   CHAOS-03/05 (+ &gt;5%)</text>
+      <text x="0" y="218" fill="#c9d1d9">pet-suv-worker-agy          worker      agy        COMPLETED   Liver=2.27, GTV -67.7%</text>
+      <text x="0" y="240" fill="#3fb950">lung1-audit [verifier]      verifier    agy        COMPLETED   PASS (AUC 1.00→0.651)</text>
+    </g>
+  </g>
+
+  <!-- Panel 4 (Bottom-Right): SQLite FTS5 Markdown Knowledge Wiki -->
+  <g transform="translate(610, 368)">
+    <rect x="0" y="0" width="570" height="292" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="570" height="34" rx="10" fill="#21262d"/>
+    <text x="16" y="22" fill="#ff9f40" font-size="13" font-weight="700">4. SQLITE FTS5 MARKDOWN WIKI (8 Indexed Clinical &amp; Radiomics Reports)</text>
+    <text x="554" y="22" fill="#8b949e" font-family="monospace" font-size="11" text-anchor="end">wiki_fts MATCH</text>
+
+    <g transform="translate(16, 48)" font-family="monospace" font-size="11">
+      <rect x="0" y="0" width="538" height="28" rx="5" fill="#0d1117" stroke="#30363d"/>
+      <text x="10" y="18" fill="#58a6ff">$ nexus-lite wiki search "spic6 OR ANON OR Steatosis OR Bonferroni"</text>
+
+      <text x="0" y="48" fill="#f39800">• radiomics/spic6_phantoms (2,629 B)</text>
+      <text x="14" y="64" fill="#8b949e">Choi 2021 CMPB 3D spiculation (Np, Na, Nl, Na_att, s1, s2) + agy interpretation</text>
+
+      <text x="0" y="88" fill="#f39800">• radiomics/ahsn_wall_elim (2,363 B) &amp; radiomics/phantom_manifest (1,631 B)</text>
+      <text x="14" y="104" fill="#8b949e">Choi 2014 CMPB 180-D AHSN surface-normal entropy &amp; isotropic NRRD manifest</text>
+
+      <text x="0" y="128" fill="#3fb950">• compliance/dicom_privacy_audit (983 B)</text>
+      <text x="14" y="144" fill="#8b949e">HIPAA Safe Harbor &amp; DICOM PS3.15 Annex E certificate (ANON-e5bd09fa7654)</text>
+
+      <text x="0" y="168" fill="#17becf">• modalities/ct_body_composition · mri_dixon_steatosis · pet_ct_suv (2,799 B)</text>
+      <text x="14" y="184" fill="#8b949e">medimage Ch.6 L3 CT SMI, Ch.7 CHAOS T1-DUAL Dixon FF, Ch.8 QIBA PET SUVbw</text>
+
+      <text x="0" y="208" fill="#d2a8ff">• reproducibility/lung1_aerts2014_audit (3,018 B)</text>
+      <text x="14" y="224" fill="#8b949e">medimage Ch.12-13 target-leakage audit, Bonferroni α=4.42e-05 &amp; cohort scaling</text>
+    </g>
+  </g>
+</svg>
