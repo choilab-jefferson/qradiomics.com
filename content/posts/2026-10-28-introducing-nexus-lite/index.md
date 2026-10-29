@@ -1,7 +1,8 @@
 ---
 title: "Introducing nexus-lite: Colab-Ready Multi-Agent Orchestration for Quantitative Medical Imaging and Radiomics"
 date: "2026-10-28T19:00:00.000-04:00"
-lastmod: "2026-10-28T20:25:00.000-04:00"
+lastmod: "2026-10-28T20:42:00.000-04:00"
+math: true
 categories:
   - "news"
   - "research"
@@ -53,10 +54,10 @@ Full-scale multi-agent systems typically require Redis clusters, external messag
 
 1. **Persistent PTY Sessions (`dtach` + `pyte`)**: Spawns detachable background pseudo-terminals rendered through a `120×36` VT100 screen buffer so interactive CLI agents (`agy`, `claude`, `bash`, `python3`) survive across notebook cells.
 2. **Zero-Server SQLite WAL Bus & FTS5 Markdown Wiki (`.nexus/lite.db`)**: High-concurrency `WAL` mode message bus with automatic pointer injection (`[nexus] dm <msg_id> ...`) and a full-text searchable Markdown knowledge base (`wiki_fts`).
-3. **Parallel Swarms (`nl.run_swarm`) & 3-Stage Role Pipelines (`nl.run_pipeline`)**: Concurrent fan-out/fan-in execution alongside sequential **Karpathy Role Pipelines** (`driver` $\to$ `navigator` $\to$ `verifier` $\to$ `refiner`) with automatic quota fallback (`claude` $\to$ `agy`).
-4. **Google Colab & Drive Bidirectional Persistence (`nl.ensure_env`)**: Automatically detects Google Colab, mounts `/content/drive/MyDrive`, non-destructively symlinks `~/.gemini` $\leftrightarrow$ `/content/drive/MyDrive/.gemini` so `agy` authentication persists across ephemeral Colab sessions, and launches a **Cloudflared Remote Bridge** (`*.trycloudflare.com`) with a live 2×2 HTML5 dashboard.
+3. **Parallel Swarms (`nl.run_swarm`) & 3-Stage Role Pipelines (`nl.run_pipeline`)**: Concurrent fan-out/fan-in execution alongside sequential **Karpathy Role Pipelines** (`driver` → `navigator` → `verifier` → `refiner`) with automatic quota fallback (`claude` → `agy`).
+4. **Google Colab & Drive Bidirectional Persistence (`nl.ensure_env`)**: Automatically detects Google Colab, mounts `/content/drive/MyDrive`, non-destructively symlinks `~/.gemini` ↔ `/content/drive/MyDrive/.gemini` so `agy` authentication persists across ephemeral Colab sessions, and launches a **Cloudflared Remote Bridge** (`*.trycloudflare.com`) with a live 2×2 HTML5 dashboard.
 
-![Live 2x2 Nexus-Lite Multi-Agent Dashboard and Colab Terminal](images/nexus-lite-colab-dashboard.svg)
+![Live Nexus-Lite Multi-Agent Dashboard running in Google Colab](images/nexus-lite-colab-dashboard.png)
 
 ---
 
@@ -140,9 +141,9 @@ Running `nl.run_phantom_shape_swarm()` dispatches three parallel `agy` workers a
 
 #### Live Colab Agent Swarm Output (`agy`)
 
-> **`[COMPLETED] spic6-worker-agy`**: The `spic6` feature set cleanly stratifies benign/lobulated phantoms from malignant phenotypes, with the three cancer models exhibiting roughly doubled total surface peak counts (`spic_Np` $\approx 54\text{–}56$ vs. $27\text{–}31$), elevated acute spiculation peaks (`spic_Na` $= 5\text{–}7$ vs. $1\text{–}2$), and a marked shift in composite spiculation scores (`spic_s1` $\le -0.82$, `spic_s2` $\ge 1.05$ vs. near-zero benign values). Furthermore, the attached-peak metric (`spic_Na_att`) and remaining free-lung peaks (`spic_Nl`) accurately capture anatomical boundary tethering: isolated lesions register zero attached peaks (`spic_Na_att` $= 0$), whereas juxta-vascular (`spic_Na_att` $= 3$) and juxta-pleural (`spic_Na_att` $= 12$) cancers reflect increasing non-parenchymal contact alongside intensified composite risk scores (`spic_s2` $= 2.56$).
+> **`[COMPLETED] spic6-worker-agy`**: The `spic6` feature set cleanly stratifies benign/lobulated phantoms from malignant phenotypes, with the three cancer models exhibiting roughly doubled total surface peak counts (`spic_Np` ≈ 54–56 vs. 27–31), elevated acute spiculation peaks (`spic_Na` = 5–7 vs. 1–2), and a marked shift in composite spiculation scores (`spic_s1` ≤ −0.82, `spic_s2` ≥ 1.05 vs. near-zero benign values). Furthermore, the attached-peak metric (`spic_Na_att`) and remaining free-lung peaks (`spic_Nl`) accurately capture anatomical boundary tethering: isolated lesions register zero attached peaks (`spic_Na_att` = 0), whereas juxta-vascular (`spic_Na_att` = 3) and juxta-pleural (`spic_Na_att` = 12) cancers reflect increasing non-parenchymal contact alongside intensified composite risk scores (`spic_s2` = 2.56).
 >
-> **`[COMPLETED] ahsn-worker-agy`**: The 180-D Angular Histograms of Surface Normals (AHSN) effectively capture morphological complexity: the malignant phantoms (`soft_lung_cancer_spiculated` and `soft_juxta_pleural_cancer`) exhibit higher entropy ($11.55$ and $11.36$) and lower $L_2$ norms ($0.21$ and $0.22$) than the smooth `soft_benign_nodule` (entropy $9.73$, $L_2$ norm $0.30$), reflecting more dispersed surface normal orientations caused by spiculation and boundary irregularity.
+> **`[COMPLETED] ahsn-worker-agy`**: The 180-D Angular Histograms of Surface Normals (AHSN) effectively capture morphological complexity: the malignant phantoms (`soft_lung_cancer_spiculated` and `soft_juxta_pleural_cancer`) exhibit higher entropy (11.55 and 11.36) and lower L2 norms (0.21 and 0.22) than the smooth `soft_benign_nodule` (entropy 9.73, L2 norm 0.30), reflecting more dispersed surface normal orientations caused by spiculation and boundary irregularity.
 >
 > **`[COMPLETED] manifest-worker-agy`**: `manifest.csv` is ready for `qrdx shape extract --features all` with all 3 CT/mask phantom pairs (`soft_benign_nodule`, `soft_lobulated_nodule`, and `soft_lung_cancer_spiculated`) properly mapped to valid NRRD volumes. The NRRD format preserves 3D isotropic spacing by storing physical voxel dimensions and orientation directly in its header metadata (`space directions` and `spacings`), ensuring accurate physical-space geometric and volumetric radiomics calculations.
 
@@ -164,9 +165,9 @@ Running `nl.run_phantom_shape_swarm()` dispatches three parallel `agy` workers a
 
 Before any clinical CT scan is exported to a cloud notebook, Protected Health Information (PHI) in the DICOM header must be stripped—and **quantitatively verified**—without altering Hounsfield Unit (HU) calibration (`RescaleSlope`, `RescaleIntercept`) or 3D voxel geometry (`PixelSpacing`).
 
-`nl.run_hipaa_privacy_pipeline()` runs a **3-stage Role Pipeline (`driver` $\to$ `verifier` $\to$ `refiner`)**:
+`nl.run_hipaa_privacy_pipeline()` runs a **3-stage Role Pipeline (`driver` → `verifier` → `refiner`)**:
 1. **`driver`**: Generates synthetic hospital DICOM slices containing 24 PHI tag instances (`PatientName`, `PatientID`, `PatientBirthDate`, `InstitutionName`, `InstitutionAddress`, `ReferringPhysicianName`, `AccessionNumber`) and executes `qrdx anonymize --replace-pid --pid-salt choilab2026`.
-2. **`verifier`**: Audits the anonymized headers to confirm `0` residual PHI findings and verifies bit-for-bit equality of the rescaled 3D HU arrays and `PixelSpacing`. (During our Colab testing, when an earlier build passed an empty payload `{}` due to an upstream CLI environment mismatch, the `verifier` and `refiner` agents immediately caught the missing `PatientID`, issued `FAIL` / `MODIFY`, and blocked release—demonstrating real closed-loop safety before the `v0.1.2` fix!)
+2. **`verifier`**: Audits the anonymized headers to confirm `0` residual PHI findings and verifies bit-for-bit equality of the rescaled 3D HU arrays and `PixelSpacing`.
 3. **`refiner`**: Issues the final `CONFIRM` compliance decision and archives the certificate into the FTS5 Wiki (`compliance/dicom_privacy_audit`):
 
 ```text
@@ -190,13 +191,13 @@ Modern oncology informatics integrates anatomical and functional imaging across 
 
 #### Live Colab Agent Swarm Output (`agy`)
 
-> **`[COMPLETED] ct-bodycomp-worker-agy` (`medimage` Ch.6 — L3 CT Body Composition)**: These L3 CT metrics indicate healthy skeletal muscle mass and density, with a skeletal muscle index of $53.94\text{ cm}^2/\text{m}^2$ (above standard sarcopenia thresholds) and a mean muscle attenuation of $44.3\text{ HU}$ (reflecting normal muscle quality without significant myosteatosis). Adipose distribution is predominantly subcutaneous ($157.73\text{ cm}^2$) with moderate, non-visceral-obesity levels of visceral adipose tissue ($70.08\text{ cm}^2$, well below the typical $100\text{ cm}^2$ metabolic risk cutoff).
+> **`[COMPLETED] ct-bodycomp-worker-agy` (`medimage` Ch.6 — L3 CT Body Composition)**: These L3 CT metrics indicate healthy skeletal muscle mass and density, with a skeletal muscle index of 53.94 cm²/m² (above standard sarcopenia thresholds) and a mean muscle attenuation of 44.3 HU (reflecting normal muscle quality without significant myosteatosis). Adipose distribution is predominantly subcutaneous (157.73 cm²) with moderate, non-visceral-obesity levels of visceral adipose tissue (70.08 cm², well below the typical 100 cm² metabolic risk cutoff).
 >
-> **`[COMPLETED] mri-steatosis-worker-agy` (`medimage` Ch.7 — CHAOS T1-DUAL Chemical-Shift MRI)**: Across all four scans, the spleen reference region maintains a consistently low baseline noise floor ($1.1\%\text{–}1.4\%$), confirming reliable fat-water separation and minimal measurement bias. Against the $5.0\%$ clinical threshold, **CHAOS-01** ($2.9\%$) and **CHAOS-02** ($3.7\%$) show normal hepatic lipid levels, whereas **CHAOS-03** ($6.8\%$) and **CHAOS-05** ($24.8\%$) test positive for mild and severe hepatic steatosis, respectively, well above background noise.
+> **`[COMPLETED] mri-steatosis-worker-agy` (`medimage` Ch.7 — CHAOS T1-DUAL Chemical-Shift MRI)**: Across all four scans, the spleen reference region maintains a consistently low baseline noise floor (1.1%–1.4%), confirming reliable fat-water separation and minimal measurement bias. Against the 5.0% clinical threshold, **CHAOS-01** (2.9%) and **CHAOS-02** (3.7%) show normal hepatic lipid levels, whereas **CHAOS-03** (6.8%) and **CHAOS-05** (24.8%) test positive for mild and severe hepatic steatosis, respectively, well above background noise.
 >
-> **`[COMPLETED] pet-suv-worker-agy` (`medimage` Ch.8 & [Choi *et al.*, *JCO CCI* 2024](https://doi.org/10.1200/CCI.23.00241))**: The reference liver SUV of $2.27$ falls squarely within the QIBA physiological quality-control range ($1.5\text{–}3.0$), confirming reliable longitudinal FDG-PET/CT calibration across timepoints. Clinically, the gross tumor volume (GTV) demonstrated a robust metabolic treatment response with a $67.7\%$ SUV reduction ($8.41 \to 2.72$), whereas myocardial uptake increased by $+1.58\text{ SUV}$ ($1.81 \to 3.39$), indicating physiological shifts in cardiac glucose metabolism or potential treatment-related cardiotoxicity.
+> **`[COMPLETED] pet-suv-worker-agy` (`medimage` Ch.8 & [Choi *et al.*, *JCO CCI* 2024](https://doi.org/10.1200/CCI.23.00241))**: The reference liver SUV of 2.27 falls squarely within the QIBA physiological quality-control range (1.5–3.0), confirming reliable longitudinal FDG-PET/CT calibration across timepoints. Clinically, the gross tumor volume (GTV) demonstrated a robust metabolic treatment response with a 67.7% SUV reduction (8.41 → 2.72), whereas myocardial uptake increased by +1.58 SUV (1.81 → 3.39), indicating physiological shifts in cardiac glucose metabolism or potential treatment-related cardiotoxicity.
 
-| CHAOS Subject | Liver Fat Fraction (%) | Spleen Noise Floor (%) | Steatosis ($>5.0\%$) |
+| CHAOS Subject | Liver Fat Fraction (%) | Spleen Noise Floor (%) | Steatosis (> 5.0%) |
 |---|---:|---:|---|
 | `CHAOS-01` | 2.9% | 1.1% | `False` (Normal) |
 | `CHAOS-02` | 3.7% | 1.1% | `False` (Normal) |
@@ -212,16 +213,16 @@ Modern oncology informatics integrates anatomical and functional imaging across 
 High-dimensional radiomics studies (~1,130 features per patient) are vulnerable to three methodological pitfalls taught in `medimage` Chapters 12 and 13:
 1. **Target Leakage**: Leaving survival columns (`OS_months`, `OS_event`) inside the feature matrix when predicting 2-year mortality (`dead_2y`), producing a suspiciously perfect `AUC = 1.000`.
 2. **Small Hold-Out Variance**: Splitting a 60-patient subset into an 18-patient test set, where random seed choice alone swings hold-out AUC from `0.508` to `0.925`.
-3. **Multiple Hypothesis Testing**: Testing 1,130 `nsclc-survival` features at $p < 0.05$ yields `~56.5` false positives by pure chance unless controlled via Bonferroni correction ($\alpha = 4.42 \times 10^{-5}$) and out-of-fold validation.
+3. **Multiple Hypothesis Testing**: Testing 1,130 `nsclc-survival` features at *p* < 0.05 yields `~56.5` false positives by pure chance unless controlled via Bonferroni correction (α = 4.42 × 10⁻⁵) and out-of-fold validation.
 
-`nl.run_lung1_audit_pipeline()` executes a **3-stage Role Pipeline (`driver` $\to$ `navigator` $\to$ `verifier`)** that diagnoses all three failure modes and compares cohort-scale reproducibility against **Aerts *et al.* 2014 (*Nature Communications*)** and **Choi *et al.* 2021 (*CMPB*)**:
+`nl.run_lung1_audit_pipeline()` executes a **3-stage Role Pipeline (`driver` → `navigator` → `verifier`)** that diagnoses all three failure modes and compares cohort-scale reproducibility against **Aerts *et al.* 2014 (*Nature Communications*)** and **Choi *et al.* 2021 (*CMPB*)**:
 
 | Study / Cohort | Metric | Value | Methodological Takeaway |
 |---|---|---:|---|
-| Lung1 subset ($n=60$) | c-index | `0.482` | Underpowered; confidence interval spans `0.50` chance |
-| Lung1 full cohort ($n=420$, `qradiomics`) | c-index | `0.580` | Prognostic direction reproduces (`original_ngtdm_Busyness`) |
-| Aerts *et al.* 2014 published ($n=422$) | c-index | `0.650` | Original published reference |
-| **Choi 2021 *CMPB* `spic6` ($n=4,248$)** | **AUC** | **`0.816`** | **Algorithmic 3D geometric method reproduces paper (`0.80–0.85`)** |
+| Lung1 subset (*n* = 60) | c-index | `0.482` | Underpowered; confidence interval spans `0.50` chance |
+| Lung1 full cohort (*n* = 420, `qradiomics`) | c-index | `0.580` | Prognostic direction reproduces (`original_ngtdm_Busyness`) |
+| Aerts *et al.* 2014 published (*n* = 422) | c-index | `0.650` | Original published reference |
+| **Choi 2021 *CMPB* `spic6` (*n* = 4,248)** | **AUC** | **`0.816`** | **Algorithmic 3D geometric method reproduces paper (`0.80–0.85`)** |
 
 ![Demo 4: NSCLC-Radiomics Lung1 Target Leakage vs Leak-Free CV and Cohort Scale Reproducibility from Google Colab](images/demo4-lung1-leakage-reproducibility.png)
 

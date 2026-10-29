@@ -1,99 +1,92 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Helvetica, Arial, sans-serif">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#14181d"/>
-      <stop offset="1" stop-color="#1f2630"/>
+      <stop offset="0" stop-color="#1b1f24"/>
+      <stop offset="1" stop-color="#20262d"/>
     </linearGradient>
-    <radialGradient id="glowAmber" cx="0.82" cy="0.15" r="0.55">
-      <stop offset="0" stop-color="#f39800" stop-opacity="0.18"/>
+    <radialGradient id="glow" cx="0.82" cy="0.12" r="0.55">
+      <stop offset="0" stop-color="#f39800" stop-opacity="0.16"/>
       <stop offset="1" stop-color="#f39800" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glowCyan" cx="0.18" cy="0.85" r="0.55">
-      <stop offset="0" stop-color="#17becf" stop-opacity="0.14"/>
-      <stop offset="1" stop-color="#17becf" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+    <pattern id="slices" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+      <line x1="0" y1="0" x2="0" y2="28" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
     </pattern>
+    <linearGradient id="cardTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect width="1200" height="630" fill="url(#grid)"/>
-  <rect width="1200" height="630" fill="url(#glowAmber)"/>
-  <rect width="1200" height="630" fill="url(#glowCyan)"/>
+  <rect width="1200" height="630" fill="url(#slices)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
 
-  <!-- Header -->
-  <g transform="translate(60, 72)">
-    <rect x="0" y="-28" width="168" height="28" rx="14" fill="#f39800" fill-opacity="0.16" stroke="#f39800" stroke-width="1"/>
-    <text x="84" y="-9" fill="#f39800" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">OPEN-CORE MULTI-AGENT</text>
-    <text x="0" y="38" fill="#ffffff" font-size="48" font-weight="700">nexus-lite</text>
-    <text x="248" y="38" fill="#f39800" font-size="26" font-weight="600">× qradiomics × medimage</text>
-    <text x="0" y="72" fill="#b8c0c8" font-size="19">Colab-Ready Multi-Agent Orchestration for Quantitative Medical Imaging &amp; Radiomics</text>
+  <!-- header -->
+  <text x="60" y="100" fill="#f39800" font-size="50" font-weight="700">nexus-lite</text>
+  <text x="61" y="134" fill="#c9cdd3" font-size="20">Colab-Ready Multi-Agent Orchestration for qradiomics &amp; medimage</text>
+
+  <!-- 12-dot tick row grouped by 3 stages (4 primitives x 3 layers) -->
+  <g fill="#f39800">
+    <circle cx="61" cy="164" r="4"/><circle cx="75" cy="164" r="4"/><circle cx="89" cy="164" r="4"/><circle cx="103" cy="164" r="4"/>
+    <circle cx="139" cy="164" r="4"/><circle cx="153" cy="164" r="4"/><circle cx="167" cy="164" r="4"/><circle cx="181" cy="164" r="4"/>
+    <circle cx="217" cy="164" r="4"/><circle cx="231" cy="164" r="4"/><circle cx="245" cy="164" r="4"/><circle cx="259" cy="164" r="4"/>
   </g>
 
-  <!-- 4 Architecture Pillars -->
-  <g transform="translate(60, 185)">
-    <!-- Card 1: Multi-Agent Runtime -->
-    <rect x="0" y="0" width="252" height="260" rx="16" fill="#232a34" stroke="#384250" stroke-width="1.5"/>
-    <circle cx="42" cy="44" r="22" fill="#f39800" fill-opacity="0.2" stroke="#f39800" stroke-width="1.5"/>
-    <text x="42" y="50" fill="#f39800" font-size="16" font-weight="700" text-anchor="middle">01</text>
-    <text x="76" y="38" fill="#f39800" font-size="12" font-weight="700" letter-spacing="1.2">PERSISTENT RUNTIME</text>
-    <text x="76" y="58" fill="#ffffff" font-size="19" font-weight="700">dtach + pyte PTYs</text>
-    <line x1="24" y1="82" x2="228" y2="82" stroke="#384250" stroke-width="1"/>
-    <text x="24" y="110" fill="#cfd6de" font-size="13.5">• Live CLI agents: agy &amp; claude</text>
-    <text x="24" y="136" fill="#cfd6de" font-size="13.5">• 120×36 VT100 screen buffer</text>
-    <text x="24" y="162" fill="#cfd6de" font-size="13.5">• ~/.gemini ↔ Google Drive sync</text>
-    <text x="24" y="188" fill="#cfd6de" font-size="13.5">• Cloudflared Colab bridge</text>
-    <rect x="24" y="210" width="204" height="28" rx="6" fill="#181d24"/>
-    <text x="126" y="229" fill="#f39800" font-family="monospace" font-size="12" text-anchor="middle">nl.ensure_env()</text>
+  <!-- 3 stage cards (identical geometry to medimage-overview.svg: x=60, 445, 830; width=310) -->
+  <g>
+    <!-- Stage 1: Runtime -->
+    <rect x="60" y="248" width="310" height="192" rx="16" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
+    <rect x="60" y="248" width="310" height="192" rx="16" fill="url(#cardTop)"/>
+    <circle cx="116" cy="308" r="28" fill="#f39800"/>
+    <g stroke="#1b1f24" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="108,301 115,308 108,315"/>
+      <line x1="118" y1="315" x2="126" y2="315"/>
+    </g>
+    <text x="160" y="294" fill="#f39800" font-size="14" font-weight="700" letter-spacing="1.5">STAGE I</text>
+    <text x="160" y="325" fill="#eef0f2" font-size="26" font-weight="700">Runtime</text>
+    <line x1="90" y1="370" x2="340" y2="370" stroke="#3a4149" stroke-width="1"/>
+    <text x="90" y="404" fill="#8b9198" font-size="15">dtach PTYs · SQLite WAL · Drive</text>
 
-    <!-- Card 2: Swarms & Role Pipelines -->
-    <rect x="276" y="0" width="252" height="260" rx="16" fill="#232a34" stroke="#384250" stroke-width="1.5"/>
-    <circle cx="318" cy="44" r="22" fill="#17becf" fill-opacity="0.2" stroke="#17becf" stroke-width="1.5"/>
-    <text x="318" y="50" fill="#17becf" font-size="16" font-weight="700" text-anchor="middle">02</text>
-    <text x="352" y="38" fill="#17becf" font-size="12" font-weight="700" letter-spacing="1.2">ORCHESTRATION</text>
-    <text x="352" y="58" fill="#ffffff" font-size="19" font-weight="700">Swarm &amp; Pipelines</text>
-    <line x1="300" y1="82" x2="504" y2="82" stroke="#384250" stroke-width="1"/>
-    <text x="300" y="110" fill="#cfd6de" font-size="13.5">• Parallel fan-out (run_swarm)</text>
-    <text x="300" y="136" fill="#cfd6de" font-size="13.5">• 3-stage Karpathy role pipeline</text>
-    <text x="300" y="162" fill="#cfd6de" font-size="13.5">• driver → navigator → verifier</text>
-    <text x="300" y="188" fill="#cfd6de" font-size="13.5">• Auto quota fallback (claude→agy)</text>
-    <rect x="300" y="210" width="204" height="28" rx="6" fill="#181d24"/>
-    <text x="402" y="229" fill="#17becf" font-family="monospace" font-size="12" text-anchor="middle">run_swarm / run_pipeline</text>
+    <!-- Stage 2: Agents -->
+    <rect x="445" y="248" width="310" height="192" rx="16" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
+    <rect x="445" y="248" width="310" height="192" rx="16" fill="url(#cardTop)"/>
+    <circle cx="501" cy="308" r="28" fill="#f39800"/>
+    <g stroke="#1b1f24" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="493" cy="302" r="4.5"/>
+      <circle cx="509" cy="302" r="4.5"/>
+      <circle cx="501" cy="316" r="4.5"/>
+      <line x1="497" y1="305" x2="505" y2="305"/>
+      <line x1="495" y1="306" x2="499" y2="312"/>
+      <line x1="507" y1="306" x2="503" y2="312"/>
+    </g>
+    <text x="545" y="294" fill="#f39800" font-size="14" font-weight="700" letter-spacing="1.5">STAGE II</text>
+    <text x="545" y="325" fill="#eef0f2" font-size="26" font-weight="700">Orchestration</text>
+    <line x1="475" y1="370" x2="725" y2="370" stroke="#3a4149" stroke-width="1"/>
+    <text x="475" y="404" fill="#8b9198" font-size="15">Swarms · Role Pipelines · agy</text>
 
-    <!-- Card 3: 3D Shape & Multimodal -->
-    <rect x="552" y="0" width="252" height="260" rx="16" fill="#232a34" stroke="#384250" stroke-width="1.5"/>
-    <circle cx="594" cy="44" r="22" fill="#2ca02c" fill-opacity="0.2" stroke="#2ca02c" stroke-width="1.5"/>
-    <text x="594" y="50" fill="#5ad45a" font-size="16" font-weight="700" text-anchor="middle">03</text>
-    <text x="628" y="38" fill="#5ad45a" font-size="12" font-weight="700" letter-spacing="1.2">QUANTITATIVE IMAGING</text>
-    <text x="628" y="58" fill="#ffffff" font-size="19" font-weight="700">Shape &amp; Multimodal</text>
-    <line x1="576" y1="82" x2="780" y2="82" stroke="#384250" stroke-width="1"/>
-    <text x="576" y="110" fill="#cfd6de" font-size="13.5">• 3D spic6 &amp; 180-D AHSN</text>
-    <text x="576" y="136" fill="#cfd6de" font-size="13.5">• L3 CT muscle / SAT / VAT</text>
-    <text x="576" y="162" fill="#cfd6de" font-size="13.5">• CHAOS T1-DUAL MRI steatosis</text>
-    <text x="576" y="188" fill="#cfd6de" font-size="13.5">• ACRIN 6668 PET QIBA SUVbw</text>
-    <rect x="576" y="210" width="204" height="28" rx="6" fill="#181d24"/>
-    <text x="678" y="229" fill="#5ad45a" font-family="monospace" font-size="12" text-anchor="middle">qradiomics.shape + Ch.6–8</text>
-
-    <!-- Card 4: HIPAA & Leakage Audit -->
-    <rect x="828" y="0" width="252" height="260" rx="16" fill="#232a34" stroke="#384250" stroke-width="1.5"/>
-    <circle cx="870" cy="44" r="22" fill="#ff7f0e" fill-opacity="0.2" stroke="#ff7f0e" stroke-width="1.5"/>
-    <text x="870" y="50" fill="#ff9f40" font-size="16" font-weight="700" text-anchor="middle">04</text>
-    <text x="904" y="38" fill="#ff9f40" font-size="12" font-weight="700" letter-spacing="1.2">CLINICAL SAFEGUARDS</text>
-    <text x="904" y="58" fill="#ffffff" font-size="19" font-weight="700">Audit &amp; FTS5 Wiki</text>
-    <line x1="852" y1="82" x2="1056" y2="82" stroke="#384250" stroke-width="1"/>
-    <text x="852" y="110" fill="#cfd6de" font-size="13.5">• DICOM PS3.15 Annex E audit</text>
-    <text x="852" y="136" fill="#cfd6de" font-size="13.5">• 100% 3D HU &amp; spacing parity</text>
-    <text x="852" y="162" fill="#cfd6de" font-size="13.5">• Lung1 target-leakage guard</text>
-    <text x="852" y="188" fill="#cfd6de" font-size="13.5">• SQLite WAL + FTS5 Wiki index</text>
-    <rect x="852" y="210" width="204" height="28" rx="6" fill="#181d24"/>
-    <text x="954" y="229" fill="#ff9f40" font-family="monospace" font-size="12" text-anchor="middle">nl.wiki_search() + 2×2 UI</text>
+    <!-- Stage 3: Radiomics -->
+    <rect x="830" y="248" width="310" height="192" rx="16" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
+    <rect x="830" y="248" width="310" height="192" rx="16" fill="url(#cardTop)"/>
+    <circle cx="886" cy="308" r="28" fill="#f39800"/>
+    <g stroke="#1b1f24" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="877" y1="318" x2="877" y2="304"/>
+      <line x1="886" y1="318" x2="886" y2="296"/>
+      <line x1="895" y1="318" x2="895" y2="300"/>
+    </g>
+    <text x="930" y="294" fill="#f39800" font-size="14" font-weight="700" letter-spacing="1.5">STAGE III</text>
+    <text x="930" y="325" fill="#eef0f2" font-size="26" font-weight="700">Radiomics</text>
+    <line x1="860" y1="370" x2="1110" y2="370" stroke="#3a4149" stroke-width="1"/>
+    <text x="860" y="404" fill="#8b9198" font-size="15">3D Shape · HIPAA · Lung1 Audit</text>
   </g>
 
-  <!-- Footer Banner -->
-  <line x1="60" y1="490" x2="1140" y2="490" stroke="#384250" stroke-width="1"/>
-  <text x="60" y="528" fill="#cfd6de" font-size="16" font-weight="600">CHOI Lab · Sidney Kimmel Medical College · Thomas Jefferson University</text>
-  <text x="60" y="556" fill="#8b949e" font-size="14">Supported by Google Gemini 4 Argon Access · Open-Source MIT License</text>
-  <text x="1140" y="528" fill="#f39800" font-size="16" font-weight="600" text-anchor="end">github.com/choilab-jefferson/nexus.lite</text>
-  <text x="1140" y="556" fill="#17becf" font-size="14" text-anchor="end">qradiomics.com</text>
+  <!-- connecting chevrons -->
+  <g stroke="#f39800" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="392,332 412,344 392,356"/>
+    <polyline points="777,332 797,344 777,356"/>
+  </g>
+
+  <!-- footer -->
+  <line x1="60" y1="494" x2="1140" y2="494" stroke="#3a4149" stroke-width="1"/>
+  <text x="60" y="530" fill="#8b9198" font-size="16">Choi Lab · Thomas Jefferson University</text>
+  <text x="1140" y="530" fill="#8b9198" font-size="16" text-anchor="end">github.com/choilab-jefferson/nexus.lite</text>
 </svg>

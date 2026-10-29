@@ -224,6 +224,17 @@ body {
     font-size: clamp(13px, 0.15vw + 12.4px, 14.5px);
 }
 
+/* Preserve intrinsic aspect ratio when layouts/_markup/render-image.html
+   stamps width and height attributes onto post images. PaperMod's reset.css
+   sets max-width: 100% without height: auto, which stretched wide figures
+   vertically when constrained to the column width. */
+img,
+.md-content img,
+.post-content img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Navigation.
 
    PaperMod has no hamburger menu; it makes the nav a horizontal scroller
