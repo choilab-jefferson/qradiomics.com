@@ -18,8 +18,6 @@ tags:
   - "Gemini"
   - "Antigravity"
   - "OpenCode"
-  - "Loom"
-  - "MLX"
   - "Radiomics"
   - "DICOM"
   - "HIPAA"
@@ -57,9 +55,9 @@ Conventional Python "agent" libraries only chain raw LLM API prompts—they are 
 
 **`nexus-lite` turns standalone CLI coding agents into a coordinated multi-agent system inside Google Colab and Jupyter notebooks** in ~600 lines of pure Python and a single dependency (`pyte`):
 
-1. **Persistent PTY Sessions (`dtach` + `pyte`)**: Spawns detachable background pseudo-terminals rendered through a `120×36` VT100 screen buffer so interactive CLI agents (`agy`, `opencode`, `loom`, `claude`, `bash`, `python3`) survive across notebook cells.
-2. **Zero-Server SQLite WAL Bus, File-Backed `stm/1` Short-Term Memory & FTS5 Markdown Wiki (`.nexus/`)**: High-concurrency `WAL` mode message bus with pointer-only delivery (`[nexus] dm <msg_id> inbox/<msg_id>.md`), file-backed `stm/1` short-term memory nodes (`.nexus/stm/{pid}/nodes/*.md` with `<nexus_stm>` continuity briefs), and a full-text searchable Markdown knowledge base (`wiki_fts`).
-3. **3-Tier Parallel Swarms (`nl.run_swarm`), Role Pipelines (`nl.run_pipeline`), and Autonomous Cooperative Problem Solving (`nl.run_cooperative_problem_solver`)**: Coordinates **Tier-0 local MLX leaf workers (`loom` + `ollama/qwen3.5:4b-mlx`)**, **Tier-1 fast coders/verifiers (`opencode`)**, and **Tier-2 frontier architects (`agy` / `claude`)** across parallel specialist swarms, peer-to-peer `[nexus] dm` code reviews (`nl.run_agent_interaction`), and closed-loop adversarial `pytest` verification & repair.
+1. **Persistent PTY Sessions (`dtach` + `pyte`)**: Spawns detachable background pseudo-terminals rendered through a `120×36` VT100 screen buffer so interactive CLI agents (`agy`, `opencode`, `claude`, `bash`, `python3`) survive across notebook cells.
+2. **Zero-Server SQLite WAL Bus, File-Backed `stm/1` Short-Term Memory & FTS5 Markdown Wiki (`.nexus/`)**: High-concurrency `WAL` mode message bus with pointer-only delivery (`[nexus] dm <msg_id> inbox/<msg_id>.md`), file-backed `stm/1` short-term memory nodes (`.nexus/stm/stm-{pid}/node/*.md` with `<nexus_stm>` continuity briefs), and a full-text searchable Markdown knowledge base (`wiki_fts`).
+3. **Parallel Swarms (`nl.run_swarm`), Role Pipelines (`nl.run_pipeline`), and Autonomous Cooperative Problem Solving (`nl.run_cooperative_problem_solver`)**: Coordinates **CLI coding agents (`agy`, `opencode`, and `claude`)** with automatic quota fallback across parallel specialist swarms, peer-to-peer `[nexus] dm` code reviews (`nl.run_agent_interaction`), and closed-loop adversarial `pytest` verification & repair.
 4. **Google Colab & Drive Bidirectional Persistence (`nl.ensure_env`)**: Automatically detects Google Colab, mounts `/content/drive/MyDrive`, non-destructively symlinks `~/.gemini` ↔ `/content/drive/MyDrive/.gemini` so `agy` authentication persists across ephemeral Colab sessions, and launches a **Cloudflared Remote Bridge** (`*.trycloudflare.com`) with a live 2×2 HTML5 dashboard visualizing both orchestrator delegations and curved peer-to-peer A2A DM/handoff arcs.
 
 ![Live Nexus-Lite Multi-Agent Dashboard running in Google Colab](images/nexus-lite-colab-dashboard.png)
@@ -257,13 +255,13 @@ Every swarm worker and pipeline verifier writes its structured Markdown report i
 
 ## Part III: Peer-to-Peer Agent Interaction (`interact`) & Autonomous 5-Phase Cooperative Problem-Solving Swarm (`cooperate`)
 
-Beyond top-down orchestrator delegation, `nexus-lite` enables **direct Peer-to-Peer Agent-to-Agent (A2A) Interaction** (`nl.run_agent_interaction`) and **Autonomous 5-Phase Cooperative Problem Solving** (`nl.run_cooperative_problem_solver`) across heterogeneous agent tiers (`agy`, `opencode`, and `loom` with Apple Silicon MLX `ollama/qwen3.5:4b-mlx`):
+Beyond top-down orchestrator delegation, `nexus-lite` enables **direct Peer-to-Peer Agent-to-Agent (A2A) Interaction** (`nl.run_agent_interaction`) and **Autonomous 5-Phase Cooperative Problem Solving** (`nl.run_cooperative_problem_solver`) across CLI coding agents (`agy`, `opencode`, and `claude`):
 
-1. **Phase 1 — Dynamic Problem Decomposition (`thinker-architect` via `agy`)**: Decomposes any multi-constraint problem goal into formal Python function contracts in FTS5 Wiki (`coop/architecture_spec`), records an `stm/1` `decision` node in `.nexus/stm/{pid}/nodes/`, and dispatches `[nexus] dm` pointers to `algo-driver`, `test-engineer`, and `leaf-scout`.
+1. **Phase 1 — Dynamic Problem Decomposition (`thinker-architect` via `agy`)**: Decomposes any multi-constraint problem goal into formal Python function contracts in FTS5 Wiki (`coop/architecture_spec`), records an `stm/1` `decision` node in `.nexus/stm/stm-{pid}/node/`, and dispatches `[nexus] dm` pointers to `algo-driver`, `test-engineer`, and `leaf-scout`.
 2. **Phase 2 — Parallel Specialist Swarm (`nl.run_swarm`)**:
    - **`algo-driver` (`opencode` / `agy`)**: Implements the initial draft of the target module (`scanner_harmonizer.py`).
    - **`test-engineer` (`agy`)**: Concurrently authors a 6-test adversarial `pytest` suite (`test_scanner_harmonizer.py`) probing Hyndman–Fan Type-7 quartiles, `bool` subclassing `int` rejection, `NaN`/`±Inf` rejection, case-insensitive `scanner_id`/`patient_id`/feature matching, outlier clamping, and zero-variance cohorts.
-   - **`leaf-scout` (`loom:ollama/qwen3.5:4b-mlx`)**: Reads its `.nexus/inbox/m-xxxx.md` DM pointer via in-process `read_file` and extracts bounded numeric/type edge-case invariants.
+   - **`leaf-scout` (`opencode/big-pickle`)**: Extracts bounded numeric/type edge-case invariants from the architect's DM pointer.
 3. **Phase 3 — Adversarial Verification & Root-Cause Critique DM (`peer-verifier` via `opencode` + `pytest`)**: Executes real `pytest` against the Phase-2 draft, diagnoses contract failures, writes an `stm/1` audit node, and sends a targeted critique DM (`[nexus] dm`) back to `algo-driver`.
 4. **Phase 4 — Closed-Loop Iterative Repair with `<nexus_stm>` Continuity & Tier Escalation**: Reads `<nexus_stm>` short-term memory + `peer-verifier`'s critique DM, patches `scanner_harmonizer.py`, and re-runs `pytest` across iterative rounds (`R1 -> R2 -> rc=0`) with automatic tier escalation until 100% of adversarial tests pass.
 5. **Phase 5 — Consensus Sign-Off, FTS5 Wiki Distillation & Peer Topology Dashboard**: Broadcasts `COOP_SOLVE_COMPLETE`, archives the full problem-solving report to FTS5 Wiki (`coop/scanner_harmonizer_live`), and renders curved peer-to-peer A2A DM/handoff arcs in `nl.dashboard()`.
@@ -302,7 +300,7 @@ test_scanner_harmonizer.py::test_harmonize_scanner_batch_zero_variance_and_valid
 
 === Executive Consensus Verdict ===
 VERDICT: PASS
-- Design & Initial Implementation (thinker-architect & algo-driver): thinker-architect (agy) specified the mathematical contracts for feature vector validation, IQR outlier quarantine, and scanner-grouped Z-score harmonization in scanner_harmonizer.py, while leaf-scout (loom:ollama/qwen3.5:4b-mlx) extracted the type/finiteness invariants.
+- Design & Initial Implementation (thinker-architect & algo-driver): thinker-architect (agy) specified the mathematical contracts for feature vector validation, IQR outlier quarantine, and scanner-grouped Z-score harmonization in scanner_harmonizer.py, while leaf-scout (opencode/big-pickle) extracted the type/finiteness invariants.
 - Test Verification & Escalated Refinement (test-engineer & agy): test-engineer (agy) authored the 6-test verification suite in test_scanner_harmonizer.py covering edge cases, fence calculations, clamping, and zero-variance batches, driving two repair rounds (R1 -> rc=2, R2 -> rc=0) with <nexus_stm> continuity.
 - Final Validation (peer-verifier): peer-verifier confirmed that all 6 unit tests in test_scanner_harmonizer.py pass (rc=0 in 0.03s).
 ```
@@ -316,13 +314,13 @@ Install `nexus-lite` and `qradiomics` in Google Colab or any local Python 3.10+ 
 ```bash
 pip install "git+https://github.com/choilab-jefferson/nexus.lite.git" qradiomics
 
-# Run all 4 multi-agent demos from the CLI (supports agy, claude, opencode, loom, or multi-tier)
+# Run all 4 multi-agent demos from the CLI (supports agy, claude, opencode, or multi-tier)
 nexus-lite demo phantom-swarm --agent multi-tier
 nexus-lite demo hipaa-pipeline --agent multi-tier
 nexus-lite demo multimodal-swarm --agent multi-tier
 nexus-lite demo lung1-audit --agent multi-tier
 
-# Run 5-turn Peer-to-Peer A2A Interaction (agy-architect <-> loom-coder <-> opencode-reviewer)
+# Run 5-turn Peer-to-Peer A2A Interaction (agy-architect <-> code-driver <-> opencode-reviewer)
 nexus-lite interact "Implement robust_zscore(values) with median/MAD and finite checks" --target-file robust_stats.py
 
 # Run 5-Phase Autonomous Multi-Agent Cooperative Problem-Solving Swarm
