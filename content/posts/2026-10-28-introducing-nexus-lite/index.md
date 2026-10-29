@@ -50,7 +50,7 @@ With **[qradiomics](/posts/2026-05-20-introducing-qradiomics/)**, we unified twe
 
 ## Why `nexus-lite`?
 
-Full-scale multi-agent systems typically require Redis clusters, external message brokers, and complex container orchestration that cannot run inside a single Google Colab VM or a medical physicist's laptop. **`nexus-lite` distills multi-agent coordination down to ~600 lines of pure Python and a single dependency (`pyte`)**:
+Most multi-agent orchestration frameworks rely on heavy SDK dependency trees, persistent background server daemons, external databases, or container setups that are cumbersome to run inside a single ephemeral Google Colab VM or a medical physicist's laptop. **`nexus-lite` distills multi-agent coordination down to ~600 lines of pure Python and a single dependency (`pyte`)**:
 
 1. **Persistent PTY Sessions (`dtach` + `pyte`)**: Spawns detachable background pseudo-terminals rendered through a `120×36` VT100 screen buffer so interactive CLI agents (`agy`, `claude`, `bash`, `python3`) survive across notebook cells.
 2. **Zero-Server SQLite WAL Bus & FTS5 Markdown Wiki (`.nexus/lite.db`)**: High-concurrency `WAL` mode message bus with automatic pointer injection (`[nexus] dm <msg_id> ...`) and a full-text searchable Markdown knowledge base (`wiki_fts`).
