@@ -54,9 +54,9 @@ Conventional Python "agent" libraries only chain raw LLM API prompts—they are 
 
 **`nexus-lite` turns standalone CLI coding agents into a coordinated multi-agent system inside Google Colab and Jupyter notebooks** in ~600 lines of pure Python and a single dependency (`pyte`):
 
-1. **Persistent PTY Sessions (`dtach` + `pyte`)**: Spawns detachable background pseudo-terminals rendered through a `120×36` VT100 screen buffer so interactive CLI agents (`agy`, `claude`, `bash`, `python3`) survive across notebook cells.
+1. **Persistent PTY Sessions (`dtach` + `pyte`)**: Spawns detachable background pseudo-terminals rendered through a `120×36` VT100 screen buffer so interactive CLI agents (`agy`, `opencode`, `claude`, `bash`, `python3`) survive across notebook cells.
 2. **Zero-Server SQLite WAL Bus & FTS5 Markdown Wiki (`.nexus/lite.db`)**: High-concurrency `WAL` mode message bus with automatic pointer injection (`[nexus] dm <msg_id> ...`) and a full-text searchable Markdown knowledge base (`wiki_fts`).
-3. **Parallel Swarms (`nl.run_swarm`) & 3-Stage Role Pipelines (`nl.run_pipeline`)**: Concurrent fan-out/fan-in execution alongside sequential **Karpathy Role Pipelines** (`driver` → `navigator` → `verifier` → `refiner`) with automatic quota fallback (`claude` → `agy`).
+3. **Parallel Swarms (`nl.run_swarm`) & 3-Stage Role Pipelines (`nl.run_pipeline`)**: Concurrent fan-out/fan-in execution alongside sequential **Karpathy Role Pipelines** (`driver` → `navigator` → `verifier` → `refiner`) with automatic agent fallback (`agy` → `opencode` zero-signup free models → `claude`).
 4. **Google Colab & Drive Bidirectional Persistence (`nl.ensure_env`)**: Automatically detects Google Colab, mounts `/content/drive/MyDrive`, non-destructively symlinks `~/.gemini` ↔ `/content/drive/MyDrive/.gemini` so `agy` authentication persists across ephemeral Colab sessions, and launches a **Cloudflared Remote Bridge** (`*.trycloudflare.com`) with a live 2×2 HTML5 dashboard.
 
 ![Live Nexus-Lite Multi-Agent Dashboard running in Google Colab](images/nexus-lite-colab-dashboard.png)
