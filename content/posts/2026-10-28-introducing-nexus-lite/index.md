@@ -1,7 +1,7 @@
 ---
 title: "Introducing nexus-lite: Colab-Ready Multi-Agent Orchestration for Quantitative Medical Imaging and Radiomics"
 date: "2026-10-28T19:00:00.000-04:00"
-lastmod: "2026-10-28T20:42:00.000-04:00"
+lastmod: "2026-10-29T08:05:00.000-04:00"
 math: true
 categories:
   - "news"
@@ -17,6 +17,9 @@ tags:
   - "Google Colab"
   - "Gemini"
   - "Antigravity"
+  - "OpenCode"
+  - "Loom"
+  - "MLX"
   - "Radiomics"
   - "DICOM"
   - "HIPAA"
@@ -54,10 +57,10 @@ Conventional Python "agent" libraries only chain raw LLM API prompts—they are 
 
 **`nexus-lite` turns standalone CLI coding agents into a coordinated multi-agent system inside Google Colab and Jupyter notebooks** in ~600 lines of pure Python and a single dependency (`pyte`):
 
-1. **Persistent PTY Sessions (`dtach` + `pyte`)**: Spawns detachable background pseudo-terminals rendered through a `120×36` VT100 screen buffer so interactive CLI agents (`agy`, `opencode`, `claude`, `bash`, `python3`) survive across notebook cells.
-2. **Zero-Server SQLite WAL Bus & FTS5 Markdown Wiki (`.nexus/lite.db`)**: High-concurrency `WAL` mode message bus with automatic pointer injection (`[nexus] dm <msg_id> ...`) and a full-text searchable Markdown knowledge base (`wiki_fts`).
-3. **Parallel Swarms (`nl.run_swarm`) & 3-Stage Role Pipelines (`nl.run_pipeline`)**: Concurrent fan-out/fan-in execution alongside sequential **Karpathy Role Pipelines** (`driver` → `navigator` → `verifier` → `refiner`) with automatic agent fallback (`agy` → `opencode` zero-signup free models → `claude`).
-4. **Google Colab & Drive Bidirectional Persistence (`nl.ensure_env`)**: Automatically detects Google Colab, mounts `/content/drive/MyDrive`, non-destructively symlinks `~/.gemini` ↔ `/content/drive/MyDrive/.gemini` so `agy` authentication persists across ephemeral Colab sessions, and launches a **Cloudflared Remote Bridge** (`*.trycloudflare.com`) with a live 2×2 HTML5 dashboard.
+1. **Persistent PTY Sessions (`dtach` + `pyte`)**: Spawns detachable background pseudo-terminals rendered through a `120×36` VT100 screen buffer so interactive CLI agents (`agy`, `opencode`, `loom`, `claude`, `bash`, `python3`) survive across notebook cells.
+2. **Zero-Server SQLite WAL Bus, File-Backed `stm/1` Short-Term Memory & FTS5 Markdown Wiki (`.nexus/`)**: High-concurrency `WAL` mode message bus with pointer-only delivery (`[nexus] dm <msg_id> inbox/<msg_id>.md`), file-backed `stm/1` short-term memory nodes (`.nexus/stm/{pid}/nodes/*.md` with `<nexus_stm>` continuity briefs), and a full-text searchable Markdown knowledge base (`wiki_fts`).
+3. **3-Tier Parallel Swarms (`nl.run_swarm`), Role Pipelines (`nl.run_pipeline`), and Autonomous Cooperative Problem Solving (`nl.run_cooperative_problem_solver`)**: Coordinates **Tier-0 local MLX leaf workers (`loom` + `ollama/qwen3.5:4b-mlx`)**, **Tier-1 fast coders/verifiers (`opencode`)**, and **Tier-2 frontier architects (`agy` / `claude`)** across parallel specialist swarms, peer-to-peer `[nexus] dm` code reviews (`nl.run_agent_interaction`), and closed-loop adversarial `pytest` verification & repair.
+4. **Google Colab & Drive Bidirectional Persistence (`nl.ensure_env`)**: Automatically detects Google Colab, mounts `/content/drive/MyDrive`, non-destructively symlinks `~/.gemini` ↔ `/content/drive/MyDrive/.gemini` so `agy` authentication persists across ephemeral Colab sessions, and launches a **Cloudflared Remote Bridge** (`*.trycloudflare.com`) with a live 2×2 HTML5 dashboard visualizing both orchestrator delegations and curved peer-to-peer A2A DM/handoff arcs.
 
 ![Live Nexus-Lite Multi-Agent Dashboard running in Google Colab](images/nexus-lite-colab-dashboard.png)
 
@@ -252,6 +255,60 @@ Every swarm worker and pipeline verifier writes its structured Markdown report i
 
 ---
 
+## Part III: Peer-to-Peer Agent Interaction (`interact`) & Autonomous 5-Phase Cooperative Problem-Solving Swarm (`cooperate`)
+
+Beyond top-down orchestrator delegation, `nexus-lite` enables **direct Peer-to-Peer Agent-to-Agent (A2A) Interaction** (`nl.run_agent_interaction`) and **Autonomous 5-Phase Cooperative Problem Solving** (`nl.run_cooperative_problem_solver`) across heterogeneous agent tiers (`agy`, `opencode`, and `loom` with Apple Silicon MLX `ollama/qwen3.5:4b-mlx`):
+
+1. **Phase 1 — Dynamic Problem Decomposition (`thinker-architect` via `agy`)**: Decomposes any multi-constraint problem goal into formal Python function contracts in FTS5 Wiki (`coop/architecture_spec`), records an `stm/1` `decision` node in `.nexus/stm/{pid}/nodes/`, and dispatches `[nexus] dm` pointers to `algo-driver`, `test-engineer`, and `leaf-scout`.
+2. **Phase 2 — Parallel Specialist Swarm (`nl.run_swarm`)**:
+   - **`algo-driver` (`opencode` / `agy`)**: Implements the initial draft of the target module (`scanner_harmonizer.py`).
+   - **`test-engineer` (`agy`)**: Concurrently authors a 6-test adversarial `pytest` suite (`test_scanner_harmonizer.py`) probing Hyndman–Fan Type-7 quartiles, `bool` subclassing `int` rejection, `NaN`/`±Inf` rejection, case-insensitive `scanner_id`/`patient_id`/feature matching, outlier clamping, and zero-variance cohorts.
+   - **`leaf-scout` (`loom:ollama/qwen3.5:4b-mlx`)**: Reads its `.nexus/inbox/m-xxxx.md` DM pointer via in-process `read_file` and extracts bounded numeric/type edge-case invariants.
+3. **Phase 3 — Adversarial Verification & Root-Cause Critique DM (`peer-verifier` via `opencode` + `pytest`)**: Executes real `pytest` against the Phase-2 draft, diagnoses contract failures, writes an `stm/1` audit node, and sends a targeted critique DM (`[nexus] dm`) back to `algo-driver`.
+4. **Phase 4 — Closed-Loop Iterative Repair with `<nexus_stm>` Continuity & Tier Escalation**: Reads `<nexus_stm>` short-term memory + `peer-verifier`'s critique DM, patches `scanner_harmonizer.py`, and re-runs `pytest` across iterative rounds (`R1 -> R2 -> rc=0`) with automatic tier escalation until 100% of adversarial tests pass.
+5. **Phase 5 — Consensus Sign-Off, FTS5 Wiki Distillation & Peer Topology Dashboard**: Broadcasts `COOP_SOLVE_COMPLETE`, archives the full problem-solving report to FTS5 Wiki (`coop/scanner_harmonizer_live`), and renders curved peer-to-peer A2A DM/handoff arcs in `nl.dashboard()`.
+
+### Live Cooperative Swarm Output (`scanner_harmonizer.py`)
+
+```text
+=== 5-Phase Cooperative Multi-Agent Problem-Solving Result ===
+Goal                 : Design and implement a 3D Radiomics Z-Score Harmonizer and IQR Outlier Quarantine module in scanner_harmonizer.py
+Project ID (`stm/1`) : p02p5wgjy2ybeeyyec1nf
+Module               : .nexus/work/coop_solver/scanner_harmonizer.py
+Adversarial Pytest   : .nexus/work/coop_solver/test_scanner_harmonizer.py
+Phase-3 Draft Pytest : rc=2
+Phase-4 Repair Loop  : R1:agy (--stm)->rc=2, R2:agy (escalated-refiner)->rc=0
+Phase-5 Final Pytest : rc=0 (6 passed in 0.03s)
+
+=== Inter-Agent Pointer Bus ([nexus] dm / handoff / broadcast) Chain ===
+  Msg 1 (thinker-architect -> algo-driver)   : [nexus] dm m-bea7854d inbox/m-bea7854d.md - # Contract Specification from thinker-architect -> algo-driver
+  Msg 2 (thinker-architect -> test-engineer) : [nexus] dm m-c4fe6254 inbox/m-c4fe6254.md - # Adversarial Test Specification from thinker-architect -> test-engineer
+  Msg 3 (thinker-architect -> leaf-scout)    : [nexus] dm m-5c026fb2 inbox/m-5c026fb2.md - # Leaf Edge-Case Check from thinker-architect -> leaf-scout
+  Msg 4 (algo-driver -> peer-verifier)       : [nexus] dm m-3455726a inbox/m-3455726a.md - # Draft Ready for Verification (algo-driver -> peer-verifier)
+  Msg 5 (test-engineer -> peer-verifier)     : [nexus] dm m-eac63207 inbox/m-eac63207.md - # Adversarial Pytest Suite Ready (test-engineer -> peer-verifier)
+  Msg 6 (leaf-scout -> peer-verifier)        : [nexus] dm m-3151425c inbox/m-3151425c.md - # Leaf Edge-Case Invariants (leaf-scout -> peer-verifier)
+  Msg 7 (peer-verifier -> algo-driver)       : [nexus] dm m-69bbd64d inbox/m-69bbd64d.md - # Peer-Verifier Adversarial Critique (peer-verifier -> algo-driver)
+  Msg 8 (algo-driver -> peer-verifier)       : [nexus] handoff m-2e807163 inbox/m-2e807163.md - # Cooperative Repair Complete (algo-driver -> peer-verifier)
+  Msg 9 (thinker-architect -> ALL)           : [nexus] broadcast m-4c54915f .nexus/inbox/m-4c54915f.md - COOP_SOLVE_COMPLETE p02p5wgjy2ybeeyyec1nf: VERDICT: PASS
+
+=== Final Pytest Verification Output ===
+test_scanner_harmonizer.py::test_validate_feature_vector_valid_and_types PASSED [ 16%]
+test_scanner_harmonizer.py::test_validate_feature_vector_edge_cases_and_errors PASSED [ 33%]
+test_scanner_harmonizer.py::test_quarantine_iqr_outliers_quartiles_and_fences PASSED [ 50%]
+test_scanner_harmonizer.py::test_quarantine_iqr_outliers_single_constant_and_errors PASSED [ 66%]
+test_scanner_harmonizer.py::test_harmonize_scanner_batch_multi_scanner_and_clamping PASSED [ 83%]
+test_scanner_harmonizer.py::test_harmonize_scanner_batch_zero_variance_and_validation_errors PASSED [100%]
+============================== 6 passed in 0.03s ===============================
+
+=== Executive Consensus Verdict ===
+VERDICT: PASS
+- Design & Initial Implementation (thinker-architect & algo-driver): thinker-architect (agy) specified the mathematical contracts for feature vector validation, IQR outlier quarantine, and scanner-grouped Z-score harmonization in scanner_harmonizer.py, while leaf-scout (loom:ollama/qwen3.5:4b-mlx) extracted the type/finiteness invariants.
+- Test Verification & Escalated Refinement (test-engineer & agy): test-engineer (agy) authored the 6-test verification suite in test_scanner_harmonizer.py covering edge cases, fence calculations, clamping, and zero-variance batches, driving two repair rounds (R1 -> rc=2, R2 -> rc=0) with <nexus_stm> continuity.
+- Final Validation (peer-verifier): peer-verifier confirmed that all 6 unit tests in test_scanner_harmonizer.py pass (rc=0 in 0.03s).
+```
+
+---
+
 ## Quick Start (Colab & Local CLI)
 
 Install `nexus-lite` and `qradiomics` in Google Colab or any local Python 3.10+ environment:
@@ -259,14 +316,20 @@ Install `nexus-lite` and `qradiomics` in Google Colab or any local Python 3.10+ 
 ```bash
 pip install "git+https://github.com/choilab-jefferson/nexus.lite.git" qradiomics
 
-# Run all 4 multi-agent demos from the CLI (auto-detects agy / claude)
-nexus-lite demo phantom-swarm --agent agy
-nexus-lite demo hipaa-pipeline --agent claude
-nexus-lite demo multimodal-swarm --agent agy
-nexus-lite demo lung1-audit --agent agy
+# Run all 4 multi-agent demos from the CLI (supports agy, claude, opencode, loom, or multi-tier)
+nexus-lite demo phantom-swarm --agent multi-tier
+nexus-lite demo hipaa-pipeline --agent multi-tier
+nexus-lite demo multimodal-swarm --agent multi-tier
+nexus-lite demo lung1-audit --agent multi-tier
+
+# Run 5-turn Peer-to-Peer A2A Interaction (agy-architect <-> loom-coder <-> opencode-reviewer)
+nexus-lite interact "Implement robust_zscore(values) with median/MAD and finite checks" --target-file robust_stats.py
+
+# Run 5-Phase Autonomous Multi-Agent Cooperative Problem-Solving Swarm
+nexus-lite cooperate "Design and implement a 3D Radiomics Z-Score Harmonizer and IQR Outlier Quarantine module in scanner_harmonizer.py" -m scanner_harmonizer.py
 
 # Search the indexed SQLite FTS5 Markdown Wiki
-nexus-lite wiki search "spic6 OR AHSN OR HIPAA OR Bonferroni"
+nexus-lite wiki search "spic6 OR AHSN OR HIPAA OR Bonferroni OR scanner_harmonizer"
 ```
 
 ---
