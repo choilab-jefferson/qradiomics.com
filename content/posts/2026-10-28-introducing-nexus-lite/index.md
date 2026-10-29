@@ -50,7 +50,7 @@ With **[qradiomics](/posts/2026-05-20-introducing-qradiomics/)**, we unified twe
 
 ## Why `nexus-lite`?
 
-Conventional Python "agent" libraries only chain raw LLM API prompts—they are not true autonomous coding agents with full shell, filesystem, and scientific CLI capabilities. Conversely, real **CLI coding agents** (`agy`, `claude`) are built as single-session interactive terminals that normally require a full workstation harness (such as `loom`) and background daemons to coordinate as a team.
+Conventional Python "agent" libraries only chain raw LLM API prompts—they are not true autonomous coding agents with full shell, filesystem, and scientific CLI capabilities. Conversely, real **CLI coding agents** (`agy`, `claude`) are built as single-session interactive terminals that normally require a dedicated workstation harness and background daemons to coordinate as a team.
 
 **`nexus-lite` turns standalone CLI coding agents into a coordinated multi-agent system inside Google Colab and Jupyter notebooks** in ~600 lines of pure Python and a single dependency (`pyte`):
 
