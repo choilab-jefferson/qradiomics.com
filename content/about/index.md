@@ -18,7 +18,7 @@ Led by **[Wookjin Choi, Ph.D.](/profile/)**, our lab operates at the intersectio
 Our mission is to translate computational innovations into actionable clinical tools. We focus on:
 1. **Precision Oncology:** Designing workflows that personalize cancer treatment plans based on quantitative imaging features.
 2. **Explainable AI (XAI):** Rejecting "black-box" models in favor of interpretable algorithms that clinicians can understand, troubleshoot, and trust.
-3. **Reproducibility:** Publishing open-source, standardized software packages (such as our flagship [QRadiomics CLI](/qradiomics/)) under the [CHOI Lab GitHub Organization](https://github.com/choilab-jefferson) so our research findings can be independently verified by the global scientific community.
+3. **Reproducibility & Agentic Automation:** Publishing open-source, standardized software packages—including our flagship [QRadiomics CLI](/qradiomics/), [nexus-lite](/nexus-lite/) multi-agent orchestrator, [loom](/loom/) sandboxed leaf-agent CLI, and [medimage](/posts/2026-08-04-introducing-medimage/) Colab course—under the [CHOI Lab GitHub Organization](https://github.com/choilab-jefferson) so our research findings can be independently verified by the global scientific community.
 
 ---
 

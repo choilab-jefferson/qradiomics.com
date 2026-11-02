@@ -1,7 +1,7 @@
 ---
 title: "QRadiomics: Radiomics Research CLI"
 date: "2026-05-17T20:31:21.000-04:00"
-lastmod: "2026-08-04T00:00:00.000-04:00"
+lastmod: "2026-11-01T19:30:00.000-05:00"
 categories:
   - "research"
 tags:
@@ -18,14 +18,23 @@ tags:
   - "Shape"
   - "TCIA"
   - "DICOM"
+  - "PET"
+  - "IBSI-SUV"
+  - "Nexus-Lite"
+  - "Loom"
 aliases:
   - /portfolio/qradiomics/
   - /projects/2026-05-17-qradiomics/
-description: "QRadiomics is an open-source CLI and library for reproducible radiomics research, supporting PyRadiomics, TCIA dataset automation, and survival analysis."
+description: "QRadiomics (v0.9.6) is an open-source CLI and library for reproducible radiomics research, supporting PyRadiomics, IBSI-1 & IBSI-SUV v3.1 PET standardization, deformable registration, longitudinal contour QC, 3D shape biomarkers, TCIA dataset automation, and survival/ML benchmarking."
 schema: "software"
 ---
 
-**License:** MIT · **Python:** 3.11+ · **Version:** 0.9.4 · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics) · **PyPI:** [qradiomics](https://pypi.org/project/qradiomics/)
+**License:** MIT · **Python:** 3.11+ · **Version:** 0.9.6 · **Repo:** [choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics) · **PyPI:** [qradiomics](https://pypi.org/project/qradiomics/)
+
+- **LUNG1 (NSCLC-Radiomics) Survival Reproduction Colab Notebook (`examples/lung1_survival_colab.ipynb`):**  
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/qradiomics/blob/main/examples/lung1_survival_colab.ipynb)
+- **QRadiomics + MedImage Multi-Agent Colab Notebook (`nexus-lite v0.2.2`):**  
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/qradiomics_medimage_colab_demo.ipynb)
 
 > **Active successor for three earlier Choi Lab radiomics codebases.** The C++/MATLAB pipelines in
 > [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools),
@@ -94,9 +103,9 @@ Env knobs: `QR_REPO_URL`, `QR_REPO_DIR`, `QR_BRANCH`, `QR_PYTHON`, `QR_VENV` (se
 pip install qradiomics
 ```
 
-That is the whole install as of **0.9.5**, and it takes well under a minute with no compiler. It
-gives you the CLI and everything that does not extract features: conversion, preprocessing, PHI
-handling, LIDC, shape, registration, and the analysis and ML commands.
+That is the whole install as of **0.9.6**, and it takes well under a minute with no compiler. It
+gives you the CLI and everything that does not extract features: conversion (including IBSI-SUV v3.1 PET), preprocessing, PHI
+handling, LIDC, 3D shape, deformable registration, longitudinal contour analysis, and the survival/ML benchmark commands.
 
 **To extract features**, add the default engine:
 
@@ -138,6 +147,7 @@ The AHSN shape descriptor pipeline (CMPB 2014) and the spiculation quantificatio
 ```bash
 pip install qradiomics              # core CLI + library from PyPI
 pip install qradiomics[rtstruct]    # plus rt-utils for `qr convert rtstruct`
+pip install qradiomics[elastix]     # plus itk-elastix for `qr register --backend elastix`
 pip install qradiomics[pysera]      # plus the PySERA extraction engine (`qr extract --engine pysera`)
 pip install qradiomics[pysera-deep] # + torch/torchvision for PySERA's deep-feature extraction mode
 ```
@@ -153,15 +163,22 @@ Python 3.11 or newer is required. PyRadiomics, SimpleITK, lifelines, scikit-lear
 
 After install, `qr`, `qradiomics`, and `qrdx` are available on `$PATH` and point at `qradiomics.cli.main:cli`.
 
-## DICOM Conversion
+## DICOM Conversion & IBSI-SUV v3.1 PET Standardization
 
 Many TCIA cohorts ship as DICOM (CT/PET/MR series + RTSTRUCT). Two helpers convert into the NRRD form the rest of the pipeline consumes:
 
 ```bash
-# 1. CT/PET/MR DICOM series → single NRRD volume (PT auto-routes through SUV conversion)
+# 1. CT/PET/MR DICOM series → single NRRD volume (PT auto-routes through IBSI-SUV v3.1 conversion)
 qr convert dicom-series \
   -i <dataset_root>/<patient>/<study>/CT/ \
   -o <out>/<patient>_CT.nrrd
+
+# 1b. PET DICOM series → SUV-normalized NRRD with IBSI-SUV v3.1 strict validation
+qr convert dicom-series \
+  -i <dataset_root>/<patient>/<study>/PT/ \
+  -o <out>/<patient>_PT_SUV.nrrd \
+  --pet-suv-ibsi-strict \
+  --pet-suv-norm BW   # {BW, LBM, LBMJAMES128, LBMJANMA, IBW, BSA}
 
 # 2. RTSTRUCT contour → binary label NRRD (same geometry as the reference CT)
 qr convert rtstruct \
@@ -178,7 +195,8 @@ qr convert manifest-from-dir \
   -o manifest.csv
 ```
 
-RTSTRUCT conversion uses `rt-utils` (install via `pip install qradiomics[rtstruct]`). ROI lookup is case-insensitive. The mask is auto-reshaped to the CT geometry, with a ±1-slice z-axis trim/pad when the structure set references slices outside the series.
+- **IBSI-SUV v3.1 Reference Standard & Enhanced PET (`qradiomics.io.dicom.pet_suv`)**: `PT` series automatically convert to Standardized Uptake Value (SUV) following the [IBSI-SUV v3.1 standard](https://theibsi.github.io/ibsi-suv/). Supports all six IBSI body-size normalizations (`BW`, `LBM`, `LBMJAMES128`, `LBMJANMA`, `IBW`, `BSA`), **Enhanced PET (`1.2.840.10008.5.1.4.1.1.130`)** and **Legacy Converted Enhanced PET (`1.2.840.10008.5.1.4.1.1.128.1`)** multi-frame functional groups (`SharedFunctionalGroupsSequence` / `PerFrameFunctionalGroupsSequence`), vendor-aware scan-start reconstruction for `START` decay correction when `SeriesTime > AcquisitionTime` (`GE` `FrameReferenceTime`, `SIEMENS` `(0071,1022)`, and non-GE $t_{\text{ave}}$ back-computation), and craniocaudal z-stacking via `ImagePositionPatient[2]` (`0020,0032`). Verified at **100% parity** across **58/58 IBSI-SUV Digital Reference Objects** (43/43 valid DROs within $\pm 10^{-4}$ tolerance + 15/15 corrupted-metadata error DROs rejected) and **16/16 clinical validation series** (including all 10 `ACRIN-NSCLC-FDG-PET` / `ACRIN 6668` series).
+- **RTSTRUCT Conversion**: Uses `rt-utils` (install via `pip install qradiomics[rtstruct]`). ROI lookup is case-insensitive. The mask is auto-reshaped to the CT geometry, with a ±1-slice z-axis trim/pad when the structure set references slices outside the series.
 
 ## End-to-end Example: TCIA NSCLC-Radiomics (Lung1) from scratch
 
@@ -259,7 +277,7 @@ EXECUTOR=prefect ./deploy.sh      # via Prefect 2.x
 EXECUTOR=inline ./deploy.sh       # sequential subprocess (smoke tests)
 ```
 
-Available bundles: `lung1/`, `nsclc_cetuximab/`, `lidc_idri/`, `acrin_heart/`.
+Available bundles: `lung1/`, `nsclc_cetuximab/`, `lidc_idri/`, `acrin_heart/`, and `ibsi1/` (IBSI-1 reference phantom parity harness).
 
 ## Workflow Assembly
 
@@ -291,7 +309,8 @@ As the field of medical physics shifts towards AI-driven automation, `qradiomics
 *   **Workflow Scaffolding:** Agents can generate complex Nextflow or Snakemake pipelines by simply describing the desired study design in natural language.
 *   **Self-Correction:** If a feature extraction fails due to DICOM header inconsistencies, the CLI provides structured error codes that an AI agent can use to suggest (or apply) data cleaning fixes.
 *   **Integration with Gemini Gems:** Our specialized [Medical Physics Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/) is pre-trained on `qradiomics` syntax, acting as a high-level **Radiomics Agent** that can write and execute your research code.
-*   **Colab-Ready Multi-Agent Orchestration (`nexus-lite`):** Coordinate parallel agent swarms and 3-stage verification pipelines (`driver` → `navigator` → `verifier` → `refiner`) with live `agy` and `claude` agents directly in Google Colab via **[nexus-lite](/posts/2026-10-28-introducing-nexus-lite/)** ([choilab-jefferson/nexus.lite](https://github.com/choilab-jefferson/nexus.lite)).
+*   **Colab-Ready Multi-Agent Orchestration (`nexus-lite v0.2.2` on PyPI):** Coordinate parallel agent swarms, 3-stage verification pipelines (`driver` → `navigator` → `verifier` → `refiner`), 5-turn peer-to-peer A2A reviews (`interact`), 5-phase autonomous cooperative problem-solving (`cooperate`), zero-preinstall remote compute (`nexus_lite.compute`), and 100% local Ollama GPU/CPU swarms (`gemma4:12b`, `qwen3.8:27b`, `lfm3:1.7b`) directly in Google Colab via **[nexus-lite](/posts/2026-10-28-introducing-nexus-lite/)** (`pip install nexus-lite`, [choilab-jefferson/nexus.lite](https://github.com/choilab-jefferson/nexus.lite)).
+*   **Sandboxed Leaf-Agent Execution & Hidden-Test Radiomics Benchmarks (`loom v0.2.3`):** Run deterministic, dependency-free single-agent leaf workers with workspace confinement, multi-turn `loom.context.v1` piping (`--context-in`/`--context-out`), `--phi` local-only model enforcement, and 93 hidden IBSI radiomics verification tests (`radiomics-firstorder`, `radiomics-texture`, `radiomics-stats`) via **[loom](/loom/)** ([choilab-jefferson/nexus.loom](https://github.com/choilab-jefferson/nexus.loom)).
 
 ## AI-Agent Skill (Claude Code)
 
@@ -420,14 +439,15 @@ Each entry point writes a JSON/CSV report next to the script; no manual gluing r
 |---|---|---|
 | `qr tcia download` | data | Bulk-download a TCIA collection (multi-process + progress) |
 | `qr anonymize` | data | Strip PHI from a DICOM tree (DICOM PS3.15 Annex E) |
-| `qr convert dicom-series` | data/image | DICOM CT/MR → NRRD; PT auto-routes through SUV conversion |
+| `qr convert dicom-series` | data/image | DICOM CT/MR → NRRD; PT auto-routes through IBSI-SUV v3.1 conversion (`--pet-suv-ibsi-strict`, `--pet-suv-norm`, Enhanced PET) |
 | `qr convert rtstruct` | data/image | DICOM RTSTRUCT contour → label NRRD (case-insensitive ROI) |
 | `qr convert manifest-from-dir` | data | Glob image+mask pairs into a manifest CSV |
 | `qr preprocess` | image | bbox crop + isotropic resample per (image, mask) row |
-| `qr register` | image | Rigid Mattes-MI/LBFGSB moving→fixed (Scenario C mask transfer) |
+| `qr register` | image | Rigid / affine / deformable registration (`--backend {sitk,plastimatch,elastix}`, `--stages`) and Scenario C mask transfer |
 | `qr hu-correct` | image | Histogram-match CBCT to a reference CT |
-| `qr extract` | features | Feature extraction → `features.csv` (manifest + pattern); `--engine pyradiomics,pysera,rtools` for multi-engine |
-| `qr shape extract` | features | AHSN + spiculation shape descriptors |
+| `qr longitudinal` | image/QC | Longitudinal RTSTRUCT session pairing, contour trajectory, outlier flags, validity checks, surface displacement & noise (`{sessions,trajectory,flags,validity,surface,noise,run}`) |
+| `qr extract` | features | Multi-engine feature extraction → `features.csv` (`--engine pyradiomics,pysera,rtools`) |
+| `qr shape extract` | features | AHSN + spiculation + 3D solid-core remodeling & contour-set descriptors |
 | `qr delta` | features | DeltaPair (A - B) + trend slope per patient across timepoints |
 | `qr results merge` | features | `features.csv` + `clinical.csv` → `analysis_ready.csv` |
 | `qr analyze survival` | modeling | Univariate Cox proportional hazards |
@@ -436,6 +456,7 @@ Each entry point writes a JSON/CSV report next to the script; no manual gluing r
 | `qr ml train` | modeling | CV Cox / logistic + leakage-safe corr/univariate selection |
 | `qr ml predict` | modeling | Apply a trained model to new features |
 | `qr ml evaluate` | modeling | Hold-out evaluation report (c-index / AUC) |
+| `qr bench` | modeling | Multi-model classification benchmark (`LR/SVM/ExtraTrees/RF/GBM/MLP/XGB/LGBM/FLAML/TPOT`), nested CV + HPO + external test + Youden's-J threshold calibration |
 | `qr workflow plan` | assembly | Generate a multi-step plan from a template |
 | `qr workflow show` | assembly | Inspect a plan's steps and variables |
 | `qr workflow scaffold` | assembly | Render a plan as shell / nextflow / prefect |
@@ -453,6 +474,12 @@ from qradiomics.atomic import (
     build_extractor, run_extractor, extract_features,
     register_pair, resample_to_fixed, histogram_match_hu,
 )
+from qradiomics.atomic.morphology import (
+    binary_erode_mm, binary_dilate_mm, distance_shell_mask,
+)
+from qradiomics.atomic.denoise_subspace import denoise_feature_matrix
+from qradiomics.deep import compartment, pooling
+from qradiomics.contract import validate_feature_table
 from qradiomics.data_model import (
     Cohort, Patient, TreatmentCourse, Study,
     ImageSeries, RTStructureSet, ROI,
@@ -503,7 +530,7 @@ save_cohort(cohort, "cohort.yaml")     # full graph persistence
 
 ## Shape Analysis: `qradiomics.shape`
 
-Python re-implementations of two published Choi-Lab pipelines, used as a library (no CLI yet; call as functions):
+Python re-implementations of published Choi-Lab 3D geometric pipelines, plus 3D solid-core remodeling and contour-set geometry:
 
 **2014 CMPB: AHSN pulmonary nodule detection**
 
@@ -528,6 +555,12 @@ from qradiomics.shape import (
     spiculation_features,           # Na / Nl / Na_att / s1 / s2 features
     spiculation_from_voxel,         # one-shot mask → SpiculationFeatures
 )
+```
+
+**3D Solid-Core Remodeling & Longitudinal Contour-Set Geometry (`v0.9.6`)**
+
+```python
+from qradiomics.shape import solid_remodeling, contour_set
 ```
 
 See `tests/shape/` for end-to-end usage on analytic shapes (sphere / spiked-sphere / phantoms).
@@ -591,7 +624,7 @@ If you build on the lung-screening lineage that this CLI grew out of, please add
 
 - [**Wookjin Choi**](https://github.com/taznux): overall architecture, CLI design, pattern templates
 - [**Pradeep Bhetwal**](https://github.com/Pradeepbhetwal): survival analysis on the LUNG1 cohort
-- **Google Gemini 4 Argon Access**: We gratefully acknowledge Google for providing Gemini 4 Argon access and support for our multi-agent radiomics and medical physics research workflows (`qradiomics`, `medimage`, and `nexus-lite`).
+- **Google Gemini 4 Argon Access**: We gratefully acknowledge Google for providing Gemini 4 Argon access and support for our multi-agent radiomics and medical physics research workflows (`qradiomics`, `medimage`, `nexus-lite`, and `loom`).
 - *Choi Lab, Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson University*
 
 ## License

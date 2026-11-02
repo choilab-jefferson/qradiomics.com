@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1b1f24"/>
+      <stop offset="1" stop-color="#20262d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.12" r="0.55">
+      <stop offset="0" stop-color="#f39800" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#f39800" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="slices" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+      <line x1="0" y1="0" x2="0" y2="28" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="cardTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#slices)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- header -->
+  <text x="60" y="100" fill="#f39800" font-size="50" font-weight="700">loom</text>
+  <text x="61" y="134" fill="#c9cdd3" font-size="20">Zero-Dependency Sandboxed Leaf-Agent CLI for nexus-lite &amp; qradiomics</text>
+
+  <!-- 12-dot tick row grouped by 3 stages -->
+  <g fill="#f39800">
+    <circle cx="61" cy="164" r="4"/><circle cx="75" cy="164" r="4"/><circle cx="89" cy="164" r="4"/><circle cx="103" cy="164" r="4"/>
+    <circle cx="139" cy="164" r="4"/><circle cx="153" cy="164" r="4"/><circle cx="167" cy="164" r="4"/><circle cx="181" cy="164" r="4"/>
+    <circle cx="217" cy="164" r="4"/><circle cx="231" cy="164" r="4"/><circle cx="245" cy="164" r="4"/><circle cx="259" cy="164" r="4"/>
+  </g>
+
+  <!-- 3 stage cards (identical geometry: x=60, 445, 830; width=310) -->
+  <g>
+    <!-- Stage 1: Sandbox & Policy -->
+    <rect x="60" y="248" width="310" height="192" rx="16" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
+    <rect x="60" y="248" width="310" height="192" rx="16" fill="url(#cardTop)"/>
+    <circle cx="116" cy="308" r="28" fill="#f39800"/>
+    <g stroke="#1b1f24" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="106" y="306" width="20" height="14" rx="2.5"/>
+      <path d="M110,306 V301 a6,6 0 0 1 12,0 V306"/>
+    </g>
+    <text x="160" y="294" fill="#f39800" font-size="14" font-weight="700" letter-spacing="1.5">PILLAR I</text>
+    <text x="160" y="325" fill="#eef0f2" font-size="26" font-weight="700">Sandbox</text>
+    <line x1="90" y1="370" x2="340" y2="370" stroke="#3a4149" stroke-width="1"/>
+    <text x="90" y="404" fill="#8b9198" font-size="15">Allowlist · --phi · Secret Scrub</text>
+
+    <!-- Stage 2: Bounded Execution -->
+    <rect x="445" y="248" width="310" height="192" rx="16" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
+    <rect x="445" y="248" width="310" height="192" rx="16" fill="url(#cardTop)"/>
+    <circle cx="501" cy="308" r="28" fill="#f39800"/>
+    <g stroke="#1b1f24" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="501" cy="308" r="11"/>
+      <polyline points="501,302 501,308 506,311"/>
+    </g>
+    <text x="545" y="294" fill="#f39800" font-size="14" font-weight="700" letter-spacing="1.5">PILLAR II</text>
+    <text x="545" y="325" fill="#eef0f2" font-size="26" font-weight="700">Budgets</text>
+    <line x1="475" y1="370" x2="725" y2="370" stroke="#3a4149" stroke-width="1"/>
+    <text x="475" y="404" fill="#8b9198" font-size="15">Turns · Context Pipe · Trace</text>
+
+    <!-- Stage 3: Leaf Harness -->
+    <rect x="830" y="248" width="310" height="192" rx="16" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
+    <rect x="830" y="248" width="310" height="192" rx="16" fill="url(#cardTop)"/>
+    <circle cx="886" cy="308" r="28" fill="#f39800"/>
+    <g stroke="#1b1f24" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="877,309 884,316 896,302"/>
+    </g>
+    <text x="930" y="294" fill="#f39800" font-size="14" font-weight="700" letter-spacing="1.5">PILLAR III</text>
+    <text x="930" y="325" fill="#eef0f2" font-size="26" font-weight="700">Verification</text>
+    <line x1="860" y1="370" x2="1110" y2="370" stroke="#3a4149" stroke-width="1"/>
+    <text x="860" y="404" fill="#8b9198" font-size="15">nexus-lite · 93 IBSI Tests</text>
+  </g>
+
+  <!-- connecting chevrons -->
+  <g stroke="#f39800" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="392,332 412,344 392,356"/>
+    <polyline points="777,332 797,344 777,356"/>
+  </g>
+
+  <!-- footer -->
+  <line x1="60" y1="494" x2="1140" y2="494" stroke="#3a4149" stroke-width="1"/>
+  <text x="60" y="530" fill="#8b9198" font-size="16">Choi Lab · Thomas Jefferson University</text>
+  <text x="1140" y="530" fill="#8b9198" font-size="16" text-anchor="end">github.com/choilab-jefferson/nexus.loom</text>
+</svg>
