@@ -158,7 +158,6 @@ Dates and amounts follow the [CV](images/wookjin-choi-cv.pdf); figures are **tot
 | Year | Honor |
 | --- | --- |
 | 2026 | **ASTRO Annual Meeting Abstract Award**, Basic Transitional Award in Physics; 30 winning abstracts out of >2,000 submissions [(details)](/posts/2026-07-27-2026-astro-annual-meeting-abstract-award/) |
-| 2026 | Oral presentation in the **BEST of Physics** session, ASTRO 2026, Boston; 300 orals out of ~2,700 abstracts [(details)](/posts/2026-05-18-astro-2026-best-of-physics-oral-acceptance/) |
 | 2026 | Selected participant, **NCI AI Embeddings Innovation Lab**; invitation-based, ~30 participants [(details)](/posts/2026-07-27-selected-nci-ai-embeddings-innovation-lab/) |
 | 2024 | **Winner ($25,000), NIH Biomedical Quantum Computation Challenge**; Team Quantum Heart, 1 of 3 winning teams [(details)](/posts/2025-08-20-team-quantum-heart-wins-nih-prize-for-innovation/) |
 | 2024 | Featured in a [*JCO Clinical Cancer Informatics* editorial](https://ascopubs.org/doi/10.1200/CCI.24.00045) for the cardiac PET radiomics study |
