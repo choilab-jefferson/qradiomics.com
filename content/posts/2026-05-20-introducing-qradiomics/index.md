@@ -47,7 +47,7 @@ Today, we are thrilled to announce the official release of **[qradiomics](https:
 DICOM download → conversion → feature extraction → clinical merge → modeling
 ```
 
-Each step is a single Unix-style command. Pipelines are assembled from those atomic commands using plain JSON plans, executed by Nextflow (per-patient parallel), Prefect, or inline. One command gets you started:
+Each step is a single atomic CLI command. Pipelines are assembled from those atomic commands using plain JSON plans, executed by Nextflow (per-patient parallel), Prefect, or inline. One command gets you started:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/choilab-jefferson/qradiomics/main/scripts/kickoff.sh | bash
