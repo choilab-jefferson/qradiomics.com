@@ -20,88 +20,88 @@
   <rect width="1200" height="540" rx="16" fill="url(#glow)"/>
 
   <!-- Header -->
-  <text x="60" y="64" fill="#f39800" font-size="15" font-weight="700" letter-spacing="2">PORTABLE COMPUTE &amp; MULTI-CENTER COLLABORATION ARCHITECTURE</text>
-  <text x="60" y="102" fill="#eef0f2" font-size="32" font-weight="700">“Data-Stay, Pipeline-Go”: Shipping Pipelines &amp; Secured Compute to Data</text>
+  <text x="50" y="60" fill="#f39800" font-size="14" font-weight="700" letter-spacing="1.6">PORTABLE COMPUTE &amp; MULTI-CENTER COLLABORATION ARCHITECTURE</text>
+  <text x="50" y="96" fill="#eef0f2" font-size="27" font-weight="700">“Data-Stay, Pipeline-Go”: Shipping Pipelines &amp; Secured Compute to Data</text>
 
-  <!-- Card 1: Portable Pipeline & Agent Package -->
+  <!-- Card 1 (x=50..380; inner box x=72..358, width=286) -->
   <g>
-    <rect x="50" y="145" width="330" height="310" rx="16" fill="url(#cardGrad)" stroke="#3a4149" stroke-width="1.5"/>
-    <rect x="50" y="145" width="330" height="6" rx="3" fill="#f39800"/>
-    <circle cx="96" cy="196" r="22" fill="#f39800"/>
-    <text x="96" y="204" fill="#1b1f24" font-size="20" font-weight="700" text-anchor="middle">1</text>
-    <text x="132" y="188" fill="#f39800" font-size="13" font-weight="700" letter-spacing="1.2">DISTRIBUTED BY CHOI LAB</text>
-    <text x="132" y="212" fill="#eef0f2" font-size="21" font-weight="700">Portable Pipeline Stack</text>
-    <line x1="76" y1="236" x2="354" y2="236" stroke="#3a4149" stroke-width="1"/>
+    <rect x="50" y="138" width="330" height="316" rx="16" fill="url(#cardGrad)" stroke="#3a4149" stroke-width="1.5"/>
+    <rect x="50" y="138" width="330" height="6" rx="3" fill="#f39800"/>
+    <circle cx="94" cy="188" r="21" fill="#f39800"/>
+    <text x="94" y="195" fill="#1b1f24" font-size="19" font-weight="700" text-anchor="middle">1</text>
+    <text x="128" y="180" fill="#f39800" font-size="11.5" font-weight="700" letter-spacing="1">DISTRIBUTED BY CHOI LAB</text>
+    <text x="128" y="204" fill="#eef0f2" font-size="18.5" font-weight="700">Portable Pipelines</text>
+    <line x1="72" y1="228" x2="358" y2="228" stroke="#3a4149" stroke-width="1"/>
 
-    <rect x="76" y="254" width="278" height="52" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
-    <text x="94" y="276" fill="#f39800" font-size="14" font-weight="700">Declarative Workflow Plans</text>
-    <text x="94" y="295" fill="#c9cdd3" font-size="13">plan.json · Nextflow · Prefect · kickoff.sh</text>
+    <rect x="72" y="246" width="286" height="56" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
+    <text x="88" y="268" fill="#f39800" font-size="13.5" font-weight="700">Declarative Workflow Plans</text>
+    <text x="88" y="288" fill="#c9cdd3" font-size="12.5">plan.json · Nextflow · Prefect</text>
 
-    <rect x="76" y="318" width="278" height="52" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
-    <text x="94" y="340" fill="#f39800" font-size="14" font-weight="700">Standardized CLI &amp; Static Binary</text>
-    <text x="94" y="359" fill="#c9cdd3" font-size="13">qradiomics (v0.9.6) + loom (v0.2.3)</text>
+    <rect x="72" y="314" width="286" height="56" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
+    <text x="88" y="336" fill="#f39800" font-size="13.5" font-weight="700">Standardized CLI &amp; Leaf Binary</text>
+    <text x="88" y="356" fill="#c9cdd3" font-size="12.5">qradiomics (v0.9.6) + loom (v0.2.3)</text>
 
-    <rect x="76" y="382" width="278" height="52" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
-    <text x="94" y="404" fill="#f39800" font-size="14" font-weight="700">Zero-Preinstall Compute Bundles</text>
-    <text x="94" y="423" fill="#c9cdd3" font-size="13">nexus-lite compute · Colab · DevContainer</text>
+    <rect x="72" y="382" width="286" height="56" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
+    <text x="88" y="404" fill="#f39800" font-size="13.5" font-weight="700">Zero-Preinstall Compute</text>
+    <text x="88" y="424" fill="#c9cdd3" font-size="12.5">nexus-lite compute · Colab · Containers</text>
   </g>
 
   <!-- Arrow 1 -> 2 -->
   <g stroke="#f39800" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="392" y1="300" x2="424" y2="300"/>
-    <polyline points="416,291 426,300 416,309"/>
+    <line x1="392" y1="296" x2="424" y2="296"/>
+    <polyline points="416,287 426,296 416,305"/>
   </g>
 
-  <!-- Card 2: Secured Execution Environment -->
+  <!-- Card 2 (x=435..765; inner box x=457..743, width=286) -->
   <g>
-    <rect x="435" y="145" width="330" height="310" rx="16" fill="url(#cardGrad)" stroke="#f39800" stroke-width="2"/>
-    <rect x="435" y="145" width="330" height="6" rx="3" fill="#f39800"/>
-    <circle cx="481" cy="196" r="22" fill="#f39800"/>
-    <text x="481" y="204" fill="#1b1f24" font-size="20" font-weight="700" text-anchor="middle">2</text>
-    <text x="517" y="188" fill="#f39800" font-size="13" font-weight="700" letter-spacing="1.2">WHERE THE DATA RESIDES</text>
-    <text x="517" y="212" fill="#eef0f2" font-size="21" font-weight="700">Secured Compute Runtime</text>
-    <line x1="461" y1="236" x2="739" y2="236" stroke="#3a4149" stroke-width="1"/>
+    <rect x="435" y="138" width="330" height="316" rx="16" fill="url(#cardGrad)" stroke="#f39800" stroke-width="2"/>
+    <rect x="435" y="138" width="330" height="6" rx="3" fill="#f39800"/>
+    <circle cx="479" cy="188" r="21" fill="#f39800"/>
+    <text x="479" y="195" fill="#1b1f24" font-size="19" font-weight="700" text-anchor="middle">2</text>
+    <text x="513" y="180" fill="#f39800" font-size="11.5" font-weight="700" letter-spacing="1">WHERE THE DATA RESIDES</text>
+    <text x="513" y="204" fill="#eef0f2" font-size="18.5" font-weight="700">Secured Compute</text>
+    <line x1="457" y1="228" x2="743" y2="228" stroke="#3a4149" stroke-width="1"/>
 
-    <rect x="461" y="254" width="278" height="62" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
-    <text x="479" y="276" fill="#60a5fa" font-size="14" font-weight="700">Tier A · Open / Educational Cloud</text>
-    <text x="479" y="295" fill="#c9cdd3" font-size="13">1-Click Google Colab &amp; GitHub Codespaces</text>
-    <text x="479" y="310" fill="#8b9198" font-size="12">Pre-mounted TCIA &amp; Zenodo benchmarks</text>
+    <rect x="457" y="246" width="286" height="64" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
+    <text x="473" y="268" fill="#60a5fa" font-size="13.5" font-weight="700">Tier A · Open / Educational Cloud</text>
+    <text x="473" y="287" fill="#c9cdd3" font-size="12.5">1-Click Google Colab &amp; Codespaces</text>
+    <text x="473" y="303" fill="#8b9198" font-size="11.5">Pre-mounted TCIA &amp; Zenodo cohorts</text>
 
-    <rect x="461" y="328" width="278" height="106" rx="10" fill="#1b1f24" stroke="#f39800" stroke-opacity="0.5" stroke-width="1.2"/>
-    <text x="479" y="350" fill="#f39800" font-size="14" font-weight="700">Tier B · Institutional PHI Sandbox</text>
-    <text x="479" y="370" fill="#c9cdd3" font-size="13">• Network-isolated workspace (loom --phi)</text>
-    <text x="479" y="390" fill="#c9cdd3" font-size="13">• Local-only Ollama LLMs (zero cloud API)</text>
-    <text x="479" y="410" fill="#c9cdd3" font-size="13">• Read-only DICOM/EHR + qr phi audit gate</text>
-    <text x="479" y="426" fill="#8b9198" font-size="12">Raw PHI never leaves the hospital firewall</text>
+    <rect x="457" y="322" width="286" height="116" rx="10" fill="#1b1f24" stroke="#f39800" stroke-opacity="0.5" stroke-width="1.2"/>
+    <text x="473" y="344" fill="#f39800" font-size="13.5" font-weight="700">Tier B · Institutional PHI Sandbox</text>
+    <text x="473" y="364" fill="#c9cdd3" font-size="12.5">• Isolated workspace (loom --phi)</text>
+    <text x="473" y="383" fill="#c9cdd3" font-size="12.5">• Local Ollama LLMs (no cloud API)</text>
+    <text x="473" y="402" fill="#c9cdd3" font-size="12.5">• Read-only data + qr phi audit gate</text>
+    <text x="473" y="422" fill="#8b9198" font-size="11.5">Raw PHI never leaves hospital firewall</text>
   </g>
 
   <!-- Arrow 2 -> 3 -->
   <g stroke="#f39800" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="777" y1="300" x2="809" y2="300"/>
-    <polyline points="801,291 811,300 801,309"/>
+    <line x1="777" y1="296" x2="809" y2="296"/>
+    <polyline points="801,287 811,296 801,305"/>
   </g>
 
-  <!-- Card 3: Standardized Multi-Center Outputs -->
+  <!-- Card 3 (x=820..1150; inner box x=842..1128, width=286) -->
   <g>
-    <rect x="820" y="145" width="330" height="310" rx="16" fill="url(#cardGrad)" stroke="#3a4149" stroke-width="1.5"/>
-    <rect x="820" y="145" width="330" height="6" rx="3" fill="#10b981"/>
-    <circle cx="866" cy="196" r="22" fill="#10b981"/>
-    <text x="866" y="204" fill="#1b1f24" font-size="20" font-weight="700" text-anchor="middle">3</text>
-    <text x="902" y="188" fill="#10b981" font-size="13" font-weight="700" letter-spacing="1.2">ZERO-PHI ARTIFACTS ONLY</text>
-    <text x="902" y="212" fill="#eef0f2" font-size="21" font-weight="700">Verified Study Outputs</text>
-    <line x1="846" y1="236" x2="1124" y2="236" stroke="#3a4149" stroke-width="1"/>
+    <rect x="820" y="138" width="330" height="316" rx="16" fill="url(#cardGrad)" stroke="#3a4149" stroke-width="1.5"/>
+    <rect x="820" y="138" width="330" height="6" rx="3" fill="#10b981"/>
+    <circle cx="864" cy="188" r="21" fill="#10b981"/>
+    <text x="864" y="195" fill="#1b1f24" font-size="19" font-weight="700" text-anchor="middle">3</text>
+    <text x="898" y="180" fill="#10b981" font-size="11.5" font-weight="700" letter-spacing="1">ZERO-PHI ARTIFACTS ONLY</text>
+    <text x="898" y="204" fill="#eef0f2" font-size="18.5" font-weight="700">Verified Outputs</text>
+    <line x1="842" y1="228" x2="1128" y2="228" stroke="#3a4149" stroke-width="1"/>
 
-    <rect x="846" y="254" width="278" height="52" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
-    <text x="864" y="276" fill="#10b981" font-size="14" font-weight="700">IBSI-Standardized Features</text>
-    <text x="864" y="295" fill="#c9cdd3" font-size="13">IBSI-1 &amp; IBSI-SUV v3.1 compliant matrices</text>
+    <rect x="842" y="246" width="286" height="56" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
+    <text x="858" y="268" fill="#10b981" font-size="13.5" font-weight="700">IBSI-Standardized Features</text>
+    <text x="858" y="288" fill="#c9cdd3" font-size="12.5">IBSI-1 &amp; IBSI-SUV v3.1 matrices</text>
 
-    <rect x="846" y="318" width="278" height="52" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
-    <text x="864" y="340" fill="#10b981" font-size="14" font-weight="700">Calibrated Models &amp; Metrics</text>
-    <text x="864" y="359" fill="#c9cdd3" font-size="13">Cox PH / ML weights · ROC AUC · C-index</text>
+    <rect x="842" y="314" width="286" height="56" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
+    <text x="858" y="336" fill="#10b981" font-size="13.5" font-weight="700">Calibrated Models &amp; Metrics</text>
+    <text x="858" y="356" fill="#c9cdd3" font-size="12.5">Cox PH / ML weights · AUC · C-index</text>
 
-    <rect x="846" y="382" width="278" height="52" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
-    <text x="864" y="404" fill="#10b981" font-size="14" font-weight="700">Deterministic Audit Trails</text>
-    <text x="864" y="423" fill="#c9cdd3" font-size="13">JSONL traces · Reproducibility v2.0 reports</text>
+    <rect x="842" y="382" width="286" height="56" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
+    <text x="858" y="404" fill="#10b981" font-size="13.5" font-weight="700">Deterministic Audit Trails</text>
+    <text x="858" y="424" fill="#c9cdd3" font-size="12.5">JSONL traces · Reproducibility v2.0</text>
   </g>
 
   <!-- Footer -->

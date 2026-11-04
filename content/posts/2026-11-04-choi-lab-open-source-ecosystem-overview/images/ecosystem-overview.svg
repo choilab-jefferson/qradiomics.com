@@ -23,7 +23,7 @@
 
   <!-- header -->
   <text x="60" y="96" fill="#f39800" font-size="44" font-weight="700">CHOI Lab Open-Source Ecosystem</text>
-  <text x="61" y="132" fill="#c9cdd3" font-size="20">Past Foundations · Present Unification (qradiomics · nexus-lite · loom · medimage) · Future Horizon</text>
+  <text x="61" y="132" fill="#c9cdd3" font-size="19">Past Foundations · Present Unified Stack (qradiomics · nexus-lite · loom · medimage) · Future Horizon</text>
 
   <!-- 12-dot tick row grouped by 3 stages -->
   <g fill="#f39800">
@@ -32,7 +32,7 @@
     <circle cx="217" cy="164" r="4"/><circle cx="231" cy="164" r="4"/><circle cx="245" cy="164" r="4"/><circle cx="259" cy="164" r="4"/>
   </g>
 
-  <!-- 3 stage cards (identical geometry: x=60, 445, 830; width=310) -->
+  <!-- 3 stage cards (identical geometry: x=60..370, 445..755, 830..1140; width=310) -->
   <g>
     <!-- Stage 1: Past Foundations -->
     <rect x="60" y="238" width="310" height="206" rx="16" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
@@ -42,11 +42,11 @@
       <polygon points="116,284 128,292 128,306 116,314 104,306 104,292"/>
       <line x1="116" y1="284" x2="116" y2="314"/>
     </g>
-    <text x="160" y="284" fill="#f39800" font-size="13" font-weight="700" letter-spacing="1.5">PAST (2012–2023)</text>
-    <text x="160" y="315" fill="#eef0f2" font-size="24" font-weight="700">Foundations</text>
-    <line x1="90" y1="352" x2="340" y2="352" stroke="#3a4149" stroke-width="1"/>
-    <text x="90" y="384" fill="#c9cdd3" font-size="14">AHSN · radiomics50 · spic6</text>
-    <text x="90" y="410" fill="#8b9198" font-size="14">CIRDataset · PathCNN · 4D-CT</text>
+    <text x="160" y="284" fill="#f39800" font-size="12" font-weight="700" letter-spacing="1.2">PAST (2012–2023)</text>
+    <text x="160" y="314" fill="#eef0f2" font-size="23" font-weight="700">Foundations</text>
+    <line x1="86" y1="352" x2="344" y2="352" stroke="#3a4149" stroke-width="1"/>
+    <text x="86" y="384" fill="#c9cdd3" font-size="14">AHSN · radiomics50 · spic6</text>
+    <text x="86" y="410" fill="#8b9198" font-size="14">CIRDataset · PathCNN · 4D-CT</text>
 
     <!-- Stage 2: Present Unification -->
     <rect x="445" y="238" width="310" height="206" rx="16" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
@@ -57,11 +57,11 @@
       <polyline points="495,295 499,298 495,301"/>
       <line x1="502" y1="301" x2="507" y2="301"/>
     </g>
-    <text x="545" y="284" fill="#f39800" font-size="13" font-weight="700" letter-spacing="1.5">PRESENT (2024–2026)</text>
-    <text x="545" y="315" fill="#eef0f2" font-size="24" font-weight="700">Unified Stack</text>
-    <line x1="475" y1="352" x2="725" y2="352" stroke="#3a4149" stroke-width="1"/>
-    <text x="475" y="384" fill="#c9cdd3" font-size="14">qradiomics · nexus-lite · loom</text>
-    <text x="475" y="410" fill="#8b9198" font-size="14">medimage · CBCT · Cardiac PET · TRACER</text>
+    <text x="545" y="284" fill="#f39800" font-size="12" font-weight="700" letter-spacing="1.2">PRESENT (2024–2026)</text>
+    <text x="545" y="314" fill="#eef0f2" font-size="23" font-weight="700">Unified Stack</text>
+    <line x1="471" y1="352" x2="729" y2="352" stroke="#3a4149" stroke-width="1"/>
+    <text x="471" y="384" fill="#c9cdd3" font-size="14">qradiomics · nexus-lite · loom</text>
+    <text x="471" y="410" fill="#8b9198" font-size="14">medimage · CBCT · PET · TRACER</text>
 
     <!-- Stage 3: Future Horizon -->
     <rect x="830" y="238" width="310" height="206" rx="16" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
@@ -71,11 +71,11 @@
       <circle cx="886" cy="298" r="11"/>
       <polyline points="882,298 886,302 893,293"/>
     </g>
-    <text x="930" y="284" fill="#f39800" font-size="13" font-weight="700" letter-spacing="1.5">FUTURE (2026–2030+)</text>
-    <text x="930" y="315" fill="#eef0f2" font-size="24" font-weight="700">Clinical AI</text>
-    <line x1="860" y1="352" x2="1110" y2="352" stroke="#3a4149" stroke-width="1"/>
-    <text x="860" y="384" fill="#c9cdd3" font-size="14">Pipeline-to-Data &amp; Safe Compute</text>
-    <text x="860" y="410" fill="#8b9198" font-size="14">Contour-Robust AI · Embeddings</text>
+    <text x="930" y="284" fill="#f39800" font-size="12" font-weight="700" letter-spacing="1.2">FUTURE (2026–2030+)</text>
+    <text x="930" y="314" fill="#eef0f2" font-size="23" font-weight="700">Clinical AI</text>
+    <line x1="856" y1="352" x2="1114" y2="352" stroke="#3a4149" stroke-width="1"/>
+    <text x="856" y="384" fill="#c9cdd3" font-size="14">Portable Pipelines &amp; Compute</text>
+    <text x="856" y="410" fill="#8b9198" font-size="14">Contour-Robust AI · Embeddings</text>
   </g>
 
   <!-- connecting chevrons -->
@@ -86,6 +86,6 @@
 
   <!-- footer -->
   <line x1="60" y1="494" x2="1140" y2="494" stroke="#3a4149" stroke-width="1"/>
-  <text x="60" y="530" fill="#8b9198" font-size="16">CHOI Lab · Department of Radiation Oncology · Thomas Jefferson University</text>
-  <text x="1140" y="530" fill="#8b9198" font-size="16" text-anchor="end">github.com/choilab-jefferson · qradiomics.com</text>
+  <text x="60" y="530" fill="#8b9198" font-size="15">CHOI Lab · Department of Radiation Oncology · Thomas Jefferson University</text>
+  <text x="1140" y="530" fill="#8b9198" font-size="15" text-anchor="end">github.com/choilab-jefferson · qradiomics.com</text>
 </svg>

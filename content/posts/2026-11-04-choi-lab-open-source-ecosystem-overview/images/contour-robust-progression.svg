@@ -14,55 +14,55 @@
 
   <rect width="1200" height="460" rx="16" fill="url(#bg2)"/>
 
-  <text x="60" y="60" fill="#f39800" font-size="15" font-weight="700" letter-spacing="2">SOLVING CLASSICAL RADIOMICS&apos; BIGGEST BOTTLENECK</text>
-  <text x="60" y="96" fill="#eef0f2" font-size="30" font-weight="700">Three-Tier Progression Beyond Manual Contour Dependency</text>
+  <text x="50" y="58" fill="#f39800" font-size="14" font-weight="700" letter-spacing="1.6">SOLVING CLASSICAL RADIOMICS&apos; BIGGEST BOTTLENECK</text>
+  <text x="50" y="94" fill="#eef0f2" font-size="28" font-weight="700">Three-Tier Progression Beyond Manual Contour Dependency</text>
 
-  <!-- Tier 1 -->
+  <!-- Tier 1 (x=50..380, width=330; text x=74, max width=282) -->
   <g>
-    <rect x="50" y="135" width="330" height="245" rx="16" fill="url(#cardGrad2)" stroke="#3a4149" stroke-width="1.5"/>
-    <text x="80" y="176" fill="#60a5fa" font-size="13" font-weight="700" letter-spacing="1.4">TIER 1 · CONTOUR HYGIENE &amp; QC</text>
-    <text x="80" y="206" fill="#eef0f2" font-size="22" font-weight="700">Audit &amp; Harmonize</text>
-    <line x1="80" y1="224" x2="350" y2="224" stroke="#3a4149" stroke-width="1"/>
-    <text x="80" y="254" fill="#c9cdd3" font-size="14">• qr longitudinal trajectory &amp; outlier QC</text>
-    <text x="80" y="282" fill="#c9cdd3" font-size="14">• TG-263 RAG-LLM ROI standardization</text>
-    <text x="80" y="310" fill="#c9cdd3" font-size="14">• Multi-reader ICC feature stability gates</text>
-    <text x="80" y="346" fill="#8b9198" font-size="13">Filters out contour jitter before modeling</text>
+    <rect x="50" y="132" width="330" height="248" rx="16" fill="url(#cardGrad2)" stroke="#3a4149" stroke-width="1.5"/>
+    <text x="74" y="172" fill="#60a5fa" font-size="12" font-weight="700" letter-spacing="1.2">TIER 1 · CONTOUR HYGIENE &amp; QC</text>
+    <text x="74" y="202" fill="#eef0f2" font-size="21" font-weight="700">Audit &amp; Harmonize</text>
+    <line x1="74" y1="220" x2="356" y2="220" stroke="#3a4149" stroke-width="1"/>
+    <text x="74" y="250" fill="#c9cdd3" font-size="13.5">• qr longitudinal contour QC</text>
+    <text x="74" y="278" fill="#c9cdd3" font-size="13.5">• TG-263 RAG-LLM ROI naming</text>
+    <text x="74" y="306" fill="#c9cdd3" font-size="13.5">• Multi-reader ICC stability gate</text>
+    <text x="74" y="346" fill="#8b9198" font-size="12.5">Filters contour jitter before modeling</text>
   </g>
 
   <!-- Arrow 1 -> 2 -->
   <g stroke="#f39800" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="392" y1="258" x2="424" y2="258"/>
-    <polyline points="416,249 426,258 416,267"/>
+    <line x1="392" y1="256" x2="424" y2="256"/>
+    <polyline points="416,247 426,256 416,265"/>
   </g>
 
-  <!-- Tier 2 -->
+  <!-- Tier 2 (x=435..765, width=330; text x=459, max width=282) -->
   <g>
-    <rect x="435" y="135" width="330" height="245" rx="16" fill="url(#cardGrad2)" stroke="#3a4149" stroke-width="1.5"/>
-    <text x="465" y="176" fill="#f39800" font-size="13" font-weight="700" letter-spacing="1.4">TIER 2 · BOUNDARY-ROBUST FEATURES</text>
-    <text x="465" y="206" fill="#eef0f2" font-size="22" font-weight="700">Denoise &amp; Pool</text>
-    <line x1="465" y1="224" x2="735" y2="224" stroke="#3a4149" stroke-width="1"/>
-    <text x="465" y="254" fill="#c9cdd3" font-size="14">• Hierarchical spatial-temporal denoising</text>
-    <text x="465" y="282" fill="#c9cdd3" font-size="14">• 3D shape descriptors (AHSN, spic6)</text>
-    <text x="465" y="310" fill="#c9cdd3" font-size="14">• CT-FM compartment subspace pooling</text>
-    <text x="465" y="346" fill="#8b9198" font-size="13">ASTRO 2026 Award &amp; AAPM 2026 SNAP Oral</text>
+    <rect x="435" y="132" width="330" height="248" rx="16" fill="url(#cardGrad2)" stroke="#3a4149" stroke-width="1.5"/>
+    <text x="459" y="172" fill="#f39800" font-size="12" font-weight="700" letter-spacing="1.2">TIER 2 · ROBUST FEATURES</text>
+    <text x="459" y="202" fill="#eef0f2" font-size="21" font-weight="700">Denoise &amp; Pool</text>
+    <line x1="459" y1="220" x2="741" y2="220" stroke="#3a4149" stroke-width="1"/>
+    <text x="459" y="250" fill="#c9cdd3" font-size="13.5">• Spatial-temporal CBCT denoising</text>
+    <text x="459" y="278" fill="#c9cdd3" font-size="13.5">• 3D shape (AHSN, spic6)</text>
+    <text x="459" y="306" fill="#c9cdd3" font-size="13.5">• CT-FM subspace pooling</text>
+    <text x="459" y="346" fill="#8b9198" font-size="12.5">ASTRO 2026 Award · AAPM SNAP Oral</text>
   </g>
 
   <!-- Arrow 2 -> 3 -->
   <g stroke="#f39800" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="777" y1="258" x2="809" y2="258"/>
-    <polyline points="801,249 811,258 801,267"/>
+    <line x1="777" y1="256" x2="809" y2="256"/>
+    <polyline points="801,247 811,256 801,265"/>
   </g>
 
-  <!-- Tier 3 -->
+  <!-- Tier 3 (x=820..1150, width=330; text x=844, max width=282) -->
   <g>
-    <rect x="820" y="135" width="330" height="245" rx="16" fill="url(#cardGrad2)" stroke="#10b981" stroke-width="2"/>
-    <text x="850" y="176" fill="#10b981" font-size="13" font-weight="700" letter-spacing="1.4">TIER 3 · CONTOUR-FREE CLINICAL AI</text>
-    <text x="850" y="206" fill="#eef0f2" font-size="22" font-weight="700">Diagnostic-to-Treatment</text>
-    <line x1="850" y1="224" x2="1120" y2="224" stroke="#3a4149" stroke-width="1"/>
-    <text x="850" y="254" fill="#c9cdd3" font-size="14">• Direct SBRT dose prediction from</text>
-    <text x="850" y="276" fill="#c9cdd3" font-size="14">  pre-treatment diagnostic PET/CT</text>
-    <text x="850" y="304" fill="#c9cdd3" font-size="14">• Automated cardiac PET remodeling</text>
-    <text x="850" y="346" fill="#8b9198" font-size="13">Zero manual simulation contours required</text>
+    <rect x="820" y="132" width="330" height="248" rx="16" fill="url(#cardGrad2)" stroke="#10b981" stroke-width="2"/>
+    <text x="844" y="172" fill="#10b981" font-size="12" font-weight="700" letter-spacing="1.2">TIER 3 · CONTOUR-FREE AI</text>
+    <text x="844" y="202" fill="#eef0f2" font-size="21" font-weight="700">Diagnostic-to-Dose AI</text>
+    <line x1="844" y1="220" x2="1126" y2="220" stroke="#3a4149" stroke-width="1"/>
+    <text x="844" y="250" fill="#c9cdd3" font-size="13.5">• Direct SBRT dose prediction from</text>
+    <text x="844" y="272" fill="#c9cdd3" font-size="13.5">  diagnostic PET/CT scans</text>
+    <text x="844" y="302" fill="#c9cdd3" font-size="13.5">• Automated cardiac PET uptake</text>
+    <text x="844" y="346" fill="#8b9198" font-size="12.5">No manual simulation contours needed</text>
   </g>
 
   <!-- Footer -->

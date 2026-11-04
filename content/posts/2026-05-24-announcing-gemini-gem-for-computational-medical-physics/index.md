@@ -46,7 +46,7 @@ Validate dose distribution algorithms, biological modeling equations (TCP/NTCP),
 
 ### 3. Clinical Guidelines & Protocol QA
 Quickly lookup reference standards and math details based on AAPM (American Association of Physicists in Medicine) Task Group reports such as **TG-51 (reference dosimetry)** and **TG-142 (linear accelerator QA)**.
-- *Example Ask:* "Summarize the TG-51 water calibration procedure and explain the temperature-pressure correction factor $P_{TP}$ equation."
+- *Example Ask:* "Summarize the TG-51 water calibration procedure and explain the temperature-pressure correction factor `P_TP` equation."
 
 ### 4. Monte Carlo & Radiation Transport Simulations
 Get assistance with writing, configuring, and debugging simulation scripts in **Geant4, MCNP, and EGSnrc**.

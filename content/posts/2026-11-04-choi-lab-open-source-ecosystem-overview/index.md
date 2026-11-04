@@ -85,14 +85,14 @@ Rather than validating pipeline runtime alone, `qradiomics` ships deployable pip
 
 | Benchmark Study | Cohort | Protocol | `qradiomics` Result | Published Reference |
 | :--- | :--- | :--- | :--- | :--- |
-| **Aerts et al. 2014** (*Nat Commun*) | TCIA Lung1 ($n=420$) | Univariate & 5-fold CV Cox PH (`Busyness` $p < 10^{-4}$) | **c-index `0.580 ± 0.029`** | `0.65` |
-| **Aerts et al. 2014 (External)** | Lung1 $\to$ NSCLC-Cetuximab ($n=460$) | 4-feature signature external transfer | **c-index `0.562`** | `0.69` |
-| **Choi & Choi 2014** (*CMPB*) | LIDC-IDRI ($1,018$ scans, $33,108$ candidates) | 180-D `AHSN` + patient-grouped 5-fold CV | **AUC `0.727 ± 0.005`** | `0.85–0.93` |
-| **Choi et al. 2018** (*Med Phys*) | LIDC-IDRI ($4,248$ nodules) | `radiomics50` ($1,409 \to$ top 50) | **AUC `0.872 ± 0.010`** | `0.83–0.95` |
-| **Choi et al. 2021** (*CMPB*, `spic6`) | LIDC-IDRI ($4,248$ nodules) | 6 interpretable spiculation features (`spic6`) | **AUC `0.816 ± 0.006`** | `0.80–0.85` (Exact) |
-| **Choi et al. 2021** (*CMPB*, LIDC-PM) | LIDC Pathology-Confirmed ($n=72, 474$ nodules) | `radiomics+spic` on `CIRDataset` masks | **AUC `0.868 ± 0.039`** | `0.85` (Exceeds) |
-| **Choi et al. 2021 / 2022** (LUNGx External) | LIDC ($4,248$) $\to$ LUNGx ($73$ size-matched) | `radiomics50` + 10-patient calibration | **AUC `0.756`** | `0.76` (Exact) |
-| **Choi et al. 2024** (*JCO CCI*) | TJU pre-RT $\to$ ACRIN 6668 / HeartCB post-RT | `rtools` + PyRadiomics cardiac FDG-PET uptake | **Accuracy `0.80 / 0.78`** | `0.80 / 0.78` (Exact) |
+| **Aerts et al. 2014** (*Nat Commun*) | TCIA Lung1 (n = 420) | Univariate & 5-fold CV Cox PH (`Busyness` p < 1e-4) | **c-index `0.580 ± 0.029`** | `0.65` |
+| **Aerts et al. 2014 (External)** | Lung1 → NSCLC-Cetuximab (n = 460) | 4-feature signature external transfer | **c-index `0.562`** | `0.69` |
+| **Choi & Choi 2014** (*CMPB*) | LIDC-IDRI (1,018 scans, 33,108 candidates) | 180-D `AHSN` + patient-grouped 5-fold CV | **AUC `0.727 ± 0.005`** | `0.85–0.93` |
+| **Choi et al. 2018** (*Med Phys*) | LIDC-IDRI (4,248 nodules) | `radiomics50` (1,409 → top 50) | **AUC `0.872 ± 0.010`** | `0.83–0.95` |
+| **Choi et al. 2021** (*CMPB*, `spic6`) | LIDC-IDRI (4,248 nodules) | 6 interpretable spiculation features (`spic6`) | **AUC `0.816 ± 0.006`** | `0.80–0.85` (Exact) |
+| **Choi et al. 2021** (*CMPB*, LIDC-PM) | LIDC Pathology-Confirmed (n = 72, 474 nodules) | `radiomics+spic` on `CIRDataset` masks | **AUC `0.868 ± 0.039`** | `0.85` (Exceeds) |
+| **Choi et al. 2021 / 2022** (LUNGx External) | LIDC (4,248) → LUNGx (73 size-matched) | `radiomics50` + 10-patient calibration | **AUC `0.756`** | `0.76` (Exact) |
+| **Choi et al. 2024** (*JCO CCI*) | TJU pre-RT → ACRIN 6668 / HeartCB post-RT | `rtools` + PyRadiomics cardiac FDG-PET uptake | **Accuracy `0.80 / 0.78`** | `0.80 / 0.78` (Exact) |
 
 ### C. Active Clinical Translation Highlights (2025–2026)
 
@@ -108,7 +108,7 @@ Looking critically at our own benchmarks and clinical deployments, two strategic
 
 ### Priority 1: Overcoming Contour Dependency (From Contour Hygiene to Contour-Free Clinical AI)
 
-Our LIDC-IDRI benchmarks highlight a fundamental vulnerability of classical radiomics: moving from raw multi-reader XML contours to radiologist-curated `CIRDataset` masks shifts pathology-confirmed malignancy AUC from `0.748` to `0.868` ($\Delta\text{AUC} = +0.120$). In longitudinal CBCT, fraction-to-fraction contour propagation jitter can easily mask true biological treatment response. We are tackling contour dependency across three progressive tiers:
+Our LIDC-IDRI benchmarks highlight a fundamental vulnerability of classical radiomics: moving from raw multi-reader XML contours to radiologist-curated `CIRDataset` masks shifts pathology-confirmed malignancy AUC from `0.748` to `0.868` (`+0.120` AUC). In longitudinal CBCT, fraction-to-fraction contour propagation jitter can easily mask true biological treatment response. We are tackling contour dependency across three progressive tiers:
 
 ![Three-Tier Progression Beyond Manual Contour Dependency](images/contour-robust-progression.svg)
 
@@ -127,9 +127,9 @@ Instead of centralizing sensitive data, our architecture is built around **shipp
 - **For Open Science & Education**: Anyone can launch our 6 **[nexus-lite](/nexus-lite/)** Colab notebooks, the **[LUNG1 survival Colab notebook](https://colab.research.google.com/github/choilab-jefferson/qradiomics/blob/main/examples/lung1_survival_colab.ipynb)**, or the 13-chapter **[medimage](/posts/2026-08-04-introducing-medimage/)** course in a browser with zero local setup—sharing the **entire pre-configured compute environment alongside the pipeline**.
 - **For Multi-Center Clinical Collaboration**: Partner institutions keep raw patient imaging and EHRs inside their own firewall. Using `scripts/kickoff.sh`, containerized runners, and **[loom](/loom/)** (`--phi` local-only model confinement + strict workspace sandboxing), collaborators deploy our standardized pipelines locally on their own hardware or HPC cluster and share only verified, de-identified summary metrics and calibrated models.
 
-### Priority 3: Principled Multi-Modal AI Embeddings & Cyber-Resilient Oncology
+### Priority 3: Principled Multi-Modal AI Embeddings & Autonomous Clinical Physics QA
 
-Building on our selection for the **[NCI AI Embeddings Innovation Lab](/posts/2026-07-27-selected-nci-ai-embeddings-innovation-lab/)** (*"AI Embeddings for Next-Gen Cancer Diagnostics"*, July 2026) and our active **NIH/AHRQ R18 grant (`R18HS030060`, 2024–2029)** on ransomware attack response resiliency in radiation oncology, we are fusing interpretable imaging biomarkers (`qradiomics`), histopathology, biological pathways (`PathCNN`), and LLM-extracted EHR trajectories (`TRACER`) into unified multi-modal diagnostic embeddings—backed by cyber-resilient clinical infrastructure.
+Building on our selection for the **[NCI AI Embeddings Innovation Lab](/posts/2026-07-27-selected-nci-ai-embeddings-innovation-lab/)** (*"AI Embeddings for Next-Gen Cancer Diagnostics"*, July 2026), we are fusing interpretable imaging biomarkers (`qradiomics`), histopathology, biological pathways (`PathCNN`), and LLM-extracted EHR trajectories (`TRACER`) into unified multi-modal diagnostic embeddings—orchestrated by self-auditing AI agents (`nexus-lite` + `loom`) for reproducible oncology research and automated clinical physics QA.
 
 ---
 
