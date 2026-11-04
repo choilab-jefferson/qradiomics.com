@@ -38,10 +38,10 @@ aliases:
   - /ecosystem/
   - /open-source/
   - /2026/11/04/choi-lab-open-source-ecosystem-overview/
-description: "A comprehensive overview of the CHOI Lab's journey: what we have built over two decades of interpretable 3D vision (Past), our unified open-source software and clinical translation stack (Present: qradiomics, nexus-lite, loom, medimage), and how we are solving contour dependency and multi-center collaboration through portable pipelines and secured compute environments (Future)."
+description: "A comprehensive overview of the CHOI Lab's journey: what we have built over a decade of interpretable 3D medical image analysis (Past: 2012–2023), our unified open-source software and clinical translation stack (Present: qradiomics, nexus-lite, loom, medimage), and how we are solving contour dependency and multi-center collaboration through portable pipelines and secured compute environments (Future)."
 ---
 
-Why do so many promising radiomics and medical AI studies struggle to cross the finish line into routine clinical care? Across two decades of quantitative imaging research, our experience at the **Computational Healthcare & Oncology Informatics ([CHOI Lab](/about/))** at Thomas Jefferson University points to three recurring barriers:
+Why do so many promising radiomics and medical AI studies struggle to cross the finish line into routine clinical care? Across more than a decade of quantitative imaging research, our experience at the **Computational Healthcare & Oncology Informatics ([CHOI Lab](/about/))** at Thomas Jefferson University points to three recurring barriers:
 
 1. **Fragmented, Non-Reproducible Software**: Research pipelines are often scattered across legacy MATLAB scripts, custom C++ binaries, and ad-hoc notebooks without standardized physical units or end-to-end verification.
 2. **Contour (Segmentation) Dependency**: Classical radiomic features are highly sensitive to manual delineation variability, inter-observer differences, and longitudinal registration jitter.
@@ -51,11 +51,11 @@ This post provides a unified overview of **what the CHOI Lab has done (Past)**, 
 
 ---
 
-## 1. What We Have Done (Past: 2002–2023) — Glass-Box Foundations & Benchmark Datasets
+## 1. What We Have Done (Past: 2012–2023) — Glass-Box Foundations & Benchmark Datasets
 
 Before building our modern Python and agentic stack, our work focused on designing **mathematically interpretable ("glass-box") 3D biomarkers** that translate clinicians' visual domain knowledge into rigorous geometric and physical formulations:
 
-- **3D Surface Normal & Shape Radiomics (`AHSN`)**: Developed the 180-dimensional Angular Histogram of Surface Normals (`AHSN`, *Computer Methods and Programs in Biomedicine* 2014) and multi-scale Hessian dot/surface filters for automated pulmonary nodule detection and chest wall elimination.
+- **3D Surface Normal & Shape Radiomics (`AHSN`)**: Developed 3D lung CT computer-aided detection (*Information Sciences* 2012; *Entropy* 2013) and the 180-dimensional Angular Histogram of Surface Normals (`AHSN`, *Computer Methods and Programs in Biomedicine* 2014) with multi-scale Hessian dot/surface filters for automated pulmonary nodule detection and chest wall elimination.
 - **Low-Dose CT Lung Cancer Screening (`radiomics50`)**: Established a compact, reproducible radiomic signature for early lung cancer detection (*Medical Physics* 2018, **Editor's Pick**; LUNGx Challenge top performer; Kaggle Data Science Bowl 2017 Bronze Medal).
 - **Conformal 3D Spiculation (`spic6`) & `CIRDataset`**: Formulated conformal spherical parameterization area-distortion peaks to quantify nodule spiculation and lobulation (*CMPB* 2021) and released **[CIRDataset](https://github.com/choilab-jefferson/CIR)** (*MICCAI* 2022; Zenodo `6762573`), comprising **966 radiologist QA/QC'd nodule masks** (883 LIDC-IDRI + 83 LUNGx).
 - **Pathway-Grounded Deep Learning (`PathCNN`) & 4D-CT Optimization**: Integrated multi-omics biological pathway graphs into interpretable CNNs for glioblastoma survival prediction (**[PathCNN](https://github.com/mskspi/PathCNN)**, *Bioinformatics / ISMB* 2021) and developed patient-specific contrast-enhanced 4D-CT simulation protocols (*Medical Physics* 2016; U.S. Patent `9,456,798 B2`).

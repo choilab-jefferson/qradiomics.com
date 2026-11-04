@@ -7,7 +7,7 @@ aliases:
 description: "Active and legacy open-source projects from the CHOI Lab: qradiomics CLI, nexus-lite multi-agent orchestrator, loom sandboxed leaf-agent CLI, medimage Colab course, CIRDataset, PathCNN, and our portable compute architecture."
 ---
 
-This page summarizes active and legacy open-source software, datasets, and educational resources from the **[CHOI Lab](/about/)**. For a full synthesis of how our stack evolved from early 3D computer vision foundations (2002–2023) and our AAPM 2025 pipeline into today's unified ecosystem—and how we use portable pipelines and secured compute environments (**"Data-Stay, Pipeline-Go"**) to enable multi-center collaboration—see **[The CHOI Lab Open-Source Ecosystem Overview](/ecosystem/)**.
+This page summarizes active and legacy open-source software, datasets, and educational resources from the **[CHOI Lab](/about/)**. For a full synthesis of how our stack evolved from foundational 3D medical image analysis (2012–2023) and our AAPM 2025 pipeline into today's unified ecosystem—and how we use portable pipelines and secured compute environments (**"Data-Stay, Pipeline-Go"**) to enable multi-center collaboration—see **[The CHOI Lab Open-Source Ecosystem Overview](/ecosystem/)**.
 
 ## Active Flagship Ecosystem
 

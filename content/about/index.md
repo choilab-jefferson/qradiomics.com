@@ -25,11 +25,11 @@ Our mission is to bridge the gap between computational innovation and routine cl
 
 ---
 
-## **1. What We Have Done (Foundations: 2002–2023)**
+## **1. What We Have Done (Foundations: 2012–2023)**
 
-Our current platform builds on two decades of foundational work in 3D medical image computing, computer-aided diagnosis (CAD), and multi-omics modeling:
+Our current platform builds on over a decade of foundational work in 3D medical image computing, computer-aided diagnosis (CAD), and multi-omics modeling:
 
-* **3D Shape & Surface-Normal Radiomics (`AHSN`):** Formulated the 180-dimensional Angular Histogram of Surface Normals (`AHSN`, *CMPB* 2014) and multi-scale Hessian filters for automated pulmonary nodule detection.
+* **3D Shape & Surface-Normal Radiomics (`AHSN`):** Formulated 3D pulmonary nodule CAD (*Information Sciences* 2012; *Entropy* 2013) and the 180-dimensional Angular Histogram of Surface Normals (`AHSN`, *CMPB* 2014) with multi-scale Hessian filters for automated lung nodule detection.
 * **Low-Dose CT Lung Cancer Screening (`radiomics50`):** Established a compact, reproducible radiomic signature for early lung cancer detection (*Medical Physics* 2018 **Editor's Pick**; LUNGx Challenge Top Performer; Kaggle Data Science Bowl 2017 Bronze Medal).
 * **Conformal 3D Spiculation (`spic6`) & `CIRDataset`:** Developed conformal spherical parameterization area-distortion metrics to quantify nodule spiculation (*CMPB* 2021) and published **[CIRDataset](https://github.com/choilab-jefferson/CIR)** (*MICCAI* 2022; Zenodo `6762573`), providing **966 radiologist QA/QC'd nodule masks** (883 LIDC-IDRI + 83 LUNGx).
 * **Pathway-Grounded Deep Learning & 4D-CT Simulation:** Created **[PathCNN](https://github.com/mskspi/PathCNN)** (*Bioinformatics / ISMB* 2021) to fuse multi-omics biological pathway graphs with CNNs for glioblastoma survival prediction, and patented patient-specific contrast-enhanced 4D-CT simulation (*Medical Physics* 2016; U.S. Patent `9,456,798 B2` among 5 issued patents).

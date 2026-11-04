@@ -42,7 +42,7 @@
       <polygon points="116,284 128,292 128,306 116,314 104,306 104,292"/>
       <line x1="116" y1="284" x2="116" y2="314"/>
     </g>
-    <text x="160" y="284" fill="#f39800" font-size="13" font-weight="700" letter-spacing="1.5">PAST (2002–2023)</text>
+    <text x="160" y="284" fill="#f39800" font-size="13" font-weight="700" letter-spacing="1.5">PAST (2012–2023)</text>
     <text x="160" y="315" fill="#eef0f2" font-size="24" font-weight="700">Foundations</text>
     <line x1="90" y1="352" x2="340" y2="352" stroke="#3a4149" stroke-width="1"/>
     <text x="90" y="384" fill="#c9cdd3" font-size="14">AHSN · radiomics50 · spic6</text>
