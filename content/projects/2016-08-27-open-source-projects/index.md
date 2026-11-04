@@ -1,21 +1,32 @@
 ---
 title: "Open source projects"
 date: "2026-05-20T22:00:40.000-04:00"
-lastmod: "2026-11-01T19:30:00.000-05:00"
+lastmod: "2026-11-04T16:00:00.000-05:00"
 aliases:
   - /portfolio/open-source-projects/
-description: "Active and legacy open-source projects from the CHOI Lab: qradiomics CLI, nexus-lite multi-agent orchestrator, loom sandboxed leaf-agent CLI, medimage Colab course, CIRDataset, and PathCNN."
+description: "Active and legacy open-source projects from the CHOI Lab: qradiomics CLI, nexus-lite multi-agent orchestrator, loom sandboxed leaf-agent CLI, medimage Colab course, CIRDataset, PathCNN, and our portable compute architecture."
 ---
 
-This page summarizes active and legacy open-source projects from Choi Lab.
+This page summarizes active and legacy open-source software, datasets, and educational resources from the **[CHOI Lab](/about/)**. For a full synthesis of how our stack evolved from early 3D computer vision foundations (2002–2023) and our AAPM 2025 pipeline into today's unified ecosystem—and how we use portable pipelines and secured compute environments (**"Data-Stay, Pipeline-Go"**) to enable multi-center collaboration—see **[The CHOI Lab Open-Source Ecosystem Overview](/ecosystem/)**.
 
-## Active
+## Active Flagship Ecosystem
+
+| Layer | Project | Version & License | Links | Primary Role |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Domain CLI & Standardized Library** | **[`qradiomics`](/qradiomics/)** | `v0.9.6` · **MIT** | [GitHub](https://github.com/choilab-jefferson/qradiomics) · [PyPI](https://pypi.org/project/qradiomics/) · [Docs](/qradiomics/) | Unified Python radiomics CLI (`qr`): TCIA automation, DICOM/RTSTRUCT/Enhanced PET conversion, **IBSI-1** & **IBSI-SUV v3.1** PET parity (58/58 DRO + 16/16 ACRIN 6668), deformable registration (`sitk`, `plastimatch`, `elastix`), `qr longitudinal` contour QC, multi-engine extraction (`pyradiomics`, `pysera`, `rtools`), 3D shape (`AHSN`, `spic6`), Nextflow/Prefect workflow assembly, and reproduction of **8 published protocols** |
+| **2. Multi-Agent Orchestrator & Portable Compute** | **[`nexus-lite`](/nexus-lite/)** | `v0.2.2` · **MIT** | [GitHub](https://github.com/choilab-jefferson/nexus.lite) · [PyPI](https://pypi.org/project/nexus-lite/) · [Post](/nexus-lite/) | Colab-ready, zero-server Python multi-agent kernel (`dtach` PTYs, SQLite WAL Bus v1, 3-tier memory `stm`/`mtm`/`ltm`, parallel swarms, role pipelines, `NEXUS_SENSITIVITY=phi` local Ollama routing, zero-preinstall remote compute `nexus_lite.compute`, and **6 Google Colab notebooks**) |
+| **3. Sandboxed Leaf-Agent Binary** | **[`loom`](/loom/)** | `v0.2.3` · **MIT** | [GitHub](https://github.com/choilab-jefferson/nexus.loom) · [Releases](https://github.com/choilab-jefferson/nexus.loom/releases) · [Post](/loom/) | Zero-dependency (Go 1.22+ stdlib only) single-agent leaf CLI with workspace confinement, multi-turn `loom.context.v1` piping, allowlisted command execution with timeout clamping, hard turn/token/deadline budgets, `--phi` local-only model confinement, and 93-test IBSI radiomics verification |
+| **4. Open Curriculum** | **[`medimage`](/posts/2026-08-04-introducing-medimage/)** | 13 Chapters · **MIT** | [GitHub](https://github.com/choilab-jefferson/medimage) · [Post](/posts/2026-08-04-introducing-medimage/) | Free, zero-setup Google Colab course in quantitative medical image analysis from DICOM fundamentals to reproducing Aerts 2014 |
+| **5. Benchmark Dataset & Spiculation** | **[`CIR` / `CIRDataset`](https://github.com/choilab-jefferson/CIR)** | 966 Nodules · Open Access | [GitHub](https://github.com/choilab-jefferson/CIR) · [Zenodo `6762573`](https://zenodo.org/records/6762573) · [arXiv](https://arxiv.org/abs/2206.14903) | Clinically interpretable lung nodule radiomics (conformal 3D spiculation and lobulation) and the *MICCAI* 2022 radiologist QA/QC'd dataset ($883$ LIDC-IDRI + $83$ LUNGx nodules) |
+| **6. Domain AI Assistant** | **[Medical Physics Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/)** | Gemini Gem · Free | [Announcement](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/) | Specialized AI co-pilot for medical image computing, radiation dosimetry, protocol QA, Monte Carlo modeling, and authoring `qradiomics` pipelines |
+
+---
 
 ### [qradiomics](/qradiomics/)
 
 Unified Python radiomics CLI (`qr`) and library for end-to-end workflows (DICOM & Enhanced PET conversion, IBSI-1 & IBSI-SUV v3.1 PET normalization, deformable registration, longitudinal contour QC, multi-engine feature extraction, 3D shape descriptors, Nextflow/Prefect orchestration, and survival/ML benchmarking).
 
-- Repo: [github.com/choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics) · PyPI: [qradiomics](https://pypi.org/project/qradiomics/)
+- Repo: [github.com/choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics) · PyPI: [qradiomics](https://pypi.org/project/qradiomics/) (`pip install qradiomics`)
 - Version: `0.9.6` · License: MIT
 - Status: actively maintained
 

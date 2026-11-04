@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" font-family="Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Overcoming Contour Dependency in Radiomics: Three-Tier Strategy</title>
+  <desc id="desc">Progression from automated contour QC and TG-263 RAG-LLM standardization to spatial-temporal denoising and direct diagnostic-to-treatment contour-free AI.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1200" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1b1f24"/>
+      <stop offset="1" stop-color="#20262d"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a313a"/>
+      <stop offset="1" stop-color="#222830"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="460" rx="16" fill="url(#bg2)"/>
+
+  <text x="60" y="60" fill="#f39800" font-size="15" font-weight="700" letter-spacing="2">SOLVING CLASSICAL RADIOMICS&apos; BIGGEST BOTTLENECK</text>
+  <text x="60" y="96" fill="#eef0f2" font-size="30" font-weight="700">Three-Tier Progression Beyond Manual Contour Dependency</text>
+
+  <!-- Tier 1 -->
+  <g>
+    <rect x="50" y="135" width="330" height="245" rx="16" fill="url(#cardGrad2)" stroke="#3a4149" stroke-width="1.5"/>
+    <text x="80" y="176" fill="#60a5fa" font-size="13" font-weight="700" letter-spacing="1.4">TIER 1 · CONTOUR HYGIENE &amp; QC</text>
+    <text x="80" y="206" fill="#eef0f2" font-size="22" font-weight="700">Audit &amp; Harmonize</text>
+    <line x1="80" y1="224" x2="350" y2="224" stroke="#3a4149" stroke-width="1"/>
+    <text x="80" y="254" fill="#c9cdd3" font-size="14">• qr longitudinal trajectory &amp; outlier QC</text>
+    <text x="80" y="282" fill="#c9cdd3" font-size="14">• TG-263 RAG-LLM ROI standardization</text>
+    <text x="80" y="310" fill="#c9cdd3" font-size="14">• Multi-reader ICC feature stability gates</text>
+    <text x="80" y="346" fill="#8b9198" font-size="13">Filters out contour jitter before modeling</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <g stroke="#f39800" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="392" y1="258" x2="424" y2="258"/>
+    <polyline points="416,249 426,258 416,267"/>
+  </g>
+
+  <!-- Tier 2 -->
+  <g>
+    <rect x="435" y="135" width="330" height="245" rx="16" fill="url(#cardGrad2)" stroke="#3a4149" stroke-width="1.5"/>
+    <text x="465" y="176" fill="#f39800" font-size="13" font-weight="700" letter-spacing="1.4">TIER 2 · BOUNDARY-ROBUST FEATURES</text>
+    <text x="465" y="206" fill="#eef0f2" font-size="22" font-weight="700">Denoise &amp; Pool</text>
+    <line x1="465" y1="224" x2="735" y2="224" stroke="#3a4149" stroke-width="1"/>
+    <text x="465" y="254" fill="#c9cdd3" font-size="14">• Hierarchical spatial-temporal denoising</text>
+    <text x="465" y="282" fill="#c9cdd3" font-size="14">• 3D shape descriptors (AHSN, spic6)</text>
+    <text x="465" y="310" fill="#c9cdd3" font-size="14">• CT-FM compartment subspace pooling</text>
+    <text x="465" y="346" fill="#8b9198" font-size="13">ASTRO 2026 Award &amp; AAPM 2026 SNAP Oral</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <g stroke="#f39800" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="777" y1="258" x2="809" y2="258"/>
+    <polyline points="801,249 811,258 801,267"/>
+  </g>
+
+  <!-- Tier 3 -->
+  <g>
+    <rect x="820" y="135" width="330" height="245" rx="16" fill="url(#cardGrad2)" stroke="#10b981" stroke-width="2"/>
+    <text x="850" y="176" fill="#10b981" font-size="13" font-weight="700" letter-spacing="1.4">TIER 3 · CONTOUR-FREE CLINICAL AI</text>
+    <text x="850" y="206" fill="#eef0f2" font-size="22" font-weight="700">Diagnostic-to-Treatment</text>
+    <line x1="850" y1="224" x2="1120" y2="224" stroke="#3a4149" stroke-width="1"/>
+    <text x="850" y="254" fill="#c9cdd3" font-size="14">• Direct SBRT dose prediction from</text>
+    <text x="850" y="276" fill="#c9cdd3" font-size="14">  pre-treatment diagnostic PET/CT</text>
+    <text x="850" y="304" fill="#c9cdd3" font-size="14">• Automated cardiac PET remodeling</text>
+    <text x="850" y="346" fill="#8b9198" font-size="13">Zero manual simulation contours required</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="50" y1="406" x2="1150" y2="406" stroke="#3a4149" stroke-width="1"/>
+  <text x="50" y="434" fill="#8b9198" font-size="14">CHOI Lab · Department of Radiation Oncology · Thomas Jefferson University</text>
+  <text x="1150" y="434" fill="#8b9198" font-size="14" text-anchor="end">qradiomics.com/ecosystem/</text>
+</svg>
