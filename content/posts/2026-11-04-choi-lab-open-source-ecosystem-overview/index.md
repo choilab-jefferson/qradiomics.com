@@ -79,6 +79,16 @@ Over the past year, we resolved those limitations and released our complete four
 | **3. Sandboxed Leaf-Agent Binary** | **[`loom`](/loom/)** (`nexus.loom` `v0.2.3`) | **MIT**<br>[GitHub](https://github.com/choilab-jefferson/nexus.loom) · [Releases](https://github.com/choilab-jefferson/nexus.loom/releases) | • Zero-dependency **Go 1.22+ stdlib static binary** (`./bin/loom`)<br>• Symlink-resolving `--workspace` sandbox, allowlisted commands (`--allow-cmd`), timeout clamping, and hard turn/token/time budgets<br>• Multi-turn `loom.context.v1` stdin/stdout piping and **`--phi` local-only model confinement** |
 | **4. Open Curriculum, Datasets & AI Co-Pilot** | **[`medimage`](/posts/2026-08-04-introducing-medimage/)** · **[`CIR`](https://github.com/choilab-jefferson/CIR)** · **[`PathCNN`](https://github.com/mskspi/PathCNN)** · **[Medical Physics Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/)** | **MIT** / Open Access | • **13-chapter zero-setup Google Colab course** (`medimage`) from DICOM basics to reproducing Aerts 2014<br>• **Reproducibility Report v2.0**: reproduces **8 published studies** end-to-end with `qradiomics` alone (no MATLAB, no Docker) |
 
+#### Self-Contained Pure-Python IBSI Compliance (`qradiomics v0.9.7`)
+
+With the `v0.9.7` release, **`qradiomics` satisfies both IBSI-1 and IBSI-SUV v3.1 natively in pure Python without depending on `pyradiomics` or `pysera`**, while simultaneously extracting legacy C++-exact `rtools` features and keeping `pyradiomics`/`pysera` as optional comparison engines:
+
+| IBSI Standard / Profile | Pure-Python Module | Reference Benchmark | Verified Parity (`v0.9.7`) |
+| :--- | :--- | :--- | :--- |
+| **IBSI-1 Standardized Features (`ibsi=True`)** | `qradiomics.feature.rtools.ibsi` | IBSI-1 Digital Phantom (`18` `stat_*` + `6` `morph_*` + `150` `cm_*` + `96` `rlm_*` across all 6 IBSI aggregations) | **270 / 270 (100%)** (`±1e-3`) |
+| **Simultaneous Legacy `rtools` Features (`ibsi=False`)** | `qradiomics.feature.rtools` | Compiled ITK C++ `FeatureExtraction` binary (`2D`, intensity, geometry, shape, GLCM, GLRLM) | **97 / 97 (100%)** C++-exact (`367` combined with IBSI-1) |
+| **IBSI-SUV v3.1 PET Standardization** | `qradiomics.io.dicom.pet_suv` | IBSI-SUV v3.1 Digital Reference Objects + ACRIN 6668 clinical PET (`BW`, `LBM`, `LBMJAMES128`, `LBMJANMA`, `IBW`, `BSA`) | **58 / 58 (100%)** DROs (`±1e-4`) + **16 / 16 (100%)** clinical series |
+
 ### B. End-to-End Reproducibility Across 8 Published Protocols
 
 Rather than validating pipeline runtime alone, `qradiomics` ships deployable pipeline bundles (`pipelines/lung1/`, `pipelines/nsclc_cetuximab/`, `pipelines/lidc_idri/`, `pipelines/acrin_heart/`) that quantitatively reproduce eight peer-reviewed benchmarks out of the box:

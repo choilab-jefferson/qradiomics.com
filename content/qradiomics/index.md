@@ -114,6 +114,20 @@ pip install "pyradiomics @ git+https://github.com/AIM-Harvard/pyradiomics.git"
 pip install qradiomics[pysera]
 ```
 
+## Self-Contained IBSI Compliance (`qradiomics v0.9.7`)
+
+As of **`v0.9.7`**, `qradiomics` satisfies both **IBSI-1** (radiomic feature standardization) and **IBSI-SUV v3.1** (quantitative PET normalization) natively in pure Python (`numpy` + `scipy` + `SimpleITK`), with **zero dependency on `pyradiomics`, `pysera`, or C++/ITK binaries**. Furthermore, `qradiomics.feature.rtools` extracts both the **IBSI-1 standardized feature set (`270` features)** and the **legacy C++-exact `radiomics-tools` feature set (`97` features)** simultaneously (**`367` non-overlapping features** in total):
+
+| IBSI Standard / Profile | Pure-Python Module | Benchmark / Reference Suite | Verified Parity (`v0.9.7`) |
+| :--- | :--- | :--- | :--- |
+| **IBSI-1 Intensity Statistics (`stat_*`)** | `qradiomics.feature.rtools.ibsi` (`ibsi=True`) | IBSI-1 Digital Phantom (`Zwanenburg et al., Radiology 2020`, §3.3) | **18 / 18 (100%)** (`±1e-3`) |
+| **IBSI-1 Voxel Morphology (`morph_*`)** | `qradiomics.feature.rtools.ibsi` (`ibsi=True`) | IBSI-1 Digital Phantom (§3.1; `morph_vol_approx`, `morph_area_dens_*`) | **6 / 6 (100%)** (`±1e-3`) |
+| **IBSI-1 GLCM (`cm_*`, 25 features × 6 modes)** | `qradiomics.feature.rtools.ibsi` (`ibsi=True`) | IBSI-1 Digital Phantom (`2D_avg`, `2D_comb`, `2_5D_avg`, `2_5D_comb`, `3D_avg`, `3D_comb`) | **150 / 150 (100%)** (`±1e-3`) |
+| **IBSI-1 GLRLM (`rlm_*`, 16 features × 6 modes)** | `qradiomics.feature.rtools.ibsi` (`ibsi=True`) | IBSI-1 Digital Phantom (`2D_avg`, `2D_comb`, `2_5D_avg`, `2_5D_comb`, `3D_avg`, `3D_comb`) | **96 / 96 (100%)** (`±1e-3`) |
+| **Total IBSI-1 Digital Phantom Parity** | `qradiomics.feature.rtools` (`ibsi=True`) | **All 4 IBSI-1 families × 6 aggregation modes** | **270 / 270 (100%)** |
+| **Simultaneous Legacy `rtools` Profile** | `qradiomics.feature.rtools` (`ibsi=False`) | Compiled ITK C++ `FeatureExtraction` binary (`2 i g s c r` families) | **97 / 97 (100%)** C++-exact (`270 + 97 = 367` combined) |
+| **IBSI-SUV v3.1 PET Normalization** | `qradiomics.io.dicom.pet_suv` | IBSI-SUV v3.1 Digital Reference Objects + ACRIN 6668 clinical PET (`BW`, `LBM`, `LBMJAMES128`, `LBMJANMA`, `IBW`, `BSA`) | **58 / 58 (100%)** DROs (`±1e-4`) + **16 / 16 (100%)** clinical series |
+
 ## Learn: the medimage course
 
 New to radiomics, or want a guided path into this CLI rather than jumping straight into the reference

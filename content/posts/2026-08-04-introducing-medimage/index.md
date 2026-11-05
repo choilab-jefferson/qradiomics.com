@@ -91,7 +91,7 @@ on another chapter having run first.
     <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter08_PET_CT.ipynb" target="_blank" rel="noopener">
       <span class="mi-chapter-num">CH. 08</span>
       <span class="mi-chapter-title">PET/CT</span>
-      <span class="mi-chapter-hook">SUV, PET/CT fusion, cardiac FDG uptake, change between timepoints</span>
+      <span class="mi-chapter-hook">IBSI-SUV v3.1 normalization, PET/CT fusion, cardiac FDG uptake, change between timepoints</span>
       <span class="mi-chapter-cta">Open in Colab</span>
     </a>
   </div>
@@ -104,7 +104,7 @@ on another chapter having run first.
     <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter09_Radiomics_Features.ipynb" target="_blank" rel="noopener">
       <span class="mi-chapter-num">CH. 09</span>
       <span class="mi-chapter-title">Radiomics features</span>
-      <span class="mi-chapter-hook">The three feature families, patterns, and what preprocessing does to each</span>
+      <span class="mi-chapter-hook">The three feature families, patterns, preprocessing drift, and pure-Python IBSI-1 + legacy <code>rtools</code> extraction</span>
       <span class="mi-chapter-cta">Open in Colab</span>
     </a>
     <a class="mi-chapter" href="https://colab.research.google.com/github/choilab-jefferson/medimage/blob/main/Chapter10_Registration.ipynb" target="_blank" rel="noopener">
@@ -156,11 +156,7 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-Everything installs from PyPI with one exception. The four chapters that extract radiomics features
-need **pyradiomics**, which publishes no wheel for Python 3.10 or newer, so it is built from its
-upstream git, which takes a few minutes on first install. In Colab that cost is paid once per session, and only
-in the notebooks that need it; every other chapter installs in well under a minute. The local
-`requirements.txt` above installs it up front, whichever chapters you plan to run.
+As of **`qradiomics v0.9.7`**, `qradiomics` itself installs cleanly from PyPI in seconds (`pip install qradiomics`) with **full self-contained pure-Python IBSI-1 feature extraction (`qradiomics.feature.rtools`, 270/270 IBSI-1 digital phantom parity + 97 legacy C++-exact features = 367 features) and IBSI-SUV v3.1 PET normalization (`qradiomics.io.dicom.pet_suv`, 58/58 DRO parity)**—requiring no C++ compiler, `pyradiomics`, or `pysera`. Because Chapters 9, 11, 12, and 13 also demonstrate cross-engine comparison (`--engine pyradiomics,pysera`) and reproduce the Aerts 2014 `nsclc-survival` signature, those four notebooks additionally install **pyradiomics** as an optional comparison engine from upstream git (since it publishes no PyPI wheel for Python 3.10+). In Colab that optional build cost is paid once per session and only in those notebooks; every other chapter installs in well under a minute.
 
 ## No imaging data in the repo
 
@@ -172,13 +168,13 @@ the licensing clean, and it keeps the provenance of every image one function cal
 |---|---|---|---|
 | Pancreas-CT | Ch 1–6 | [TCIA](https://doi.org/10.7937/K9/TCIA.2016.tNB1kqBU) | CC BY 3.0 |
 | CHAOS (T1-DUAL MRI) | Ch 3, 7 | [Zenodo](https://doi.org/10.5281/zenodo.3431873) | CC BY-NC-SA 4.0 |
-| ACRIN-NSCLC-FDG-PET (ACRIN 6668) | Ch 8, 11 | [TCIA](https://www.cancerimagingarchive.net/collection/acrin-nsclc-fdg-pet/) | TCIA data usage policy |
+| ACRIN-NSCLC-FDG-PET (ACRIN 6668) | Ch 8, 10, 11 | [TCIA](https://www.cancerimagingarchive.net/collection/acrin-nsclc-fdg-pet/) | TCIA data usage policy |
 | NSCLC-Radiomics (Lung1) | Ch 9, 12, 13 | [TCIA](https://www.cancerimagingarchive.net/collection/nsclc-radiomics/) | CC BY-NC 3.0 |
 
 ## Built alongside QRadiomics
 
-Chapters 5, 9, 11, 12 and 13 run the same `qr` CLI that powers **[QRadiomics](/qradiomics/)**, Choi
-Lab's radiomics research toolkit. Chapter 13 reproduces the Aerts 2014 NSCLC-Radiomics Cox PH result
+Chapters 5, 8, 9, 10, 11, 12 and 13 run the same `qr` CLI and Python APIs that power **[QRadiomics](/qradiomics/)** (`v0.9.7`), Choi
+Lab's self-contained, IBSI-compliant radiomics research toolkit. Chapter 8 uses `qradiomics.io.dicom.pet_suv` (**IBSI-SUV v3.1**), Chapter 9 demonstrates both pure-Python `qradiomics.feature.rtools` (**IBSI-1** `270/270` digital phantom parity + `97` legacy features = `367` features) and multi-engine comparison (`pyradiomics`, `pysera`), and Chapter 13 reproduces the Aerts 2014 NSCLC-Radiomics Cox PH result
 using the public `qr extract` → `qr results merge` → `qr analyze survival` pipeline. medimage is the
 teaching path into the same tools and data used in the lab's published research.
 
