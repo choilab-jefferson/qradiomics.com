@@ -39,7 +39,7 @@
 
     <rect x="72" y="314" width="286" height="56" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
     <text x="88" y="336" fill="#f39800" font-size="13.5" font-weight="700">Standardized CLI &amp; Leaf Binary</text>
-    <text x="88" y="356" fill="#c9cdd3" font-size="12.5">qradiomics (v0.9.6) + loom (v0.2.3)</text>
+    <text x="88" y="356" fill="#c9cdd3" font-size="12.5">qradiomics (v0.9.7) + loom (v0.2.3)</text>
 
     <rect x="72" y="382" width="286" height="56" rx="10" fill="#1b1f24" stroke="#333b44" stroke-width="1"/>
     <text x="88" y="404" fill="#f39800" font-size="13.5" font-weight="700">Zero-Preinstall Compute</text>
