@@ -1,7 +1,7 @@
 ---
 title: "Introducing qradiomics: A Unified Radiomics CLI for Reproducible Research"
 date: "2026-05-20T17:00:00.000-04:00"
-lastmod: "2026-11-01T19:30:00.000-05:00"
+lastmod: "2026-11-04T23:15:00.000-05:00"
 categories:
   - "news"
   - "research"

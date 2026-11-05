@@ -1,7 +1,7 @@
 ---
 title: "Wookjin Choi, Ph.D."
 date: "2016-06-22T23:51:23.000-04:00"
-lastmod: "2026-08-19T00:00:00.000-04:00"
+lastmod: "2026-11-04T23:15:00.000-05:00"
 description: "Wookjin Choi, Ph.D., Associate Professor of Radiation Oncology at Thomas Jefferson University and Director of the CHOI Lab. Radiomics, interpretable AI, and medical image analysis for cancer care."
 summary: "Associate Professor of Radiation Oncology at Thomas Jefferson University; Director of the CHOI Lab. Radiomics, interpretable AI, and open-source medical image analysis."
 keywords: ["Wookjin Choi", "radiomics", "medical image analysis", "interpretable AI", "radiation oncology", "Thomas Jefferson University", "CHOI Lab", "qradiomics"]

@@ -1,7 +1,7 @@
 ---
 title: "Introducing nexus-lite: Colab-Ready Multi-Agent Orchestration for Quantitative Medical Imaging and Radiomics"
 date: "2026-10-28T19:00:00.000-04:00"
-lastmod: "2026-11-01T19:30:00.000-05:00"
+lastmod: "2026-11-04T23:15:00.000-05:00"
 math: true
 categories:
   - "news"

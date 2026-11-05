@@ -1,7 +1,7 @@
 ---
 title: "Introducing loom: A Zero-Dependency Sandboxed Leaf-Agent CLI for Reproducible Multi-Agent Workflows"
 date: "2026-11-01T12:00:00.000-05:00"
-lastmod: "2026-11-01T19:30:00.000-05:00"
+lastmod: "2026-11-04T23:15:00.000-05:00"
 math: true
 categories:
   - "news"

@@ -1,7 +1,7 @@
 ---
 title: "Open source projects"
 date: "2026-05-20T22:00:40.000-04:00"
-lastmod: "2026-11-04T16:00:00.000-05:00"
+lastmod: "2026-11-04T23:15:00.000-05:00"
 aliases:
   - /portfolio/open-source-projects/
 description: "Active and legacy open-source projects from the CHOI Lab: qradiomics CLI, nexus-lite multi-agent orchestrator, loom sandboxed leaf-agent CLI, medimage Colab course, CIRDataset, PathCNN, and our portable compute architecture."

@@ -1,7 +1,7 @@
 ---
 title: "The CHOI Lab Open-Source Ecosystem: Past Foundations, Present Unification, and the Future of Portable, Contour-Robust Clinical AI"
 date: "2026-11-04T16:00:00.000-05:00"
-lastmod: "2026-11-04T16:00:00.000-05:00"
+lastmod: "2026-11-04T23:15:00.000-05:00"
 math: true
 categories:
   - "news"

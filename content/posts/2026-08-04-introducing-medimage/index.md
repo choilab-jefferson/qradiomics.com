@@ -1,6 +1,7 @@
 ---
 title: "Introducing medimage: A Free Colab Course in Quantitative Medical Image Analysis"
 date: "2026-08-04T09:00:00.000-04:00"
+lastmod: "2026-11-04T23:15:00.000-05:00"
 categories:
   - "news"
   - "research"

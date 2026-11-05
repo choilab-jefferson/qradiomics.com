@@ -1,7 +1,7 @@
 ---
 title: "About the Lab"
 date: "2026-06-05T15:22:00.000-04:00"
-lastmod: "2026-11-04T16:00:00.000-05:00"
+lastmod: "2026-11-04T23:15:00.000-05:00"
 description: "The Computational Healthcare & Oncology Informatics (CHOI) Lab at Thomas Jefferson University: our past foundations in 3D computer vision, present open-source radiomics & clinical AI stack, and future vision for contour-robust, portable clinical AI."
 schema: "about"
 ---
