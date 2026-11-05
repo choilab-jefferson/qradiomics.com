@@ -25,7 +25,7 @@ tags:
 aliases:
   - /portfolio/qradiomics/
   - /projects/2026-05-17-qradiomics/
-description: "QRadiomics (v0.9.7) is an open-source CLI and library for reproducible radiomics research, featuring a native pure-Python rtools engine with IBSI-1 support, PyRadiomics/PySERA integration, IBSI-SUV v3.1 PET standardization, deformable registration, longitudinal contour QC, 3D shape biomarkers, TCIA automation, and survival/ML benchmarking."
+description: "QRadiomics (v0.9.7) is an open-source CLI and library for reproducible radiomics research with self-contained pure-Python IBSI-1 feature extraction (rtools) and IBSI-SUV v3.1 PET standardization—no dependency on PyRadiomics or PySERA required—plus deformable registration, longitudinal contour QC, 3D shape biomarkers, TCIA automation, and survival/ML benchmarking."
 schema: "software"
 ---
 
@@ -36,13 +36,13 @@ schema: "software"
 - **QRadiomics + MedImage Multi-Agent Colab Notebook (`nexus-lite v0.2.2`):**  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/qradiomics_medimage_colab_demo.ipynb)
 
-> **Active successor for three earlier Choi Lab radiomics codebases.** The C++/MATLAB pipelines in
+> **Self-contained pure-Python IBSI-1 & IBSI-SUV v3.1 radiomics—no external engine required (`v0.9.7`).**
+> `qradiomics` is the active successor to three earlier Choi Lab radiomics codebases:
 > [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools),
 > [taznux/lung-image-analysis](https://github.com/taznux/lung-image-analysis), and
-> [choilab-jefferson/LungCancerScreeningRadiomics](https://github.com/choilab-jefferson/LungCancerScreeningRadiomics)
-> are **superseded** by this repo. As of **`v0.9.7`**, the legacy C++ `FeatureExtraction` binary from `radiomics-tools` is completely ported to pure Python in
-> `qradiomics.feature.rtools` (`numpy` + `scipy`; `SimpleITK` for image I/O only—neither ITK Python nor the compiled C++ binary is required), matching the C++ binary to printed precision while adding an opt-in **IBSI-1 profile** (`rtools_ibsi=True`).
-> New work should land here.
+> [choilab-jefferson/LungCancerScreeningRadiomics](https://github.com/choilab-jefferson/LungCancerScreeningRadiomics).
+> As of **`v0.9.7`**, the legacy C++ `FeatureExtraction` engine from `radiomics-tools` is completely ported to pure Python in
+> `qradiomics.feature.rtools` (`numpy` + `scipy`, with `SimpleITK` for image I/O only). It natively supports **IBSI-1 standardized extraction** while simultaneously extracting the legacy C++-compatible features in the same workflow. Combined with `qradiomics.io.dicom.pet_suv` (**IBSI-SUV v3.1**), **`qradiomics` achieves full IBSI compliance on its own without depending on `pyradiomics` or `pysera`** (`pyradiomics` and `pysera` are optional engines extracted alongside for cross-engine comparison).
 
 Radiomics research CLI. `qr` does two things equally well:
 
@@ -55,7 +55,7 @@ The canonical radiomics data flow has four stages (`data → image → features 
 # Atomic tasks
 qr convert dicom-series / rtstruct / manifest-from-dir
 qr extract        -m manifest.csv -p <pattern> -o features.csv
-qr extract        -m manifest.csv -o features.csv --engine pyradiomics,pysera,rtools  # multi-engine
+qr extract        -m manifest.csv -o features.csv --engine rtools,pyradiomics,pysera  # native + optional comparison engines
 qr results merge  -f features.csv -c clinical.csv -o analysis_ready.csv
 qr analyze {survival,classify,importance} -i analysis_ready.csv ...
 qr ml {train,predict,evaluate} ...
@@ -103,23 +103,16 @@ Env knobs: `QR_REPO_URL`, `QR_REPO_DIR`, `QR_BRANCH`, `QR_PYTHON`, `QR_VENV` (se
 pip install qradiomics
 ```
 
-That is the whole install as of **0.9.7**, and it takes well under a minute with no compiler. It
-gives you the CLI, the **native pure-Python `rtools` radiomics engine** (`qr extract --engine rtools`, including its opt-in **IBSI-1** profile `rtools_ibsi=True`), conversion (including IBSI-SUV v3.1 PET), preprocessing, PHI
-handling, LIDC, 3D shape, deformable registration, longitudinal contour analysis, and the survival/ML benchmark commands.
+That is the whole install as of **0.9.7**, and it takes well under a minute with no compiler. Because `qradiomics.feature.rtools` is a 100% pure-Python engine (`numpy` + `scipy` + `SimpleITK`) with native **IBSI-1** support alongside legacy C++-compatible features, **`qradiomics` provides self-contained IBSI-1 feature extraction and IBSI-SUV v3.1 PET normalization out of the box without depending on `pyradiomics` or `pysera`**. You also get full DICOM/RTSTRUCT conversion, preprocessing, PHI handling, LIDC, 3D shape (`AHSN`, `spic6`, solid-core remodeling), deformable registration, longitudinal contour QC, and the survival/ML benchmark commands.
 
-**To additionally enable the `pyradiomics` engine (`--engine pyradiomics`):**
+**Optional comparison engines (`pyradiomics` / `pysera`):**
+
+`pyradiomics` and `pysera` are optional engines that we commonly extract alongside our native `rtools` (IBSI-1 + legacy) engine for cross-engine comparison (`qr extract --engine rtools,pyradiomics,pysera`):
 
 ```bash
 pip install "pyradiomics @ git+https://github.com/AIM-Harvard/pyradiomics.git"
+pip install qradiomics[pysera]
 ```
-
-pyradiomics is an optional extra rather than a hard dependency, because it cannot be installed from PyPI
-at all on Python 3.10+: its wheels stop at cp39 and its 3.1.0 sdist declares `3.0.1a1` in its
-metadata, so pip discards it. Requiring it used to make plain `pip install qradiomics` fail on every
-modern interpreter, Colab included. Installing from upstream git gives pip a build that satisfies the
-requirement, and `qr extract` says so if the engine is missing.
-
-This is a pyradiomics packaging limitation, not a qradiomics one—and as of `v0.9.7`, `qr extract --engine rtools` works out of the box with plain `pip install qradiomics`.
 
 ## Learn: the medimage course
 
@@ -132,24 +125,24 @@ results merge` → `qr analyze survival`. No install required: every chapter ope
 
 ## Background: three earlier projects, unified
 
-`qradiomics` is the modern Python successor of three earlier Choi Lab radiomics codebases. The MATLAB pipelines, the ITK / Ruffus C++ tools, and the Docker-based screening workflow are distilled here into a single Click CLI built on PyRadiomics, scikit-learn, and lifelines:
+`qradiomics` is the modern Python successor of three earlier Choi Lab radiomics codebases. The MATLAB pipelines, the ITK / Ruffus C++ tools, and the Docker-based screening workflow are distilled here into a single self-contained Click CLI built on `numpy`, `scipy`, `SimpleITK`, `scikit-learn`, and `lifelines` (with optional comparison adapters for `PyRadiomics` and `PySERA`):
 
 | Earlier project | Stack | Role | This repo |
 |---|---|---|---|
 | [taznux/lung-image-analysis](https://github.com/taznux/lung-image-analysis) | MATLAB · MIT | LIDC-IDRI nodule detection / segmentation / characterization | superseded |
-| [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools) | C++/Python (ITK, Ruffus) · MIT | DICOM tools, GrowCut segmentation, feature extraction pipeline | its `FeatureExtraction` binary is ported to native Python as the `rtools` engine (`qr extract --engine rtools`; ITK Python not required, `rtools_backend="cxx"` keeps the binary for parity checks, `rtools_ibsi=True` selects an opt-in IBSI-1 profile); DICOM tools/GrowCut remain superseded |
-| [choilab-jefferson/LungCancerScreeningRadiomics](https://github.com/choilab-jefferson/LungCancerScreeningRadiomics) | MATLAB / Python · GPL-3.0 | LIDC + LUNGx end-to-end screening workflow with AutoML | superseded (this repo re-implements the open subset under MIT using PyRadiomics) |
+| [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools) | C++/Python (ITK, Ruffus) · MIT | DICOM tools, GrowCut segmentation, feature extraction pipeline | its `FeatureExtraction` binary is ported to native Python as the `rtools` engine (`qr extract --engine rtools`; ITK Python not required, supports both IBSI-1 standardization and legacy C++-exact extraction simultaneously, while `rtools_backend="cxx"` keeps the binary for parity checks); DICOM tools/GrowCut remain superseded |
+| [choilab-jefferson/LungCancerScreeningRadiomics](https://github.com/choilab-jefferson/LungCancerScreeningRadiomics) | MATLAB / Python · GPL-3.0 | LIDC + LUNGx end-to-end screening workflow with AutoML | superseded (this repo re-implements the open subset under MIT in pure Python) |
 
 The AHSN shape descriptor pipeline (CMPB 2014) and the spiculation quantification pipeline (CMPB 2021, companion to [choilab-jefferson/CIR](https://github.com/choilab-jefferson/CIR)) are re-integrated in `qradiomics.shape`. The longitudinal CBCT / delta-radiomics workflows (ASTRO / AAPM 2026) will be released here after publication.
 
 ## Install
 
 ```bash
-pip install qradiomics              # core CLI + library from PyPI
+pip install qradiomics              # core CLI + native pure-Python rtools (C++-exact & IBSI-1) + IBSI-SUV v3.1 PET
 pip install qradiomics[rtstruct]    # plus rt-utils for `qr convert rtstruct`
 pip install qradiomics[elastix]     # plus itk-elastix for `qr register --backend elastix`
-pip install qradiomics[pysera]      # plus the PySERA extraction engine (`qr extract --engine pysera`)
-pip install qradiomics[pysera-deep] # + torch/torchvision for PySERA's deep-feature extraction mode
+pip install qradiomics[pysera]      # optional: PySERA extraction engine (`qr extract --engine pysera`)
+pip install qradiomics[pysera-deep] # optional: + torch/torchvision for PySERA's deep-feature extraction mode
 ```
 
 Or for development (editable mode):
@@ -159,7 +152,7 @@ cd qradiomics
 pip install -e .
 ```
 
-Python 3.11 or newer is required. PyRadiomics, SimpleITK, lifelines, scikit-learn, statsmodels, scipy, and pandas are pulled in as dependencies.
+Python 3.11 or newer is required. Native IBSI-1 and `rtools` extraction rely only on standard scientific Python packages (`numpy`, `scipy`, `SimpleITK`), with `lifelines`, `scikit-learn`, `statsmodels`, and `pandas` powering the statistical and ML modeling stages.
 
 After install, `qr`, `qradiomics`, and `qrdx` are available on `$PATH` and point at `qradiomics.cli.main:cli`.
 
@@ -446,7 +439,7 @@ Each entry point writes a JSON/CSV report next to the script; no manual gluing r
 | `qr register` | image | Rigid / affine / deformable registration (`--backend {sitk,plastimatch,elastix}`, `--stages`) and Scenario C mask transfer |
 | `qr hu-correct` | image | Histogram-match CBCT to a reference CT |
 | `qr longitudinal` | image/QC | Longitudinal RTSTRUCT session pairing, contour trajectory, outlier flags, validity checks, surface displacement & noise (`{sessions,trajectory,flags,validity,surface,noise,run}`) |
-| `qr extract` | features | Multi-engine feature extraction → `features.csv` (`--engine pyradiomics,pysera,rtools`; `rtools` runs natively in pure Python with optional `rtools_ibsi=True` IBSI-1 profile) |
+| `qr extract` | features | Multi-engine feature extraction → `features.csv` (`--engine rtools,pyradiomics,pysera`; native pure-Python `rtools` extracts both IBSI-1 and legacy features, with optional `pyradiomics`/`pysera` for cross-comparison) |
 | `qr shape extract` | features | AHSN + spiculation + 3D solid-core remodeling & contour-set descriptors |
 | `qr delta` | features | DeltaPair (A - B) + trend slope per patient across timepoints |
 | `qr results merge` | features | `features.csv` + `clinical.csv` → `analysis_ready.csv` |
@@ -565,21 +558,20 @@ from qradiomics.shape import solid_remodeling, contour_set
 
 See `tests/shape/` for end-to-end usage on analytic shapes (sphere / spiked-sphere / phantoms).
 
-## Native Pure-Python `rtools` Engine & IBSI-1 Profile (`qradiomics.feature.rtools`, `v0.9.7`)
+## Native Pure-Python `rtools` Engine & Self-Contained IBSI-1 Support (`qradiomics.feature.rtools`, `v0.9.7`)
 
-As of **`v0.9.7`**, the legacy C++ `FeatureExtraction` binary from [`taznux/radiomics-tools`](https://github.com/taznux/radiomics-tools) (ITK 5.1.2) is completely ported to pure Python (`numpy` + `scipy`, with `SimpleITK` for image I/O only). Neither ITK Python nor a compiled C++ binary is required.
+As of **`v0.9.7`**, the legacy C++ `FeatureExtraction` binary from [`taznux/radiomics-tools`](https://github.com/taznux/radiomics-tools) (ITK 5.1.2) is completely ported to pure Python (`numpy` + `scipy`, with `SimpleITK` for image I/O only). Neither ITK Python nor a compiled C++ binary is required, and **`qradiomics` now supports IBSI-1 feature extraction natively without depending on `pyradiomics` or `pysera`**. In our standard research workflows, we extract **both IBSI-1 standardized features and legacy `rtools` features simultaneously** (and optionally include `pyradiomics` / `pysera` alongside for multi-engine comparison).
 
-- **Exact C++ Parity (`ibsi=False`, default)**: `feature_text()` reproduces the C++ binary's output file line-for-line across all six families (`2 i g s c r`: largest-slice 2D, intensity statistics, geometry, shape statistics, GLCM, and GLRLM), and `extract_features()` returns the parsed scalar dictionary. Setting `rtools_backend="cxx"` retains optional parity-check execution against the compiled C++ binary (`tests/test_rtools_parity.py`).
-- **Opt-In IBSI-1 Reference Profile (`ibsi=True` / `rtools_ibsi=True`)**: Implements the IBSI-1 reference manual definitions for the `rtools` feature families—intensity statistics (`stat_*`, 18 features), voxel-based morphology (`morph_vol_approx`, `morph_pca_*`), GLCM (`cm_*`, 25 features), and GLRLM (`rlm_*`, 16 features)—across all **six IBSI aggregation modes** (`2D_avg`, `2D_comb`, `2_5D_avg`, `2_5D_comb`, `3D_avg`, `3D_comb`) with fixed bin size (`bin_width`) or fixed bin number (`bin_number`, default 64) discretization, verified against the IBSI-1 digital phantom (`tests/fixtures/ibsi1_digital_phantom.json`, `tests/test_rtools_ibsi.py`).
+- **Self-Contained IBSI-1 Standardization (`ibsi=True` / `rtools_ibsi=True`)**: Implements the IBSI-1 reference manual definitions directly inside `qradiomics`—intensity statistics (`stat_*`, 18 features), voxel-based morphology (`morph_vol_approx`, `morph_pca_*`), GLCM (`cm_*`, 25 features), and GLRLM (`rlm_*`, 16 features)—across all **six IBSI aggregation modes** (`2D_avg`, `2D_comb`, `2_5D_avg`, `2_5D_comb`, `3D_avg`, `3D_comb`) with fixed bin size (`bin_width`) or fixed bin number (`bin_number`, default 64) discretization, verified against the IBSI-1 digital phantom (`tests/fixtures/ibsi1_digital_phantom.json`, `tests/test_rtools_ibsi.py`).
+- **Simultaneous Legacy C++-Exact Extraction (`ibsi=False`)**: `feature_text()` and `extract_features()` reproduce the legacy C++ binary's output line-for-line across all six families (`2 i g s c r`: largest-slice 2D, intensity statistics, geometry, shape statistics, GLCM, and GLRLM), preserving 100% continuity with prior CHOI Lab studies (`rtools_backend="cxx"` retains optional parity-check execution against the compiled C++ binary via `tests/test_rtools_parity.py`).
 
 ```python
 from qradiomics.feature.rtools import extract_features, feature_text
 
-# 1. Default C++-exact rtools extraction (families: "2isgcr")
-feats_legacy = extract_features("CT.nrrd", "GTV-label.nrrd", label=1, feature_select="2isgcr", number_of_bins=64)
-
-# 2. Opt-in IBSI-1 reference profile (6 aggregation modes: 2D_avg, 2D_comb, 2_5D_avg, 2_5D_comb, 3D_avg, 3D_comb)
+# Extract both IBSI-1 standardized features and legacy C++-exact rtools features in pure Python
 feats_ibsi = extract_features("CT.nrrd", "GTV-label.nrrd", label=1, ibsi=True, bin_width=25.0)
+feats_legacy = extract_features("CT.nrrd", "GTV-label.nrrd", label=1, feature_select="2isgcr", number_of_bins=64)
+feats_combined = {**feats_ibsi, **feats_legacy}
 ```
 
 ## Repository Layout
@@ -638,9 +630,10 @@ Drop a new `*.yaml` into `qradiomics/data/templates/` to add a study; `qr patter
 
 ## Citing
 
-If you use this CLI in published work, please cite the relevant upstream papers. PyRadiomics and the NSCLC-Radiomics cohort are the two essential citations for any qradiomics-derived feature analysis:
+If you use this CLI in published work, please cite the Choi Lab radiomics papers below together with the relevant upstream cohort or reference standard (such as IBSI-1, the NSCLC-Radiomics cohort, or PyRadiomics when using `--engine pyradiomics`):
 
-- **PyRadiomics**: van Griethuysen JJM, Fedorov A, Parmar C, et al. *Computational Radiomics System to Decode the Radiographic Phenotype.* Cancer Research 2017; 77(21):e104-e107. [doi:10.1158/0008-5472.CAN-17-0339](https://doi.org/10.1158/0008-5472.CAN-17-0339)
+- **IBSI-1 Reference Standard**: Zwanenburg A, Vallières M, Abdalah MA, et al. *The Image Biomarker Standardization Initiative: Standardized Quantitative Radiomics for High-Throughput Image-based Phenotyping.* Radiology 2020; 295(2):328-338. [doi:10.1148/radiol.2020191145](https://doi.org/10.1148/radiol.2020191145)
+- **PyRadiomics (when using `--engine pyradiomics`)**: van Griethuysen JJM, Fedorov A, Parmar C, et al. *Computational Radiomics System to Decode the Radiographic Phenotype.* Cancer Research 2017; 77(21):e104-e107. [doi:10.1158/0008-5472.CAN-17-0339](https://doi.org/10.1158/0008-5472.CAN-17-0339)
 - **NSCLC-Radiomics (TCIA LUNG1)**: Aerts HJWL, Velazquez ER, Leijenaar RTH, et al. *Decoding tumour phenotype by noninvasive imaging using a quantitative radiomics approach.* Nature Communications 2014; 5:4006. [doi:10.1038/ncomms5006](https://doi.org/10.1038/ncomms5006)
 
 If you build on the lung-screening lineage that this CLI grew out of, please additionally cite:

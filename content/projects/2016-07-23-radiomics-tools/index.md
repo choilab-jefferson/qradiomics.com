@@ -6,7 +6,7 @@ aliases:
 description: "> ⚠️ This project is no longer maintained. It has been superseded by QRadiomics, which provides a unified modern Python implementation. Image processing..."
 ---
 
-> ⚠️ **This project is no longer maintained.** It has been superseded by [QRadiomics](/qradiomics/) (`v0.9.7`), which provides a unified modern pure-Python implementation (`qradiomics.feature.rtools` reproduces the legacy C++ `FeatureExtraction` binary to printed precision without requiring ITK Python or a compiled binary, and adds an opt-in **IBSI-1** profile via `rtools_ibsi=True`).
+> ⚠️ **This project is no longer maintained.** It has been superseded by [QRadiomics](/qradiomics/) (`v0.9.7`), which provides a unified modern pure-Python implementation (`qradiomics.feature.rtools` reproduces the legacy C++ `FeatureExtraction` binary to printed precision without requiring ITK Python or a compiled binary, while natively supporting **IBSI-1** standardization alongside legacy feature extraction).
 
 Image processing tools and [ruffus](http://www.ruffus.org.uk/) based pipeline for radiomics feature analysis
 

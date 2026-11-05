@@ -60,10 +60,10 @@ curl -sSL https://raw.githubusercontent.com/choilab-jefferson/qradiomics/main/sc
 | Earlier project | Stack | Status |
 |---|---|---|
 | [taznux/lung-image-analysis](https://github.com/taznux/lung-image-analysis) | MATLAB | superseded |
-| [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools) | C++ / ITK / Ruffus | superseded (`FeatureExtraction` ported to pure Python as `qradiomics.feature.rtools` with opt-in IBSI-1 support) |
+| [taznux/radiomics-tools](https://github.com/taznux/radiomics-tools) | C++ / ITK / Ruffus | superseded (`FeatureExtraction` ported to pure Python as `qradiomics.feature.rtools` with native IBSI-1 + legacy extraction) |
 | [choilab-jefferson/LungCancerScreeningRadiomics](https://github.com/choilab-jefferson/LungCancerScreeningRadiomics) | MATLAB / Python | superseded |
 
-The feature extractors (including the native pure-Python `rtools` port with both C++-exact and IBSI-1 profiles), spiculation pipeline, and LIDC-IDRI workflow from all three are now available as pure Python under a single MIT-licensed package.
+The feature extractors (including the self-contained pure-Python `rtools` engine that simultaneously supports IBSI-1 standardization and legacy C++-exact features without requiring `pyradiomics` or `pysera`), spiculation pipeline, and LIDC-IDRI workflow from all three are now available as pure Python under a single MIT-licensed package.
 
 ## Reproducibility: published results re-confirmed
 
@@ -83,7 +83,7 @@ The LUNGx external validation result (AUC 0.756) matches the published number ex
 - **`qr tcia download`**: bulk-pull any TCIA collection with multi-process progress
 - **`qr convert dicom-series / rtstruct`**: DICOM CT/PET/MR + RTSTRUCT → NRRD, featuring full **IBSI-SUV v3.1** PET normalization (`BW`, `LBM`, `LBMJAMES128`, `LBMJANMA`, `IBW`, `BSA`), **Enhanced PET (`1.2.840.10008.5.1.4.1.1.130`)** support, 58/58 IBSI-SUV DRO parity, and case-insensitive ROI lookup
 - **`qr register` & `qr longitudinal`**: rigid/affine/deformable registration across `sitk`, `plastimatch`, and `itk-elastix` (`--backend {sitk,plastimatch,elastix} --stages`) plus longitudinal RTSTRUCT trajectory, surface displacement, and contour noise QC (`qr longitudinal {sessions,trajectory,flags,validity,surface,noise,run}`)
-- **`qr extract`**: multi-engine extraction (`--engine pyradiomics,pysera,rtools`), featuring a native pure-Python `rtools` engine (`qradiomics.feature.rtools`, zero C++ binary or ITK Python dependency) with opt-in **IBSI-1** support (`rtools_ibsi=True`), **IBSI-1** reference phantom parity (`pipelines/ibsi1/`), and bundled pattern templates (`nsclc-survival`, `ct-default`, …)
+- **`qr extract`**: self-contained pure-Python extraction via `qradiomics.feature.rtools` (simultaneously supporting **IBSI-1** standardization and legacy `rtools` features with zero C++/ITK or `pyradiomics`/`pysera` dependency), plus optional `pyradiomics` and `pysera` co-extraction (`--engine rtools,pyradiomics,pysera`) for cross-engine comparison, **IBSI-1** reference phantom parity (`pipelines/ibsi1/`), and bundled pattern templates (`nsclc-survival`, `ct-default`, …)
 - **`qr analyze survival / classify / importance`**: Cox PH, logistic regression, random-forest feature importance
 - **`qr ml train / predict / evaluate` & `qr bench`**: leakage-safe cross-validated model building and multi-model classification benchmarking (`LR/SVM/ExtraTrees/RF/GBM/MLP/XGB/LGBM/FLAML/TPOT`) with nested CV, HPO, and Youden's-J threshold calibration
 - **`qr workflow plan / scaffold / run`**: Nextflow / Prefect / inline pipeline assembly
