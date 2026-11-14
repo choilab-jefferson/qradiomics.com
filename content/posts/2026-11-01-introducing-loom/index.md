@@ -1,7 +1,7 @@
 ---
 title: "Introducing loom: A Zero-Dependency Sandboxed Leaf-Agent CLI for Reproducible Multi-Agent Workflows"
 date: "2026-11-01T12:00:00.000-05:00"
-lastmod: "2026-11-04T23:15:00.000-05:00"
+lastmod: "2026-11-13T21:25:00.000-05:00"
 math: true
 categories:
   - "news"
@@ -35,19 +35,19 @@ aliases:
   - /nexus-loom/
   - /2026/11/01/introducing-loom/
   - /projects/loom/
-description: "Introducing loom (v0.2.3), a dependency-free Go stdlib single-agent CLI with workspace sandboxing, multi-turn context piping (loom.context.v1), hard turn/token/time budgets, --phi local-model confinement, and hidden-test IBSI radiomics verification with nexus-lite."
+description: "Introducing loom (v0.3.2), a dependency-free Go stdlib single-agent CLI with workspace and --tools/glob confinement, shared-workspace per-file locking, background ML job tools (job_start/wait/log), shell-less run_readonly (git/glab), multi-turn context piping (loom.context.v1), hard budgets, --phi local-model confinement, and hidden-test IBSI radiomics verification with nexus-lite (v0.3.0)."
 ---
 
-Today we are releasing **[loom](https://github.com/choilab-jefferson/nexus.loom)** (`v0.2.3`, MIT License), a small, zero-dependency (**Go 1.22+ standard library only**) single-agent CLI engineered to execute one bounded coding or scientific task per run as an unattended leaf worker.
+Today we are releasing **[loom](https://github.com/choilab-jefferson/nexus.loom)** (`v0.3.2`, MIT License), a small, zero-dependency (**Go 1.22+ standard library only**) single-agent CLI engineered to execute one bounded coding or scientific task per run as an unattended leaf worker.
 
 Across our open-source computational oncology stack, each layer has a distinct responsibility:
 - **[qradiomics](/qradiomics/)** (`v0.9.7`, [PyPI](https://pypi.org/project/qradiomics/)) provides the domain-specific Python CLI (`qr`) and atomic library for DICOM/RTSTRUCT conversion, self-contained pure-Python **IBSI-1** (`qradiomics.feature.rtools`, simultaneously supporting IBSI-1 and legacy `rtools` features without requiring `pyradiomics`/`pysera`) & **IBSI-SUV v3.1** PET normalization, deformable registration (`sitk`, `plastimatch`, `elastix`), longitudinal contour QC (`qr longitudinal`), 3D shape biomarkers (`AHSN`, `spic6`, solid-core remodeling), and survival/ML benchmarking (`qr bench`).
 - **[medimage](/posts/2026-08-04-introducing-medimage/)** teaches those quantitative imaging workflows through a 13-chapter zero-setup Google Colab curriculum.
-- **[nexus-lite](/nexus-lite/)** (`v0.2.2`, [PyPI: `pip install nexus-lite`](https://pypi.org/project/nexus-lite/)) provides the zero-server multi-agent orchestration kernel (`dtach` PTYs, SQLite WAL Bus v1, 3-tier memory `stm`/`mtm`/`ltm`, parallel swarms, role pipelines, and zero-preinstall remote compute).
-- **`loom` (`nexus.loom` `v0.2.3`) is the deterministic leaf-worker binary**: one agent, one bounded task (or one composable turn via `loom.context.v1` stdin/stdout piping), a strict workspace sandbox, allowlisted command execution with timeout clamping (`--max-cmd-timeout`), hard turn/token/time budgets, and a resumable JSONL trace—with **zero external runtime dependencies**, **zero implicit host-state reads**, and **zero configuration files**.
+- **[nexus-lite](/nexus-lite/)** (`v0.3.0`, [PyPI: `pip install nexus-lite`](https://pypi.org/project/nexus-lite/)) provides the zero-server multi-agent orchestration kernel (`dtach`/stdlib PTYs, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledger primitives, parallel swarms, role pipelines, and zero-preinstall Colab/sandbox compute).
+- **`loom` (`nexus.loom` `v0.3.2`) is the deterministic leaf-worker binary**: one agent, one bounded task (or one composable turn via `loom.context.v1` stdin/stdout piping), strict workspace and capability/glob confinement (`--tools`, `--read-glob`/`--write-glob`), allowlisted command execution with timeout clamping (`--max-cmd-timeout`), background ML job tools (`job_*`), shell-less `run_readonly` (`git`/`glab`), hard budgets + tool-result compaction (`--max-tool-result-bytes`, `--keep-tool-results`), and a resumable JSONL trace—with **zero external runtime dependencies**, **zero implicit host-state reads**, and **zero configuration files**.
 
-- **Repository:** [github.com/choilab-jefferson/nexus.loom](https://github.com/choilab-jefferson/nexus.loom) · **Version:** `v0.2.3` · **License:** MIT
-- **Prebuilt Releases:** [github.com/choilab-jefferson/nexus.loom/releases](https://github.com/choilab-jefferson/nexus.loom/releases) (`loom-linux-amd64`, `loom-darwin-arm64`, `loom-darwin-amd64` + SHA-256 `checksums.txt`)
+- **Repository:** [github.com/choilab-jefferson/nexus.loom](https://github.com/choilab-jefferson/nexus.loom) · **Version:** `v0.3.2` · **License:** MIT
+- **Prebuilt Releases:** [github.com/choilab-jefferson/nexus.loom/releases](https://github.com/choilab-jefferson/nexus.loom/releases) (`loom-linux-amd64`, `loom-linux-arm64`, `loom-darwin-arm64`, `loom-darwin-amd64` + SHA-256 `checksums.txt`)
 - **Python Installer (via `nexus-lite` on PyPI):** `pip install nexus-lite && nexus-lite loom install`
 - **Interactive Google Colab Notebooks Featuring `loom`:**
   - **Loom Multi-Agent, 93-Test IBSI Radiomics & Remote Compute (`loom_multi_agent_colab.ipynb`):** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/loom_multi_agent_colab.ipynb)
@@ -60,12 +60,12 @@ Across our open-source computational oncology stack, each layer has a distinct r
 
 Full interactive coding terminals (`agy`, `claude`, `opencode`) excel at open-ended interactive sessions, but unattended multi-agent pipelines in Google Colab, CI runners, and hospital HPC clusters also require a **hermetic, single-shot leaf worker** that obeys strict operational contracts:
 
-1. **Zero Dependencies (Go Standard Library Only) & Zero Host-State Leakage**: `loom` compiles to a single static binary with no third-party Go modules (`go.mod` has zero `require` directives), no Node/Python runtime dependencies, no background daemon, and no interactive TTY prompts. In `v0.2.3`, `loom` reads **no implicit host Nexus state**—the caller owns all context via the prompt, `task_slice.context_files`, or explicit `--context-in` / `--context-out` (`loom.context.v1`) files.
-2. **Strict Workspace Sandbox, Command Allowlisting & Timeout Clamping**: File tools (`read_file`, `search`, `edit_file`, `write_file`) resolve symlinks and refuse any path escaping `--workspace` or matching deny globs. `run_command` executes only explicitly allowlisted `argv` prefixes (`--allow-cmd`, computed as $\text{global} \cap \text{agent} \cap \text{task}$), clamps per-command execution time via `--max-cmd-timeout` (default `300s`), never invokes a shell (`sh -c`), and rejects interpreter evaluation flags (`python -c`, `node -e`).
-3. **Composable Multi-Turn Context Piping (`loom.context.v1`)**: Each `loom` invocation answers one bounded turn, while `--context-out` and `--context-in` serialize and restore `loom.context.v1` JSON over files or Unix pipes (`-` for stdin/stdout)—allowing callers to chain turns across different providers (`anthropic` → `gemini` → `ollama`) or inspect and prune history between turns.
-4. **Hard Budgets & Machine-Readable Exit Codes**: Every invocation is bounded by turn (`--max-turns`), token (`--max-total-tokens`, `--max-output-tokens`), tool-call (`--max-tool-calls`), and wall-clock (`--deadline`) budgets. When a run finishes or hits a boundary, `loom` emits a structured exit code and JSON summary that **[nexus-lite](/nexus-lite/)** maps directly to retry, escalation, or provider fallback logic.
+1. **Zero Dependencies (Go Standard Library Only) & Zero Host-State Leakage**: `loom` compiles to a single static binary with no third-party Go modules (`go.mod` has zero `require` directives), no Node/Python runtime dependencies, no background daemon, and no interactive TTY prompts. In `v0.3.2`, `loom` reads **no implicit host Nexus state**—the caller owns all context via the prompt, `task_slice.context_files`, or explicit `--context-in` / `--context-out` (`loom.context.v1`) files.
+2. **Workspace Sandbox, Capability/Glob Confinement, Safe Edits & `run_readonly`**: File tools (`read_file`, `search`, `edit_file`, `write_file`) resolve symlinks, refuse paths escaping `--workspace` or deny globs, and support fine-grained `--tools`, `--read-glob` / `--write-glob` confinement (recoverable `path_not_allowed` / `tool_not_available` observations, terminating repeated refusals at `--max-disallowed-tool-requests` with `constraint_failure`). `edit_file` applies unique multi-block replacements (preserving CRLF/BOM) and returns a unified diff, while `write_file` enforces a SHA-256 stale-write guard against unread or externally modified files. `run_command` executes only explicitly allowlisted `argv` prefixes (`--allow-cmd`, computed as $\text{global} \cap \text{agent} \cap \text{task}$) with `--max-cmd-timeout` clamping (default `300s`), never invokes a shell (`sh -c`), and rejects interpreter eval flags (`python -c`, `node -e`). For read-only inspection without write/command access, `constraints.readonly_commands` enables shell-less `run_readonly` (`git` and `glab` allowlist, mutually exclusive with `allow_commands` and write tools).
+3. **Composable Multi-Turn Context Piping (`loom.context.v1`) & Tool-Result Compaction**: Each `loom` invocation answers one bounded turn, while `--context-out` and `--context-in` serialize and restore `loom.context.v1` JSON over files or Unix pipes (`-` for stdin/stdout)—allowing callers to chain turns across different providers (`anthropic` → `gemini` → `ollama`) or inspect and prune history between turns. To keep multi-turn prompts compact, `--max-tool-result-bytes` caps each tool output (default `16384`, preserving head+tail) and `--keep-tool-results K` retains only the last `K` tool results verbatim (`[loom:elided ...]` stubs for older turns) alongside prompt-cache breakpoints on the latest tool result.
+4. **Hard Budgets, Detached Background ML Jobs (`job_*`) & Structured Exit Codes**: Every invocation is bounded by turn (`--max-turns`), token (`--max-total-tokens`, `--max-output-tokens`), tool-call (`--max-tool-calls`), and wall-clock (`--deadline`) budgets. For long ML training runs or sweeps that exceed `run_command` timeouts, `job_start`, `job_status`, `job_log`, `job_wait`, and `job_kill` manage allowlisted background jobs in `<workspace>/.loom/jobs/` (persisting across `loom resume` and optionally surviving run exit via `detach: true`). When a run finishes or hits a boundary, `loom` emits a structured exit code and JSON summary that **[nexus-lite](/nexus-lite/)** maps directly to retry, escalation, or provider fallback logic.
 5. **Clinical `--phi` Local-Only Confinement & Secret Scrubbing**: Passing `--phi` enforces strict local-only model execution (refusing non-local cloud API endpoints). API keys (`*_API_KEY`, `*TOKEN*`) are automatically scrubbed from child-process environments and redacted from all error streams and traces.
-6. **Parallel Execution Safety (`flock`) & Atomic Checkpointing**: Multiple `loom` workers can run concurrently across subtasks. Each `--workspace` and `--trace` is guarded by a kernel-managed advisory `flock` (preventing collisions with zero stale lock files), and every turn is atomically checkpointed to `<trace>.ckpt` for instant `loom resume <trace>`.
+6. **Shared-Workspace Per-File Locking (`flock`) & Atomic Checkpointing**: Multiple `loom` workers can run concurrently on subtasks using distinct `--trace` files (each guarded by a non-blocking kernel `flock` with zero stale lock files) and **may now share a single `--workspace`**, coordinated by exclusive per-file advisory `flock` locks inside `write_file` and `edit_file`. Every turn is atomically checkpointed to `<trace>.ckpt` for instant `loom resume <trace>`.
 
 ---
 
@@ -79,8 +79,8 @@ pip install nexus-lite
 nexus-lite loom install
 
 # Option 2: Download checksum-verified prebuilt binary directly (e.g., Linux amd64 for Colab)
-curl -fsSL -o loom https://github.com/choilab-jefferson/nexus.loom/releases/download/v0.2.3/loom-linux-amd64
-curl -fsSL -o checksums.txt https://github.com/choilab-jefferson/nexus.loom/releases/download/v0.2.3/checksums.txt
+curl -fsSL -o loom https://github.com/choilab-jefferson/nexus.loom/releases/download/v0.3.2/loom-linux-amd64
+curl -fsSL -o checksums.txt https://github.com/choilab-jefferson/nexus.loom/releases/download/v0.3.2/checksums.txt
 grep loom-linux-amd64 checksums.txt | sed 's/loom-linux-amd64/loom/' | sha256sum -c -
 chmod +x loom && ./loom version
 
@@ -89,7 +89,7 @@ git clone https://github.com/choilab-jefferson/nexus.loom.git
 cd nexus.loom && make build   # produces ./bin/loom
 ```
 
-### 60-Second CLI Usage & Multi-Turn Context Piping (`v0.2.3`)
+### 60-Second CLI Usage & Multi-Turn Context Piping (`v0.3.2`)
 
 ```bash
 # 1. Offline smoke test (no model, no network, no API key)
@@ -139,20 +139,23 @@ Query live model IDs available to your credentials at any time with:
 loom models --provider gemini --json
 ```
 
-### Core CLI Flags & Subcommands (`v0.2.3`)
+### Core CLI Flags & Subcommands (`v0.3.2`)
 
 | Flag / Command | Purpose |
 | :--- | :--- |
 | `-p "<prompt>"` / `loom run --task-file task.json` | Execute a one-shot prompt or structured JSON task specification |
-| `--workspace <dir>` | Confine all file reads, edits, writes, and searches to `<dir>` (symlinks resolved) |
+| `--workspace <dir>` | Confine all file reads, edits, writes, and searches to `<dir>` (symlinks resolved; shared workspaces coordinate via per-file `flock`) |
+| `--tools <a,b>`, `--read-glob <G>`, `--write-glob <G>`, `--max-disallowed-tool-requests <N>` | Expose only listed built-in tools, confine file tools to workspace globs (recoverable refusal), and abort repeated refusals with `constraint_failure` |
 | `--context-in <file\|->`, `--context-out <file\|->` | Read/write multi-turn `loom.context.v1` conversation history JSON (supports `-` for Unix pipes across providers) |
-| `--allow-cmd "<prefix>"` | Allowlist a command prefix for `run_command` (repeatable; empty by default) |
-| `--max-cmd-timeout <S\|duration>` | Clamp `run_command` timeout per call (default `300s`; supports durations like `10m` or `LOOM_MAX_CMD_TIMEOUT`) |
+| `--allow-cmd "<prefix>"` | Allowlist a command prefix for `run_command` and `job_*` (repeatable; empty by default) |
+| `--max-cmd-timeout <S\|duration>` | Clamp `run_command` / `job_wait` timeout per call (default `300s`; supports durations like `10m` or `LOOM_MAX_CMD_TIMEOUT`) |
+| `--max-tool-result-bytes <N>`, `--keep-tool-results <K>` | Cap per-tool result bytes (default `16384`, head+tail) and retain only the last `K` tool results verbatim (`[loom:elided ...]` compaction) |
 | `--pass-env NAME[,PREFIX*]` | Pass extra environment variables to `run_command` children (ML vars like `PYTHONPATH`, `CUDA_*`, `HF_HOME` pass by default; secrets require exact name) |
 | `--no-agents-md` (`LOOM_NO_AGENTS_MD=1`) | Disable automatic loading of `<workspace>/AGENTS.md` into the system prompt |
 | `--max-turns`, `--max-total-tokens`, `--max-output-tokens`, `--max-tool-calls`, `--deadline` | Hard execution budgets per invocation |
 | `--phi` | Enforce local-only model endpoints for PHI/HIPAA workloads |
 | `--trace <file.jsonl>`, `--json` | Write per-turn JSONL execution trace and emit machine-readable final result |
+| `job_start` / `job_status` / `job_log` / `job_wait` / `job_kill` & `run_readonly` | Built-in tools for allowlisted background ML jobs (`.loom/jobs/`, optional `detach: true`) and shell-less read-only `git`/`glab` inspection (`constraints.readonly_commands`) |
 | `loom resume <trace.jsonl>` | Resume an interrupted (`130`) run from its atomic `<trace>.ckpt` checkpoint |
 | `loom capabilities --json` | Emit the machine-readable contract (available tools, providers, exit codes, version) |
 
@@ -161,7 +164,7 @@ loom models --provider gemini --json
 | Exit Code | Policy Constant | Meaning & Orchestrator Action |
 | :---: | :--- | :--- |
 | `0` | `policy.ExitOK` | Task completed within turn and token budgets (`ok`) |
-| `1` | `policy.ExitTaskFail` | Retryable task failure or `max_turns` exhausted (`task_failure`) |
+| `1` | `policy.ExitTaskFail` | Task failure: provider error, `max_turns` exhausted, tool-error strikes, or `constraint_failure` (`task_failure`) |
 | `2` | `policy.ExitHarnessErr` | Fatal harness/config error, missing key, lock collision, or `PolicyViolationError` (`harness_or_policy_error`) |
 | `3` | `policy.ExitEscalate` | Structured `escalation_required` JSON payload emitted on stdout (`escalation_required`) |
 | `4` | `policy.ExitBudget` | Token, wall-clock deadline, or tool-call budget exhausted (`budget`) |
@@ -169,9 +172,9 @@ loom models --provider gemini --json
 
 ---
 
-## Orchestrating `loom` from `nexus-lite v0.2.2` in Google Colab & Remote Compute
+## Orchestrating `loom` from `nexus-lite v0.3.0` in Google Colab & Remote Compute
 
-While `loom` is intentionally a single-agent CLI, **[nexus-lite](/nexus-lite/)** (`v0.2.2`, on [PyPI](https://pypi.org/project/nexus-lite/)) turns `loom` into a multi-agent team (`Orchestrator → Workers → Reviewer`) via `nexus_lite.loom` and `nexus_lite.demos.loom_multi_agent`, and can even ship `loom` workflows to remote hosts with zero pre-installation via `nexus_lite.compute`.
+While `loom` is intentionally a single-agent CLI, **[nexus-lite](/nexus-lite/)** (`v0.3.0`, on [PyPI](https://pypi.org/project/nexus-lite/)) turns `loom` into a multi-agent team (`Orchestrator → Workers → Reviewer`) via `nexus_lite.loom` and `nexus_lite.demos.loom_multi_agent`, turns `loom` into a persistent FIFO bus-driven team agent via `nexus-lite agent run analyst -- loom -p ... --context-in '{context_in}' --context-out '{context_out}'` (automatically promoting `loom.context.v1` state across bus messages), and can ship `loom` workflows to remote Colab or sandbox runtimes with zero pre-installation via `nexus_lite.compute`.
 
 ### 1. Explicit SHA-256 Installer & Python Subprocess Adapter (`nexus_lite.loom`)
 

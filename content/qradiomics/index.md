@@ -1,7 +1,7 @@
 ---
 title: "QRadiomics: Radiomics Research CLI"
 date: "2026-05-17T20:31:21.000-04:00"
-lastmod: "2026-11-04T23:15:00.000-05:00"
+lastmod: "2026-11-13T21:25:00.000-05:00"
 categories:
   - "research"
 tags:
@@ -33,7 +33,7 @@ schema: "software"
 
 - **LUNG1 (NSCLC-Radiomics) Survival Reproduction Colab Notebook (`examples/lung1_survival_colab.ipynb`):**  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/qradiomics/blob/main/examples/lung1_survival_colab.ipynb)
-- **QRadiomics + MedImage Multi-Agent Colab Notebook (`nexus-lite v0.2.2`):**  
+- **QRadiomics + MedImage Multi-Agent Colab Notebook (`nexus-lite v0.3.0`):**  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/qradiomics_medimage_colab_demo.ipynb)
 
 > **Self-contained pure-Python IBSI-1 & IBSI-SUV v3.1 radiomics—no external engine required (`v0.9.7`).**
@@ -316,8 +316,8 @@ As the field of medical physics shifts towards AI-driven automation, `qradiomics
 *   **Workflow Scaffolding:** Agents can generate complex Nextflow or Snakemake pipelines by simply describing the desired study design in natural language.
 *   **Self-Correction:** If a feature extraction fails due to DICOM header inconsistencies, the CLI provides structured error codes that an AI agent can use to suggest (or apply) data cleaning fixes.
 *   **Integration with Gemini Gems:** Our specialized [Medical Physics Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/) is pre-trained on `qradiomics` syntax, acting as a high-level **Radiomics Agent** that can write and execute your research code.
-*   **Colab-Ready Multi-Agent Orchestration (`nexus-lite v0.2.2` on PyPI):** Coordinate parallel agent swarms, 3-stage verification pipelines (`driver` → `navigator` → `verifier` → `refiner`), 5-turn peer-to-peer A2A reviews (`interact`), 5-phase autonomous cooperative problem-solving (`cooperate`), zero-preinstall remote compute (`nexus_lite.compute`), and 100% local Ollama GPU/CPU swarms (`gemma4:12b`, `qwen3.8:27b`, `lfm3:1.7b`) directly in Google Colab via **[nexus-lite](/posts/2026-10-28-introducing-nexus-lite/)** (`pip install nexus-lite`, [choilab-jefferson/nexus.lite](https://github.com/choilab-jefferson/nexus.lite)).
-*   **Sandboxed Leaf-Agent Execution & Hidden-Test Radiomics Benchmarks (`loom v0.2.3`):** Run deterministic, dependency-free single-agent leaf workers with workspace confinement, multi-turn `loom.context.v1` piping (`--context-in`/`--context-out`), `--phi` local-only model enforcement, and 93 hidden IBSI radiomics verification tests (`radiomics-firstorder`, `radiomics-texture`, `radiomics-stats`) via **[loom](/loom/)** ([choilab-jefferson/nexus.loom](https://github.com/choilab-jefferson/nexus.loom)).
+*   **Colab-Ready Multi-Agent Orchestration (`nexus-lite v0.3.0` on PyPI):** Coordinate parallel agent swarms, 3-stage verification pipelines (`driver` → `navigator` → `verifier` → `refiner`), 5-turn peer-to-peer A2A reviews (`interact`), 5-phase autonomous cooperative problem-solving (`cooperate`), `agent run` bus loops, `ballot` voting, detached `job` ledgers, zero-preinstall Colab/sandbox compute (`nexus_lite.compute`) & Colab Agent PCs, and 100% local Ollama GPU/CPU swarms (`gemma4:12b`, `qwen3.8:27b`, `lfm3:1.7b`) across 7 Colab notebooks via **[nexus-lite](/posts/2026-10-28-introducing-nexus-lite/)** (`pip install nexus-lite`, [choilab-jefferson/nexus.lite](https://github.com/choilab-jefferson/nexus.lite)).
+*   **Sandboxed Leaf-Agent Execution & Hidden-Test Radiomics Benchmarks (`loom v0.3.2`):** Run deterministic, dependency-free single-agent leaf workers with workspace and `--tools`/glob confinement, shared-workspace per-file locks, background `job_*` tools, shell-less `run_readonly`, multi-turn `loom.context.v1` piping (`--context-in`/`--context-out`), `--phi` local-only model enforcement, and 93 hidden IBSI radiomics verification tests (`radiomics-firstorder`, `radiomics-texture`, `radiomics-stats`) via **[loom](/loom/)** ([choilab-jefferson/nexus.loom](https://github.com/choilab-jefferson/nexus.loom)).
 
 ## AI-Agent Skill (Claude Code)
 

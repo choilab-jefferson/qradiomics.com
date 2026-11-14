@@ -1,7 +1,7 @@
 ---
 title: "About the Lab"
 date: "2026-06-05T15:22:00.000-04:00"
-lastmod: "2026-11-04T23:15:00.000-05:00"
+lastmod: "2026-11-13T21:25:00.000-05:00"
 description: "The Computational Healthcare & Oncology Informatics (CHOI) Lab at Thomas Jefferson University: our past foundations in 3D computer vision, present open-source radiomics & clinical AI stack, and future vision for contour-robust, portable clinical AI."
 schema: "about"
 ---
@@ -20,7 +20,7 @@ Led by **[Wookjin Choi, Ph.D.](/profile/)** (Associate Professor of Radiation On
 
 Our mission is to bridge the gap between computational innovation and routine clinical care through three guiding principles:
 1. **Glass-Box Interpretability:** Designing physically and biologically grounded biomarkers—such as 3D surface-normal geometry, conformal spiculation, functional organ-at-risk remodeling, and pathway-informed neural networks—that clinicians can inspect, troubleshoot, and trust.
-2. **End-to-End Reproducibility:** Releasing open-source, IBSI-standardized software packages—led by our flagship **[QRadiomics CLI](/qradiomics/)** (`v0.9.7`), **[nexus-lite](/nexus-lite/)** (`v0.2.2`) multi-agent orchestrator, **[loom](/loom/)** (`v0.2.3`) sandboxed leaf-agent CLI, and **[medimage](/posts/2026-08-04-introducing-medimage/)** 13-chapter Colab course—under the [CHOI Lab GitHub Organization (`choilab-jefferson`)](https://github.com/choilab-jefferson).
+2. **End-to-End Reproducibility:** Releasing open-source, IBSI-standardized software packages—led by our flagship **[QRadiomics CLI](/qradiomics/)** (`v0.9.7`), **[nexus-lite](/nexus-lite/)** (`v0.3.0`) multi-agent orchestrator, **[loom](/loom/)** (`v0.3.2`) sandboxed leaf-agent CLI, and **[medimage](/posts/2026-08-04-introducing-medimage/)** 13-chapter Colab course—under the [CHOI Lab GitHub Organization (`choilab-jefferson`)](https://github.com/choilab-jefferson).
 3. **"Data-Stay, Pipeline-Go" Portable Compute:** Enabling multi-institutional collaboration not by moving sensitive patient data across hospital firewalls, but by shipping portable pipelines and self-contained, secured computing environments directly to where clinical data resides.
 
 ---
@@ -42,8 +42,8 @@ Today, the CHOI Lab has unified its legacy MATLAB and C++ codebases into a moder
 
 ### **A. Unified Open-Source Software & Education Stack**
 * **[`qradiomics`](/qradiomics/) (`qr` CLI `v0.9.7`, MIT, [PyPI](https://pypi.org/project/qradiomics/)):** End-to-end radiomics CLI and Python library featuring TCIA automation, DICOM/RTSTRUCT/Enhanced PET conversion, **self-contained pure-Python IBSI-1 & IBSI-SUV v3.1 PET standardization** (`qradiomics.feature.rtools` & `qradiomics.io.dicom.pet_suv`—no dependency on `pyradiomics` or `pysera` required), simultaneous extraction of **IBSI-1 and legacy C++-compatible `rtools` features** (with optional `pyradiomics`/`pysera` co-extraction for cross-engine comparison), deformable registration (`sitk`, `plastimatch`, `elastix`), longitudinal contour QC (`qr longitudinal`), 3D shape (`AHSN`, `spic6`), Nextflow/Prefect workflow scaffolding, and reproduction of **8 published studies** out of the box.
-* **[`nexus-lite`](/nexus-lite/) (`v0.2.2`, MIT, [PyPI](https://pypi.org/project/nexus-lite/)):** Zero-server Python multi-agent orchestration kernel (`dtach` PTYs, SQLite WAL Bus v1, 3-tier memory `stm`/`mtm`/`ltm`, `NEXUS_SENSITIVITY=phi` local Ollama routing, zero-preinstall remote compute `nexus_lite.compute`, and **6 interactive Google Colab notebooks**).
-* **[`loom`](/loom/) (`v0.2.3`, MIT, [GitHub](https://github.com/choilab-jefferson/nexus.loom)):** Zero-dependency Go stdlib single-agent leaf CLI with strict workspace sandboxing, allowlisted command execution, hard turn/token/time budgets, `loom.context.v1` piping, and `--phi` local-only model confinement.
+* **[`nexus-lite`](/nexus-lite/) (`v0.3.0`, MIT, [PyPI](https://pypi.org/project/nexus-lite/)):** Zero-server Python multi-agent orchestration kernel (`dtach`/stdlib PTYs, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledger primitives, `NEXUS_SENSITIVITY=phi` local Ollama routing, zero-preinstall Colab/sandbox remote compute & Agent PCs, and **7 interactive Google Colab notebooks**).
+* **[`loom`](/loom/) (`v0.3.2`, MIT, [GitHub](https://github.com/choilab-jefferson/nexus.loom)):** Zero-dependency Go stdlib single-agent leaf CLI with strict workspace and `--tools`/`--read-glob`/`--write-glob` confinement, shared-workspace per-file locking, allowlisted command execution, background ML `job_*` tools, shell-less `run_readonly`, hard budgets + tool-result compaction, `loom.context.v1` piping, and `--phi` local-only model confinement.
 * **[`medimage`](/posts/2026-08-04-introducing-medimage/) & [Computational Medical Physicist Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/):** Free 13-chapter hands-on Google Colab course and specialized Gemini AI co-pilot for medical physics and radiomics.
 
 ### **B. Core Clinical Research Pillars**
