@@ -1,7 +1,7 @@
 ---
 title: "Introducing qradiomics: A Unified Radiomics CLI for Reproducible Research"
 date: "2026-05-20T17:00:00.000-04:00"
-lastmod: "2026-11-13T21:25:00.000-05:00"
+lastmod: "2026-11-14T18:30:00.000-05:00"
 categories:
   - "news"
   - "research"
@@ -12,7 +12,8 @@ tags:
   - "CLI"
   - "Lung Cancer"
   - "Open Source"
-  - "PyRadiomics"
+  - "IBSI-1"
+  - "IBSI-SUV"
   - "TCIA"
   - "Reproducibility"
   - "LIDC-IDRI"
@@ -29,25 +30,25 @@ cover:
   relative: true
 aliases:
   - /2026/05/20/introducing-qradiomics/
-description: "Introducing qradiomics, a unified Python CLI and library to automate radiomics research pipelines from DICOM to published-grade survival models."
+description: "Introducing qradiomics (v0.9.8), a unified pure-Python CLI and library with self-contained IBSI-1 extraction, pair manifests, and packaged Nextflow pipelines—with PyRadiomics completely optional."
 ---
 
-Today, we are thrilled to announce the official release of **[qradiomics](https://github.com/choilab-jefferson/qradiomics)** (`v0.9.7`), an open-source Command Line Interface (CLI) and **agent-friendly orchestrator** designed to bring reproducibility, scalability, and AI-driven automation to the world of radiomics research. It is available on PyPI at [pypi.org/project/qradiomics](https://pypi.org/project/qradiomics/).
+Today, we are thrilled to announce the latest release of **[qradiomics](https://github.com/choilab-jefferson/qradiomics)** (`v0.9.8`), an open-source Command Line Interface (CLI) and **agent-friendly orchestrator** designed to bring reproducibility, scalability, and AI-driven automation to the world of radiomics research. It is available on PyPI at [pypi.org/project/qradiomics](https://pypi.org/project/qradiomics/).
 
 - **LUNG1 (NSCLC-Radiomics) Survival Reproduction Colab Notebook:**  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/qradiomics/blob/main/examples/lung1_survival_colab.ipynb)
-- **QRadiomics + MedImage Multi-Agent Colab Notebook (`nexus-lite v0.3.0`):**  
+- **QRadiomics + MedImage Multi-Agent Colab Notebook (`nexus-lite v0.3.1`):**  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/qradiomics_medimage_colab_demo.ipynb)
 
 ## What is qradiomics?
 
-`qradiomics` (command: `qr`) is a radiomics research CLI built for the full data flow from raw DICOM to published-grade results:
+`qradiomics` (command: `qr` / `qrdx`) is a radiomics research CLI built for the full data flow from raw DICOM to published-grade results:
 
 ```
-DICOM download → conversion → feature extraction → clinical merge → modeling
+selection (pair manifest) → conversion → feature extraction → clinical merge → modeling
 ```
 
-Each step is a single atomic CLI command. Pipelines are assembled from those atomic commands using plain JSON plans, executed by Nextflow (per-patient parallel), Prefect, or inline. One command gets you started:
+Each step is a single atomic CLI command. Pipelines are assembled from those atomic commands using plain JSON plans, executed locally via the default **`inline`** thread-pool executor, at scale via the single packaged **Nextflow** pipeline (`qr workflow run plan.json --executor nextflow`, supporting `-resume`, `--profile local|slurm`, `--container`), or via Prefect (`--executor prefect`). One command gets you started:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/choilab-jefferson/qradiomics/main/scripts/kickoff.sh | bash
@@ -83,13 +84,13 @@ The LUNGx external validation result (AUC 0.756) matches the published number ex
 - **`qr tcia download`**: bulk-pull any TCIA collection with multi-process progress
 - **`qr convert dicom-series / rtstruct`**: DICOM CT/PET/MR + RTSTRUCT → NRRD, featuring full **IBSI-SUV v3.1** PET normalization (`BW`, `LBM`, `LBMJAMES128`, `LBMJANMA`, `IBW`, `BSA`), **Enhanced PET (`1.2.840.10008.5.1.4.1.1.130`)** support, 58/58 IBSI-SUV DRO parity, and case-insensitive ROI lookup
 - **`qr register` & `qr longitudinal`**: rigid/affine/deformable registration across `sitk`, `plastimatch`, and `itk-elastix` (`--backend {sitk,plastimatch,elastix} --stages`) plus longitudinal RTSTRUCT trajectory, surface displacement, and contour noise QC (`qr longitudinal {sessions,trajectory,flags,validity,surface,noise,run}`)
-- **`qr extract`**: self-contained pure-Python extraction via `qradiomics.feature.rtools` (simultaneously supporting **IBSI-1** standardization and legacy `rtools` features with zero C++/ITK or `pyradiomics`/`pysera` dependency), plus optional `pyradiomics` and `pysera` co-extraction (`--engine rtools,pyradiomics,pysera`) for cross-engine comparison, **IBSI-1** reference phantom parity (`pipelines/ibsi1/`), and bundled pattern templates (`nsclc-survival`, `ct-default`, …)
+- **`qr extract` & `qr select validate`**: contract-checked `.parquet` / `.csv` pair manifests (`qr select validate`, with `pandas` and `pyarrow` built into core dependencies) feeding self-contained pure-Python extraction via `qradiomics.feature.rtools` (`--engine rtools`, simultaneously supporting **IBSI-1** standardization and legacy `rtools` features with zero C++/ITK or `pyradiomics`/`pysera` dependency), plus strictly optional `pyradiomics` and `pysera` co-extraction (`--engine rtools,pyradiomics,pysera`) for cross-engine comparison, **IBSI-1** reference phantom parity (`pipelines/ibsi1/`), and bundled pattern templates (`nsclc-survival`, `ct-default`, …)
 - **`qr analyze survival / classify / importance`**: Cox PH, logistic regression, random-forest feature importance
 - **`qr ml train / predict / evaluate` & `qr bench`**: leakage-safe cross-validated model building and multi-model classification benchmarking (`LR/SVM/ExtraTrees/RF/GBM/MLP/XGB/LGBM/FLAML/TPOT`) with nested CV, HPO, and Youden's-J threshold calibration
-- **`qr workflow plan / scaffold / run`**: Nextflow / Prefect / inline pipeline assembly
+- **`qr workflow plan / show / run`**: declarative JSON/YAML workflow plans executed via **`inline`** (default), packaged **Nextflow** (`qr workflow run plan.json --executor nextflow`, `QR_PRE -> QR_CASE -> QR_PAIR -> QR_POST` with `-resume` and `--profile local|slurm`), or Prefect
 - **`qr anonymize`**: strip PHI from DICOM trees (PS3.15 Annex E)
-- **`qradiomics.shape` & `qradiomics.deep`**: Python re-implementations of the Choi 2014 AHSN nodule detector, Choi 2021 spiculation quantifier, 3D solid-core remodeling (`solid_remodeling`), longitudinal contour-set geometry (`contour_set`), and CT-FM small-ROI compartment pooling & subspace denoising (`qradiomics.deep`, `qradiomics.atomic.denoise_subspace`)
-- **Agent-Ready Ecosystem**: Ships with a first-class Claude Code skill (`.claude/skills/qradiomics/`) and integrates directly with **[nexus-lite](/nexus-lite/)** (`v0.3.0` on [PyPI](https://pypi.org/project/nexus-lite/), with 7 Google Colab notebooks) and **[loom](/loom/)** (`v0.3.2` sandboxed single-agent leaf CLI)
+- **`qradiomics.shape` & `qradiomics.deep`**: Python re-implementations of the Choi 2014 AHSN nodule detector, Choi 2021 conformal cMCF spiculation quantifier (`spic_a`, `spic_b`, `roundness`, `Na`/`Nl`/`s1`/`s2`), 3D solid-core remodeling (`solid_remodeling`), longitudinal contour-set geometry (`contour_set`), and CT-FM small-ROI compartment pooling & subspace denoising (`qradiomics.deep`, `qradiomics.atomic.denoise_subspace`)
+- **Agent-Ready Ecosystem**: Ships with a first-class Antigravity / Claude Code skill (`.claude/skills/qradiomics/`) and integrates directly with **[nexus-lite](/nexus-lite/)** (`v0.3.1` on [PyPI](https://pypi.org/project/nexus-lite/), with 7 Google Colab notebooks) and **[loom](/loom/)** (`v0.3.2` sandboxed single-agent leaf CLI)
 
 ## Validated on four public cohorts
 

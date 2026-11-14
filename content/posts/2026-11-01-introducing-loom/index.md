@@ -1,7 +1,7 @@
 ---
 title: "Introducing loom: A Zero-Dependency Sandboxed Leaf-Agent CLI for Reproducible Multi-Agent Workflows"
 date: "2026-11-01T12:00:00.000-05:00"
-lastmod: "2026-11-13T21:45:00.000-05:00"
+lastmod: "2026-11-14T18:30:00.000-05:00"
 math: true
 categories:
   - "news"
@@ -36,15 +36,15 @@ aliases:
   - /nexus-loom/
   - /2026/11/01/introducing-loom/
   - /projects/loom/
-description: "Introducing loom (v0.3.2), a dependency-free Go stdlib single-agent CLI with workspace and --tools/glob confinement, shared-workspace per-file locking, background ML job tools (job_start/wait/log), shell-less run_readonly (git/glab), multi-turn context piping (loom.context.v1), hard budgets, --phi local-model confinement, and hidden-test IBSI radiomics verification with nexus-lite (v0.3.0)."
+description: "Introducing loom (v0.3.2), a dependency-free Go stdlib single-agent CLI with workspace and --tools/glob confinement, shared-workspace per-file locking, background ML job tools (job_start/wait/log), shell-less run_readonly (git/glab), multi-turn context piping (loom.context.v1), hard budgets, --phi local-model confinement, and hidden-test IBSI radiomics verification with nexus-lite (v0.3.1)."
 ---
 
 Today we are releasing **[loom](https://github.com/choilab-jefferson/nexus.loom)** (`v0.3.2`, MIT License), a small, zero-dependency (**Go 1.22+ standard library only**) single-agent CLI engineered to execute one bounded coding or scientific task per run as an unattended leaf worker.
 
 Across our open-source computational oncology stack, each layer has a distinct responsibility:
-- **[qradiomics](/qradiomics/)** (`v0.9.7`, [PyPI](https://pypi.org/project/qradiomics/)) provides the domain-specific Python CLI (`qr`) and atomic library for DICOM/RTSTRUCT conversion, self-contained pure-Python **IBSI-1** (`qradiomics.feature.rtools`, simultaneously supporting IBSI-1 and legacy `rtools` features without requiring `pyradiomics`/`pysera`) & **IBSI-SUV v3.1** PET normalization, deformable registration (`sitk`, `plastimatch`, `elastix`), longitudinal contour QC (`qr longitudinal`), 3D shape biomarkers (`AHSN`, `spic6`, solid-core remodeling), and survival/ML benchmarking (`qr bench`).
+- **[qradiomics](/qradiomics/)** (`v0.9.8`, [PyPI](https://pypi.org/project/qradiomics/)) provides the domain-specific Python CLI (`qr`) and atomic library for DICOM/RTSTRUCT conversion, pair manifests (`qr select validate`), self-contained pure-Python **IBSI-1** (`qradiomics.feature.rtools`, simultaneously supporting IBSI-1 and legacy `rtools` features with `pyradiomics`/`pysera` strictly optional) & **IBSI-SUV v3.1** PET normalization, deformable registration (`sitk`, `plastimatch`, `elastix`), longitudinal contour QC (`qr longitudinal`), 3D shape biomarkers (`AHSN`, `spic6` cMCF, solid-core remodeling), packaged Nextflow execution (`qr workflow run --executor nextflow`), and survival/ML benchmarking (`qr bench`).
 - **[medimage](/posts/2026-08-04-introducing-medimage/)** teaches those quantitative imaging workflows through a 13-chapter zero-setup Google Colab curriculum.
-- **[nexus-lite](/nexus-lite/)** (`v0.3.0`, [PyPI: `pip install nexus-lite`](https://pypi.org/project/nexus-lite/)) provides the zero-server multi-agent orchestration kernel (`dtach`/stdlib PTYs, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledger primitives, parallel swarms, role pipelines, and zero-preinstall Colab/sandbox compute).
+- **[nexus-lite](/nexus-lite/)** (`v0.3.1`, [PyPI: `pip install nexus-lite`](https://pypi.org/project/nexus-lite/)) provides the zero-server multi-agent orchestration kernel (`dtach`/stdlib PTYs with Google Drive FUSE `/tmp` socket fallback, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledger primitives, parallel swarms, role pipelines, and zero-preinstall Colab/sandbox compute).
 - **`loom` (`nexus.loom` `v0.3.2`) is the deterministic leaf-worker binary**: one agent, one bounded task (or one composable turn via `loom.context.v1` stdin/stdout piping), strict workspace and capability/glob confinement (`--tools`, `--read-glob`/`--write-glob`), allowlisted command execution with timeout clamping (`--max-cmd-timeout`), background ML job tools (`job_*`), shell-less `run_readonly` (`git`/`glab`), hard budgets + tool-result compaction (`--max-tool-result-bytes`, `--keep-tool-results`), and a resumable JSONL trace—with **zero external runtime dependencies**, **zero implicit host-state reads**, and **zero configuration files**.
 
 - **Repository:** [github.com/choilab-jefferson/nexus.loom](https://github.com/choilab-jefferson/nexus.loom) · **Version:** `v0.3.2` · **License:** MIT
@@ -173,9 +173,9 @@ loom models --provider gemini --json
 
 ---
 
-## Orchestrating `loom` from `nexus-lite v0.3.0` in Google Colab & Remote Compute
+## Orchestrating `loom` from `nexus-lite v0.3.1` in Google Colab & Remote Compute
 
-While `loom` is intentionally a single-agent CLI, **[nexus-lite](/nexus-lite/)** (`v0.3.0`, on [PyPI](https://pypi.org/project/nexus-lite/)) turns `loom` into a multi-agent team (`Orchestrator → Workers → Reviewer`) via `nexus_lite.loom` and `nexus_lite.demos.loom_multi_agent`, turns `loom` into a persistent FIFO bus-driven team agent via `nexus-lite agent run analyst -- loom -p ... --context-in '{context_in}' --context-out '{context_out}'` (automatically promoting `loom.context.v1` state across bus messages), and can ship `loom` workflows to remote Colab or sandbox runtimes with zero pre-installation via `nexus_lite.compute`.
+While `loom` is intentionally a single-agent CLI, **[nexus-lite](/nexus-lite/)** (`v0.3.1`, on [PyPI](https://pypi.org/project/nexus-lite/)) turns `loom` into a multi-agent team (`Orchestrator → Workers → Reviewer`) via `nexus_lite.loom` and `nexus_lite.demos.loom_multi_agent`, turns `loom` into a persistent FIFO bus-driven team agent via `nexus-lite agent run analyst -- loom -p ... --context-in '{context_in}' --context-out '{context_out}'` (automatically promoting `loom.context.v1` state across bus messages), and can ship `loom` workflows to remote Colab or sandbox runtimes with zero pre-installation via `nexus_lite.compute`.
 
 ### 1. Explicit SHA-256 Installer & Python Subprocess Adapter (`nexus_lite.loom`)
 
@@ -218,7 +218,7 @@ To benchmark coding agents on real quantitative medical imaging math—where off
 | **`radiomics-texture`** | `glcm.py`<br>`glcm_features.py`<br>`glrlm.py`<br>`glrlm_features.py` | **34** | • **Mask-Aware 2D GLCM**: Symmetric normalized co-occurrence across $0^\circ, 45^\circ, 90^\circ, 135^\circ$ (only in-mask pairs), joint max, energy, contrast, homogeneity, entropy, correlation, autocorrelation<br>• **Mask-Aware 2D GLRLM**: Maximal contiguous run lengths per angle, SRE, LRE, GLNU, RLNU, Run Percentage ($N_r / N_p$), LGRE, HGRE |
 | **`radiomics-stats`** | `icc.py`<br>`fdr.py`<br>`standardise.py`<br>`cindex.py` | **26** | • **Reproducibility & Multiple Testing**: Two-way mixed consistency $\text{ICC}(3,1)$ and Benjamini–Hochberg monotone FDR $q$-values (preserving original feature order)<br>• **Leakage-Safe Modeling**: Train-only z-score (`fit_zscore` / `apply_zscore`) and Harrell's survival concordance index ($C$-index) with censoring and tie rules |
 
-*(For full DICOM PET **IBSI-SUV v3.1** standardization—including `BW`, `LBM`, `LBMJAMES128`, `LBMJANMA`, `IBW`, `BSA`, `START`/`ADMIN` decay, and frame-duration $t_{\text{ave}}$ scan-start reconstruction—see **[qradiomics](/qradiomics/) `v0.9.7`**'s native `qradiomics.io.dicom.pet_suv` engine.)*
+*(For full DICOM PET **IBSI-SUV v3.1** standardization—including `BW`, `LBM`, `LBMJAMES128`, `LBMJANMA`, `IBW`, `BSA`, `START`/`ADMIN` decay, and frame-duration $t_{\text{ave}}$ scan-start reconstruction—see **[qradiomics](/qradiomics/) `v0.9.8`**'s native `qradiomics.io.dicom.pet_suv` engine.)*
 
 Run the `loom` radiomics multi-agent benchmarks and zero-preinstall remote compute bundle locally or in Google Colab:
 

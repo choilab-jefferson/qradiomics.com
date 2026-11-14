@@ -1,7 +1,7 @@
 ---
 title: "Introducing medimage: A Free Colab Course in Quantitative Medical Image Analysis"
 date: "2026-08-04T09:00:00.000-04:00"
-lastmod: "2026-11-04T23:15:00.000-05:00"
+lastmod: "2026-11-14T18:30:00.000-05:00"
 categories:
   - "news"
   - "research"
@@ -157,7 +157,7 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-As of **`qradiomics v0.9.7`**, `qradiomics` itself installs cleanly from PyPI in seconds (`pip install qradiomics`) with **full self-contained pure-Python IBSI-1 feature extraction (`qradiomics.feature.rtools`, 270/270 IBSI-1 digital phantom parity + 97 legacy C++-exact features = 367 features) and IBSI-SUV v3.1 PET normalization (`qradiomics.io.dicom.pet_suv`, 58/58 DRO parity)**—requiring no C++ compiler, `pyradiomics`, or `pysera`. Because Chapters 9, 11, 12, and 13 also demonstrate cross-engine comparison (`--engine pyradiomics,pysera`) and reproduce the Aerts 2014 `nsclc-survival` signature, those four notebooks additionally install **pyradiomics** as an optional comparison engine from upstream git (since it publishes no PyPI wheel for Python 3.10+). In Colab that optional build cost is paid once per session and only in those notebooks; every other chapter installs in well under a minute.
+As of **`qradiomics v0.9.8`**, `qradiomics` itself installs cleanly from PyPI in seconds (`pip install qradiomics`) with **full self-contained pure-Python IBSI-1 feature extraction (`qradiomics.feature.rtools`, 270/270 IBSI-1 digital phantom parity + 97 legacy C++-exact features = 367 features) and IBSI-SUV v3.1 PET normalization (`qradiomics.io.dicom.pet_suv`, 58/58 DRO parity)**—requiring no C++ compiler, `pyradiomics`, or `pysera`. In `medimage`, **`pyradiomics` is completely optional** (commented out in `requirements.txt`): `medimage_data.fetch_lung1_cohort()` automatically falls back to pure-Python `--engine rtools` when `pyradiomics` is not installed, while Chapters 9, 11, 12, and 13 optionally show how to install **pyradiomics** from upstream git if you wish to run multi-engine cross-comparisons (`--engine pyradiomics,pysera`) or the legacy Aerts 2014 `nsclc-survival` wavelet/LoG pattern. Every other chapter installs in well under a minute.
 
 ## No imaging data in the repo
 
@@ -174,8 +174,8 @@ the licensing clean, and it keeps the provenance of every image one function cal
 
 ## Built alongside QRadiomics
 
-Chapters 5, 8, 9, 10, 11, 12 and 13 run the same `qr` CLI and Python APIs that power **[QRadiomics](/qradiomics/)** (`v0.9.7`), Choi
-Lab's self-contained, IBSI-compliant radiomics research toolkit. Chapter 8 uses `qradiomics.io.dicom.pet_suv` (**IBSI-SUV v3.1**), Chapter 9 demonstrates both pure-Python `qradiomics.feature.rtools` (**IBSI-1** `270/270` digital phantom parity + `97` legacy features = `367` features) and multi-engine comparison (`pyradiomics`, `pysera`), and Chapter 13 reproduces the Aerts 2014 NSCLC-Radiomics Cox PH result
+Chapters 5, 8, 9, 10, 11, 12 and 13 run the same `qr` CLI and Python APIs that power **[QRadiomics](/qradiomics/)** (`v0.9.8`), Choi
+Lab's self-contained, IBSI-compliant radiomics research toolkit (`pyradiomics` optional). Chapter 8 uses `qradiomics.io.dicom.pet_suv` (**IBSI-SUV v3.1**), Chapter 9 demonstrates both pure-Python `qradiomics.feature.rtools` (**IBSI-1** `270/270` digital phantom parity + `97` legacy features = `367` features) and optional multi-engine comparison (`pyradiomics`, `pysera`), and Chapter 13 reproduces the Aerts 2014 NSCLC-Radiomics Cox PH result
 using the public `qr extract` → `qr results merge` → `qr analyze survival` pipeline. medimage is the
 teaching path into the same tools and data used in the lab's published research.
 

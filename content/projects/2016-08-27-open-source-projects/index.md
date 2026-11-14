@@ -1,7 +1,7 @@
 ---
 title: "Open source projects"
 date: "2026-05-20T22:00:40.000-04:00"
-lastmod: "2026-11-13T21:25:00.000-05:00"
+lastmod: "2026-11-14T18:30:00.000-05:00"
 aliases:
   - /portfolio/open-source-projects/
 description: "Active and legacy open-source projects from the CHOI Lab: qradiomics CLI, nexus-lite multi-agent orchestrator, loom sandboxed leaf-agent CLI, medimage Colab course, CIRDataset, PathCNN, and our portable compute architecture."
@@ -13,8 +13,8 @@ This page summarizes active and legacy open-source software, datasets, and educa
 
 | Layer | Project | Version & License | Links | Primary Role |
 | :--- | :--- | :--- | :--- | :--- |
-| **1. Domain CLI & Standardized Library** | **[`qradiomics`](/qradiomics/)** | `v0.9.7` · **MIT** | [GitHub](https://github.com/choilab-jefferson/qradiomics) · [PyPI](https://pypi.org/project/qradiomics/) · [Docs](/qradiomics/) | Unified Python radiomics CLI (`qr`): TCIA automation, DICOM/RTSTRUCT/Enhanced PET conversion, **self-contained pure-Python IBSI-1 & IBSI-SUV v3.1 PET parity** (`qradiomics.feature.rtools` & `pet_suv`—no dependency on `pyradiomics` or `pysera` required), simultaneous **IBSI-1 + legacy `rtools` extraction** (with optional `pyradiomics`/`pysera` co-extraction for comparison), deformable registration (`sitk`, `plastimatch`, `elastix`), `qr longitudinal` contour QC, 3D shape (`AHSN`, `spic6`), Nextflow/Prefect workflow assembly, and reproduction of **8 published protocols** |
-| **2. Multi-Agent Orchestrator & Portable Compute** | **[`nexus-lite`](/nexus-lite/)** | `v0.3.0` · **MIT** | [GitHub](https://github.com/choilab-jefferson/nexus.lite) · [PyPI](https://pypi.org/project/nexus-lite/) · [Post](/nexus-lite/) | Colab-ready, zero-server Python multi-agent kernel (`dtach`/stdlib PTYs, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledgers, parallel swarms, role pipelines, `NEXUS_SENSITIVITY=phi` local Ollama routing, zero-preinstall Colab/sandbox remote compute & Agent PCs, and **7 Google Colab notebooks**) |
+| **1. Domain CLI & Standardized Library** | **[`qradiomics`](/qradiomics/)** | `v0.9.8` · **MIT** | [GitHub](https://github.com/choilab-jefferson/qradiomics) · [PyPI](https://pypi.org/project/qradiomics/) · [Docs](/qradiomics/) | Unified Python radiomics CLI (`qr`): TCIA automation, DICOM/RTSTRUCT/Enhanced PET conversion, `qr select validate` pair manifests, **self-contained pure-Python IBSI-1 & IBSI-SUV v3.1 PET parity** (`qradiomics.feature.rtools` & `pet_suv`—with `pyradiomics` and `pysera` completely optional), simultaneous **IBSI-1 + legacy `rtools` extraction**, deformable registration (`sitk`, `plastimatch`, `elastix`), `qr longitudinal` contour QC, 3D shape (`AHSN`, cMCF `spic6` defaults in `v0.9.8`), `inline` & packaged Nextflow (`--executor nextflow`) workflows, and reproduction of **8 published protocols** |
+| **2. Multi-Agent Orchestrator & Portable Compute** | **[`nexus-lite`](/nexus-lite/)** | `v0.3.1` · **MIT** | [GitHub](https://github.com/choilab-jefferson/nexus.lite) · [PyPI](https://pypi.org/project/nexus-lite/) · [Post](/nexus-lite/) | Colab-ready, zero-server Python multi-agent kernel (`dtach`/stdlib PTYs with Google Drive FUSE `/tmp` socket fallback, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledgers, parallel swarms, role pipelines, `NEXUS_SENSITIVITY=phi` local Ollama routing, zero-preinstall Colab/sandbox remote compute & Agent PCs, and **7 PyPI-direct Google Colab notebooks**) |
 | **3. Sandboxed Leaf-Agent Binary** | **[`loom`](/loom/)** | `v0.3.2` · **MIT** | [GitHub](https://github.com/choilab-jefferson/nexus.loom) · [Releases](https://github.com/choilab-jefferson/nexus.loom/releases) · [Post](/loom/) | Zero-dependency (Go 1.22+ stdlib only) single-agent leaf CLI with workspace and `--tools`/glob confinement, shared-workspace per-file locks, multi-turn `loom.context.v1` piping, allowlisted commands with timeout clamping, background `job_*` tools, shell-less `run_readonly`, hard budgets + tool-result compaction, `--phi` local-only model confinement, and 93-test IBSI radiomics verification |
 | **4. Open Curriculum** | **[`medimage`](/posts/2026-08-04-introducing-medimage/)** | 13 Chapters · **MIT** | [GitHub](https://github.com/choilab-jefferson/medimage) · [Post](/posts/2026-08-04-introducing-medimage/) | Free, zero-setup Google Colab course in quantitative medical image analysis from DICOM fundamentals to reproducing Aerts 2014 |
 | **5. Benchmark Dataset & Spiculation** | **[`CIR` / `CIRDataset`](https://github.com/choilab-jefferson/CIR)** | 966 Nodules · Open Access | [GitHub](https://github.com/choilab-jefferson/CIR) · [Zenodo `6762573`](https://zenodo.org/records/6762573) · [arXiv](https://arxiv.org/abs/2206.14903) | Clinically interpretable lung nodule radiomics (conformal 3D spiculation and lobulation) and the *MICCAI* 2022 radiologist QA/QC'd dataset (883 LIDC-IDRI + 83 LUNGx nodules) |
@@ -24,18 +24,18 @@ This page summarizes active and legacy open-source software, datasets, and educa
 
 ### [qradiomics](/qradiomics/)
 
-Unified Python radiomics CLI (`qr`) and library for end-to-end workflows (DICOM & Enhanced PET conversion, IBSI-1 & IBSI-SUV v3.1 PET normalization, native pure-Python `rtools` engine with IBSI-1 support, deformable registration, longitudinal contour QC, multi-engine feature extraction, 3D shape descriptors, Nextflow/Prefect orchestration, and survival/ML benchmarking).
+Unified Python radiomics CLI (`qr`) and library for end-to-end workflows (DICOM & Enhanced PET conversion, pair manifests, IBSI-1 & IBSI-SUV v3.1 PET normalization, native pure-Python `rtools` engine with `pyradiomics` strictly optional, deformable registration, longitudinal contour QC, 3D shape descriptors, `inline` & packaged Nextflow orchestration, and survival/ML benchmarking).
 
 - Repo: [github.com/choilab-jefferson/qradiomics](https://github.com/choilab-jefferson/qradiomics) · PyPI: [qradiomics](https://pypi.org/project/qradiomics/) (`pip install qradiomics`)
-- Version: `0.9.7` · License: MIT
+- Version: `0.9.8` · License: MIT
 - Status: actively maintained
 
 ### [nexus-lite](/nexus-lite/)
 
-Colab-ready, zero-server Python multi-agent orchestration kernel and scientific workflow suite (`dtach`/stdlib PTYs, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledgers, parallel swarms, role pipelines, peer-to-peer A2A review loops, zero-preinstall Colab/sandbox remote compute, Colab Agent PCs, local Ollama GPU/CPU swarms, and 7 Google Colab notebooks).
+Colab-ready, zero-server Python multi-agent orchestration kernel and scientific workflow suite (`dtach`/stdlib PTYs with Google Drive FUSE `/tmp` socket fallback, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledgers, parallel swarms, role pipelines, peer-to-peer A2A review loops, zero-preinstall Colab/sandbox remote compute, Colab Agent PCs, local Ollama GPU/CPU swarms, and 7 PyPI-direct Google Colab notebooks).
 
 - Repo: [github.com/choilab-jefferson/nexus.lite](https://github.com/choilab-jefferson/nexus.lite) · PyPI: [nexus-lite](https://pypi.org/project/nexus-lite/) (`pip install nexus-lite`)
-- Version: `0.3.0` · License: MIT
+- Version: `0.3.1` · License: MIT
 - Status: actively maintained
 
 ### [loom](/loom/)
@@ -65,7 +65,7 @@ Earlier end-to-end screening workflow on LIDC-IDRI and LUNGx with AutoML compone
 
 ### [Radiomics Tools](../2016-07-23-radiomics-tools/)
 
-C++/Python (ITK, Ruffus) radiomics pipeline including DICOM/RT handling and feature extraction. Its `FeatureExtraction` engine has been completely ported to pure Python (`qradiomics.feature.rtools`) in [`qradiomics`](/qradiomics/) (`v0.9.7`), supporting simultaneous **IBSI-1** and legacy C++-exact feature extraction without external C++/ITK dependencies.
+C++/Python (ITK, Ruffus) radiomics pipeline including DICOM/RT handling and feature extraction. Its `FeatureExtraction` engine has been completely ported to pure Python (`qradiomics.feature.rtools`) in [`qradiomics`](/qradiomics/) (`v0.9.8`), supporting simultaneous **IBSI-1** and legacy C++-exact feature extraction without external C++/ITK dependencies.
 
 - Repo: [github.com/taznux/radiomics-tools](https://github.com/taznux/radiomics-tools)
 - Status: superseded by [`qradiomics`](/qradiomics/) (`qradiomics.feature.rtools`)
