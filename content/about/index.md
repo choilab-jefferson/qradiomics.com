@@ -1,7 +1,7 @@
 ---
 title: "About the Lab"
 date: "2026-06-05T15:22:00.000-04:00"
-lastmod: "2026-11-13T21:25:00.000-05:00"
+lastmod: "2026-11-13T21:45:00.000-05:00"
 description: "The Computational Healthcare & Oncology Informatics (CHOI) Lab at Thomas Jefferson University: our past foundations in 3D computer vision, present open-source radiomics & clinical AI stack, and future vision for contour-robust, portable clinical AI."
 schema: "about"
 ---
@@ -66,6 +66,8 @@ Our next strategic phase addresses the remaining structural bottlenecks to wides
 
 ## **Collaborations & Funding**
 Our research is translated in close collaboration with clinical colleagues at the Sidney Kimmel Comprehensive Cancer Center and is supported by research grants and industry partnerships including **Varian Medical Systems**, **ViewRay Technologies**, and the **Sidney Kimmel Comprehensive Cancer Center**.
+
+For our open-source software and multi-agent AI research workflows (`qradiomics`, `nexus-lite`, `loom`, and `medimage`), we also gratefully acknowledge **Google** for providing **highest-tier access to Google Antigravity** (including **Gemini 4 Argon** and **Gemini 4 Carbon**) and compute support, and **Anthropic** for academic research lab support through the **Claude Team Plan for Scientists** program (free Claude Team workspace with discounted USD 15/month Premium seat upgrades for Claude and Claude Code).
 
 ---
 

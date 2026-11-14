@@ -1,7 +1,7 @@
 ---
 title: "QRadiomics: Radiomics Research CLI"
 date: "2026-05-17T20:31:21.000-04:00"
-lastmod: "2026-11-13T21:25:00.000-05:00"
+lastmod: "2026-11-13T21:45:00.000-05:00"
 categories:
   - "research"
 tags:
@@ -661,7 +661,8 @@ If you build on the lung-screening lineage that this CLI grew out of, please add
 
 - [**Wookjin Choi**](https://github.com/taznux): overall architecture, CLI design, pattern templates
 - [**Pradeep Bhetwal**](https://github.com/Pradeepbhetwal): survival analysis on the LUNG1 cohort
-- **Google Gemini 4 Argon Access**: We gratefully acknowledge Google for providing Gemini 4 Argon access and support for our multi-agent radiomics and medical physics research workflows (`qradiomics`, `medimage`, `nexus-lite`, and `loom`).
+- **Google Antigravity (Highest-Tier Access)**: We gratefully acknowledge **Google** for providing highest-tier access to **Google Antigravity** (including **Gemini 4 Argon** and **Gemini 4 Carbon**) and compute support for our multi-agent radiomics and medical physics research workflows (`qradiomics`, `medimage`, `nexus-lite`, and `loom`).
+- **Anthropic Claude Team Plan for Scientists**: We also acknowledge **Anthropic** for supporting our academic research lab through the **Claude Team Plan for Scientists** program (free Claude Team workspace with discounted USD 15/month Premium seat upgrades for Claude and Claude Code).
 - *Choi Lab, Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson University*
 
 ## License

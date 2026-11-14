@@ -1,7 +1,7 @@
 ---
 title: "The CHOI Lab Open-Source Ecosystem: Past Foundations, Present Unification, and the Future of Portable, Contour-Robust Clinical AI"
 date: "2026-11-04T16:00:00.000-05:00"
-lastmod: "2026-11-13T21:25:00.000-05:00"
+lastmod: "2026-11-13T21:45:00.000-05:00"
 math: true
 categories:
   - "news"
@@ -26,6 +26,9 @@ tags:
   - "PET"
   - "Multi-Agent"
   - "Google Colab"
+  - "Antigravity"
+  - "Gemini"
+  - "Anthropic"
   - "HIPAA"
   - "PHI"
   - "Lung Cancer"
@@ -153,3 +156,14 @@ All public packages, reproducible cohort bundles, and educational courses are av
 - **medimage 13-Chapter Colab Course (MIT):** [Course Guide](/posts/2026-08-04-introducing-medimage/) · [GitHub (`choilab-jefferson/medimage`)](https://github.com/choilab-jefferson/medimage)
 - **Datasets & Domain AI Assistant:** [CIR / CIRDataset](https://github.com/choilab-jefferson/CIR) · [PathCNN](https://github.com/mskspi/PathCNN) · [Computational Medical Physicist Gemini Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/)
 - **About the CHOI Lab & Director Profile:** [About the Lab](/about/) · [Wookjin Choi, Ph.D.](/profile/) · [Open-Source Projects Index](/projects/2016-08-27-open-source-projects/)
+
+---
+
+## Acknowledgements
+
+- **Google**: We gratefully acknowledge **Google** for providing **highest-tier access to Google Antigravity**—including frontier **Gemini 4 Argon** and **Gemini 4 Carbon** model access—and compute support across our open-source quantitative imaging and multi-agent research stack (**[qradiomics](/qradiomics/)**, **[nexus-lite](/nexus-lite/)**, **[loom](/loom/)**, and **[medimage](/posts/2026-08-04-introducing-medimage/)**).
+- **Anthropic**: We also acknowledge **Anthropic** for supporting our academic research lab through the **Claude Team Plan for Scientists** program, providing a free Claude Team workspace with discounted USD 15/month Premium seat upgrades for Claude and Claude Code.
+
+---
+
+*Computational Healthcare & Oncology Informatics (CHOI) Lab, Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson University* · [Wookjin Choi, Ph.D.](/profile/) · MIT License

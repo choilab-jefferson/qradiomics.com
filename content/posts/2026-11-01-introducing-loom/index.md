@@ -1,7 +1,7 @@
 ---
 title: "Introducing loom: A Zero-Dependency Sandboxed Leaf-Agent CLI for Reproducible Multi-Agent Workflows"
 date: "2026-11-01T12:00:00.000-05:00"
-lastmod: "2026-11-13T21:25:00.000-05:00"
+lastmod: "2026-11-13T21:45:00.000-05:00"
 math: true
 categories:
   - "news"
@@ -18,6 +18,7 @@ tags:
   - "Go"
   - "CLI"
   - "Google Colab"
+  - "Antigravity"
   - "Gemini"
   - "Anthropic"
   - "Ollama"
@@ -239,7 +240,8 @@ python examples/remote_compute_and_loom.py
 
 ## Acknowledgements
 
-We gratefully acknowledge **Google** for providing **Gemini 4 Argon** access and compute support, which powered the multi-agent orchestration, sandboxed leaf-worker verification, and IBSI radiomics benchmarking across **[loom](https://github.com/choilab-jefferson/nexus.loom)**, **[nexus-lite](/nexus-lite/)**, **[qradiomics](/qradiomics/)**, and **[medimage](/posts/2026-08-04-introducing-medimage/)**.
+- **Google**: We gratefully acknowledge **Google** for providing **highest-tier access to Google Antigravity**—including frontier **Gemini 4 Argon** and **Gemini 4 Carbon** model access—and compute support, which powered the multi-agent orchestration, sandboxed leaf-worker verification, and IBSI radiomics benchmarking across **[loom](https://github.com/choilab-jefferson/nexus.loom)**, **[nexus-lite](/nexus-lite/)**, **[qradiomics](/qradiomics/)**, and **[medimage](/posts/2026-08-04-introducing-medimage/)**.
+- **Anthropic**: We also acknowledge **Anthropic** for supporting our academic research lab through the **Claude Team Plan for Scientists** program, providing a free Claude Team workspace with discounted USD 15/month Premium seat upgrades for Claude and Claude Code.
 
 ---
 
