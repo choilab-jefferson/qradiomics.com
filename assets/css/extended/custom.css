@@ -119,18 +119,17 @@ a.mi-chapter:hover {
     margin-top: 0;
 }
 
-/* Markdown tables are wrapped by layouts/_markup/render-table.html so they have
-   something to scroll inside; the wrapper carries the spacing and the breakout. */
+/* Markdown tables are wrapped and classified by layouts/_markup/render-table.html:
+   - .table-wrap--cards  : desktop table (> 720px), stacked cards on mobile (<= 720px)
+   - .table-wrap--kv     : headerless 2-col key-value metadata tables
+   - .table-wrap--matrix : multi-header numeric matrices (horizontal scroll on narrow screens) */
 .post-content .table-wrap {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     margin-bottom: var(--content-gap);
 
-    /* Scrolling shadows. A table that scrolls with no cue is worse than one
-       that wraps: the wrapped version at least showed every column, while a
-       silent scroller hides them. These two gradient pairs sit on the left and
-       right edges — the `local` layers scroll away with the content and uncover
-       the `scroll` layers, so a shadow appears only on a side that has more
-       table to reach. Pure CSS, no script. */
+    /* Edge scroll-cue shadows: local layers scroll with content and uncover
+       scroll layers only on edges that have more columns out of view. */
     background:
         linear-gradient(to right, var(--theme), transparent) 0 0 / 28px 100% no-repeat local,
         linear-gradient(to left, var(--theme), transparent) 100% 0 / 28px 100% no-repeat local,
@@ -141,9 +140,6 @@ a.mi-chapter:hover {
     width: 100%;
     margin-bottom: 0;
 }
-
-/* The shadow is black-on-white; on the dark theme it would vanish into the
-   background, so invert it there. PaperMod stamps data-theme on :root. */
 :root[data-theme="dark"] .post-content .table-wrap {
     background:
         linear-gradient(to right, var(--theme), transparent) 0 0 / 28px 100% no-repeat local,
@@ -152,13 +148,243 @@ a.mi-chapter:hover {
         radial-gradient(farthest-side at 100% 50%, rgba(255, 255, 255, 0.22), transparent) 100% 0 / 16px 100% no-repeat scroll;
 }
 
-/* Below the breakout width there is no room for a four-column table: squeezed
-   into 362px on a phone its cells wrap to ten lines and the grid stops reading
-   as a grid. Past three columns, keep the natural width and scroll instead.
-   Two- and three-column tables still fit, so they are left to wrap. */
-@media screen and (max-width: 1151px) {
-    .post-content .table-wrap:has(thead th:nth-child(4)) > table {
+/* Shared desktop/tablet polish: top-align multi-line rows and distinguish headers. */
+.post-content.md-content .table-wrap table th,
+.post-content.md-content .table-wrap table td {
+    vertical-align: top;
+}
+.post-content.md-content .table-wrap table thead th {
+    background: var(--code-bg);
+    font-weight: 600;
+}
+
+/* Tablet / narrow desktop (721px–1151px): keep 4+ column standard tables at
+   readable grid width with horizontal scroll; below 720px they become cards. */
+@media screen and (min-width: 721px) and (max-width: 1151px) {
+    .post-content .table-wrap.table-wrap--cards:has(thead th:nth-child(4)) > table {
         min-width: 680px;
+    }
+}
+
+/* Partial-header numeric matrices (e.g. multi-cohort validation grids) keep
+   their 2D grid structure at all widths below the desktop breakout. */
+@media screen and (max-width: 1151px) {
+    .post-content .table-wrap.table-wrap--matrix > table {
+        min-width: 640px;
+    }
+}
+@media screen and (max-width: 720px) {
+    .post-content.md-content .table-wrap.table-wrap--matrix {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+    }
+    .post-content.md-content .table-wrap.table-wrap--matrix table {
+        font-size: 13.5px;
+    }
+    .post-content.md-content .table-wrap.table-wrap--matrix table th,
+    .post-content.md-content .table-wrap.table-wrap--matrix table td {
+        min-width: 64px;
+        padding: 5px 8px;
+    }
+}
+
+/* Headerless 2-column key-value metadata tables (.table-wrap--kv). */
+.post-content.md-content .table-wrap.table-wrap--kv {
+    overflow-x: visible;
+    background: none;
+}
+:root[data-theme="dark"] .post-content.md-content .table-wrap.table-wrap--kv {
+    background: none;
+}
+.post-content.md-content .table-wrap.table-wrap--kv table td:first-child {
+    width: 1%;
+    white-space: nowrap;
+    background: var(--code-bg);
+    color: var(--secondary);
+    font-weight: 600;
+}
+@media screen and (max-width: 560px) {
+    .post-content.md-content .table-wrap.table-wrap--kv > table,
+    .post-content.md-content .table-wrap.table-wrap--kv > table > tbody {
+        display: block;
+        width: 100%;
+    }
+    .post-content.md-content .table-wrap.table-wrap--kv > table {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--entry);
+        overflow: hidden;
+    }
+    .post-content.md-content .table-wrap.table-wrap--kv table tr {
+        display: block;
+        padding: 9px 14px;
+        border-top: 1px solid var(--border);
+    }
+    .post-content.md-content .table-wrap.table-wrap--kv table tr:first-child {
+        border-top: 0;
+    }
+    .post-content.md-content .table-wrap.table-wrap--kv table td,
+    .post-content.md-content .table-wrap.table-wrap--kv table td:first-child {
+        display: block;
+        width: auto;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        white-space: normal;
+        text-align: left !important;
+        overflow-wrap: anywhere;
+    }
+    .post-content.md-content .table-wrap.table-wrap--kv table td:first-child {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--secondary);
+        margin-bottom: 2px;
+    }
+}
+
+/* Mobile stacked cards (<= 720px) for all standard headered tables (.table-wrap--cards). */
+@media screen and (max-width: 720px) {
+    .post-content.md-content .table-wrap.table-wrap--cards,
+    :root[data-theme="dark"] .post-content.md-content .table-wrap.table-wrap--cards {
+        overflow-x: visible;
+        background: none;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards > table {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        border: 0;
+        font-size: 15px;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards > table > thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards > table > tbody {
+        display: block;
+        width: 100%;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards > table > tbody > tr {
+        display: block;
+        margin-bottom: 12px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--entry);
+        overflow: hidden;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards > table > tbody > tr:last-child {
+        margin-bottom: 0;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards table td {
+        min-width: 0;
+        border: 0;
+        text-align: left !important;
+        line-height: 1.5;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards table td code {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    /* First column acts as the card header bar with an uppercase column eyebrow. */
+    .post-content.md-content .table-wrap.table-wrap--cards table td:first-child {
+        display: block;
+        padding: 10px 14px;
+        background: var(--code-bg);
+        font-weight: 600;
+        color: var(--primary);
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards table td:first-child[data-label]::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #f39800;
+        margin-bottom: 3px;
+        line-height: 1.25;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards table td:first-child > .td-val {
+        font-size: 0.96rem;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards table td:first-child > .td-val img {
+        display: inline-block;
+        height: 20px;
+        width: auto;
+        vertical-align: middle;
+        margin-top: 4px;
+    }
+
+    /* Remaining columns: labeled card fields. */
+    .post-content.md-content .table-wrap.table-wrap--cards table td:not(:first-child) {
+        padding: 8px 14px;
+        border-top: 1px solid var(--border);
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards table td:not(:first-child).td-empty {
+        display: none;
+    }
+
+    /* Compact values sit on a single horizontal key–value row. */
+    .post-content.md-content .table-wrap.table-wrap--cards table td:not(:first-child).td-compact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 2px 12px;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards table td:not(:first-child).td-compact[data-label]::before {
+        content: attr(data-label);
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--secondary);
+        flex: 0 1 auto;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards table td:not(:first-child).td-compact > .td-val {
+        flex: 0 1 auto;
+        margin-left: auto;
+        text-align: right;
+        min-width: 0;
+        overflow-wrap: anywhere;
+        color: var(--primary);
+    }
+
+    /* Prose / multi-line / code-heavy values stack full-width below the label. */
+    .post-content.md-content .table-wrap.table-wrap--cards table td:not(:first-child).td-prose {
+        display: block;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards table td:not(:first-child).td-prose[data-label]::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.71rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--secondary);
+        margin-bottom: 4px;
+        line-height: 1.3;
+    }
+    .post-content.md-content .table-wrap.table-wrap--cards table td:not(:first-child).td-prose > .td-val {
+        display: block;
+        text-align: left;
+        min-width: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        color: var(--content);
+        line-height: 1.55;
     }
 }
 

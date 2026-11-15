@@ -1,12 +1,57 @@
-{{- /* Wrap markdown tables so they have something to scroll inside.
+{{- /* Classify and wrap Markdown tables for desktop + mobile viewports:
+       1. table-wrap--kv     : headerless 2-col metadata tables (| | |) — omit empty <thead>
+       2. table-wrap--matrix : partial-header multi-row numeric matrices — keep horizontal grid scroll
+       3. table-wrap--cards  : standard fully-headered tables — desktop table, mobile stacked cards */ -}}
+{{- $headers := slice -}}
+{{- $nonEmptyHeaders := 0 -}}
+{{- range first 1 .THead -}}
+  {{- range . -}}
+    {{- $lbl := plainify .Text | htmlUnescape | strings.TrimSpace -}}
+    {{- $headers = $headers | append $lbl -}}
+    {{- if ne $lbl "" -}}
+      {{- $nonEmptyHeaders = add $nonEmptyHeaders 1 -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $colCount := len $headers -}}
 
-       Without a wrapper a wide table has only one way to fit a narrow screen:
-       squeeze its columns until cells wrap to ten lines and the grid stops
-       reading as a grid. The wrapper lets tables past three columns keep their
-       natural width and scroll sideways instead, and it is also what the
-       desktop breakout attaches to. */ -}}
-<div class="table-wrap">
+{{- $variant := "table-wrap--cards" -}}
+{{- if eq $nonEmptyHeaders 0 -}}
+  {{- $variant = "table-wrap--kv" -}}
+{{- else if lt $nonEmptyHeaders $colCount -}}
+  {{- $variant = "table-wrap--matrix" -}}
+{{- end -}}
+
+{{- $colClasses := slice -}}
+{{- range $colIdx, $lbl := $headers -}}
+  {{- $isProse := eq $colCount 2 -}}
+  {{- $maxLen := 0 -}}
+  {{- range $.TBody -}}
+    {{- if lt $colIdx (len .) -}}
+      {{- $cell := index . $colIdx -}}
+      {{- $raw := lower (printf "%s" $cell.Text) -}}
+      {{- $plain := plainify $cell.Text | htmlUnescape | strings.TrimSpace -}}
+      {{- if or (in $raw "<br") (in $raw "<img") -}}
+        {{- $isProse = true -}}
+      {{- end -}}
+      {{- if gt (len $plain) $maxLen -}}
+        {{- $maxLen = len $plain -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if or (gt $maxLen 32) (gt (add (len $lbl) $maxLen) 46) -}}
+    {{- $isProse = true -}}
+  {{- end -}}
+  {{- if $isProse -}}
+    {{- $colClasses = $colClasses | append "td-prose" -}}
+  {{- else -}}
+    {{- $colClasses = $colClasses | append "td-compact" -}}
+  {{- end -}}
+{{- end -}}
+
+<div class="table-wrap {{ $variant }}">
   <table>
+    {{- if gt $nonEmptyHeaders 0 }}
     <thead>
       {{- range .THead }}
       <tr>
@@ -16,11 +61,25 @@
       </tr>
       {{- end }}
     </thead>
+    {{- end }}
     <tbody>
       {{- range .TBody }}
       <tr>
-        {{- range . }}
-        <td{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</td>
+        {{- range $colIdx, $cell := . }}
+        {{- $label := "" -}}
+        {{- if lt $colIdx (len $headers) -}}
+          {{- $label = index $headers $colIdx -}}
+        {{- end -}}
+        {{- $colClass := "td-prose" -}}
+        {{- if lt $colIdx (len $colClasses) -}}
+          {{- $colClass = index $colClasses $colIdx -}}
+        {{- end -}}
+        {{- $plainCell := plainify $cell.Text | htmlUnescape | strings.TrimSpace -}}
+        {{- $rawCell := lower (printf "%s" $cell.Text) -}}
+        {{- if and (eq $plainCell "") (not (in $rawCell "<img")) -}}
+          {{- $colClass = printf "%s td-empty" $colClass -}}
+        {{- end -}}
+        <td class="{{ $colClass }}"{{ with $cell.Alignment }} style="text-align: {{ . }}"{{ end }}{{ with $label }} data-label="{{ . }}"{{ end }}><div class="td-val">{{ $cell.Text }}</div></td>
         {{- end }}
       </tr>
       {{- end }}
