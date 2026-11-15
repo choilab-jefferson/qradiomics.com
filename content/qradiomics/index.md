@@ -674,7 +674,7 @@ If you build on the lung-screening lineage that this CLI grew out of, please add
 
 - [**Wookjin Choi**](https://github.com/taznux): overall architecture, CLI design, pattern templates
 - [**Pradeep Bhetwal**](https://github.com/Pradeepbhetwal): survival analysis on the LUNG1 cohort
-- **Google**: Supported by **[Google Antigravity](https://antigravity.google/)**
+- **Google**: Supported through **[Google Antigravity for Science](https://antigravity.google/use-cases/science/)**
 - **Anthropic**: Supported through the **[Claude Team Plan for Scientists](https://claude.com/programs/team-plan-for-scientists)** program
 - *Choi Lab, Department of Radiation Oncology, Sidney Kimmel Medical College at Thomas Jefferson University*
 

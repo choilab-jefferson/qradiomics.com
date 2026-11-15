@@ -67,7 +67,7 @@ Our next strategic phase addresses the remaining structural bottlenecks to wides
 ## **Collaborations & Funding**
 Our research is translated in close collaboration with clinical colleagues at the Sidney Kimmel Comprehensive Cancer Center and is supported by research grants and industry partnerships including **Varian Medical Systems**, **ViewRay Technologies**, and the **Sidney Kimmel Comprehensive Cancer Center**.
 
-For our open-source software and multi-agent AI research workflows, we also gratefully acknowledge support from **[Google Antigravity](https://antigravity.google/)** and Anthropic's **[Claude Team Plan for Scientists](https://claude.com/programs/team-plan-for-scientists)** program.
+For our open-source software and multi-agent AI research workflows, we also gratefully acknowledge support through **[Google Antigravity for Science](https://antigravity.google/use-cases/science/)** and Anthropic's **[Claude Team Plan for Scientists](https://claude.com/programs/team-plan-for-scientists)** program.
 
 ---
 

@@ -161,7 +161,7 @@ All public packages, reproducible cohort bundles, and educational courses are av
 
 ## Acknowledgements
 
-- **Google**: Supported by **[Google Antigravity](https://antigravity.google/)**.
+- **Google**: Supported through **[Google Antigravity for Science](https://antigravity.google/use-cases/science/)**.
 - **Anthropic**: Supported through the **[Claude Team Plan for Scientists](https://claude.com/programs/team-plan-for-scientists)** program.
 
 ---
