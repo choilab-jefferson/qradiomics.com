@@ -1,7 +1,7 @@
 ---
 title: "Introducing medimage: A Free Colab Course in Quantitative Medical Image Analysis"
 date: "2026-08-04T09:00:00.000-04:00"
-lastmod: "2026-11-14T18:30:00.000-05:00"
+lastmod: "2026-11-15T00:25:00.000-05:00"
 categories:
   - "news"
   - "research"
@@ -139,7 +139,7 @@ Each chapter teaches the failure mode alongside the technique: a registration th
 and is shown side by side with the run that worked (Ch. 10), a real data leak walked through step by
 step (Ch. 12), a "does the number actually add up" check before trusting it (Ch. 3), rather than
 only the happy path. Chapter 12 closes by splitting the same 59 patients six ways and getting
-hold-out AUCs from 0.48 to 0.74, which is an argument about sample size rather than about models.
+hold-out AUCs from 0.40 to 0.68, which is an argument about sample size rather than about models.
 
 ## Run it, no install required
 
@@ -157,7 +157,7 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-As of **`qradiomics v0.9.8`**, `qradiomics` itself installs cleanly from PyPI in seconds (`pip install qradiomics`) with **full self-contained pure-Python IBSI-1 feature extraction (`qradiomics.feature.rtools`, 270/270 IBSI-1 digital phantom parity + 97 legacy C++-exact features = 367 features) and IBSI-SUV v3.1 PET normalization (`qradiomics.io.dicom.pet_suv`, 58/58 DRO parity)**—requiring no C++ compiler, `pyradiomics`, or `pysera`. In `medimage`, **`pyradiomics` is completely optional** (commented out in `requirements.txt`): `medimage_data.fetch_lung1_cohort()` automatically falls back to pure-Python `--engine rtools` when `pyradiomics` is not installed, while Chapters 9, 11, 12, and 13 optionally show how to install **pyradiomics** from upstream git if you wish to run multi-engine cross-comparisons (`--engine pyradiomics,pysera`) or the legacy Aerts 2014 `nsclc-survival` wavelet/LoG pattern. Every other chapter installs in well under a minute.
+As of **`qradiomics v0.9.9`** (building on pure-Python `rtools` introduced in `v0.9.8` and now set as the default engine everywhere), `qradiomics` itself installs cleanly from PyPI in seconds (`pip install qradiomics`) with **full self-contained pure-Python IBSI-1 feature extraction (`qradiomics.feature.rtools`, 270/270 IBSI-1 digital phantom parity + 97 legacy C++-exact features = 367 features) and IBSI-SUV v3.1 PET normalization (`qradiomics.io.dicom.pet_suv`, 58/58 DRO parity)**—requiring no C++ compiler, `pyradiomics`, or `pysera`. In `medimage`, **all 13 chapters run out of the box with pure-Python `qradiomics` and zero `pyradiomics` installation** (`pyradiomics` is commented out in `requirements.txt`, `medimage_data.fetch_lung1_cohort()` defaults to `--engine rtools` when `pyradiomics` is absent, and Chapters 9, 11, 12, and 13 ship with `INSTALL_OPTIONAL_PYRADIOMICS = False`—opt-in `True` only if you want `--engine pyradiomics` cross-comparisons or the legacy Aerts 2014 wavelet/LoG filter set). Every chapter installs in well under a minute.
 
 ## No imaging data in the repo
 
@@ -174,7 +174,7 @@ the licensing clean, and it keeps the provenance of every image one function cal
 
 ## Built alongside QRadiomics
 
-Chapters 5, 8, 9, 10, 11, 12 and 13 run the same `qr` CLI and Python APIs that power **[QRadiomics](/qradiomics/)** (`v0.9.8`), Choi
+Chapters 5, 8, 9, 10, 11, 12 and 13 run the same `qr` CLI and Python APIs that power **[QRadiomics](/qradiomics/)** (`v0.9.9`), Choi
 Lab's self-contained, IBSI-compliant radiomics research toolkit (`pyradiomics` optional). Chapter 8 uses `qradiomics.io.dicom.pet_suv` (**IBSI-SUV v3.1**), Chapter 9 demonstrates both pure-Python `qradiomics.feature.rtools` (**IBSI-1** `270/270` digital phantom parity + `97` legacy features = `367` features) and optional multi-engine comparison (`pyradiomics`, `pysera`), and Chapter 13 reproduces the Aerts 2014 NSCLC-Radiomics Cox PH result
 using the public `qr extract` → `qr results merge` → `qr analyze survival` pipeline. medimage is the
 teaching path into the same tools and data used in the lab's published research.

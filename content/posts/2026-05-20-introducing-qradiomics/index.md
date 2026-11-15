@@ -1,7 +1,7 @@
 ---
 title: "Introducing qradiomics: A Unified Radiomics CLI for Reproducible Research"
 date: "2026-05-20T17:00:00.000-04:00"
-lastmod: "2026-11-14T18:30:00.000-05:00"
+lastmod: "2026-11-15T00:25:00.000-05:00"
 categories:
   - "news"
   - "research"
@@ -30,13 +30,15 @@ cover:
   relative: true
 aliases:
   - /2026/05/20/introducing-qradiomics/
-description: "Introducing qradiomics (v0.9.8), a unified pure-Python CLI and library with self-contained IBSI-1 extraction, pair manifests, and packaged Nextflow pipelines—with PyRadiomics completely optional."
+description: "Introducing qradiomics (v0.9.9), a unified pure-Python CLI and library with rtools as the default extraction engine everywhere (IBSI-1 + legacy rtools), pair manifests, and packaged Nextflow pipelines—with PyRadiomics strictly optional."
 ---
 
-Today, we are thrilled to announce the latest release of **[qradiomics](https://github.com/choilab-jefferson/qradiomics)** (`v0.9.8`), an open-source Command Line Interface (CLI) and **agent-friendly orchestrator** designed to bring reproducibility, scalability, and AI-driven automation to the world of radiomics research. It is available on PyPI at [pypi.org/project/qradiomics](https://pypi.org/project/qradiomics/).
+Today, we are thrilled to announce the latest release of **[qradiomics](https://github.com/choilab-jefferson/qradiomics)** (`v0.9.9`), an open-source Command Line Interface (CLI) and **agent-friendly orchestrator** designed to bring reproducibility, scalability, and AI-driven automation to the world of radiomics research (`rtools` is now the default extraction engine everywhere, with `pyradiomics` and `pysera` strictly opt-in). It is available on PyPI at [pypi.org/project/qradiomics](https://pypi.org/project/qradiomics/).
 
 - **LUNG1 (NSCLC-Radiomics) Survival Reproduction Colab Notebook:**  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/qradiomics/blob/main/examples/lung1_survival_colab.ipynb)
+- **IBSI-1 Digital Phantom Parity (`270/270`) Colab Notebook:**  
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/qradiomics/blob/main/examples/ibsi1_phantom_colab.ipynb)
 - **QRadiomics + MedImage Multi-Agent Colab Notebook (`nexus-lite v0.3.1`):**  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/qradiomics_medimage_colab_demo.ipynb)
 
@@ -84,7 +86,7 @@ The LUNGx external validation result (AUC 0.756) matches the published number ex
 - **`qr tcia download`**: bulk-pull any TCIA collection with multi-process progress
 - **`qr convert dicom-series / rtstruct`**: DICOM CT/PET/MR + RTSTRUCT → NRRD, featuring full **IBSI-SUV v3.1** PET normalization (`BW`, `LBM`, `LBMJAMES128`, `LBMJANMA`, `IBW`, `BSA`), **Enhanced PET (`1.2.840.10008.5.1.4.1.1.130`)** support, 58/58 IBSI-SUV DRO parity, and case-insensitive ROI lookup
 - **`qr register` & `qr longitudinal`**: rigid/affine/deformable registration across `sitk`, `plastimatch`, and `itk-elastix` (`--backend {sitk,plastimatch,elastix} --stages`) plus longitudinal RTSTRUCT trajectory, surface displacement, and contour noise QC (`qr longitudinal {sessions,trajectory,flags,validity,surface,noise,run}`)
-- **`qr extract` & `qr select validate`**: contract-checked `.parquet` / `.csv` pair manifests (`qr select validate`, with `pandas` and `pyarrow` built into core dependencies) feeding self-contained pure-Python extraction via `qradiomics.feature.rtools` (`--engine rtools`, simultaneously supporting **IBSI-1** standardization and legacy `rtools` features with zero C++/ITK or `pyradiomics`/`pysera` dependency), plus strictly optional `pyradiomics` and `pysera` co-extraction (`--engine rtools,pyradiomics,pysera`) for cross-engine comparison, **IBSI-1** reference phantom parity (`pipelines/ibsi1/`), and bundled pattern templates (`nsclc-survival`, `ct-default`, …)
+- **`qr extract` & `qr select validate`**: contract-checked `.parquet` / `.csv` pair manifests (`qr select validate`, with `pandas` and `pyarrow` built into core dependencies) feeding self-contained pure-Python extraction via `qradiomics.feature.rtools` (the default engine everywhere in `v0.9.9`, simultaneously supporting **IBSI-1** standardization and legacy `rtools` features with zero C++/ITK or `pyradiomics`/`pysera` dependency), plus strictly opt-in `--engine pyradiomics` and `--engine pysera` co-extraction (`--engine rtools,pyradiomics,pysera`) for cross-engine comparison, **IBSI-1** reference phantom parity (`pipelines/ibsi1/`), and bundled pattern templates (`ct-default`, `pet-default`, `nsclc-survival`, `standard-radiomics`, `survival-analysis`)
 - **`qr analyze survival / classify / importance`**: Cox PH, logistic regression, random-forest feature importance
 - **`qr ml train / predict / evaluate` & `qr bench`**: leakage-safe cross-validated model building and multi-model classification benchmarking (`LR/SVM/ExtraTrees/RF/GBM/MLP/XGB/LGBM/FLAML/TPOT`) with nested CV, HPO, and Youden's-J threshold calibration
 - **`qr workflow plan / show / run`**: declarative JSON/YAML workflow plans executed via **`inline`** (default), packaged **Nextflow** (`qr workflow run plan.json --executor nextflow`, `QR_PRE -> QR_CASE -> QR_PAIR -> QR_POST` with `-resume` and `--profile local|slurm`), or Prefect
