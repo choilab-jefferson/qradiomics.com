@@ -1,7 +1,7 @@
 ---
 title: "About the Lab"
 date: "2026-06-05T15:22:00.000-04:00"
-lastmod: "2026-11-15T00:25:00.000-05:00"
+lastmod: "2026-11-15T10:30:00.000-05:00"
 description: "The Computational Healthcare & Oncology Informatics (CHOI) Lab at Thomas Jefferson University: our past foundations in 3D computer vision, present open-source radiomics & clinical AI stack, and future vision for contour-robust, portable clinical AI."
 schema: "about"
 ---
@@ -20,7 +20,7 @@ Led by **[Wookjin Choi, Ph.D.](/profile/)** (Associate Professor of Radiation On
 
 Our mission is to bridge the gap between computational innovation and routine clinical care through three guiding principles:
 1. **Glass-Box Interpretability:** Designing physically and biologically grounded biomarkers—such as 3D surface-normal geometry, conformal spiculation, functional organ-at-risk remodeling, and pathway-informed neural networks—that clinicians can inspect, troubleshoot, and trust.
-2. **End-to-End Reproducibility:** Releasing open-source, IBSI-standardized software packages—led by our flagship **[QRadiomics CLI](/qradiomics/)** (`v0.9.9`), **[nexus-lite](/nexus-lite/)** (`v0.3.1`) multi-agent orchestrator, **[loom](/loom/)** (`v0.3.2`) sandboxed leaf-agent CLI, and **[medimage](/posts/2026-08-04-introducing-medimage/)** 13-chapter Colab course—under the [CHOI Lab GitHub Organization (`choilab-jefferson`)](https://github.com/choilab-jefferson).
+2. **End-to-End Reproducibility:** Releasing open-source, IBSI-standardized software packages—led by our flagship **[QRadiomics CLI](/qradiomics/)** (`v0.9.9`), **[nexus-lite](/nexus-lite/)** (`v0.3.2`) multi-agent orchestrator, **[loom](/loom/)** (`v0.3.2`) sandboxed leaf-agent CLI, and **[medimage](/posts/2026-08-04-introducing-medimage/)** 13-chapter Colab course—under the [CHOI Lab GitHub Organization (`choilab-jefferson`)](https://github.com/choilab-jefferson).
 3. **"Data-Stay, Pipeline-Go" Portable Compute:** Enabling multi-institutional collaboration not by moving sensitive patient data across hospital firewalls, but by shipping portable pipelines and self-contained, secured computing environments directly to where clinical data resides.
 
 ---
@@ -42,7 +42,7 @@ Today, the CHOI Lab has unified its legacy MATLAB and C++ codebases into a moder
 
 ### **A. Unified Open-Source Software & Education Stack**
 * **[`qradiomics`](/qradiomics/) (`qr` CLI `v0.9.9`, MIT, [PyPI](https://pypi.org/project/qradiomics/)):** End-to-end radiomics CLI and Python library featuring TCIA automation, DICOM/RTSTRUCT/Enhanced PET conversion, contracted pair manifests (`qr select validate`), **pure-Python `rtools` as the default extraction engine everywhere (IBSI-1 + legacy `rtools`) & IBSI-SUV v3.1 PET standardization** (`qradiomics.feature.rtools` & `qradiomics.io.dicom.pet_suv`—with `pyradiomics` and `pysera` strictly opt-in), simultaneous extraction of **IBSI-1 and legacy C++-compatible `rtools` features**, deformable registration (`sitk`, `plastimatch`, `elastix`), longitudinal contour QC (`qr longitudinal`), 3D shape (`AHSN`, cMCF `spic6` defaults), `inline` & packaged Nextflow orchestration (`qr workflow run --executor nextflow`), and reproduction of **8 published studies** out of the box.
-* **[`nexus-lite`](/nexus-lite/) (`v0.3.1`, MIT, [PyPI](https://pypi.org/project/nexus-lite/)):** Zero-server Python multi-agent orchestration kernel (`dtach`/stdlib PTYs with Google Drive FUSE `/tmp` `AF_UNIX` fallback, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledger primitives, `NEXUS_SENSITIVITY=phi` local Ollama routing, zero-preinstall Colab/sandbox remote compute & Agent PCs, and **7 PyPI-direct Google Colab notebooks**).
+* **[`nexus-lite`](/nexus-lite/) (`v0.3.2`, MIT, [PyPI](https://pypi.org/project/nexus-lite/)):** Zero-server Python multi-agent orchestration kernel (dependency-free stdlib PTYs `nexus_lite.pty` with `pty ls`/`attach` and Google Drive FUSE `/tmp` `AF_UNIX` fallback, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledger primitives, `NEXUS_SENSITIVITY=phi` local Ollama routing, zero-preinstall Colab/sandbox remote compute & Agent PCs, and **7 PyPI-direct Google Colab notebooks**).
 * **[`loom`](/loom/) (`v0.3.2`, MIT, [GitHub](https://github.com/choilab-jefferson/nexus.loom)):** Zero-dependency Go stdlib single-agent leaf CLI with strict workspace and `--tools`/`--read-glob`/`--write-glob` confinement, shared-workspace per-file locking, allowlisted command execution, background ML `job_*` tools, shell-less `run_readonly`, hard budgets + tool-result compaction, `loom.context.v1` piping, and `--phi` local-only model confinement.
 * **[`medimage`](/posts/2026-08-04-introducing-medimage/) & [Computational Medical Physicist Gem](/posts/2026-05-24-announcing-gemini-gem-for-computational-medical-physics/):** Free 13-chapter hands-on Google Colab course and specialized Gemini AI co-pilot for medical physics and radiomics.
 
@@ -67,7 +67,7 @@ Our next strategic phase addresses the remaining structural bottlenecks to wides
 ## **Collaborations & Funding**
 Our research is translated in close collaboration with clinical colleagues at the Sidney Kimmel Comprehensive Cancer Center and is supported by research grants and industry partnerships including **Varian Medical Systems**, **ViewRay Technologies**, and the **Sidney Kimmel Comprehensive Cancer Center**.
 
-For our open-source software and multi-agent AI research workflows (`qradiomics`, `nexus-lite`, `loom`, and `medimage`), we also gratefully acknowledge **Google** for providing **highest-tier access to Google Antigravity** (including **Gemini 4 Argon** and **Gemini 4 Carbon**) and compute support, and **Anthropic** for academic research lab support through the **Claude Team Plan for Scientists** program (free Claude Team workspace with discounted USD 15/month Premium seat upgrades for Claude and Claude Code).
+For our open-source software and multi-agent AI research workflows, we also gratefully acknowledge support from **[Google Antigravity](https://antigravity.google/)** and Anthropic's **[Claude Team Plan for Scientists](https://claude.com/programs/team-plan-for-scientists)** program.
 
 ---
 

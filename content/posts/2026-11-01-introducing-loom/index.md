@@ -1,7 +1,7 @@
 ---
 title: "Introducing loom: A Zero-Dependency Sandboxed Leaf-Agent CLI for Reproducible Multi-Agent Workflows"
 date: "2026-11-01T12:00:00.000-05:00"
-lastmod: "2026-11-15T00:25:00.000-05:00"
+lastmod: "2026-11-15T10:30:00.000-05:00"
 math: true
 categories:
   - "news"
@@ -36,7 +36,7 @@ aliases:
   - /nexus-loom/
   - /2026/11/01/introducing-loom/
   - /projects/loom/
-description: "Introducing loom (v0.3.2), a dependency-free Go stdlib single-agent CLI with workspace and --tools/glob confinement, shared-workspace per-file locking, background ML job tools (job_start/wait/log), shell-less run_readonly (git/glab), multi-turn context piping (loom.context.v1), hard budgets, --phi local-model confinement, and hidden-test IBSI radiomics verification with nexus-lite (v0.3.1)."
+description: "Introducing loom (v0.3.2), a dependency-free Go stdlib single-agent CLI with workspace and --tools/glob confinement, shared-workspace per-file locking, background ML job tools (job_start/wait/log), shell-less run_readonly (git/glab), multi-turn context piping (loom.context.v1), hard budgets, --phi local-model confinement, and hidden-test IBSI radiomics verification with nexus-lite (v0.3.2)."
 ---
 
 Today we are releasing **[loom](https://github.com/choilab-jefferson/nexus.loom)** (`v0.3.2`, MIT License), a small, zero-dependency (**Go 1.22+ standard library only**) single-agent CLI engineered to execute one bounded coding or scientific task per run as an unattended leaf worker.
@@ -44,7 +44,7 @@ Today we are releasing **[loom](https://github.com/choilab-jefferson/nexus.loom)
 Across our open-source computational oncology stack, each layer has a distinct responsibility:
 - **[qradiomics](/qradiomics/)** (`v0.9.9`, [PyPI](https://pypi.org/project/qradiomics/)) provides the domain-specific Python CLI (`qr`) and atomic library for DICOM/RTSTRUCT conversion, pair manifests (`qr select validate`), pure-Python `rtools` set as the default extraction engine everywhere (`qradiomics.feature.rtools`, simultaneously supporting IBSI-1 and legacy `rtools` features with `pyradiomics`/`pysera` strictly opt-in) & **IBSI-SUV v3.1** PET normalization, deformable registration (`sitk`, `plastimatch`, `elastix`), longitudinal contour QC (`qr longitudinal`), 3D shape biomarkers (`AHSN`, `spic6` cMCF, solid-core remodeling), packaged Nextflow execution (`qr workflow run --executor nextflow`), and survival/ML benchmarking (`qr bench`).
 - **[medimage](/posts/2026-08-04-introducing-medimage/)** teaches those quantitative imaging workflows through a 13-chapter zero-setup Google Colab curriculum.
-- **[nexus-lite](/nexus-lite/)** (`v0.3.1`, [PyPI: `pip install nexus-lite`](https://pypi.org/project/nexus-lite/)) provides the zero-server multi-agent orchestration kernel (`dtach`/stdlib PTYs with Google Drive FUSE `/tmp` socket fallback, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledger primitives, parallel swarms, role pipelines, and zero-preinstall Colab/sandbox compute).
+- **[nexus-lite](/nexus-lite/)** (`v0.3.2`, [PyPI: `pip install nexus-lite`](https://pypi.org/project/nexus-lite/)) provides the zero-server multi-agent orchestration kernel (dependency-free stdlib PTYs `nexus_lite.pty` with `pty ls`/`attach` and Google Drive FUSE `/tmp` socket fallback, SQLite WAL Bus v1–v3, 3-tier memory `stm`/`mtm`/`ltm`, `agent run` bus loops, `ballot` voting, detached `job`/ledger primitives, parallel swarms, role pipelines, and zero-preinstall Colab/sandbox compute).
 - **`loom` (`nexus.loom` `v0.3.2`) is the deterministic leaf-worker binary**: one agent, one bounded task (or one composable turn via `loom.context.v1` stdin/stdout piping), strict workspace and capability/glob confinement (`--tools`, `--read-glob`/`--write-glob`), allowlisted command execution with timeout clamping (`--max-cmd-timeout`), background ML job tools (`job_*`), shell-less `run_readonly` (`git`/`glab`), hard budgets + tool-result compaction (`--max-tool-result-bytes`, `--keep-tool-results`), and a resumable JSONL trace—with **zero external runtime dependencies**, **zero implicit host-state reads**, and **zero configuration files**.
 
 - **Repository:** [github.com/choilab-jefferson/nexus.loom](https://github.com/choilab-jefferson/nexus.loom) · **Version:** `v0.3.2` · **License:** MIT
@@ -173,9 +173,9 @@ loom models --provider gemini --json
 
 ---
 
-## Orchestrating `loom` from `nexus-lite v0.3.1` in Google Colab & Remote Compute
+## Orchestrating `loom` from `nexus-lite v0.3.2` in Google Colab & Remote Compute
 
-While `loom` is intentionally a single-agent CLI, **[nexus-lite](/nexus-lite/)** (`v0.3.1`, on [PyPI](https://pypi.org/project/nexus-lite/)) turns `loom` into a multi-agent team (`Orchestrator → Workers → Reviewer`) via `nexus_lite.loom` and `nexus_lite.demos.loom_multi_agent`, turns `loom` into a persistent FIFO bus-driven team agent via `nexus-lite agent run analyst -- loom -p ... --context-in '{context_in}' --context-out '{context_out}'` (automatically promoting `loom.context.v1` state across bus messages), and can ship `loom` workflows to remote Colab or sandbox runtimes with zero pre-installation via `nexus_lite.compute`.
+While `loom` is intentionally a single-agent CLI, **[nexus-lite](/nexus-lite/)** (`v0.3.2`, on [PyPI](https://pypi.org/project/nexus-lite/)) turns `loom` into a multi-agent team (`Orchestrator → Workers → Reviewer`) via `nexus_lite.loom` and `nexus_lite.demos.loom_multi_agent`, turns `loom` into a persistent FIFO bus-driven team agent via `nexus-lite agent run analyst -- loom -p ... --context-in '{context_in}' --context-out '{context_out}'` (automatically promoting `loom.context.v1` state across bus messages), and can ship `loom` workflows to remote Colab or sandbox runtimes with zero pre-installation via `nexus_lite.compute`.
 
 ### 1. Explicit SHA-256 Installer & Python Subprocess Adapter (`nexus_lite.loom`)
 
@@ -240,8 +240,8 @@ python examples/remote_compute_and_loom.py
 
 ## Acknowledgements
 
-- **Google**: We gratefully acknowledge **Google** for providing **highest-tier access to Google Antigravity**—including frontier **Gemini 4 Argon** and **Gemini 4 Carbon** model access—and compute support, which powered the multi-agent orchestration, sandboxed leaf-worker verification, and IBSI radiomics benchmarking across **[loom](https://github.com/choilab-jefferson/nexus.loom)**, **[nexus-lite](/nexus-lite/)**, **[qradiomics](/qradiomics/)**, and **[medimage](/posts/2026-08-04-introducing-medimage/)**.
-- **Anthropic**: We also acknowledge **Anthropic** for supporting our academic research lab through the **Claude Team Plan for Scientists** program, providing a free Claude Team workspace with discounted USD 15/month Premium seat upgrades for Claude and Claude Code.
+- **Google**: Supported by **[Google Antigravity](https://antigravity.google/)**.
+- **Anthropic**: Supported through the **[Claude Team Plan for Scientists](https://claude.com/programs/team-plan-for-scientists)** program.
 
 ---
 

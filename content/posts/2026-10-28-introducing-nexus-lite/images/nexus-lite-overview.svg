@@ -45,7 +45,7 @@
     <text x="160" y="294" fill="#f39800" font-size="14" font-weight="700" letter-spacing="1.5">STAGE I</text>
     <text x="160" y="325" fill="#eef0f2" font-size="26" font-weight="700">Runtime</text>
     <line x1="90" y1="370" x2="340" y2="370" stroke="#3a4149" stroke-width="1"/>
-    <text x="90" y="404" fill="#8b9198" font-size="15">dtach PTYs · SQLite WAL · Drive</text>
+    <text x="90" y="404" fill="#8b9198" font-size="15">Stdlib PTYs · SQLite WAL · Drive</text>
 
     <!-- Stage 2: Agents -->
     <rect x="445" y="248" width="310" height="192" rx="16" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>
