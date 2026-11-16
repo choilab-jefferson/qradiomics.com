@@ -58,7 +58,7 @@
     <text x="545" y="294" fill="#f39800" font-size="14" font-weight="700" letter-spacing="1.5">PILLAR II</text>
     <text x="545" y="325" fill="#eef0f2" font-size="26" font-weight="700">Budgets</text>
     <line x1="475" y1="370" x2="725" y2="370" stroke="#3a4149" stroke-width="1"/>
-    <text x="475" y="404" fill="#8b9198" font-size="15">Turns · Context Pipe · Trace</text>
+    <text x="475" y="404" fill="#8b9198" font-size="15">Turns · Loop Mode · Context Pipe</text>
 
     <!-- Stage 3: Leaf Harness -->
     <rect x="830" y="248" width="310" height="192" rx="16" fill="#262c33" stroke="#3a4149" stroke-width="1.5"/>

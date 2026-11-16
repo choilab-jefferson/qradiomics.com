@@ -1,7 +1,7 @@
 ---
 title: "Introducing qradiomics: A Unified Radiomics CLI for Reproducible Research"
 date: "2026-05-20T17:00:00.000-04:00"
-lastmod: "2026-11-15T10:30:00.000-05:00"
+lastmod: "2026-11-16T11:30:00.000-05:00"
 categories:
   - "news"
   - "research"
@@ -39,7 +39,7 @@ Today, we are thrilled to announce the latest release of **[qradiomics](https://
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/qradiomics/blob/main/examples/lung1_survival_colab.ipynb)
 - **IBSI-1 Digital Phantom Parity (`270/270`) Colab Notebook:**  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/qradiomics/blob/main/examples/ibsi1_phantom_colab.ipynb)
-- **QRadiomics + MedImage Multi-Agent Colab Notebook (`nexus-lite v0.3.2`):**  
+- **QRadiomics + MedImage Multi-Agent Colab Notebook (`nexus-lite v0.4.0`):**  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/qradiomics_medimage_colab_demo.ipynb)
 
 ## What is qradiomics?
@@ -92,7 +92,7 @@ The LUNGx external validation result (AUC 0.756) matches the published number ex
 - **`qr workflow plan / show / run`**: declarative JSON/YAML workflow plans executed via **`inline`** (default), packaged **Nextflow** (`qr workflow run plan.json --executor nextflow`, `QR_PRE -> QR_CASE -> QR_PAIR -> QR_POST` with `-resume` and `--profile local|slurm`), or Prefect
 - **`qr anonymize`**: strip PHI from DICOM trees (PS3.15 Annex E)
 - **`qradiomics.shape` & `qradiomics.deep`**: Python re-implementations of the Choi 2014 AHSN nodule detector, Choi 2021 conformal cMCF spiculation quantifier (`spic_a`, `spic_b`, `roundness`, `Na`/`Nl`/`s1`/`s2`), 3D solid-core remodeling (`solid_remodeling`), longitudinal contour-set geometry (`contour_set`), and CT-FM small-ROI compartment pooling & subspace denoising (`qradiomics.deep`, `qradiomics.atomic.denoise_subspace`)
-- **Agent-Ready Ecosystem**: Ships with a first-class Antigravity / Claude Code skill (`.claude/skills/qradiomics/`) and integrates directly with **[nexus-lite](/nexus-lite/)** (`v0.3.2` on [PyPI](https://pypi.org/project/nexus-lite/), with 7 Google Colab notebooks) and **[loom](/loom/)** (`v0.3.2` sandboxed single-agent leaf CLI)
+- **Agent-Ready Ecosystem**: Ships with a first-class Antigravity / Claude Code skill (`.claude/skills/qradiomics/`) and integrates directly with **[nexus-lite](/nexus-lite/)** (`v0.4.0` on [PyPI](https://pypi.org/project/nexus-lite/), with 7 Google Colab notebooks) and **[loom](/loom/)** (`v0.4.0` sandboxed single-agent & `loom serve` loop-mode leaf CLI)
 
 ## Validated on four public cohorts
 
