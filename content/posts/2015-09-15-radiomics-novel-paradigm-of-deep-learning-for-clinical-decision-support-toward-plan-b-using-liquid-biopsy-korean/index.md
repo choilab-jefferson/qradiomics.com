@@ -20,4 +20,4 @@ aliases:
 description: "Read about Radiomics: Novel Paradigm of Deep Learning for Clinical Decision Support toward Plan B using Liquid Biopsy (Korean) and other research topics..."
 ---
 
-{{< slideshare id="52826006" >}}
+{{< slideshare id="52826006" type="doc" >}}

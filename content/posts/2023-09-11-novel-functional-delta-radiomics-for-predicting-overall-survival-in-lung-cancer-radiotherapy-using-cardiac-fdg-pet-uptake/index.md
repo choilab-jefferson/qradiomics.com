@@ -20,8 +20,9 @@ tags:
   - "toxicity"
 cover:
   image: "images/image-1.png"
-  alt: "Functional cardiac PET radiomics workflow for lung cancer radiotherapy"
+  alt: "Cardiac FDG uptake patterns on 18F-FDG PET/CT: no uptake, diffuse uptake, and focal uptake"
   relative: true
+  hiddenInSingle: true
 aliases:
   - /2023/09/11/novel-functional-delta-radiomics-for-predicting-overall-survival-in-lung-cancer-radiotherapy-using-cardiac-fdg-pet-uptake/
 description: "Our paper “Novel Functional Radiomics for Prediction of Cardiac Positron Emission Tomography Avidity in Lung Cancer Radiotherapy” has been published in..."
@@ -31,9 +32,9 @@ Our paper **“Novel Functional Radiomics for Prediction of Cardiac Positron Emi
 
 > Note: This post summarizes broader **functional cardiac PET radiomics** work. Only one related presentation below is specifically a **delta-radiomics** analysis.
 
-![Cardiac FDG uptake patterns on 18F-FDG PET/CT: no uptake, diffuse uptake, and focal uptake](images/image.png)
+![Functional cardiac PET radiomics workflow: preprocessing, feature analysis, and model building](images/image.png)
 
-![Functional cardiac PET radiomics workflow for predicting cardiac FDG avidity in lung cancer radiotherapy](images/image-1.png)
+![Cardiac FDG uptake patterns on 18F-FDG PET/CT: no uptake, diffuse uptake, and focal uptake](images/image-1.png)
 
 ### Abstract:
 

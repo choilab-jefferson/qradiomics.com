@@ -23,4 +23,4 @@ description: "2010 IEEE ICIP"
 
 2010 IEEE ICIP
 
-{{< slideshare id="39782553" >}}
+{{< slideshare id="39782553" type="doc" >}}

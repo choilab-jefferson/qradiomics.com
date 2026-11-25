@@ -16,6 +16,7 @@ cover:
   image: "images/image-3.png"
   alt: "The Nexus article on the CHOI Lab cardiac PET radiomics study"
   relative: true
+  hiddenInSingle: true
 aliases:
   - /2024/06/27/the-nexus-featured-our-cardiac-pet-radiomics-study/
 description: "Jefferson Investigates: Artificial Intelligence and Heart Disease — The Nexus Machine learning uses lung cancer scans to predict heart damage —..."

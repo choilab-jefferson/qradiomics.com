@@ -14,6 +14,7 @@ cover:
   image: "images/00289_psisdg11510_115102w_page_5_1.jpg"
   alt: "Ants detected and circled in red on a rocky ground photo and on a white arena"
   relative: true
+  hiddenInSingle: true
 aliases:
   - /2020/11/17/automatic-motion-tracking-system-for-analysis-of-insect-behavior/
 description: "Darrin Gladman, Jehu Osegbe, Wookjin Choi\ , and Joon Suk Lee 'Automatic motion tracking system for analysis of insect behavior', Proc. SPIE 11510,..."
@@ -29,4 +30,4 @@ Darrin Gladman, Jehu Osegbe, Wookjin Choi\*, and Joon Suk Lee "Automatic mo
 
 We present a multi-object tracking system to track small insects such as ants and bees. Motion-based object tracking recognizes the movements of objects in videos using information extracted from the given video frames. We applied several computer vision techniques, such as blob detection and appearance matching, to track ants. Moreover, we discussed different object detection methodologies and investigated the various challenges of object detection, such as illumination variations and blob merge/split. The proposed system effectively tracked multiple objects in various environments.
 
-{{< slideshare id="239304811" >}}
+{{< slideshare id="239304811" type="doc" >}}
