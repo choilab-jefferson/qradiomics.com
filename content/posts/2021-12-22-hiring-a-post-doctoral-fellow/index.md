@@ -22,7 +22,7 @@ description: "Postdoctoral Fellow Developing Clinically Interpretable Medical Im
 
 #### Postdoctoral Fellow - Developing Clinically Interpretable Medical Imaging AI in Radiation Therapy
 
-https://recruit.jefferson.edu/psp/hcmp/EMPLOYEE/HRMS/c/HRS\_HRAM\_FL.HRS\_CG\_SEARCH\_FL.GBL?Page=HRS\_APP\_JBPST\_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=9272548&PostingSeq=1
+[Jefferson Careers Posting](https://recruit.jefferson.edu/psp/hcmp/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=9272548&PostingSeq=1)
 
 - PI: Wookjin Choi, Ph.D. <[Wookjin.Choi@jefferson.edu](mailto:Wookjin.Choi@jefferson.edu)\>  
     Assistant Professor of Radiation Oncology, Thomas Jefferson University

@@ -16,4 +16,4 @@ This video clip shows how to estimate peak enhancement time by using the test in
 
 W Choi et al. Individually Optimized Contrast-Enhanced 4D-CT for Radiotherapy Simulation in Pancreatic Ductal Adenocarcinoma [http://onlinelibrary.wiley.com/doi/10.1118/1.4963213/full](http://onlinelibrary.wiley.com/doi/10.1118/1.4963213/full)
 
-https://youtu.be/Vo1IBDz3DBs
+{{< youtube Vo1IBDz3DBs >}}

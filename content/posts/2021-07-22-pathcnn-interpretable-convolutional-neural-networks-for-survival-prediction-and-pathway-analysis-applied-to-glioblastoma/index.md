@@ -13,6 +13,11 @@ tags:
   - "pathcnn"
   - "pathway"
   - "survival"
+cover:
+  image: "images/pathcnn.png"
+  alt: "PathCNN pipeline: a pathway image passes through a CNN to LTS and non-LTS outputs, with GradCAM maps compared between the two groups"
+  relative: true
+  hiddenInSingle: true
 aliases:
   - /2021/07/22/pathcnn-interpretable-convolutional-neural-networks-for-survival-prediction-and-pathway-analysis-applied-to-glioblastoma/
 description: "Jung Hun Oh, Wookjin Choi, Euiseong Ko, Mingon Kang, Allen Tannenbaum, Joseph O Deasy The authors wish it to be known that, in their opinion, Jung Hun Oh..."
@@ -22,11 +27,11 @@ Jung Hun Oh, Wookjin Choi, Euiseong Ko, Mingon Kang, Allen Tannenbaum, Joseph O 
 
 The authors wish it to be known that, in their opinion, Jung Hun Oh and Wookjin Choi should be regarded as Joint First Authors.
 
-[https://academic.oup.com/bioinformatics/article/37/Supplement\_1/i443/6319702](https://academic.oup.com/bioinformatics/article/37/Supplement_1/i443/6319702)
+[https://academic.oup.com/bioinformatics/article/37/Supplement_1/i443/6319702](https://academic.oup.com/bioinformatics/article/37/Supplement_1/i443/6319702)
 
 <figure>
 
-https://github.com/mskspi/PathCNN/raw/main/img/pathcnn.png
+![PathCNN biological interpretation pipeline: Grad-CAM class activation maps on pathway images and statistical comparison between LTS and non-LTS groups](images/pathcnn.png)
 
 <figcaption>
 
@@ -44,8 +49,10 @@ Convolutional neural networks (CNNs) have achieved great success in the areas of
 
 Results
 
-To address these issues, we propose a novel method, called _PathCNN_, that constructs an interpretable CNN model on integrated multi-omics data using a newly defined _pathway image_. PathCNN showed promising predictive performance in differentiating between long-term survival (LTS) and non-LTS when applied to glioblastoma multiforme (GBM). The adoption of a visualization tool coupled with statistical analysis enabled the identification of plausible pathways associated with survival in GBM. In summary, PathCNN demonstrates that CNNs can be effectively applied to multi-omics data in an interpretable manner, resulting in promising predictive power while identifying key biological correlates of disease.Availability and implementation
+To address these issues, we propose a novel method, called _PathCNN_, that constructs an interpretable CNN model on integrated multi-omics data using a newly defined _pathway image_. PathCNN showed promising predictive performance in differentiating between long-term survival (LTS) and non-LTS when applied to glioblastoma multiforme (GBM). The adoption of a visualization tool coupled with statistical analysis enabled the identification of plausible pathways associated with survival in GBM. In summary, PathCNN demonstrates that CNNs can be effectively applied to multi-omics data in an interpretable manner, resulting in promising predictive power while identifying key biological correlates of disease.
+
+Availability and implementation
 
 The source code is freely available at: [https://github.com/mskspi/PathCNN](https://github.com/mskspi/PathCNN).
 
-https://www.youtube.com/watch?v=K0cuEp1ID0o
+{{< youtube K0cuEp1ID0o >}}

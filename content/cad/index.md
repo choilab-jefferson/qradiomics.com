@@ -22,4 +22,4 @@ keywords: ["lung CAD", "computer-aided detection", "pulmonary nodule detection",
 
 [QuaLIA CAD System](https://qradiomics.com/projects/2016-01-11-qualia-cad/) - [https://github.com/taznux/qualia](https://github.com/taznux/qualia) [Lung image analysis framework](https://qradiomics.com/projects/2016-08-27-lung-image-analysis-framwork/) - [https://github.com/taznux/lung-image-analysis](https://github.com/taznux/lung-image-analysis)
 
-http://www.youtube.com/watch?v=uEPYpfTG5uw
+{{< youtube uEPYpfTG5uw >}}
