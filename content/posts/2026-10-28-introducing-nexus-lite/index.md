@@ -1,7 +1,7 @@
 ---
 title: "Introducing nexus-lite: Colab-Ready Multi-Agent Orchestration for Quantitative Medical Imaging and Radiomics"
 date: "2026-10-28T19:00:00.000-04:00"
-lastmod: "2026-11-16T11:30:00.000-05:00"
+lastmod: "2026-11-28T11:30:00.000-05:00"
 math: true
 categories:
   - "news"
@@ -40,22 +40,22 @@ cover:
 aliases:
   - /2026/10/28/introducing-nexus-lite/
   - /nexus-lite/
-description: "Introducing nexus-lite (v0.4.0), an open-source, zero-server Python multi-agent kernel and demo suite on PyPI with 7 Google Colab notebooks—covering dependency-free stdlib PTYs (nexus_lite.pty + interactive pty ls/attach), Drive FUSE AF_UNIX socket fallback, file-native Bus (nexus_lite.filebus + rebuildable lite.db index & zero-poll bus wait), 3-tier memory (STM/MTM/LTM), command agents (agent run), ballot voting, xrun-parity detached jobs (--mem-max, roots index, --notify, kernel exit wait) & ledgers, Colab Agent PCs, qradiomics v0.9.9 + medimage workflows (zero pyradiomics required), loom serve loop mode (LoomAdapter.serve()) & IBSI benchmarks, zero-preinstall Colab/sandbox compute, and 100% local Ollama GPU/CPU swarms."
+description: "Introducing nexus-lite (v0.5.0, with the nxl alias, kernel Store contract, artifacts export/push/pull/verify, compute job contract and ledger CLI), an open-source, zero-server Python multi-agent kernel and demo suite on PyPI with 7 Google Colab notebooks—covering dependency-free stdlib PTYs (nexus_lite.pty + interactive pty ls/attach), Drive FUSE AF_UNIX socket fallback, file-native Bus (nexus_lite.filebus + rebuildable lite.db index & zero-poll bus wait), 3-tier memory (STM/MTM/LTM), command agents (agent run), ballot voting, xrun-parity detached jobs (--mem-max, roots index, --notify, kernel exit wait) & ledgers, Colab Agent PCs, qradiomics v0.9.9 + medimage workflows (zero pyradiomics required), loom serve loop mode (LoomAdapter.serve()) & IBSI benchmarks, zero-preinstall Colab/sandbox compute, and 100% local Ollama GPU/CPU swarms."
 ---
 
-Today we are excited to release **[nexus-lite](https://github.com/choilab-jefferson/nexus.lite)** (`v0.4.0`, MIT License, on [PyPI](https://pypi.org/project/nexus-lite/)), an ultra-lightweight, Colab-ready multi-agent orchestration kernel and scientific workflow suite designed to coordinate live CLI coding and research agents—including **Google Antigravity (`agy`)**, **OpenCode (`opencode`)**, **Claude Code (`claude`)**, local **Ollama** GPU/CPU models (`gemma4`, `qwen3.8`, `lfm3`), and our sandboxed single-agent leaf CLI **[loom](/loom/)** (`v0.4.0`)—directly on top of **[qradiomics](/qradiomics/)** (`v0.9.9`) and **[medimage](/posts/2026-08-04-introducing-medimage/)**.
+Today we are excited to release **[nexus-lite](https://github.com/choilab-jefferson/nexus.lite)** (`v0.5.0`, MIT License, on [PyPI](https://pypi.org/project/nexus-lite/)), an ultra-lightweight, Colab-ready multi-agent orchestration kernel and scientific workflow suite designed to coordinate live CLI coding and research agents—including **Google Antigravity (`agy`)**, **OpenCode (`opencode`)**, **Claude Code (`claude`)**, local **Ollama** GPU/CPU models (`gemma4`, `qwen3.8`, `lfm3`), and our sandboxed single-agent leaf CLI **[loom](/loom/)** (`v0.5.0`)—directly on top of **[qradiomics](/qradiomics/)** (`v0.9.9`) and **[medimage](/posts/2026-08-04-introducing-medimage/)**.
 
 With **[qradiomics](/posts/2026-05-20-introducing-qradiomics/)**, we unified twelve years of CHOI Lab radiomics and 3D shape pipelines into an atomic Python CLI and library (`qr` / `qrdx`) with pure-Python `rtools` (IBSI-1 + legacy) set as the default engine everywhere (`pyradiomics` is strictly optional). With **[medimage](/posts/2026-08-04-introducing-medimage/)**, we turned those tools into a 13-chapter hands-on Google Colab curriculum. **`nexus-lite` completes the stack**: it gives multiple AI agents a shared, zero-server workspace where they can run parallel radiomics extractions, audit DICOM de-identification under an opt-in PHI gate (`NEXUS_SENSITIVITY=phi`), detect survival data leakage, execute hidden-test IBSI radiomics verification benchmarks with **[loom](/loom/)**, ship zero-preinstall remote compute bundles over Cloudflared tunnels or persistent Colab Agent PCs, and index every finding into a searchable SQLite FTS5 knowledge wiki—all inside a single Google Colab notebook or local workstation.
 
-- **Repository:** [github.com/choilab-jefferson/nexus.lite](https://github.com/choilab-jefferson/nexus.lite) · **PyPI:** [`pip install -U nexus-lite`](https://pypi.org/project/nexus-lite/) (or `pip install -U "nexus-lite[demos]"`) · **Version:** `v0.4.0` · **License:** MIT
+- **Repository:** [github.com/choilab-jefferson/nexus.lite](https://github.com/choilab-jefferson/nexus.lite) · **PyPI:** [`pip install -U nexus-lite`](https://pypi.org/project/nexus-lite/) (or `pip install -U "nexus-lite[demos]"`) · **Version:** `v0.5.0` · **License:** MIT
 
 ### All 7 Interactive Google Colab Notebooks (`notebooks/`)
 
-`nexus-lite v0.4.0` ships with **seven self-contained Google Colab notebooks** installing `nexus-lite` (`>=0.4.0`) and `qradiomics` (`>=0.9.9`) directly from PyPI (zero git clone required, zero mandatory C++ dependencies, and zero `pyradiomics` requirement), spanning cloud CLI coding agents (`agy`, `claude`, `opencode`), kernel primitives, sandboxed `loom` leaf-agent verification, zero-preinstall remote compute dispatch, and 100% local/PHI-safe open-weight LLM swarms on Colab T4, A100, and CPU runtimes:
+`nexus-lite v0.5.0` ships with **seven self-contained Google Colab notebooks** installing `nexus-lite` (`>=0.5.0`) and `qradiomics` (`>=0.9.9`) directly from PyPI (zero git clone required, zero mandatory C++ dependencies, and zero `pyradiomics` requirement), spanning cloud CLI coding agents (`agy`, `claude`, `opencode`), kernel primitives, sandboxed `loom` leaf-agent verification, zero-preinstall remote compute dispatch, and 100% local/PHI-safe open-weight LLM swarms on Colab T4, A100, and CPU runtimes:
 
 | Colab Notebook | Runtime & What It Demonstrates |
 | :--- | :--- |
-| **1. Core Primitives**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/nexus_lite_colab_demo.ipynb) | **Free Colab (`agy`, `opencode`, `claude`, `loom`)** · `nexus_lite_colab_demo.ipynb` (18 cells)<br>PyPI direct install, dependency-free stdlib PTYs (`nexus_lite.pty`) with Google Drive FUSE `/tmp` `AF_UNIX` socket auto-fallback, Drive `~/.gemini` credential sync (`colab.ensure_colab`), Cloudflared tunnel (`colab.tunnel`), Bus v1 pointer injection, parallel swarms, role pipelines, 5-turn A2A `interact`, 5-phase `cooperate`, E2E test suite, and **Cell 9: Loom Multi-Agent IBSI Radiomics Verification**. |
+| **1. Core Primitives**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/nexus_lite_colab_demo.ipynb) | **Free Colab (`agy`, `opencode`, `claude`, `loom`)** · `nexus_lite_colab_demo.ipynb` (18 cells)<br>PyPI direct install, dependency-free stdlib PTYs (`nexus_lite.pty`) with Google Drive FUSE `/tmp` `AF_UNIX` socket auto-fallback, Drive `~/.gemini` credential sync (`colab.ensure_colab`), Cloudflared tunnel (`colab.tunnel`), file-bus pointer injection, parallel swarms, role pipelines, 5-turn A2A `interact`, 5-phase `cooperate`, E2E test suite, and **Cell 9: Loom Multi-Agent IBSI Radiomics Verification**. |
 | **2. QRadiomics + MedImage**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/qradiomics_medimage_colab_demo.ipynb) | **Free Colab (`agy`, `opencode`, `claude`, `loom`)** · `qradiomics_medimage_colab_demo.ipynb` (8 Demos)<br>PyPI `qradiomics>=0.9.9` (`rtools` default everywhere, `pyradiomics` optional!), Demo 1 (`qradiomics.shape` cMCF 3D `spic6` & 180-D `AHSN` swarm), Demo 2 (HIPAA Safe Harbor DICOM de-identification pipeline), Demo 3 (Multi-modality CT L3 body comp, CHAOS MRI steatosis, ACRIN 6668 PET SUV swarm), Demo 4 (Lung1 data-leakage & reproducibility audit), Demo 5 (5-phase cooperative `scanner_harmonizer.py`), Demo 6 (FTS5 Wiki + `viz.dashboard()`), **Demo 7 (Loom 93-Test IBSI Radiomics Suite)**, and **Demo 8 (Antigravity `agy` + `nexus-lite` driving `qr select validate` → `qr extract` → `qr results merge`)**. |
 | **3. Kernel Primitives**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/kernel_primitives_colab.ipynb) | **Free Colab (Pure Python Stdlib Kernel)** · `kernel_primitives_colab.ipynb` (15 cells)<br>Hands-on walkthrough of 3-tier memory (`stm`/`mtm`/`ltm`), file-native Bus (`nexus_lite.filebus` + rebuildable `lite.db` index, `bus wait`, multi-consumer cursors, offline redelivery, `bus_prune`), dependency-free PTYs (`nexus_lite.pty`), code-tallied `ballot` voting, `cas` + `#nexus.ledger/2` step ledgers, `NEXUS_SENSITIVITY=phi` redaction, and zero-preinstall remote compute (`run_local_sandbox` / `run_on_colab`). |
 | **4. Loom + IBSI Suite**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/loom_multi_agent_colab.ipynb) | **Free Colab (`loom`: `mock`, `anthropic`, `gemini`)** · `loom_multi_agent_colab.ipynb` (13 cells)<br>SHA-256-verified `loom.install_loom()`, `Orchestrator -> Workers -> Reviewer` vs. single-agent baseline on the 4-module `basic` task & 3 IBSI Radiomics suites (93 hidden tests), failure injection (`--inject-bad-key`, `--inject-timeout`), secret redaction, and **zero-preinstall remote compute (`nl.run_on_colab`) over `colab.tunnel`**. |
@@ -65,11 +65,32 @@ With **[qradiomics](/posts/2026-05-20-introducing-qradiomics/)**, we unified twe
 
 ---
 
-## Why `nexus-lite`? (And What's New in `v0.4.0`)
+## Why `nexus-lite`? (And What's New in `v0.5.0`)
+
+**What's New in `v0.5.0`**
+
+`v0.5.0` is a cleanup and kernel-contract release. It adds a few stable primitives and removes the deprecated names that earlier releases kept as shims.
+
+- **Short alias:** the console script `nxl` runs the same entry point as `nexus-lite`.
+- **Kernel store (`nexus_lite.store`):** a `Store` Protocol (`get`, `set(nx, ttl)`, `cas_row`, `rows`, `sweep_expired`) with a stdlib sqlite backend (`SqliteStore`), plus `Store.delete(key)` and an atomic JSON read-modify-write helper `store.kv_update(store, key, fn, ttl=, attempts=)`. The bus itself stays the file bus.
+- **Artifacts:** new `artifacts root`, `refs`, `show` and `export --json` (one JSON bundle of refs and every reachable manifest), plus rsync-over-ssh `artifacts push` / `pull` / `verify`.
+- **Compute job contract (`nexus_lite.compute_jobs`):** `submit` / `status` / `fetch` / `cancel` over any backend. It ships no backend of its own; backends are plugins.
+- **Workspace and ledger helpers:** `workspace(path)` scopes workspace-relative calls to one context without touching the environment, `NEXUS_LITE_LTM_DIR` gives the wiki its own root, `nexus-lite ledger` (`step`, `begin`, `mark`, `commit`) drives resumable step ledgers, and `nexus_lite.get_bus_dir()` / `connect_at(path)` are available at top level.
+- **`agent run` replies:** a reply goes to `meta.reply_to` when it is a valid bus target, else to the sender, and a reply failure never blocks the ack. Senders may now be structured addresses that contain `/`.
+- **Local LLM swarms:** `examples/ollama_agent.py` sends `think: false` by default, so thinking models no longer return empty output; `--think` opts in.
+
+**Breaking changes in `v0.5.0`.** Code that still used deprecated or internal names must migrate:
+- `nexus_lite.ptyd` is gone: use `python -m nexus_lite.pty serve|attach`.
+- The deprecated `nexus_lite.core` re-exports and the `viz`, `loom_multi_agent`, `loom_multi_task` and `loom_radiomics_tasks` shims are gone: import from `nexus_lite.memory.{mtm,ltm,stm}`, `nexus_lite.demos.orchestration`, `nexus_lite.colab.env`, `nexus_lite.demos.viz` and `nexus_lite.demos.loom_*`.
+- `run_swarm(live_viz=)` is removed (it had been ignored since `v0.3.0`).
+- `NEXUS_ARTIFACT_DIR` is removed: workers see only `NEXUS_TASK_DIR`. `NEXUS_ALLOW_NESTED_MININEXUS` is removed too; the delegation depth cap is the only recursion rule.
+- `agent run` children now inherit the full parent environment (plus `NEXUS_AGENT` and `NEXUS_LITE_DIR`) instead of a nine-variable allowlist, and `--env VAR` / `pass_env=` are removed. Start the agent under `env -i ...` if it must not see the parent's variables.
+
+**Companion version.** `nexus-lite v0.5.0` pairs with **[loom](/loom/) `v0.5.0`**. Loop mode needs loom `v0.4.0` or newer. The installer's default pin (`LOOM_VERSION`) is still `"0.4.0"`, so run `nexus-lite loom install --version 0.5.0` to get the matching binary.
 
 Conventional Python "agent" libraries only chain raw LLM API prompts—they are not true autonomous coding agents with full shell, filesystem, and scientific CLI capabilities. Conversely, real **CLI coding agents** (`agy`, `claude`, `opencode`, `loom`) are built as single-session terminals that normally require a dedicated workstation harness and background daemons to coordinate as a team.
 
-**`nexus-lite v0.4.0` turns standalone CLI coding agents and local Ollama models into a coordinated multi-agent system inside Google Colab and Jupyter notebooks** with a clean **Kernel vs. Demo Architecture Split** (including PyPI-first notebook installs and automatic `/tmp` `AF_UNIX` socket fallback when `/content/drive/MyDrive` runs on Google Drive FUSE):
+**`nexus-lite v0.5.0` turns standalone CLI coding agents and local Ollama models into a coordinated multi-agent system inside Google Colab and Jupyter notebooks** with a clean **Kernel vs. Demo Architecture Split** (including PyPI-first notebook installs and automatic `/tmp` `AF_UNIX` socket fallback when `/content/drive/MyDrive` runs on Google Drive FUSE):
 
 1. **Pure-Stdlib Multi-Agent Kernel (`nexus_lite` / `nexus-lite` CLI)**:
    - **Persistent, Dependency-Free PTY Package (`nexus_lite.pty`)**: Spawns detachable background PTY sessions with **zero external runtime dependencies** (`dependencies = []`, requiring neither a `dtach` binary nor `pyte` at runtime)—combining a built-in stdlib session server (`python -m nexus_lite.pty serve [-A|-c|-N|-z] SOCK -- CMD...`) that speaks the `dtach` 0.9 `<BB8s` wire protocol with launcher-safe `<sock>.lite.lock` serialization and clean `WINCH`-at-spawn geometry, a pure-stdlib VT text-screen reader (`nexus_lite.pty.screen`), interactive session listing and numbered attach picker (`nexus-lite pty ls` and `nexus-lite pty attach [name|no] [--ro]`), human-input timestamping (`<sock>.input`), macOS/Linux PTY parity, and automatic Google Drive FUSE `/tmp` `AF_UNIX` socket fallback.
@@ -329,21 +350,22 @@ VERDICT: PASS
 
 ---
 
-## Part IV: `loom` Single-Agent & Loop-Mode Harness (`nexus_lite.loom`) & 93-Test Hidden-Test IBSI Radiomics Suite (`v0.4.0`)
+## Part IV: `loom` Single-Agent & Loop-Mode Harness (`nexus_lite.loom`) & 93-Test Hidden-Test IBSI Radiomics Suite (`v0.5.0`)
 
-`nexus-lite v0.4.0` ships first-class integration with **[loom](/loom/)** ([choilab-jefferson/nexus.loom](https://github.com/choilab-jefferson/nexus.loom), `v0.4.0`, pinned `LOOM_VERSION = "0.4.0"`), our dependency-free (Go stdlib only) leaf-agent CLI—supporting both bounded one-shot task runs (`--workspace`, shared-workspace per-file `flock` locks, background `job_*` tools, shell-less `run_readonly`, `{context_in}`/`{context_out}` piping) and **persistent `loom serve` loop mode (`LoomAdapter.serve()` / `LoomLoop`)** directly over the shared file bus.
+`nexus-lite v0.5.0` ships first-class integration with **[loom](/loom/)** ([choilab-jefferson/nexus.loom](https://github.com/choilab-jefferson/nexus.loom), `v0.5.0`; the installer's pinned default `LOOM_VERSION` is still `"0.4.0"`, so pass `--version 0.5.0` to install the latest), our dependency-free (Go stdlib only) leaf-agent CLI—supporting both bounded one-shot task runs (`--workspace`, shared-workspace per-file `flock` locks, background `job_*` tools, shell-less `run_readonly`, `{context_in}`/`{context_out}` piping) and **persistent `loom serve` loop mode (`LoomAdapter.serve()` / `LoomLoop`)** directly over the shared file bus.
 
 ### 1. Explicit SHA-256 Installer (`loom.install_loom`), Subprocess Adapter & File-Bus Loop Mode (`nexus_lite.loom`)
 
-Importing `nexus_lite` or instantiating `LoomAdapter` never touches the network implicitly. Instead, `nexus_lite.loom.install_loom()` (or `nexus-lite loom install`) explicitly downloads the pinned `loom v0.4.0` release binary (`linux`/`darwin` on `amd64`/`arm64`) and verifies its SHA-256 digest against the release `checksums.txt`. `LoomAdapter` then wraps `loom` with automatic capability probing (`loom capabilities --json`, advertising `loop_mode` on `v0.4.0+`), a strict environment allowlist (`PATH`, `HOME`, `LOOM_*`, and provider API keys), deterministic exit-code mapping (`ok`, `task_failure`, `harness_or_policy_error`, `escalation_required`, `budget`, `interrupted`), and persistent loop orchestration (`LoomAdapter.serve()`):
+Importing `nexus_lite` or instantiating `LoomAdapter` never touches the network implicitly. Instead, `nexus_lite.loom.install_loom()` (or `nexus-lite loom install`) explicitly downloads the pinned `loom` release binary (default `LOOM_VERSION = "0.4.0"`; choose another release with `--version`) (`linux`/`darwin` on `amd64`/`arm64`) and verifies its SHA-256 digest against the release `checksums.txt`. `LoomAdapter` then wraps `loom` with automatic capability probing (`loom capabilities --json`, advertising `loop_mode` on loom `v0.4.0+`), a strict environment allowlist (`PATH`, `HOME`, `LOOM_*`, and provider API keys), deterministic exit-code mapping (`ok`, `task_failure`, `harness_or_policy_error`, `escalation_required`, `budget`, `interrupted`), and persistent loop orchestration (`LoomAdapter.serve()`):
 
 ```python
 from nexus_lite import loom
 from nexus_lite.loom import probe, LoomAdapter
 
-# Explicitly install checksum-verified loom v0.4.0 binary (~/.local/bin/loom) if missing
+# Explicitly install a checksum-verified loom binary (~/.local/bin/loom) if missing.
+# The default pin is loom 0.4.0; ask for the v0.5.0 release explicitly.
 if not probe().available:
-    loom.install_loom()
+    loom.install_loom(version="0.5.0")
 
 info = probe()
 print(info.available, info.version, info.version_ok)
@@ -379,11 +401,11 @@ In [`notebooks/loom_multi_agent_colab.ipynb`](https://github.com/choilab-jeffers
 
 ## Part V: Zero-API-Key Local-LLM Swarms on Colab T4, A100 & CPU (`local_llm_swarm_colab_*.ipynb`) & Zero-Preinstall Remote Compute (`nexus_lite.compute`)
 
-Hospital clinical imaging environments frequently prohibit sending Protected Health Information (PHI) to external cloud APIs (`NEXUS_SENSITIVITY=phi`). At the same time, researchers often need to dispatch multi-agent workloads to remote Colab GPUs or isolated sandbox runtimes without maintaining pre-installed virtual environments on every worker node. **`nexus-lite v0.4.0` solves both problems natively.**
+Hospital clinical imaging environments frequently prohibit sending Protected Health Information (PHI) to external cloud APIs (`NEXUS_SENSITIVITY=phi`). At the same time, researchers often need to dispatch multi-agent workloads to remote Colab GPUs or isolated sandbox runtimes without maintaining pre-installed virtual environments on every worker node. **`nexus-lite v0.5.0` solves both problems natively.**
 
 ### 1. Three Local-LLM Ollama Swarm Notebooks (Colab T4, Colab Pro A100, and Tiny CPU/GPU)
 
-Using `examples/ollama_agent.py` (which strips `<think>...</think>` blocks and streams directly from a local Ollama server at `127.0.0.1:11434`), `nexus-lite` orchestrates 100% local, zero-API-key multi-agent swarms across three hardware profiles:
+Using `examples/ollama_agent.py` (which strips `<think>...</think>` blocks, sends `think: false` by default since `v0.5.0` so thinking models such as `gemma4` no longer burn the token budget on reasoning, accepts `--think` to opt back in, and streams directly from a local Ollama server at `127.0.0.1:11434`), `nexus-lite` orchestrates 100% local, zero-API-key multi-agent swarms across three hardware profiles:
 
 1. **[`notebooks/local_llm_swarm_colab_t4.ipynb`](https://colab.research.google.com/github/choilab-jefferson/nexus.lite/blob/main/notebooks/local_llm_swarm_colab_t4.ipynb) — Free Colab T4 GPU (`gemma4:12b`)**:
    - Fits 4-bit **`gemma4:12b`** (~8 GB VRAM) comfortably inside a free Colab T4's 15 GB VRAM (`OLLAMA_NUM_PARALLEL=2`, `OLLAMA_MAX_LOADED_MODELS=1`).
@@ -433,13 +455,16 @@ pip install "nexus-lite[demos]" qradiomics
 
 # 1. Kernel CLI (nexus-lite): workspace, PTYs, File Bus, bus wait, agent loops, ballots, detached jobs & Loom installer
 nexus-lite init
-nexus-lite loom install
+nexus-lite loom install --version 0.5.0   # default pin is loom 0.4.0
+nxl pty ls                                  # nxl is a short alias for nexus-lite (v0.5.0)
 nexus-lite pty ls
 nexus-lite bus wait --target lead --timeout 60
 nexus-lite wiki search "spic6 OR AHSN OR HIPAA OR Bonferroni OR scanner_harmonizer"
 nexus-lite agent run analyst --timeout 300 -- python agent.py
 nexus-lite ballot open b1 --question "Adopt harmonized model?" --voters lead,analyst,verifier
 nexus-lite job start train --mem-max 16G --notify lead -- python train.py
+nexus-lite artifacts add results/model.bin && nexus-lite artifacts commit
+nexus-lite artifacts export --json > catalog.json
 
 # 2. Demo & Orchestration CLI (nexus-lite-demo): medical imaging demos, A2A interact & 5-phase cooperate
 nexus-lite-demo demo phantom-swarm --agent multi-tier
